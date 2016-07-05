@@ -1,0 +1,27 @@
+ [ {
+  "question": "The device that connects different parts of networks together and figured out how to route traffic is called a:",
+  "choice1": "Web",
+  "choice2": "Router",
+  "choice3": "Blog",
+  "choice4": "Email",
+  "correct": "Router"
+  
+  }, {
+  
+  "question": "The early network that led to the development of the Internet was called the:",
+  "choice1": "Apple Net",
+  "choice2": "HairNet",
+  "choice3": "NothingButNet",
+  "choice4": "ARPANET",
+  "correct": "ARPANET"
+  }, {
+  
+  "question": "How fast does light travel through space?",
+  "choice1": "1 mile in a day",
+  "choice2": "3 miles per second",
+  "choice3": "Faster than my brother",
+  "choice4": "186,000 miles per second",
+  "correct": "186,000 miles per second"
+  }
+  ]
+
