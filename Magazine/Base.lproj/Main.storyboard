@@ -836,44 +836,39 @@
                         <viewControllerLayoutGuide type="bottom" id="AVd-BS-Ayq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wEs-m3-ced">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aroundTheWorld.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="5AF-S7-c4w">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcG-9X-cFX">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CDH-WF-uQT">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="CDH-WF-uQT" firstAttribute="leading" secondItem="rcG-9X-cFX" secondAttribute="leading" id="0nl-Kb-XTz"/>
+                                    <constraint firstAttribute="bottom" secondItem="CDH-WF-uQT" secondAttribute="bottom" id="7QH-m3-lNY"/>
+                                    <constraint firstAttribute="trailing" secondItem="CDH-WF-uQT" secondAttribute="trailing" id="RLD-wK-RNR"/>
+                                    <constraint firstItem="CDH-WF-uQT" firstAttribute="top" secondItem="rcG-9X-cFX" secondAttribute="top" id="TVG-9V-MEO"/>
+                                    <constraint firstItem="CDH-WF-uQT" firstAttribute="centerX" secondItem="rcG-9X-cFX" secondAttribute="centerX" id="dnz-Ma-Obm"/>
+                                    <constraint firstItem="CDH-WF-uQT" firstAttribute="centerY" secondItem="rcG-9X-cFX" secondAttribute="centerY" id="gQe-6b-6ol"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="5AF-S7-c4w" firstAttribute="height" secondItem="wEs-m3-ced" secondAttribute="height" id="KHK-67-MGV"/>
-                            <constraint firstItem="5AF-S7-c4w" firstAttribute="centerX" secondItem="wEs-m3-ced" secondAttribute="centerX" id="VqS-OR-WvK"/>
-                            <constraint firstItem="5AF-S7-c4w" firstAttribute="width" secondItem="wEs-m3-ced" secondAttribute="width" id="lx7-pj-3IW"/>
-                            <constraint firstItem="5AF-S7-c4w" firstAttribute="centerY" secondItem="wEs-m3-ced" secondAttribute="centerY" id="tkI-zi-1Sb"/>
+                            <constraint firstItem="rcG-9X-cFX" firstAttribute="width" secondItem="wEs-m3-ced" secondAttribute="width" id="5GV-Id-cLb"/>
+                            <constraint firstItem="rcG-9X-cFX" firstAttribute="centerY" secondItem="wEs-m3-ced" secondAttribute="centerY" id="hnN-fr-BRN"/>
+                            <constraint firstItem="rcG-9X-cFX" firstAttribute="centerX" secondItem="wEs-m3-ced" secondAttribute="centerX" id="jio-wE-oCV"/>
+                            <constraint firstItem="rcG-9X-cFX" firstAttribute="height" secondItem="wEs-m3-ced" secondAttribute="height" id="jvS-XE-9Hb"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="5AF-S7-c4w"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="KHK-67-MGV"/>
-                                <exclude reference="VqS-OR-WvK"/>
-                                <exclude reference="lx7-pj-3IW"/>
-                                <exclude reference="tkI-zi-1Sb"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular-widthClass=regular">
-                            <mask key="subviews">
-                                <include reference="5AF-S7-c4w"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="KHK-67-MGV"/>
-                                <include reference="VqS-OR-WvK"/>
-                                <include reference="lx7-pj-3IW"/>
-                                <include reference="tkI-zi-1Sb"/>
-                            </mask>
-                        </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="imageView" destination="CDH-WF-uQT" id="1Fe-Tc-lqh"/>
+                        <outlet property="scrollView" destination="rcG-9X-cFX" id="H8I-aj-cSz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWS-eM-nne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -888,7 +883,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Dn7-gr-8x3"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ahf-xh-Nhn">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7GX-BJ-2if">
@@ -917,7 +912,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXU-ig-GDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2583.75" y="238.5"/>
+            <point key="canvasLocation" x="2594" y="360"/>
         </scene>
         <!--Puzzle Title-->
         <scene sceneID="I9I-tf-UZa">
@@ -1328,7 +1323,6 @@
     </scenes>
     <resources>
         <image name="2025KidsLogo.png" width="600" height="250"/>
-        <image name="aroundTheWorld.jpg" width="2048" height="1327"/>
         <image name="conrete.jpg" width="500" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
