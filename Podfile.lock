@@ -1,0 +1,21 @@
+PODS:
+  - libsodium (1.0.3)
+  - NAChloride (2.0.11):
+    - libsodium
+  - pop (1.0.9)
+  - WYMaterialButton (1.2.1):
+    - pop (~> 1.0)
+
+DEPENDENCIES:
+  - NAChloride
+  - WYMaterialButton
+
+SPEC CHECKSUMS:
+  libsodium: be547e31dc75725629acc5717dc0a40fc05ef243
+  NAChloride: 0526f4f53ee40bd19fbc301ae2f927a7b4a459ef
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  WYMaterialButton: 4ad7428ab02c3e89f97f04482a84b57170008d91
+
+PODFILE CHECKSUM: 76c05ab0638e14031c692cb2a4da6ca9bc10c348
+
+COCOAPODS: 1.0.0
