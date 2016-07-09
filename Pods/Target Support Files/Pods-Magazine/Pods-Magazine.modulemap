@@ -1,6 +1,0 @@
-framework module Pods_Magazine {
-  umbrella header "Pods-Magazine-umbrella.h"
-
-  export *
-  module * { export * }
-}
