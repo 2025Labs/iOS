@@ -413,10 +413,10 @@
             </objects>
             <point key="canvasLocation" x="1717" y="-135.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="20x-ds-CNT">
             <objects>
-                <viewController id="ZhS-5t-nZV" sceneMemberID="viewController">
+                <viewController id="ZhS-5t-nZV" customClass="Login" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RWp-3P-Obi"/>
                         <viewControllerLayoutGuide type="bottom" id="3eJ-vz-Jj4"/>
@@ -597,6 +597,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="zdG-0r-UWJ" id="gdc-Rd-Vuk"/>
+                        <outlet property="password" destination="c2s-W7-VgQ" id="163-kC-x1L"/>
+                        <outlet property="username" destination="T4o-MH-KTC" id="ioH-U0-cYf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irl-W2-dol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

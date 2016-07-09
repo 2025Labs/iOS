@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7816C75D1D317EBD005696ED /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 7816C75C1D317EBD005696ED /* Login.m */; };
+		7816C77A1D318752005696ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7816C76F1D318752005696ED /* .gitignore */; };
+		7816C77B1D318752005696ED /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 7816C7711D318752005696ED /* AESCrypt.m */; };
+		7816C77C1D318752005696ED /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 7816C7721D318752005696ED /* LICENSE */; };
+		7816C77D1D318752005696ED /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 7816C7741D318752005696ED /* NSData+Base64.m */; };
+		7816C77E1D318752005696ED /* NSData+CommonCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = 7816C7761D318752005696ED /* NSData+CommonCrypto.m */; };
+		7816C77F1D318752005696ED /* NSString+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 7816C7781D318752005696ED /* NSString+Base64.m */; };
+		7816C7801D318752005696ED /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7816C7791D318752005696ED /* README.md */; };
 		781D774A1D1BA7A000D9417C /* wordsearch.png in Resources */ = {isa = PBXBuildFile; fileRef = 781D77491D1BA7A000D9417C /* wordsearch.png */; };
 		781D77511D1CA8CC00D9417C /* Puzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 781D77501D1CA8CC00D9417C /* Puzzle.m */; };
 		784A316F1D248CA200AC8AB9 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = 784A316C1D248CA200AC8AB9 /* quiz.json */; };
@@ -55,6 +63,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7816C75B1D317EBD005696ED /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Login.h; path = ../Login.h; sourceTree = "<group>"; };
+		7816C75C1D317EBD005696ED /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Login.m; path = ../Login.m; sourceTree = "<group>"; };
+		7816C76F1D318752005696ED /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		7816C7701D318752005696ED /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
+		7816C7711D318752005696ED /* AESCrypt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AESCrypt.m; sourceTree = "<group>"; };
+		7816C7721D318752005696ED /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		7816C7731D318752005696ED /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		7816C7741D318752005696ED /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		7816C7751D318752005696ED /* NSData+CommonCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+CommonCrypto.h"; sourceTree = "<group>"; };
+		7816C7761D318752005696ED /* NSData+CommonCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+CommonCrypto.m"; sourceTree = "<group>"; };
+		7816C7771D318752005696ED /* NSString+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Base64.h"; sourceTree = "<group>"; };
+		7816C7781D318752005696ED /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
+		7816C7791D318752005696ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		781D77491D1BA7A000D9417C /* wordsearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordsearch.png; sourceTree = "<group>"; };
 		781D774F1D1CA8CC00D9417C /* Puzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Puzzle.h; sourceTree = "<group>"; };
 		781D77501D1CA8CC00D9417C /* Puzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Puzzle.m; sourceTree = "<group>"; };
@@ -125,6 +146,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7816C76E1D318752005696ED /* AESCrypt-ObjC-master */ = {
+			isa = PBXGroup;
+			children = (
+				7816C76F1D318752005696ED /* .gitignore */,
+				7816C7701D318752005696ED /* AESCrypt.h */,
+				7816C7711D318752005696ED /* AESCrypt.m */,
+				7816C7721D318752005696ED /* LICENSE */,
+				7816C7731D318752005696ED /* NSData+Base64.h */,
+				7816C7741D318752005696ED /* NSData+Base64.m */,
+				7816C7751D318752005696ED /* NSData+CommonCrypto.h */,
+				7816C7761D318752005696ED /* NSData+CommonCrypto.m */,
+				7816C7771D318752005696ED /* NSString+Base64.h */,
+				7816C7781D318752005696ED /* NSString+Base64.m */,
+				7816C7791D318752005696ED /* README.md */,
+			);
+			path = "AESCrypt-ObjC-master";
+			sourceTree = "<group>";
+		};
 		78D07FCB1D2EFBB90090D72B /* IGCMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,7 +232,10 @@
 				78D07FCB1D2EFBB90090D72B /* IGCMenu */,
 				78D07FCF1D2F0B6B0090D72B /* images */,
 				784A31851D26E4D200AC8AB9 /* CircleProgressBar.h */,
+				7816C76E1D318752005696ED /* AESCrypt-ObjC-master */,
 				78E4D45F1D1B2D9300FAFC1C /* YTPlayerView.h */,
+				7816C75B1D317EBD005696ED /* Login.h */,
+				7816C75C1D317EBD005696ED /* Login.m */,
 				784A31861D26E4D200AC8AB9 /* CircleProgressBar.m */,
 				784A316C1D248CA200AC8AB9 /* quiz.json */,
 				78E4D4601D1B2D9300FAFC1C /* YTPlayerView.m */,
@@ -291,6 +333,7 @@
 				78D07FF01D2F0B6B0090D72B /* fillintheblank.jpg in Resources */,
 				78A9FBAE1D1DEC250055B029 /* 2025KidsLogo.png in Resources */,
 				78D07FE41D2F0B6B0090D72B /* 2025KidsLogo.jpg in Resources */,
+				7816C77C1D318752005696ED /* LICENSE in Resources */,
 				78D0800E1D2F29980090D72B /* userIcon2.jpg in Resources */,
 				78D07FEF1D2F0B6B0090D72B /* cross2@3x.png in Resources */,
 				78D0800C1D2F28D10090D72B /* userIcon.png in Resources */,
@@ -300,6 +343,7 @@
 				781D774A1D1BA7A000D9417C /* wordsearch.png in Resources */,
 				78A9FBBB1D21CB790055B029 /* article4.jpg in Resources */,
 				78D07FF71D2F0B6B0090D72B /* wrong.png in Resources */,
+				7816C77A1D318752005696ED /* .gitignore in Resources */,
 				78D07FF31D2F0B6B0090D72B /* page12.jpg in Resources */,
 				78A9FBB81D21CB790055B029 /* article1.jpg in Resources */,
 				78D07FFB1D2F0FF50090D72B /* newspaper.png in Resources */,
@@ -329,9 +373,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7816C77E1D318752005696ED /* NSData+CommonCrypto.m in Sources */,
 				78A9FBE11D21DEF80055B029 /* ArticleViewing.m in Sources */,
 				78A9FBF41D233A9B0055B029 /* AroundTheWorld.m in Sources */,
+				7816C77D1D318752005696ED /* NSData+Base64.m in Sources */,
 				78E4D4501D1B1CF200FAFC1C /* ViewController.m in Sources */,
+				7816C77F1D318752005696ED /* NSString+Base64.m in Sources */,
+				7816C7801D318752005696ED /* README.md in Sources */,
+				7816C75D1D317EBD005696ED /* Login.m in Sources */,
 				78A9FBB31D1E15300055B029 /* PuzzleNavigation.m in Sources */,
 				78D07FCE1D2EFBB90090D72B /* IGCMenu.m in Sources */,
 				784A31871D26E4D200AC8AB9 /* CircleProgressBar.m in Sources */,
@@ -339,6 +388,7 @@
 				781D77511D1CA8CC00D9417C /* Puzzle.m in Sources */,
 				78E4D4611D1B2D9400FAFC1C /* YTPlayerView.m in Sources */,
 				784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */,
+				7816C77B1D318752005696ED /* AESCrypt.m in Sources */,
 				78E4D44A1D1B1CF100FAFC1C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,10 +503,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Magazine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-025labs.Magazine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -464,10 +517,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Magazine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "-025labs.Magazine";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
