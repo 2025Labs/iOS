@@ -16,6 +16,7 @@
 
 #import "Login.h"
 #import "AESCrypt.h"
+#import <libpq/libpq-fe.h>
 
 @implementation Login
 
@@ -25,44 +26,79 @@
     
     [super viewDidLoad];
     
-    NSString *password = @"top secret message";
-    NSString *key = @"p4ssw0rd";
-    NSString *salt = [self randomStringWithLength:32];
-    NSLog(@"Randomly Generated Salt: %@", key);
+    [self connectToDatabase];
+}
+
+-(void) connectToDatabase {
+    _connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219";
+    _connection = PQconnectdb(_connectionString);
     
-    NSString *saltedMessage = [NSString stringWithFormat:@"%@%@", password, salt];
-    NSLog(@"Salted Message: %@", saltedMessage);
+    if(PQstatus(_connection) != CONNECTION_OK) {
+        NSLog(@"Error: Couldn't connect to the database");
+        NSLog(@"Error message: %s", PQerrorMessage(_connection));
+    }
     
-    NSString *encryptedData = [AESCrypt encrypt:password password:key];
-    NSLog(@"Encrypted: %@", encryptedData);
+}
+
+-(const char*) queryDatabase: (NSString*) username: (NSString*) attribute  {
+    _res = PQexec(_connection, "begin");
+    if(PQresultStatus(_res) != PGRES_COMMAND_OK) {
+        NSLog(@"Begin command failed");
+    }
+    PQclear(_res);
     
-    NSString *message2 = [AESCrypt decrypt:encryptedData password:key];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT %@ FROM userinformation WHERE username = '%@'", attribute, username];
+    const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     
-    NSLog(@"Message: %@", message2);
-  
+    NSLog(@"Query: %s", query);
+    _res = PQexec(_connection, query);
+    if(PQresultStatus(_res) !=PGRES_TUPLES_OK) {
+        NSLog(@"Couldn't fetch anything");
+    }
+    PQclear(_res);
+    //If successful, this should be a hashed password
+    return PQgetvalue(_res, 0, 0);
 }
 
 -(NSString *) randomStringWithLength: (int) len {
-    
+    //len = 32 = 32 bytes = 256 bits = AES256
     NSString *letters = @"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     
     NSMutableString *randomString = [NSMutableString stringWithCapacity: len];
-    
-    
-    
     for (int i=0; i<len; i++) {
-        
         [randomString appendFormat: @"%C", [letters characterAtIndex: arc4random_uniform([letters length])]];
-        
     }
-    
-    
-    
     return randomString;
+}
+
+- (IBAction)attemptLogin:(id)sender {
+    NSString *username = _username.text;
+    NSString *password = _password.text;
+    //Query database using the username and return the hashed password
+    NSString *passwordDB = [NSString stringWithUTF8String:[self queryDatabase:username:@"password"]];
+    NSString *saltDB = [NSString stringWithUTF8String:[self queryDatabase:username:@"salt"]];
+    
+    NSLog(@"Password: %@, salt: %@", passwordDB, saltDB);
     
 }
 
-
+-(void) decrypt {
+    
+}
+- (IBAction)registerNewUser:(id)sender {
+   /* NSString *username = _username.text;
+    NSString *password = _password.text;
+    NSString *key = [self randomStringWithLength:32];
+    NSString *salt = [self randomStringWithLength:32];
+    //NSLog(@"Salted Message: %@", saltedPassword);
+    //NSLog(@"Randomly Generated Salt: %@", salt);
+    //NSLog(@"Randomly Generated Key: %@", key);
+    //NSString *encryptedData = [AESCrypt encrypt:saltedPassword password:key];
+    //NSLog(@"Encrypted: %@", encryptedData);
+    //NSString *message2 = [AESCrypt decrypt:encryptedData password:key];
+    //NSLog(@"Message: %@", message2);
+    */
+}
 
 @end
 

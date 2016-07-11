@@ -8,10 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import <libpq/libpq-fe.h>
 @interface Login : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *username;
 @property (weak, nonatomic) IBOutlet UITextField *password;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
+@property const char *connectionString;
+@property PGresult *res;
+@property PGconn *connection;
 @end
