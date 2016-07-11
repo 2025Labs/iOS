@@ -73,18 +73,29 @@
 
 - (IBAction)attemptLogin:(id)sender {
     NSString *username = _username.text;
-    NSString *password = _password.text;
+    NSString *attemptedPassword = _password.text;
     //Query database using the username and return the hashed password
-    NSString *passwordDB = [NSString stringWithUTF8String:[self queryDatabase:username:@"password"]];
-    NSString *saltDB = [NSString stringWithUTF8String:[self queryDatabase:username:@"salt"]];
-    
-    NSLog(@"Password: %@, salt: %@", passwordDB, saltDB);
-    
+    NSString *salt = [NSString stringWithUTF8String:[self queryDatabase:username:@"salt"]];
+
+    NSString *saltedPassword = [NSString stringWithFormat:@"%@%@",attemptedPassword, salt];
+    if([self decrypt:username comparedWith:saltedPassword]) {
+        NSLog(@"Succesful login");
+    } else {
+        NSLog(@"The username or password is invalid");
+    }
+
 }
 
--(void) decrypt {
+-(BOOL) decrypt:(NSString*)username comparedWith:(NSString*) saltedPassword {
+    NSString *passwordDB = [NSString stringWithUTF8String:[self queryDatabase:username:@"password"]];
+    NSString *keyDB = [NSString stringWithUTF8String:[self queryDatabase:username:@"key"]];
     
+    if([saltedPassword isEqualToString:[AESCrypt decrypt:passwordDB password:keyDB]]) {
+        return true;
+    }
+    return false;
 }
+
 - (IBAction)registerNewUser:(id)sender {
    /* NSString *username = _username.text;
     NSString *password = _password.text;
