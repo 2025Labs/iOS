@@ -40,7 +40,7 @@
     
 }
 
--(const char*) queryDatabase: (NSString*) username: (NSString*) attribute  {
+-(const char*) queryDatabase: (NSString*)username: (NSString*)attribute  {
     _res = PQexec(_connection, "begin");
     if(PQresultStatus(_res) != PGRES_COMMAND_OK) {
         NSLog(@"Begin command failed");

@@ -17,17 +17,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSAssert(self.scrollView, @"self.scrollView must not be nil."
-             "Check your IBOutlet connections.");
-    NSAssert(self.imageView, @"self.imageView must not be nil."
-             "Check your IBOutlet connections.");
     
+    [self setUpScrollview];
+    [self setUpNavigationZoomBar];
+    [self setUpZoomButtons];
+    
+    NSLog(@"View X: %f View Y: %f", self.view.frame.size.width, self.view.frame.size.height);
+    
+}
+
+- (void) setUpNavigationZoomBar {
+    UIBarButtonItem *navigationZoomInButton = [[UIBarButtonItem alloc] initWithTitle:@"Zoom In" style:UIBarButtonItemStylePlain target:self action:@selector(zoomIn:)];
+    UIBarButtonItem *navigationZoomOutButton = [[UIBarButtonItem alloc] initWithTitle:@"Zoom Out" style:UIBarButtonItemStylePlain target:self action:@selector(zoomOut:)];
+    [self.navigationItem setRightBarButtonItems:[NSArray arrayWithObjects:navigationZoomOutButton, navigationZoomInButton, nil]];
+}
+
+- (void) setUpScrollview {
     UIImage* image = [UIImage imageNamed:@"aroundTheWorld.jpg"];
-    
-    NSAssert(image, @"image must not be nil."
-             "Check that you added the image to your bundle and that "
-             "the filename above matches the name of your image.");
-    
+
     self.imageView.image = image;
     [self.imageView sizeToFit];
     
@@ -35,6 +42,34 @@
     self.scrollView.delegate = self;
     self.scrollView.minimumZoomScale = 1.0;
     self.scrollView.maximumZoomScale = 100.0;
+}
+
+- (void) setUpZoomButtons {
+    UIButton *zoomInButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [zoomInButton setBackgroundImage:[UIImage imageNamed:@"zoom-in.png"] forState:UIControlStateNormal];
+    //zoomInButton.frame = CGRectMake(890,  630, 30.0, 46.0);
+    
+    zoomInButton.frame = CGRectMake(self.view.frame.size.width * 0.87,  self.view.frame.size.height * 0.82, 30.0, 46.0);
+    
+    //This is the coordinates if we are in portrait
+    //zoomInButton.frame = CGRectMake(self.view.frame.size.width * 0.82,  self.view.frame.size.height * 0.87, 30.0, 46.0);
+    
+    [zoomInButton sizeToFit];
+    [zoomInButton addTarget:self action:@selector(zoomIn:)forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview: zoomInButton];
+    
+    UIButton *zoomOutButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [zoomOutButton setBackgroundImage:[UIImage imageNamed:@"zoom-out.png"] forState:UIControlStateNormal];
+    //zoomOutButton.frame = CGRectMake(950,  630, 30.0, 46.0);
+    
+    zoomOutButton.frame = CGRectMake(self.view.frame.size.width * 0.93,  self.view.frame.size.height * 0.82, 30.0, 46.0);
+    
+    //This is the coordinates if we are in portrait
+    //zoomOutButton.frame = CGRectMake(self.view.frame.size.width * 0.90,  self.view.frame.size.height * 0.87, 30.0, 46.0);
+    [zoomOutButton sizeToFit];
+    [zoomOutButton addTarget:self action:@selector(zoomOut:)forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview: zoomOutButton];
+    self.view.userInteractionEnabled = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -112,8 +147,13 @@
 
 - (IBAction)zoomIn:(id)sender {
     if(self.scrollView.zoomScale < self.scrollView.maximumZoomScale) {
-        self.scrollView.zoomScale = (self.scrollView.zoomScale + 0.1);
+        self.scrollView.zoomScale = (self.scrollView.zoomScale + 0.4);
     }
 }
 
+- (IBAction)zoomOut:(id)sender {
+    if(self.scrollView.zoomScale < self.scrollView.maximumZoomScale) {
+        self.scrollView.zoomScale = (self.scrollView.zoomScale - 0.4);
+    }
+}
 @end

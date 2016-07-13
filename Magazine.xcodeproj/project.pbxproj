@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780B94621D36EEEA00ADFE12 /* wrongSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B94611D36EEEA00ADFE12 /* wrongSmall.png */; };
+		780B94641D36EFF900ADFE12 /* zoom-in.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B94631D36EFF900ADFE12 /* zoom-in.png */; };
+		780B94681D36F25A00ADFE12 /* zoom-out.png in Resources */ = {isa = PBXBuildFile; fileRef = 780B94661D36F25A00ADFE12 /* zoom-out.png */; };
 		7816C75D1D317EBD005696ED /* Login.m in Sources */ = {isa = PBXBuildFile; fileRef = 7816C75C1D317EBD005696ED /* Login.m */; };
 		7816C77A1D318752005696ED /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7816C76F1D318752005696ED /* .gitignore */; };
 		7816C77B1D318752005696ED /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = 7816C7711D318752005696ED /* AESCrypt.m */; };
@@ -59,6 +62,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		780B94611D36EEEA00ADFE12 /* wrongSmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wrongSmall.png; sourceTree = "<group>"; };
+		780B94631D36EFF900ADFE12 /* zoom-in.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoom-in.png"; sourceTree = "<group>"; };
+		780B94661D36F25A00ADFE12 /* zoom-out.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zoom-out.png"; sourceTree = "<group>"; };
 		7816C75B1D317EBD005696ED /* Login.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Login.h; path = ../Login.h; sourceTree = "<group>"; };
 		7816C75C1D317EBD005696ED /* Login.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Login.m; path = ../Login.m; sourceTree = "<group>"; };
 		7816C76F1D318752005696ED /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -203,6 +209,9 @@
 				78D07FE11D2F0B6B0090D72B /* quiz.json */,
 				78D07FE21D2F0B6B0090D72B /* wordsearch.png */,
 				78D07FE31D2F0B6B0090D72B /* wrong.png */,
+				780B94631D36EFF900ADFE12 /* zoom-in.png */,
+				780B94661D36F25A00ADFE12 /* zoom-out.png */,
+				780B94611D36EEEA00ADFE12 /* wrongSmall.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -331,6 +340,7 @@
 				78D07FE61D2F0B6B0090D72B /* aroundTheWorld.jpg in Resources */,
 				78D07FF01D2F0B6B0090D72B /* fillintheblank.jpg in Resources */,
 				78A9FBAE1D1DEC250055B029 /* 2025KidsLogo.png in Resources */,
+				780B94681D36F25A00ADFE12 /* zoom-out.png in Resources */,
 				78D07FE41D2F0B6B0090D72B /* 2025KidsLogo.jpg in Resources */,
 				7816C77C1D318752005696ED /* LICENSE in Resources */,
 				78D0800E1D2F29980090D72B /* userIcon2.jpg in Resources */,
@@ -341,6 +351,7 @@
 				78E4D4581D1B1CF200FAFC1C /* LaunchScreen.storyboard in Resources */,
 				781D774A1D1BA7A000D9417C /* wordsearch.png in Resources */,
 				78A9FBBB1D21CB790055B029 /* article4.jpg in Resources */,
+				780B94641D36EFF900ADFE12 /* zoom-in.png in Resources */,
 				78D07FF71D2F0B6B0090D72B /* wrong.png in Resources */,
 				7816C77A1D318752005696ED /* .gitignore in Resources */,
 				78D07FF31D2F0B6B0090D72B /* page12.jpg in Resources */,
@@ -351,6 +362,7 @@
 				78D07FF21D2F0B6B0090D72B /* materialtime.jpg in Resources */,
 				78D080101D2F29F90090D72B /* passwordIcon.png in Resources */,
 				78D07FF41D2F0B6B0090D72B /* plus.png in Resources */,
+				780B94621D36EEEA00ADFE12 /* wrongSmall.png in Resources */,
 				78D07FEE1D2F0B6B0090D72B /* cipher.jpg in Resources */,
 				78E4D4531D1B1CF200FAFC1C /* Main.storyboard in Resources */,
 				78D0800A1D2F23CA0090D72B /* background.jpg in Resources */,

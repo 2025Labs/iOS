@@ -192,7 +192,7 @@
                                                                 </state>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="Rtt-ta-HsO" firstAttribute="centerY" secondItem="gxn-nI-HHV" secondAttribute="centerY" id="8NC-v8-5Zh"/>
                                                             <constraint firstItem="Rtt-ta-HsO" firstAttribute="height" secondItem="gxn-nI-HHV" secondAttribute="height" id="FN3-zI-mCi"/>
@@ -259,9 +259,9 @@
                                             <constraint firstAttribute="height" constant="60" id="Mpo-Az-SZD"/>
                                             <constraint firstAttribute="width" constant="60" id="PCI-jy-Sii"/>
                                         </constraints>
-                                        <state key="normal" title="World2"/>
+                                        <state key="normal" title="World"/>
                                         <connections>
-                                            <segue destination="oH0-f1-6eg" kind="show" identifier="showWorld" id="ufM-tN-gDk"/>
+                                            <segue destination="2ug-xX-isR" kind="show" id="aTy-vz-U61"/>
                                         </connections>
                                     </button>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2025KidsLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Cw-xS-PHQ">
@@ -738,9 +738,6 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                                    <rect key="frame" x="8" y="9" width="224" height="136"/>
-                                                </variation>
                                                 <connections>
                                                     <segue destination="4b9-iq-1Vy" kind="show" identifier="showFillInTheBlank" id="APU-9i-53U"/>
                                                 </connections>
@@ -1229,7 +1226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWS-eM-nne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486.25" y="908.25"/>
+            <point key="canvasLocation" x="2486" y="908.25"/>
         </scene>
         <!--Article Viewing-->
         <scene sceneID="yHD-QR-LR8">
@@ -1269,7 +1266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXU-ig-GDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2594" y="360"/>
+            <point key="canvasLocation" x="2822" y="292.5"/>
         </scene>
         <!--Puzzle Title-->
         <scene sceneID="I9I-tf-UZa">
@@ -1338,7 +1335,8 @@
         <image name="userIcon.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ufM-tN-gDk"/>
-        <segue reference="UZ0-md-rKD"/>
+        <segue reference="AUh-5A-kjY"/>
+        <segue reference="Ryv-bK-gQV"/>
+        <segue reference="dIY-n0-kxo"/>
     </inferredMetricsTieBreakers>
 </document>
