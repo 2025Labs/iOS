@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
-@interface Puzzle : UIViewController
+#import "IGCMenu.h"
+@interface Puzzle : UIViewController<IGCMenuDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *cipher;
 @property (weak, nonatomic) IBOutlet UIImageView *tempDrawingImage;
+@property (weak, nonatomic) IBOutlet UIButton *moreButton;
 
 @property CGPoint lastPoint;
 @property CGFloat red;
@@ -22,4 +23,6 @@
 @property BOOL mouseSwiped;
 @property NSString *fileName;
 
+@property IGCMenu *menu;
+@property BOOL isMenuActive;
 @end

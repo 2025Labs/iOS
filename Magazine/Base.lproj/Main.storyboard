@@ -738,6 +738,9 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                    <rect key="frame" x="8" y="9" width="224" height="136"/>
+                                                </variation>
                                                 <connections>
                                                     <segue destination="4b9-iq-1Vy" kind="show" identifier="showFillInTheBlank" id="APU-9i-53U"/>
                                                 </connections>
@@ -1242,20 +1245,48 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7GX-BJ-2if">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="280" y="336" width="240" height="128"/>
-                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7GX-BJ-2if" firstAttribute="width" secondItem="ahf-xh-Nhn" secondAttribute="width" id="02H-tm-o62"/>
+                            <constraint firstItem="7GX-BJ-2if" firstAttribute="height" secondItem="ahf-xh-Nhn" secondAttribute="height" id="0Je-Ff-amE">
+                                <variation key="heightClass=regular-widthClass=regular" constant="65"/>
+                            </constraint>
+                            <constraint firstItem="Dn7-gr-8x3" firstAttribute="top" secondItem="7GX-BJ-2if" secondAttribute="bottom" id="F0F-g4-odm"/>
+                            <constraint firstItem="Dn7-gr-8x3" firstAttribute="top" secondItem="7GX-BJ-2if" secondAttribute="bottom" constant="272" id="cpw-6W-uCz">
+                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstItem="7GX-BJ-2if" firstAttribute="centerY" secondItem="ahf-xh-Nhn" secondAttribute="centerY" id="m3J-WA-0rr"/>
+                            <constraint firstItem="7GX-BJ-2if" firstAttribute="centerX" secondItem="ahf-xh-Nhn" secondAttribute="centerX" id="o8j-rl-p2S"/>
+                            <constraint firstItem="7GX-BJ-2if" firstAttribute="top" secondItem="YAm-wi-e1c" secondAttribute="bottom" id="vZe-uF-zpP"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="7GX-BJ-2if"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="02H-tm-o62"/>
+                                <exclude reference="0Je-Ff-amE"/>
+                                <exclude reference="m3J-WA-0rr"/>
+                                <exclude reference="o8j-rl-p2S"/>
+                                <exclude reference="vZe-uF-zpP"/>
+                                <exclude reference="F0F-g4-odm"/>
+                                <exclude reference="cpw-6W-uCz"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="7GX-BJ-2if"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="02H-tm-o62"/>
+                                <exclude reference="0Je-Ff-amE"/>
+                                <include reference="m3J-WA-0rr"/>
+                                <include reference="o8j-rl-p2S"/>
+                                <include reference="vZe-uF-zpP"/>
+                                <include reference="F0F-g4-odm"/>
+                                <include reference="cpw-6W-uCz"/>
                             </mask>
                         </variation>
                     </view>
@@ -1266,7 +1297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXU-ig-GDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2822" y="292.5"/>
+            <point key="canvasLocation" x="2821.5" y="292.5"/>
         </scene>
         <!--Puzzle Title-->
         <scene sceneID="I9I-tf-UZa">
@@ -1286,22 +1317,58 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gwO-U6-UVD">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V53-Oa-7q4">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.6275315275348432" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="More Puzzles">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="menuPressed:" destination="4b9-iq-1Vy" eventType="touchUpInside" id="EWw-9T-EGT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gwO-U6-UVD" firstAttribute="height" secondItem="Lm3-rm-JzT" secondAttribute="height" id="14p-qN-rLx"/>
                             <constraint firstItem="gwO-U6-UVD" firstAttribute="centerX" secondItem="kT0-cW-Fd9" secondAttribute="centerX" id="7oe-7j-oaZ"/>
+                            <constraint firstItem="wXV-HY-yMd" firstAttribute="top" secondItem="V53-Oa-7q4" secondAttribute="bottom" constant="20" id="8D4-mF-05y"/>
                             <constraint firstItem="kT0-cW-Fd9" firstAttribute="centerX" secondItem="Lm3-rm-JzT" secondAttribute="centerX" id="9X8-4q-8RM"/>
                             <constraint firstItem="gwO-U6-UVD" firstAttribute="width" secondItem="Lm3-rm-JzT" secondAttribute="width" id="JpW-6i-3TG"/>
                             <constraint firstItem="kT0-cW-Fd9" firstAttribute="height" secondItem="Lm3-rm-JzT" secondAttribute="height" id="M8E-I3-dGN"/>
                             <constraint firstItem="kT0-cW-Fd9" firstAttribute="width" secondItem="Lm3-rm-JzT" secondAttribute="width" id="XsN-vH-APS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="V53-Oa-7q4" secondAttribute="trailing" constant="332" id="ayz-s0-vQ2"/>
                             <constraint firstItem="kT0-cW-Fd9" firstAttribute="centerY" secondItem="Lm3-rm-JzT" secondAttribute="centerY" id="cLG-Ee-Fkw"/>
                             <constraint firstItem="gwO-U6-UVD" firstAttribute="centerY" secondItem="kT0-cW-Fd9" secondAttribute="centerY" id="m6U-kS-ptr"/>
+                            <constraint firstItem="V53-Oa-7q4" firstAttribute="leading" secondItem="Lm3-rm-JzT" secondAttribute="leadingMargin" constant="333" id="wJO-h7-gjQ">
+                                <variation key="heightClass=regular-widthClass=regular" constant="303"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="V53-Oa-7q4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="8D4-mF-05y"/>
+                                <exclude reference="ayz-s0-vQ2"/>
+                                <exclude reference="wJO-h7-gjQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="V53-Oa-7q4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="8D4-mF-05y"/>
+                                <include reference="ayz-s0-vQ2"/>
+                                <include reference="wJO-h7-gjQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Puzzle Title" id="pIL-jV-7N3"/>
                     <connections>
                         <outlet property="cipher" destination="kT0-cW-Fd9" id="HPg-kc-aQ5"/>
+                        <outlet property="moreButton" destination="V53-Oa-7q4" id="DVj-pT-SZb"/>
                         <outlet property="tempDrawingImage" destination="gwO-U6-UVD" id="dGN-WI-dlu"/>
                     </connections>
                 </viewController>
@@ -1335,8 +1402,8 @@
         <image name="userIcon.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="AUh-5A-kjY"/>
-        <segue reference="Ryv-bK-gQV"/>
-        <segue reference="dIY-n0-kxo"/>
+        <segue reference="UZ0-md-rKD"/>
+        <segue reference="aTy-vz-U61"/>
+        <segue reference="1V0-kq-zbN"/>
     </inferredMetricsTieBreakers>
 </document>

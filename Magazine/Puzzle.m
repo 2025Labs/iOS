@@ -7,6 +7,8 @@
 //
 
 #import "Puzzle.h"
+#import "IGCMenu.h"
+
 
 @implementation Puzzle
 
@@ -24,8 +26,57 @@
     UIImage *image = [UIImage imageNamed: self.fileName];
     [self.tempDrawingImage setImage:image];
     NSLog(@"tempDrawingImage has been set to %@", self.fileName);
+    [self prepareMenu];
 }
 
+-(void) prepareMenu {
+    //_moreButton.clipsToBounds = YES;
+    //_moreButton.layer.cornerRadius = self.moreButton.frame.size.width / 2;
+    //[_moreButton setImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
+    
+    if(_menu == nil) {
+        _menu = [[IGCMenu alloc] init];
+    }
+    _menu.menuButton = self.moreButton;
+    _menu.menuSuperView = self.view;
+    _menu.disableBackground = YES;
+    _menu.numberOfMenuItem = 4;
+    _menu.menuRadius = 150; //How far apart the menu displays
+    _menu.menuHeight = 90; //Size of the circles
+    _menu.menuItemsNameArray = [NSArray arrayWithObjects:@"Fill in the Blanks", @"Material Time", @"Word Search", @"Cipher", nil];
+    _isMenuActive = false;
+    _menu.delegate = self;
+    
+}
+
+- (IBAction)menuPressed:(id)sender {
+    if(_isMenuActive) {
+        [_menu hideCircularMenu];
+        _isMenuActive = false;
+    } else {
+        [_menu showCircularMenu];
+        _isMenuActive = true;
+    }
+}
+
+- (void)igcMenuSelected:(NSString *)selectedMenuName atIndex:(NSInteger)index{
+    
+    switch (index) {
+        case 0:
+            NSLog(@"Transition to Computing");
+            break;
+        case 1:
+            NSLog(@"Transition to Energy");
+            
+            break;
+        case 2:
+            NSLog(@"Transition to Materials");
+            
+            break;
+        default:
+            break;
+    }
+}
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
