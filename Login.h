@@ -15,6 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @property const char *connectionString;
-@property PGresult *res;
+@property PGresult *result;
 @property PGconn *connection;
 @end

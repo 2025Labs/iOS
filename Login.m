@@ -41,23 +41,23 @@
 }
 
 -(const char*) queryDatabase: (NSString*)username: (NSString*)attribute  {
-    _res = PQexec(_connection, "begin");
-    if(PQresultStatus(_res) != PGRES_COMMAND_OK) {
+    _result = PQexec(_connection, "begin");
+    if(PQresultStatus(_result) != PGRES_COMMAND_OK) {
         NSLog(@"Begin command failed");
     }
-    PQclear(_res);
+    PQclear(_result);
     
     NSString *tempQuery = [NSString stringWithFormat:@"SELECT %@ FROM userinformation WHERE username = '%@'", attribute, username];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     
     NSLog(@"Query: %s", query);
-    _res = PQexec(_connection, query);
-    if(PQresultStatus(_res) !=PGRES_TUPLES_OK) {
+    _result = PQexec(_connection, query);
+    if(PQresultStatus(_result) !=PGRES_TUPLES_OK) {
         NSLog(@"Couldn't fetch anything");
     }
-    PQclear(_res);
+    PQclear(_result);
     //If successful, this should be a hashed password
-    return PQgetvalue(_res, 0, 0);
+    return PQgetvalue(_result, 0, 0);
 }
 
 -(NSString *) randomStringWithLength: (int) len {

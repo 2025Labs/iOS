@@ -24,16 +24,16 @@
     NSLog(@"Hello");
     if([segue.identifier isEqualToString:@"showCipher"]) {
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"cipher.jpg";
+        controller.fileName = @"cipher";
     } else if([segue.identifier isEqualToString:@"showWordSearch"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"wordsearch.png";
+        controller.fileName = @"wordsearch";
     } else if([segue.identifier isEqualToString:@"showFillInTheBlank"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"fillintheblank.jpg";
+        controller.fileName = @"fillintheblank";
     } else if([segue.identifier isEqualToString:@"showMaterialTime"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"materialtime.jpg";
+        controller.fileName = @"materialtime";
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         ArticleViewing* controller = [segue destinationViewController];
         //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method

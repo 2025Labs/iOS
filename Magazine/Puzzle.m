@@ -8,25 +8,73 @@
 
 #import "Puzzle.h"
 #import "IGCMenu.h"
-
+#import "AsyncImageView.h"
+#import <libpq/libpq-fe.h>
 
 @implementation Puzzle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self preparePencil];
+    [self prepareMenu];
+    [self connectToDatabase];
+    NSMutableArray *fileArray = [self getArticleFiles:_fileName];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //Make the edge of the view underneath the nav bar
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    //Get the fileName, which was passed by whichever segue brought us here
+    //UIImage *image = [UIImage imageNamed: self.fileName];
+    
+    //setting imageURL starts downloading the image in the background
+    _tempDrawingImage.imageURL = [NSURL URLWithString:[fileArray objectAtIndex:0]];
+    
+    //[self.tempDrawingImage setImage:image];
+    NSLog(@"tempDrawingImage has been set to %@", [fileArray objectAtIndex:0]);
+}
+
+-(void) connectToDatabase {
+    _connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219";
+    _connection = PQconnectdb(_connectionString);
+    
+    if(PQstatus(_connection) != CONNECTION_OK) {
+        NSLog(@"Error: Couldn't connect to the database");
+        NSLog(@"Error message: %s", PQerrorMessage(_connection));
+    }
+    
+}
+
+-(NSMutableArray*) getArticleFiles: (NSString*) filename{
+    _result = PQexec(_connection, "begin");
+    if(PQresultStatus(_result) != PGRES_COMMAND_OK) {
+        NSLog(@"Begin command failed");
+    }
+    PQclear(_result);
+    
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = '%@'", filename];
+    const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
+    NSLog(@"Query: %s", query);
+    _result = PQexec(_connection, query);
+    if(PQresultStatus(_result) !=PGRES_TUPLES_OK) {
+        NSLog(@"Couldn't fetch anything");
+    }
+    NSMutableArray* resultArray = [[NSMutableArray alloc] init];
+    //If successful, this should be a hashed password
+    for(int i =0; i < PQntuples(_result); i++) {
+        NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
+        NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
+        [resultArray addObject:temp];
+    }
+    PQclear(_result);
+    return resultArray;
+}
+
+-(void) preparePencil {
     _red = 0.0;
     _green = 0.0;
     _blue = 0.0;
     _brush = 3.0;
     _opacity = 1.0;
-    //Make the edge of the view underneath the nav bar
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    //Get the fileName, which was passed by whichever segue brought us here
-    UIImage *image = [UIImage imageNamed: self.fileName];
-    [self.tempDrawingImage setImage:image];
-    NSLog(@"tempDrawingImage has been set to %@", self.fileName);
-    [self prepareMenu];
 }
 
 -(void) prepareMenu {

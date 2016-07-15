@@ -17,6 +17,6 @@
 @property NSInteger numPages;
 
 @property const char *connectionString;
-@property PGresult *res;
+@property PGresult *result;
 @property PGconn *connection;
 @end

@@ -61,28 +61,28 @@
 }
 
 -(NSMutableArray*) getArticleFiles {
-    _res = PQexec(_connection, "begin");
-    if(PQresultStatus(_res) != PGRES_COMMAND_OK) {
+    _result = PQexec(_connection, "begin");
+    if(PQresultStatus(_result) != PGRES_COMMAND_OK) {
         NSLog(@"Begin command failed");
     }
-    PQclear(_res);
+    PQclear(_result);
     
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images"];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename like 'article_'"];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     
     NSLog(@"Query: %s", query);
-    _res = PQexec(_connection, query);
-    if(PQresultStatus(_res) !=PGRES_TUPLES_OK) {
+    _result = PQexec(_connection, query);
+    if(PQresultStatus(_result) !=PGRES_TUPLES_OK) {
         NSLog(@"Couldn't fetch anything");
     }
     NSMutableArray* resultArray = [[NSMutableArray alloc] init];
     //If successful, this should be a hashed password
-    for(int i =0; i < PQntuples(_res); i++) {
-    NSLog(@"value: %s ",PQgetvalue(_res, i, 2));
-        NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_res, i, 2)];
+    for(int i =0; i < PQntuples(_result); i++) {
+    NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
+        NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
         [resultArray addObject:temp];
     }
-    PQclear(_res);
+    PQclear(_result);
     return resultArray;
 }
 
