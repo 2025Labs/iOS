@@ -1229,7 +1229,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWS-eM-nne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2486" y="908.25"/>
+            <point key="canvasLocation" x="2483.25" y="993"/>
         </scene>
         <!--Article Viewing-->
         <scene sceneID="yHD-QR-LR8">
@@ -1243,56 +1243,28 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7GX-BJ-2if">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9E4-B8-gjY">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="264" y="377" width="240" height="128"/>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="7GX-BJ-2if" firstAttribute="width" secondItem="ahf-xh-Nhn" secondAttribute="width" id="02H-tm-o62"/>
-                            <constraint firstItem="7GX-BJ-2if" firstAttribute="height" secondItem="ahf-xh-Nhn" secondAttribute="height" id="0Je-Ff-amE">
-                                <variation key="heightClass=regular-widthClass=regular" constant="65"/>
-                            </constraint>
-                            <constraint firstItem="Dn7-gr-8x3" firstAttribute="top" secondItem="7GX-BJ-2if" secondAttribute="bottom" id="F0F-g4-odm"/>
-                            <constraint firstItem="Dn7-gr-8x3" firstAttribute="top" secondItem="7GX-BJ-2if" secondAttribute="bottom" constant="272" id="cpw-6W-uCz">
-                                <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
-                            </constraint>
-                            <constraint firstItem="7GX-BJ-2if" firstAttribute="centerY" secondItem="ahf-xh-Nhn" secondAttribute="centerY" id="m3J-WA-0rr"/>
-                            <constraint firstItem="7GX-BJ-2if" firstAttribute="centerX" secondItem="ahf-xh-Nhn" secondAttribute="centerX" id="o8j-rl-p2S"/>
-                            <constraint firstItem="7GX-BJ-2if" firstAttribute="top" secondItem="YAm-wi-e1c" secondAttribute="bottom" id="vZe-uF-zpP"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="7GX-BJ-2if"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="02H-tm-o62"/>
-                                <exclude reference="0Je-Ff-amE"/>
-                                <exclude reference="m3J-WA-0rr"/>
-                                <exclude reference="o8j-rl-p2S"/>
-                                <exclude reference="vZe-uF-zpP"/>
-                                <exclude reference="F0F-g4-odm"/>
-                                <exclude reference="cpw-6W-uCz"/>
+                                <exclude reference="9E4-B8-gjY"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="7GX-BJ-2if"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="02H-tm-o62"/>
-                                <exclude reference="0Je-Ff-amE"/>
-                                <include reference="m3J-WA-0rr"/>
-                                <include reference="o8j-rl-p2S"/>
-                                <include reference="vZe-uF-zpP"/>
-                                <include reference="F0F-g4-odm"/>
-                                <include reference="cpw-6W-uCz"/>
+                                <include reference="9E4-B8-gjY"/>
                             </mask>
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
-                        <outlet property="scrollView" destination="7GX-BJ-2if" id="n1l-Qr-xkH"/>
+                        <outlet property="scrollView" destination="9E4-B8-gjY" id="Edg-Tj-GFd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXU-ig-GDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
