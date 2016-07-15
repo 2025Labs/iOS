@@ -18,7 +18,7 @@
     [self preparePencil];
     [self prepareMenu];
     [self connectToDatabase];
-    NSMutableArray *fileArray = [self getArticleFiles:_fileName];
+    NSMutableArray *fileArray = [self getImageFilesFromDatabase:_fileName];
     // Do any additional setup after loading the view, typically from a nib.
     
     //Make the edge of the view underneath the nav bar
@@ -44,7 +44,7 @@
     
 }
 
--(NSMutableArray*) getArticleFiles: (NSString*) filename{
+-(NSMutableArray*) getImageFilesFromDatabase: (NSString*) filename{
     _result = PQexec(_connection, "begin");
     if(PQresultStatus(_result) != PGRES_COMMAND_OK) {
         NSLog(@"Begin command failed");
@@ -89,7 +89,7 @@
     _menu.menuSuperView = self.view;
     _menu.disableBackground = YES;
     _menu.numberOfMenuItem = 4;
-    _menu.menuRadius = 150; //How far apart the menu displays
+    _menu.menuRadius = 175; //How far apart the menu displays
     _menu.menuHeight = 90; //Size of the circles
     _menu.menuItemsNameArray = [NSArray arrayWithObjects:@"Fill in the Blanks", @"Material Time", @"Word Search", @"Cipher", nil];
     _isMenuActive = false;
@@ -115,7 +115,6 @@
             break;
         case 1:
             NSLog(@"Transition to Energy");
-            
             break;
         case 2:
             NSLog(@"Transition to Materials");

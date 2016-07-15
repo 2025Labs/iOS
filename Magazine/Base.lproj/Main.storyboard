@@ -273,28 +273,35 @@
                                             <constraint firstAttribute="width" constant="240" id="qtA-QN-oRh"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3if-Yi-Z21">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3if-Yi-Z21">
                                         <rect key="frame" x="362" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.64313725490196072" green="0.80784313725490198" blue="0.22352941176470587" alpha="0.75850509749999995" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="EiA-sZ-Nbf"/>
-                                            <constraint firstAttribute="width" constant="60" id="oG1-9a-8Nd"/>
+                                            <constraint firstAttribute="height" constant="60" id="EiA-sZ-Nbf">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                                            </constraint>
+                                            <constraint firstAttribute="width" constant="60" id="oG1-9a-8Nd">
+                                                <variation key="heightClass=regular-widthClass=regular" constant="70"/>
+                                            </constraint>
                                         </constraints>
-                                        <state key="normal" title="Articles"/>
+                                        <state key="normal" image="newspaper.png"/>
                                         <connections>
                                             <segue destination="oH0-f1-6eg" kind="show" identifier="showArticle" id="1V0-kq-zbN"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="6Kz-PQ-POI" firstAttribute="baseline" secondItem="3if-Yi-Z21" secondAttribute="baseline" id="43h-ZX-8Hp"/>
+                                    <constraint firstItem="6Kz-PQ-POI" firstAttribute="baseline" secondItem="3if-Yi-Z21" secondAttribute="baseline" id="43h-ZX-8Hp">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="-27"/>
+                                    </constraint>
                                     <constraint firstItem="6Kz-PQ-POI" firstAttribute="baseline" secondItem="lwI-SH-1cx" secondAttribute="baseline" id="4Xv-GS-fM3"/>
                                     <constraint firstItem="7Cw-xS-PHQ" firstAttribute="leading" secondItem="IDY-Fh-iam" secondAttribute="leading" id="EXD-hd-DkD"/>
                                     <constraint firstItem="7Cw-xS-PHQ" firstAttribute="centerY" secondItem="IDY-Fh-iam" secondAttribute="centerY" id="h3a-yN-2Jo"/>
                                     <constraint firstItem="lwI-SH-1cx" firstAttribute="top" secondItem="IDY-Fh-iam" secondAttribute="top" id="nSd-2i-3HD">
                                         <variation key="heightClass=regular" constant="8"/>
                                     </constraint>
-                                    <constraint firstItem="6Kz-PQ-POI" firstAttribute="leading" secondItem="3if-Yi-Z21" secondAttribute="trailing" constant="8" symbolic="YES" id="pk5-Eq-fQQ"/>
+                                    <constraint firstItem="6Kz-PQ-POI" firstAttribute="leading" secondItem="3if-Yi-Z21" secondAttribute="trailing" constant="8" symbolic="YES" id="pk5-Eq-fQQ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="18"/>
+                                    </constraint>
                                     <constraint firstItem="lwI-SH-1cx" firstAttribute="leading" secondItem="6Kz-PQ-POI" secondAttribute="trailing" constant="8" symbolic="YES" id="ri3-Mh-OVU"/>
                                     <constraint firstAttribute="trailing" secondItem="lwI-SH-1cx" secondAttribute="trailing" id="vFn-3l-dfS">
                                         <variation key="heightClass=regular" constant="3"/>
@@ -1369,6 +1376,7 @@
     </scenes>
     <resources>
         <image name="2025KidsLogo.png" width="600" height="250"/>
+        <image name="newspaper.png" width="138" height="136"/>
         <image name="passwordIcon.png" width="256" height="256"/>
         <image name="plus.png" width="90" height="90"/>
         <image name="userIcon.png" width="200" height="200"/>

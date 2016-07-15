@@ -18,7 +18,7 @@
 
     
     NSMutableArray *articleArray = [[NSMutableArray alloc]init];
-    articleArray = [self getArticleFiles];
+    articleArray = [self getImageFilesFromDatabase];
     
     for (int i = 0; i < [articleArray count]; i++) {
         CGFloat xOrigin = i * self.view.frame.size.width;
@@ -60,7 +60,7 @@
     
 }
 
--(NSMutableArray*) getArticleFiles {
+-(NSMutableArray*) getImageFilesFromDatabase {
     _result = PQexec(_connection, "begin");
     if(PQresultStatus(_result) != PGRES_COMMAND_OK) {
         NSLog(@"Begin command failed");

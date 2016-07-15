@@ -18,12 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self connectToDatabase];
     // Do any additional setup after loading the view.
-    
     [self setUpScrollview];
     [self setUpNavigationZoomBar];
     [self setUpZoomButtons];
-    [self connectToDatabase];
     
     NSLog(@"View X: %f View Y: %f", self.view.frame.size.width, self.view.frame.size.height);
     
@@ -40,7 +39,7 @@
     
 }
 
--(NSMutableArray*) getArticleFiles {
+-(NSMutableArray*) getImageFilesFromDatabase{
     _result = PQexec(_connection, "begin");
     if(PQresultStatus(_result) != PGRES_COMMAND_OK) {
         NSLog(@"Begin command failed");
@@ -49,7 +48,6 @@
     
     NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = 'aroundtheworld'"];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
-    
     NSLog(@"Query: %s", query);
     _result = PQexec(_connection, query);
     if(PQresultStatus(_result) !=PGRES_TUPLES_OK) {
@@ -74,12 +72,13 @@
 }
 
 - (void) setUpScrollview {
-    UIImage* image = [UIImage imageNamed:@"aroundTheWorld.jpg"];
-
-    self.imageView.image = image;
-    [self.imageView sizeToFit];
+    NSMutableArray *imageArray = [self getImageFilesFromDatabase];
+    if([imageArray count] > 0)
+    _imageView.imageURL = [NSURL URLWithString:[imageArray objectAtIndex:0]];
     
-    self.scrollView.contentSize = image.size;
+    [_imageView sizeToFit];
+    
+    self.scrollView.contentSize = _imageView.image.size;
     self.scrollView.delegate = self;
     self.scrollView.minimumZoomScale = 1.0;
     self.scrollView.maximumZoomScale = 100.0;
