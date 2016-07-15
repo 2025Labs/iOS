@@ -66,11 +66,12 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0S7-Kd-SRi">
                                                         <rect key="frame" x="0.0" y="0.0" width="274" height="91"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ak-hC-Htd">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ak-hC-Htd">
                                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="91"/>
                                                                 <color key="backgroundColor" red="0.59607843140000005" green="0.31372549020000001" blue="0.62352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                <state key="normal" title="Article 1">
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="160" maxY="0.0"/>
+                                                                <state key="normal" title="Article 1" image="newspaper.png">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -78,6 +79,7 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <variation key="heightClass=regular-widthClass=regular"/>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.54901960780000003" green="0.18039215689999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -240,7 +242,7 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwI-SH-1cx">
                                         <rect key="frame" x="498" y="0.0" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.5490196078431373" green="0.1803921568627451" blue="1" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.4823529411764706" green="0.2627450980392157" blue="0.49019607843137253" alpha="0.76000000000000001" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="8XT-SD-CYf"/>
                                             <constraint firstAttribute="height" constant="60" id="VIf-Q9-GPa"/>
@@ -637,7 +639,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4aj-gS-ERF">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <color key="backgroundColor" red="0.5490196078431373" green="0.1803921568627451" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.4823529411764706" green="0.2627450980392157" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Cipher">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -686,7 +688,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRW-pd-41A">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <color key="backgroundColor" red="0.5490196078431373" green="0.1803921568627451" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.4823529411764706" green="0.2627450980392157" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Word Search">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -735,7 +737,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="imt-rY-b1y">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <color key="backgroundColor" red="0.5490196078431373" green="0.1803921568627451" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.4823529411764706" green="0.2627450980392157" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Fill in the Blanks">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -787,7 +789,7 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ex-SN-u4I">
                                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                                <color key="backgroundColor" red="0.5490196078431373" green="0.1803921568627451" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" red="0.4823529411764706" green="0.2627450980392157" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Material Time">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -995,7 +997,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zl-zp-53H">
                                         <rect key="frame" x="532" y="8" width="60" height="60"/>
-                                        <color key="backgroundColor" red="0.5490196078431373" green="0.1803921568627451" blue="1" alpha="0.75850509749999995" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.4823529411764706" green="0.2627450980392157" blue="0.49019607843137253" alpha="0.75850509749999995" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Bcg-G7-IQQ"/>
                                             <constraint firstAttribute="height" constant="60" id="j0J-T4-8Ee"/>
@@ -1052,7 +1054,7 @@
                                         </state>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.54901960780000003" green="0.18039215689999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.4823529411764706" green="0.2627450980392157" blue="0.49019607843137253" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="M98-uR-wJa" firstAttribute="top" secondItem="8QW-Wl-AWf" secondAttribute="top" constant="44" id="KEt-gc-64d"/>
                                     <constraint firstItem="M98-uR-wJa" firstAttribute="leading" secondItem="8QW-Wl-AWf" secondAttribute="leading" constant="16" id="LLp-0W-yj1"/>
