@@ -37,7 +37,7 @@
 -(void) prepareMenu {
     _menuButton.clipsToBounds = YES;
     _menuButton.layer.cornerRadius = self.menuButton.frame.size.width / 2;
-    [_menuButton setImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
+    [_menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
     
     if(_menu == nil) {
         _menu = [[IGCMenu alloc] init];
@@ -77,7 +77,7 @@
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
-        ArticleViewing* controller = [segue destinationViewController];
+        Puzzle* controller = [segue destinationViewController];
         //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
@@ -91,9 +91,12 @@
     if(_isMenuActive) {
         [_menu hideCircularMenu];
         _isMenuActive = false;
+        [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
     } else {
         [_menu showCircularMenu];
         _isMenuActive = true;
+        [self.menuButton setImage:[UIImage imageNamed:@"circleChevronDown.png"] forState:UIControlStateNormal];
+
     }
 }
 
@@ -103,15 +106,25 @@
         case 0:
             NSLog(@"Transition to Computing");
             _currentTopic = @"computing";
+            [_menu hideCircularMenu];
+            _isMenuActive = false;
+            [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
             break;
         case 1:
             NSLog(@"Transition to Energy");
             _currentTopic = @"energy";
+            [_menu hideCircularMenu];
+            _isMenuActive = false;
+            [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
 
             break;
         case 2:
             NSLog(@"Transition to Materials");
             _currentTopic = @"materials";
+            [_menu hideCircularMenu];
+            _isMenuActive = false;
+            [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
+
             break;
         default:
             break;

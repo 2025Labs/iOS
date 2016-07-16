@@ -1,0 +1,71 @@
+Article 1
+http://w42i.imgup.net/article167c2.png
+Article 2:
+http://n05i.imgup.net/article257f0.png
+
+Article 3:
+https://s31.postimg.org/i6w6gv7cp/article3.jpg
+
+Article 4:
+https://s31.postimg.org/si8j9iz21/article4.jpg
+
+Cipher:
+https://s32.postimg.org/6huj5c0g3/cipher.jpg
+
+Fill in the blanks:
+https://s32.postimg.org/q0z4eoz7n/fillintheblank.jpg
+
+Word Search:
+https://s32.postimg.org/6yfqrro77/wordsearch.png
+
+Material Time:
+https://s31.postimg.org/7aa3u9d15/materialtime.jpg
+
+Around the World:
+https://s32.postimg.org/ryj027msl/aroundtheworld.png
+
+Energy Issue:
+
+Article 1:
+https://s31.postimg.org/4cgb50lkb/article1.png
+Article 2:
+https://s31.postimg.org/lr0jdaip7/article2.png
+Article 3:
+https://s31.postimg.org/66t5mr8kr/article3.png
+Article 4:
+https://s31.postimg.org/sk0w9k9ij/article4.png
+Article 5:
+https://s32.postimg.org/8o3j7kt05/article5.png
+Article 6:
+https://s32.postimg.org/gzzqbofad/article6.png
+
+Word Search:
+https://s31.postimg.org/9krztjscb/wordsearch.png
+Cipher:
+https://s32.postimg.org/mbv52v9jn/cipher.png
+Material:
+https://s32.postimg.org/4n8g8d445/materialtime.png
+fill in the blank:
+https://s32.postimg.org/hq42rmuc5/fillintheblank.png
+
+//Think about the design of it. 
+I think the topic field should correlate to the magazine topic
+
+INSERT INTO images (uid, filename, file path, topic) VALUES
+(4, 'cipher','https://s32.postimg.org/6huj5c0g3/cipher.jpg', ‘computing'),
+(5, 'fillintheblank’,'https://s32.postimg.org/q0z4eoz7n/fillintheblank.jpg', 'computing'),
+(6, 'wordsearch','https://s32.postimg.org/6yfqrro77/wordsearch.png', ‘computing'),
+(7, 'materialtime','https://s31.postimg.org/7aa3u9d15/materialtime.jpg', ‘computing’);
+
+
+get # of tuples received
+
+get file link
+
+INSERT INTO images (uid, filename, file path, topic) VALUES
+(0, 'article1','https://s31.postimg.org/lny8ju6ex/article1.jpg', ‘history'),
+(1, 'article2’,'https://s31.postimg.org/4wcx13663/article2.jpg', 'history'),
+(2, 'article3','https://s31.postimg.org/i6w6gv7cp/article3.jpg', ‘internet'),
+(3, 'article4','https://s31.postimg.org/si8j9iz21/article4.jpg', ‘internet’ );
+
+if a user wishes to read a certain topic, we will load it out from the database using the ‘topic’ column

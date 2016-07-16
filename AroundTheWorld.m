@@ -46,7 +46,7 @@
     }
     PQclear(_result);
     
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = 'aroundtheworld'"];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = 'aroundtheworld' AND topic = '%@'", _currentTopic];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     NSLog(@"Query: %s", query);
     _result = PQexec(_connection, query);
