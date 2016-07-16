@@ -9,7 +9,6 @@
 #import "ArticleViewing.h"
 #import <libpq/libpq-fe.h>
 #import "AsyncImageView.h"
-//#import "ViewController.h" //Contains global variable
 
 @implementation ArticleViewing
 

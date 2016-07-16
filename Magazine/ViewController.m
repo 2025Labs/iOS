@@ -78,11 +78,9 @@
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
         Puzzle* controller = [segue destinationViewController];
-        //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         ArticleViewing* controller = [segue destinationViewController];
-        //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
         controller.currentTopic = _currentTopic;
     }
 }

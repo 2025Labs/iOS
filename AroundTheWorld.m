@@ -9,7 +9,7 @@
 #import "AroundTheWorld.h"
 #import "AsyncImageView.h"
 #import <libpq/libpq-fe.h>
-//#import "ViewController.h" //Contains global variable
+
 @interface AroundTheWorld ()
 
 @end

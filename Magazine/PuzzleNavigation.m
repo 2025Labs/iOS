@@ -9,7 +9,6 @@
 #import "PuzzleNavigation.h"
 #import "Puzzle.h"
 #import "ArticleViewing.h"
-//#import "ViewController.h" //Contains global variable
 
 @implementation PuzzleNavigation
 
