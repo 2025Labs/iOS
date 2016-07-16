@@ -15,6 +15,7 @@
 
 @property NSString *fileName;
 @property NSInteger numPages;
+@property NSString *currentTopic;
 
 @property const char *connectionString;
 @property PGresult *result;

@@ -18,6 +18,7 @@
     [self preparePencil];
     [self prepareMenu];
     [self connectToDatabase];
+    
     NSMutableArray *fileArray = [self getImageFilesFromDatabase:_fileName];
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -51,7 +52,7 @@
     }
     PQclear(_result);
     
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = '%@'", filename];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = '%@' AND topic = '%@'", filename, _currentTopic];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     NSLog(@"Query: %s", query);
     _result = PQexec(_connection, query);
@@ -81,7 +82,6 @@
     //_moreButton.clipsToBounds = YES;
     //_moreButton.layer.cornerRadius = self.moreButton.frame.size.width / 2;
     //[_moreButton setImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
-    
     if(_menu == nil) {
         _menu = [[IGCMenu alloc] init];
     }

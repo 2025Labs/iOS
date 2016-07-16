@@ -26,6 +26,7 @@
 @property CGFloat opacity;
 @property BOOL mouseSwiped;
 @property NSString *fileName;
+@property NSString *currentTopic;
 
 @property IGCMenu *menu;
 @property BOOL isMenuActive;

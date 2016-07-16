@@ -9,6 +9,8 @@
 #import "ArticleViewing.h"
 #import <libpq/libpq-fe.h>
 #import "AsyncImageView.h"
+//#import "ViewController.h" //Contains global variable
+
 @implementation ArticleViewing
 
 - (void)viewDidLoad {
@@ -67,7 +69,7 @@
     }
     PQclear(_result);
     
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename like 'article_'"];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename like 'article_' AND topic = '%@'", _currentTopic];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     
     NSLog(@"Query: %s", query);

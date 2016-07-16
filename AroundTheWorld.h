@@ -17,6 +17,8 @@
 
 -(void)view:(UIView*)view setCenter:(CGPoint) centerPoint;
 
+@property NSString *currentTopic;
+
 
 @property const char *connectionString;
 @property PGresult *result;

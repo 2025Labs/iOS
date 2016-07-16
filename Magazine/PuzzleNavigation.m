@@ -9,6 +9,8 @@
 #import "PuzzleNavigation.h"
 #import "Puzzle.h"
 #import "ArticleViewing.h"
+//#import "ViewController.h" //Contains global variable
+
 @implementation PuzzleNavigation
 
 - (void)viewDidLoad {
@@ -25,25 +27,29 @@
     if([segue.identifier isEqualToString:@"showCipher"]) {
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"cipher";
+        controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showWordSearch"]){
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"wordsearch";
+        controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showFillInTheBlank"]){
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"fillintheblank";
+        controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showMaterialTime"]){
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"materialtime";
+        controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         ArticleViewing* controller = [segue destinationViewController];
         //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
         controller.fileName = @"aroundtheworld";
-        controller.numPages = 2;
+        controller.currentTopic = _currentTopic;
     }  else if([segue.identifier isEqualToString:@"showArticle"]) {
         ArticleViewing* controller = [segue destinationViewController];
         //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
         controller.fileName = @"article";
-        controller.numPages = 4;
+        controller.currentTopic = _currentTopic;
     }
 }
 

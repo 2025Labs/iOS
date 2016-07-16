@@ -17,4 +17,8 @@
 @property const char *connectionString;
 @property PGresult *result;
 @property PGconn *connection;
+
+@property NSString *currentTopic;
+
+
 @end

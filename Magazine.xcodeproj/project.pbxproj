@@ -56,6 +56,7 @@
 		78D4101F1D3992D9004742A7 /* w.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D4101E1D3992D9004742A7 /* w.png */; };
 		78D410211D39B6BC004742A7 /* project.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D410201D39B6BC004742A7 /* project.png */; };
 		78D410231D39B73E004742A7 /* globe.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D410221D39B73E004742A7 /* globe.png */; };
+		78D410251D39BBD4004742A7 /* newspapersmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D410241D39BBD4004742A7 /* newspapersmall.png */; };
 		78E4D44A1D1B1CF100FAFC1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4D4491D1B1CF100FAFC1C /* main.m */; };
 		78E4D44D1D1B1CF200FAFC1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4D44C1D1B1CF200FAFC1C /* AppDelegate.m */; };
 		78E4D4501D1B1CF200FAFC1C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4D44F1D1B1CF200FAFC1C /* ViewController.m */; };
@@ -133,6 +134,7 @@
 		78D4101E1D3992D9004742A7 /* w.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = w.png; sourceTree = "<group>"; };
 		78D410201D39B6BC004742A7 /* project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = project.png; sourceTree = "<group>"; };
 		78D410221D39B73E004742A7 /* globe.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe.png; sourceTree = "<group>"; };
+		78D410241D39BBD4004742A7 /* newspapersmall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = newspapersmall.png; sourceTree = "<group>"; };
 		78E4D4451D1B1CF100FAFC1C /* Magazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E4D4491D1B1CF100FAFC1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78E4D44B1D1B1CF200FAFC1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				780B94631D36EFF900ADFE12 /* zoom-in.png */,
 				780B94661D36F25A00ADFE12 /* zoom-out.png */,
 				780B94611D36EEEA00ADFE12 /* wrongSmall.png */,
+				78D410241D39BBD4004742A7 /* newspapersmall.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -367,6 +370,7 @@
 				7816C77C1D318752005696ED /* LICENSE in Resources */,
 				78D0800E1D2F29980090D72B /* userIcon2.jpg in Resources */,
 				78D07FEF1D2F0B6B0090D72B /* cross2@3x.png in Resources */,
+				78D410251D39BBD4004742A7 /* newspapersmall.png in Resources */,
 				78D0800C1D2F28D10090D72B /* userIcon.png in Resources */,
 				78D07FED1D2F0B6B0090D72B /* checkmark.png in Resources */,
 				78A9FBB91D21CB790055B029 /* article2.jpg in Resources */,

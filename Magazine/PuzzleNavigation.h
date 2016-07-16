@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *triviaButton;
 @property (weak, nonatomic) IBOutlet UIButton *GameButton;
 @property (weak, nonatomic) IBOutlet UIButton *PuzzleButton;
+@property NSString *currentTopic;
 
 @end

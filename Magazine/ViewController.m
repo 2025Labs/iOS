@@ -22,6 +22,9 @@
     [self.playerView loadWithVideoId:@"lZxJgTiKDis"];
     [self prepareNavigationMenu];
     [self prepareMenu];
+    UILabel *label = _article1.titleLabel;
+    label.adjustsFontSizeToFitWidth = YES;
+    _currentTopic = @"computing";
     }
 
 -(void) prepareNavigationMenu {
@@ -56,20 +59,31 @@
     if([segue.identifier isEqualToString:@"showCipher"]) {
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"cipher";
+        controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showWordSearch"]){
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"wordsearch";
+        controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showFillInTheBlank"]){
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"fillintheblank";
+        controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showMaterialTime"]){
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"materialtime";
+        controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showArticle"]) {
         ArticleViewing* controller = [segue destinationViewController];
-        //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
         controller.fileName = @"article";
-        controller.numPages = 4;
+        controller.currentTopic = _currentTopic;
+    } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
+        ArticleViewing* controller = [segue destinationViewController];
+        //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
+        controller.currentTopic = _currentTopic;
+    } else if([segue.identifier isEqualToString:@"showWorld"]) {
+        ArticleViewing* controller = [segue destinationViewController];
+        //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
+        controller.currentTopic = _currentTopic;
     }
 }
 
@@ -88,14 +102,16 @@
     switch (index) {
         case 0:
             NSLog(@"Transition to Computing");
+            _currentTopic = @"computing";
             break;
         case 1:
             NSLog(@"Transition to Energy");
+            _currentTopic = @"energy";
 
             break;
         case 2:
             NSLog(@"Transition to Materials");
-
+            _currentTopic = @"materials";
             break;
         default:
             break;
