@@ -22,8 +22,10 @@
     [self.playerView loadWithVideoId:@"lZxJgTiKDis"];
     [self prepareNavigationMenu];
     [self prepareMenu];
-    UILabel *label = _article1.titleLabel;
-    label.adjustsFontSizeToFitWidth = YES;
+    UILabel *label1 = _article1.titleLabel;
+    label1.adjustsFontSizeToFitWidth = YES;
+    UILabel *label2 = _article2.titleLabel;
+    label2.adjustsFontSizeToFitWidth = YES;
     _currentTopic = @"computing";
     }
 

@@ -30,8 +30,9 @@
                                          self.view.frame.size.height)];
         
         //setting imageURL starts downloading the image in the background
+        NSLog(@"Loading URL");
         imageView.imageURL = [NSURL URLWithString:[articleArray objectAtIndex:i]];
-
+        NSLog(@"Done loading URL");
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         [self.scrollView addSubview:imageView];
     }

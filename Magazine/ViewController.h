@@ -20,6 +20,9 @@
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
 @property (weak, nonatomic) IBOutlet UIButton *article1;
+@property (weak, nonatomic) IBOutlet UIButton *article2;
+
+
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @property NSString *currentTopic;
