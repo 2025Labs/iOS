@@ -40,13 +40,13 @@ Article 6:
 https://orig02.deviantart.net/6782/f/2016/197/8/9/article6_by_hellorichardpham-daaa23m.png
 
 Word Search:
-https://s31.postimg.org/9krztjscb/wordsearch.png
+https://orig14.deviantart.net/e65a/f/2016/197/d/2/wordsearch_by_hellorichardpham-daaa49k.png
 Cipher:
-https://s32.postimg.org/mbv52v9jn/cipher.png
+https://orig10.deviantart.net/03a8/f/2016/197/6/4/cipher_by_hellorichardpham-daaa49q.png
 Material:
 https://orig11.deviantart.net/4740/f/2016/197/5/a/materialtime_by_hellorichardpham-daaa4a5.png
 fill in the blank:
-https://s32.postimg.org/hq42rmuc5/fillintheblank.png
+https://orig02.deviantart.net/6d8b/f/2016/197/b/6/fillintheblank_by_hellorichardpham-daaa49x.png
 
 Around the world:
 https://orig01.deviantart.net/ff6d/f/2016/197/5/d/aroundtheworld_by_hellorichardpham-daaa1bw.png
@@ -72,3 +72,9 @@ INSERT INTO images (uid, filename, file path, topic) VALUES
 (3, 'article4','https://s31.postimg.org/si8j9iz21/article4.jpg', ‘internet’ );
 
 if a user wishes to read a certain topic, we will load it out from the database using the ‘topic’ column
+
+
+Bangalore, India is well known for information technology companies to which other companies hire out their work. Among these IT outsourcers: Infosys, Tata, and Wipro. Tech companies all over the world make use of IT talent from Indian companies. India hopes to move beyond outsourcing to more home grown companies.
+
+Hong Kong, China is compared to hot startup locations like London and New York. It is considered an emerging tech hub by sources such as Forbes, Inc. In face, Hong Kong has one of the fastest growing startup communities in the world. With only 7 million residents, a whopping 150,000 new businesses were started in 2011 alone. With its rich startup environment, it is nicknamed "Silicon Harbour" in comparison to Silicon Valley.
+

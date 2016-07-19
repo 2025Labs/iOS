@@ -191,6 +191,9 @@
                                                                 <state key="normal" title="Puzzle 2">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <segue destination="sRK-kn-abJ" kind="show" id="xgx-H5-c3i"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -365,7 +368,8 @@
                                                 <exclude reference="kkv-mk-2Qb"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular">
+                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                            <rect key="frame" x="0.0" y="1" width="200" height="68"/>
                                             <mask key="constraints">
                                                 <include reference="kkv-mk-2Qb"/>
                                             </mask>
@@ -1108,7 +1112,7 @@
                                             </mask>
                                         </variation>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz8-5U-Wgf" userLabel="Article Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz8-5U-Wgf" userLabel="Article Button">
                                         <rect key="frame" x="362" y="0.0" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="IS8-Kj-Zuk"/>
@@ -1307,7 +1311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9i-s1-rUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763.25" y="609"/>
+            <point key="canvasLocation" x="2149.5" y="556.5"/>
         </scene>
         <!--Around The World-->
         <scene sceneID="uE8-cx-ygd">
@@ -1491,6 +1495,38 @@
             </objects>
             <point key="canvasLocation" x="1032.75" y="-135.75"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="XiQ-5Y-PbL">
+            <objects>
+                <viewController id="sRK-kn-abJ" customClass="ViewController" customModule="MapTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Qn-QZ-qb1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rho-OQ-hwq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ctm-41-dNS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CU6-Rl-fKj">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CU6-Rl-fKj" firstAttribute="height" secondItem="ctm-41-dNS" secondAttribute="height" id="4sH-1Q-ns3"/>
+                            <constraint firstItem="CU6-Rl-fKj" firstAttribute="centerY" secondItem="ctm-41-dNS" secondAttribute="centerY" id="VKI-25-Wjw"/>
+                            <constraint firstItem="CU6-Rl-fKj" firstAttribute="centerX" secondItem="ctm-41-dNS" secondAttribute="centerX" id="m7E-TZ-2PF"/>
+                            <constraint firstItem="CU6-Rl-fKj" firstAttribute="width" secondItem="ctm-41-dNS" secondAttribute="width" id="wRq-Gm-YXV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="CU6-Rl-fKj" id="3Wx-UE-kEC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpM-X4-BBF" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631.25" y="597"/>
+        </scene>
     </scenes>
     <resources>
         <image name="2025KidsLogo.png" width="600" height="180"/>
@@ -1503,6 +1539,6 @@
         <image name="world-icon_70x70.png" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dIY-n0-kxo"/>
+        <segue reference="UZ0-md-rKD"/>
     </inferredMetricsTieBreakers>
 </document>
