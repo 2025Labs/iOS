@@ -20,7 +20,7 @@ class ViewController: UIViewController {
         
         centerMapOnLocation(initialLocation)
         
-        let bangalore = City(title: "Bangalore", coordinate: CLLocationCoordinate2DMake(12.9716, 77.5946), locationName: "Bangalore, India", image: "banagalore.jpg", information: "Bangalore, India is well known for information technology companies to which other companies hire out their work. Among these IT outsourcers: Infosys, Tata, and Wipro. Tech companies all over the world make use of IT talent from Indian companies. India hopes to move beyond outsourcing to more home grown companies.")
+        let bangalore = City(title: "Bangalore", coordinate: CLLocationCoordinate2DMake(12.9716, 77.5946), locationName: "Bangalore, India", image: "bangalore.jpg", information: "Bangalore, India is well known for information technology companies to which other companies hire out their work. Among these IT outsourcers: Infosys, Tata, and Wipro. Tech companies all over the world make use of IT talent from Indian companies. India hopes to move beyond outsourcing to more home grown companies.")
         
         let hongkong = City(title: "Hong Kong", coordinate: CLLocationCoordinate2DMake(22.3964, 114.1095), locationName: "Hong Kong", image: "hongkong.jpg", information:"Hong Kong, China is compared to hot startup locations like London and New York. It is considered an emerging tech hub by sources such as Forbes, Inc. In face, Hong Kong has one of the fastest growing startup communities in the world. With only 7 million residents, a whopping 150,000 new businesses were started in 2011 alone. With its rich startup environment, it is nicknamed \"Silicon Harbour\" in comparison to Silicon Valley.")
         
