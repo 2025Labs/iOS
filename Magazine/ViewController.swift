@@ -12,7 +12,8 @@ import MapKit
 class ViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var leftBottomButton: UIButton!
-    
+    var cityArray = [City]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
@@ -20,15 +21,9 @@ class ViewController: UIViewController {
         connectToDatabase()
         centerMapOnLocation(initialLocation)
         
-        let bangalore = City(title: "Bangalore", coordinate: CLLocationCoordinate2DMake(12.9716, 77.5946), country: "India", image: "bangalore.jpg", information: "Bangalore, India is well known for information technology companies to which other companies hire out their work. Among these IT outsourcers: Infosys, Tata, and Wipro. Tech companies all over the world make use of IT talent from Indian companies. India hopes to move beyond outsourcing to more home grown companies.")
-        
-        let hongkong = City(title: "Hong Kong", coordinate: CLLocationCoordinate2DMake(22.3964, 114.1095), country: "China", image: "hongkong.jpg", information:"Hong Kong, China is compared to hot startup locations like London and New York. It is considered an emerging tech hub by sources such as Forbes, Inc. In face, Hong Kong has one of the fastest growing startup communities in the world. With only 7 million residents, a whopping 150,000 new businesses were started in 2011 alone. With its rich startup environment, it is nicknamed \"Silicon Harbour\" in comparison to Silicon Valley.")
-        
-        let telaviv = City(title:"Tel Aviv", coordinate: CLLocationCoordinate2DMake(32.0853, 34.7818), country: "Israel", image:"telaviv.jpg", information:"Tel Aviv, Israel is not big, but it is an emerging technology center with a thriving startup scene. According to the bbc, high tech exports amounted to about $18 billion per year, and about 45% of Israel's exports. There is so much startup activity that there is one startup for every 431 residents.")
-        
-        map.addAnnotation(bangalore);
-        map.addAnnotation(hongkong);
-        map.addAnnotation(telaviv);
+        for i in 0...cityArray.count-1 {
+            map.addAnnotation(cityArray[i])
+        }
 
     }
     
@@ -49,12 +44,19 @@ class ViewController: UIViewController {
         
         if(PQresultStatus(result) != PGRES_TUPLES_OK) {
             print("Couldn't fetch anything")
-        } else {
-            print("Fetched stuff");
         }
-        
         for i in 0...PQntuples(result)-1 {
-            print(NSString(format:"result: %s", PQgetvalue(result, i, 0)))
+            
+            let title = String.fromCString(PQgetvalue(result, i, 0))
+            let latitude = String.fromCString(PQgetvalue(result, i, 1))
+            let longitude = String.fromCString(PQgetvalue(result, i, 2))
+            let country = String.fromCString(PQgetvalue(result, i, 3))
+            let image = String.fromCString(PQgetvalue(result, i, 4))
+            let information = String.fromCString(PQgetvalue(result, i, 5))
+        
+            let newCity = City(title: title!, coordinate: CLLocationCoordinate2DMake(Double(latitude!)!, Double(longitude!)!), country: country!, image: image!, information: information!)
+            
+            cityArray.append(newCity)
         }
     }
     func centerMapOnLocation(location: CLLocation) {
