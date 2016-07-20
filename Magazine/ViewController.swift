@@ -17,19 +17,45 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         map.delegate = self
         let initialLocation = CLLocation(latitude: 12.9, longitude: 77.6)
-        
+        connectToDatabase()
         centerMapOnLocation(initialLocation)
         
-        let bangalore = City(title: "Bangalore", coordinate: CLLocationCoordinate2DMake(12.9716, 77.5946), locationName: "Bangalore, India", image: "bangalore.jpg", information: "Bangalore, India is well known for information technology companies to which other companies hire out their work. Among these IT outsourcers: Infosys, Tata, and Wipro. Tech companies all over the world make use of IT talent from Indian companies. India hopes to move beyond outsourcing to more home grown companies.")
+        let bangalore = City(title: "Bangalore", coordinate: CLLocationCoordinate2DMake(12.9716, 77.5946), country: "India", image: "bangalore.jpg", information: "Bangalore, India is well known for information technology companies to which other companies hire out their work. Among these IT outsourcers: Infosys, Tata, and Wipro. Tech companies all over the world make use of IT talent from Indian companies. India hopes to move beyond outsourcing to more home grown companies.")
         
-        let hongkong = City(title: "Hong Kong", coordinate: CLLocationCoordinate2DMake(22.3964, 114.1095), locationName: "Hong Kong", image: "hongkong.jpg", information:"Hong Kong, China is compared to hot startup locations like London and New York. It is considered an emerging tech hub by sources such as Forbes, Inc. In face, Hong Kong has one of the fastest growing startup communities in the world. With only 7 million residents, a whopping 150,000 new businesses were started in 2011 alone. With its rich startup environment, it is nicknamed \"Silicon Harbour\" in comparison to Silicon Valley.")
+        let hongkong = City(title: "Hong Kong", coordinate: CLLocationCoordinate2DMake(22.3964, 114.1095), country: "China", image: "hongkong.jpg", information:"Hong Kong, China is compared to hot startup locations like London and New York. It is considered an emerging tech hub by sources such as Forbes, Inc. In face, Hong Kong has one of the fastest growing startup communities in the world. With only 7 million residents, a whopping 150,000 new businesses were started in 2011 alone. With its rich startup environment, it is nicknamed \"Silicon Harbour\" in comparison to Silicon Valley.")
         
-        let telaviv = City(title:"Tel Aviv", coordinate: CLLocationCoordinate2DMake(32.0853, 34.7818), locationName: "Tel Aviv", image:"telaviv.jpg", information:"Tel Aviv, Israel is not big, but it is an emerging technology center with a thriving startup scene. According to the bbc, high tech exports amounted to about $18 billion per year, and about 45% of Israel's exports. There is so much startup activity that there is one startup for every 431 residents.")
+        let telaviv = City(title:"Tel Aviv", coordinate: CLLocationCoordinate2DMake(32.0853, 34.7818), country: "Israel", image:"telaviv.jpg", information:"Tel Aviv, Israel is not big, but it is an emerging technology center with a thriving startup scene. According to the bbc, high tech exports amounted to about $18 billion per year, and about 45% of Israel's exports. There is so much startup activity that there is one startup for every 431 residents.")
         
         map.addAnnotation(bangalore);
         map.addAnnotation(hongkong);
         map.addAnnotation(telaviv);
+
+    }
+    
+    func connectToDatabase() {
+        let connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219"
+        let connection = PQconnectdb(connectionString)
+        if(PQstatus(connection) != CONNECTION_OK) {
+            print("Error: Couldn't connect to the database")
+        }
         
+        var result = PQexec(connection, "begin")
+        if(PQresultStatus(result) != PGRES_COMMAND_OK) {
+            print("Begin command failed")
+        }
+        PQclear(result)
+        
+        result = PQexec(connection, "SELECT * FROM cities")
+        
+        if(PQresultStatus(result) != PGRES_TUPLES_OK) {
+            print("Couldn't fetch anything")
+        } else {
+            print("Fetched stuff");
+        }
+        
+        for i in 0...PQntuples(result)-1 {
+            print(NSString(format:"result: %s", PQgetvalue(result, i, 0)))
+        }
     }
     func centerMapOnLocation(location: CLLocation) {
         let regionRadius: CLLocationDistance = 1000000

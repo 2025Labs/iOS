@@ -22,7 +22,7 @@ extension ViewController: MKMapViewDelegate {
             let identifier = "pin"
             var view: MKPinAnnotationView
             if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
-                as? MKPinAnnotationView { // 2
+                as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
             } else {
@@ -37,15 +37,16 @@ extension ViewController: MKMapViewDelegate {
         }
         return nil
     }
+
     
     
     func mapView(mapView: MKMapView, annotationView: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         let annView = annotationView.annotation as? City;
         print("Information: " + annView!.information);
         print("Image: %s", annView!.image);
-
+        mapView.deselectAnnotation(annotationView.annotation, animated: true)
         if control == annotationView.rightCalloutAccessoryView {
-            let width = self.view.frame.width / 3
+            let width = self.view.frame.width / 2.5
             let aView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: width))
             
             
@@ -56,20 +57,19 @@ extension ViewController: MKMapViewDelegate {
             imageView.frame = CGRect(x: 0, y: 0, width: width, height: width/2)
             aView.addSubview(imageView)
             
-            let label = UILabel(frame: CGRect(x:0, y:width/4, width: width, height: width))
+            let label = UILabel(frame: CGRect(x:0, y:width/2, width: width, height: width/2))
             label.text = (annView!.information)
             label.numberOfLines = 0
             label.textAlignment = NSTextAlignment.Center
             label.font = label.font.fontWithSize(12)
-            
             aView.addSubview(label);
             let options = [
                 .Type(.Up),
-                //.CornerRadius(width / 2),
                 .AnimationIn(0.3),
                 .ArrowSize(CGSize(width: 15.0, height: 15.0))
                 ] as [PopoverOption]
             let popover = Popover(options: options, showHandler: nil, dismissHandler: nil)
+            
             popover.show(aView, fromView: annotationView)
         }
     }
