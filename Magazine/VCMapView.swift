@@ -11,7 +11,6 @@ import MapKit
 import Popover
 
 extension ViewController: MKMapViewDelegate {
-    
     func buttonAction() ->String {
         return "hello world"
     }
@@ -46,15 +45,14 @@ extension ViewController: MKMapViewDelegate {
         print("Image: %s", annView!.image);
         mapView.deselectAnnotation(annotationView.annotation, animated: true)
         if control == annotationView.rightCalloutAccessoryView {
-            let width = self.view.frame.width / 2.5
+            let width = self.view.frame.width / 3
             let aView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: width))
-            
             
             let imageName = (annView!.image)
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image)
             
-            imageView.frame = CGRect(x: 0, y: 0, width: width, height: width/2)
+            imageView.frame = CGRect(x: 0, y: 0, width: width, height: width/1.8)
             aView.addSubview(imageView)
             
             let label = UILabel(frame: CGRect(x:0, y:width/2, width: width, height: width/2))
@@ -63,12 +61,26 @@ extension ViewController: MKMapViewDelegate {
             label.textAlignment = NSTextAlignment.Center
             label.font = label.font.fontWithSize(12)
             aView.addSubview(label);
-            let options = [
-                .Type(.Up),
+            var options:[PopoverOption]
+            
+            if(annotationView.frame.origin.y - width < 15) {
+                options = [
+                .Type(.Down),
                 .AnimationIn(0.3),
                 .ArrowSize(CGSize(width: 15.0, height: 15.0))
                 ] as [PopoverOption]
+            } else {
+                options = [
+                    .Type(.Up),
+                    .AnimationIn(0.3),
+                    .ArrowSize(CGSize(width: 15.0, height: 15.0))
+                    ] as [PopoverOption]
+            }
+            
             let popover = Popover(options: options, showHandler: nil, dismissHandler: nil)
+            
+            print(annotationView.frame.origin.x)
+            print(annotationView.frame.origin.y)
             
             popover.show(aView, fromView: annotationView)
         }
