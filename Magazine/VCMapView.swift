@@ -45,9 +45,12 @@ extension ViewController: MKMapViewDelegate {
         print("Image: %s", annView!.image);
         mapView.deselectAnnotation(annotationView.annotation, animated: true)
         if control == annotationView.rightCalloutAccessoryView {
-            let width = self.view.frame.width / 3
+            var width = self.view.frame.width / 3
+            if(self.view.frame.height > self.view.frame.width) {
+                width = self.view.frame.height / 3
+            }
             let aView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: width))
-            
+            print(width)
             let imageName = (annView!.image)
             let image = UIImage(named: imageName)
             let imageView = UIImageView(image: image)
@@ -69,6 +72,7 @@ extension ViewController: MKMapViewDelegate {
                 .AnimationIn(0.3),
                 .ArrowSize(CGSize(width: 15.0, height: 15.0))
                 ] as [PopoverOption]
+
             } else {
                 options = [
                     .Type(.Up),

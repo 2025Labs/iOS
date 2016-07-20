@@ -191,9 +191,6 @@
                                                                 <state key="normal" title="Puzzle 2">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
-                                                                <connections>
-                                                                    <segue destination="sRK-kn-abJ" kind="show" id="xgx-H5-c3i"/>
-                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,7 +329,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="2ug-xX-isR" kind="show" identifier="showWorld" id="ley-sb-NrS"/>
+                                            <segue destination="sRK-kn-abJ" kind="show" id="aMm-YA-PGH"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3if-Yi-Z21" userLabel="Article Button">
@@ -1498,7 +1495,7 @@
         <!--View Controller-->
         <scene sceneID="XiQ-5Y-PbL">
             <objects>
-                <viewController id="sRK-kn-abJ" customClass="ViewController" customModule="MapTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sRK-kn-abJ" customClass="ViewController" customModule="Magazine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Qn-QZ-qb1"/>
                         <viewControllerLayoutGuide type="bottom" id="Rho-OQ-hwq"/>
@@ -1525,7 +1522,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hpM-X4-BBF" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1631.25" y="597"/>
+            <point key="canvasLocation" x="1650" y="648"/>
         </scene>
     </scenes>
     <resources>
