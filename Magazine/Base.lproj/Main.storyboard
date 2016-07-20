@@ -365,18 +365,40 @@
                                                 <exclude reference="kkv-mk-2Qb"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                            <rect key="frame" x="0.0" y="1" width="200" height="68"/>
+                                        <variation key="heightClass=regular-widthClass=regular">
                                             <mask key="constraints">
                                                 <include reference="kkv-mk-2Qb"/>
                                             </mask>
                                         </variation>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMt-Pf-vo4">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="Doj-Fx-2xe"/>
+                                            <constraint firstAttribute="height" constant="70" id="bC2-Yk-Izq"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="quiz_icon_70x70.png"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Doj-Fx-2xe"/>
+                                                <exclude reference="bC2-Yk-Izq"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="Doj-Fx-2xe"/>
+                                                <include reference="bC2-Yk-Izq"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="lwI-SH-1cx" secondAttribute="trailing" id="1gr-g8-vwb"/>
+                                    <constraint firstItem="3if-Yi-Z21" firstAttribute="leading" secondItem="sMt-Pf-vo4" secondAttribute="trailing" constant="8" id="Bzc-NI-IDx"/>
                                     <constraint firstItem="6Kz-PQ-POI" firstAttribute="leading" secondItem="3if-Yi-Z21" secondAttribute="trailing" constant="8" id="GLk-G5-iV1"/>
+                                    <constraint firstItem="sMt-Pf-vo4" firstAttribute="top" secondItem="IDY-Fh-iam" secondAttribute="top" constant="-1" id="NjR-wV-5rD"/>
                                     <constraint firstItem="7Cw-xS-PHQ" firstAttribute="height" secondItem="IDY-Fh-iam" secondAttribute="height" id="QVc-Ly-BJT"/>
+                                    <constraint firstAttribute="bottom" secondItem="sMt-Pf-vo4" secondAttribute="bottom" constant="-1" id="Yct-Tj-9Tz"/>
                                     <constraint firstItem="lwI-SH-1cx" firstAttribute="leading" secondItem="6Kz-PQ-POI" secondAttribute="trailing" constant="8" id="ccR-Ur-i7j"/>
                                     <constraint firstItem="3if-Yi-Z21" firstAttribute="top" secondItem="IDY-Fh-iam" secondAttribute="top" id="gyC-as-QYb"/>
                                     <constraint firstItem="lwI-SH-1cx" firstAttribute="centerY" secondItem="3if-Yi-Z21" secondAttribute="centerY" id="knS-69-OEC"/>
@@ -390,10 +412,16 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="sMt-Pf-vo4"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="QVc-Ly-BJT"/>
                                         <exclude reference="ugw-zg-xz8"/>
                                         <exclude reference="z1I-0Y-cDE"/>
+                                        <exclude reference="NjR-wV-5rD"/>
+                                        <exclude reference="Yct-Tj-9Tz"/>
+                                        <exclude reference="Bzc-NI-IDx"/>
                                         <exclude reference="gyC-as-QYb"/>
                                         <exclude reference="GLk-G5-iV1"/>
                                         <exclude reference="wNd-eq-8QJ"/>
@@ -403,10 +431,16 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="sMt-Pf-vo4"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <include reference="QVc-Ly-BJT"/>
                                         <include reference="ugw-zg-xz8"/>
                                         <include reference="z1I-0Y-cDE"/>
+                                        <include reference="NjR-wV-5rD"/>
+                                        <include reference="Yct-Tj-9Tz"/>
+                                        <include reference="Bzc-NI-IDx"/>
                                         <include reference="gyC-as-QYb"/>
                                         <include reference="GLk-G5-iV1"/>
                                         <include reference="wNd-eq-8QJ"/>
@@ -1108,6 +1142,9 @@
                                                 <include reference="h8V-u7-W9T"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <segue destination="sRK-kn-abJ" kind="show" id="CM3-m5-7gA"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz8-5U-Wgf" userLabel="Article Button">
                                         <rect key="frame" x="362" y="0.0" width="60" height="60"/>
@@ -1170,8 +1207,29 @@
                                             </mask>
                                         </variation>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAh-XR-1Hv">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="1I2-7h-Ofs"/>
+                                            <constraint firstAttribute="height" constant="70" id="Qbs-ul-H92"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="quiz_icon_70x70.png"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="1I2-7h-Ofs"/>
+                                                <exclude reference="Qbs-ul-H92"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <include reference="1I2-7h-Ofs"/>
+                                                <include reference="Qbs-ul-H92"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="KAh-XR-1Hv" firstAttribute="top" secondItem="xHc-kd-dBh" secondAttribute="top" constant="8" id="CO2-YX-BMJ"/>
                                     <constraint firstAttribute="bottom" secondItem="QAS-hW-0eM" secondAttribute="bottom" constant="7" id="GIb-gF-471">
                                         <variation key="heightClass=regular-widthClass=regular" constant="9"/>
                                     </constraint>
@@ -1182,6 +1240,8 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="85"/>
                                     </constraint>
                                     <constraint firstItem="QAS-hW-0eM" firstAttribute="leading" secondItem="xHc-kd-dBh" secondAttribute="leading" id="iLN-ny-QpQ"/>
+                                    <constraint firstItem="xz8-5U-Wgf" firstAttribute="leading" secondItem="KAh-XR-1Hv" secondAttribute="trailing" constant="8" id="kZG-V8-A5y"/>
+                                    <constraint firstAttribute="bottom" secondItem="KAh-XR-1Hv" secondAttribute="bottom" constant="7" id="mtu-xL-CQV"/>
                                     <constraint firstItem="845-KQ-nza" firstAttribute="centerY" secondItem="xz8-5U-Wgf" secondAttribute="centerY" id="qNJ-gZ-8RX"/>
                                     <constraint firstItem="QAS-hW-0eM" firstAttribute="top" secondItem="xHc-kd-dBh" secondAttribute="top" constant="8" id="sKm-H1-Hi2">
                                         <variation key="heightClass=regular-widthClass=regular" constant="6"/>
@@ -1199,11 +1259,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="KAh-XR-1Hv"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <exclude reference="fxx-na-yPf"/>
                                         <exclude reference="GIb-gF-471"/>
                                         <exclude reference="iLN-ny-QpQ"/>
                                         <exclude reference="sKm-H1-Hi2"/>
+                                        <exclude reference="CO2-YX-BMJ"/>
+                                        <exclude reference="mtu-xL-CQV"/>
+                                        <exclude reference="kZG-V8-A5y"/>
                                         <exclude reference="t7Q-mM-d4f"/>
                                         <exclude reference="YPi-2P-AA1"/>
                                         <exclude reference="ydU-Kg-Vm7"/>
@@ -1213,11 +1279,17 @@
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="subviews">
+                                        <include reference="KAh-XR-1Hv"/>
+                                    </mask>
                                     <mask key="constraints">
                                         <include reference="fxx-na-yPf"/>
                                         <include reference="GIb-gF-471"/>
                                         <include reference="iLN-ny-QpQ"/>
                                         <include reference="sKm-H1-Hi2"/>
+                                        <include reference="CO2-YX-BMJ"/>
+                                        <include reference="mtu-xL-CQV"/>
+                                        <include reference="kZG-V8-A5y"/>
                                         <include reference="t7Q-mM-d4f"/>
                                         <include reference="YPi-2P-AA1"/>
                                         <include reference="ydU-Kg-Vm7"/>
@@ -1355,7 +1427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWS-eM-nne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2483.25" y="993"/>
+            <point key="canvasLocation" x="2627.25" y="1209"/>
         </scene>
         <!--Article Viewing-->
         <scene sceneID="yHD-QR-LR8">
@@ -1532,10 +1604,12 @@
         <image name="newspaper.png" width="138" height="136"/>
         <image name="passwordIcon.png" width="256" height="256"/>
         <image name="puzzle-icon_70x70.png" width="70" height="70"/>
+        <image name="quiz_icon_70x70.png" width="70" height="70"/>
         <image name="userIcon.png" width="100" height="100"/>
         <image name="world-icon_70x70.png" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UZ0-md-rKD"/>
+        <segue reference="dIY-n0-kxo"/>
+        <segue reference="CM3-m5-7gA"/>
     </inferredMetricsTieBreakers>
 </document>

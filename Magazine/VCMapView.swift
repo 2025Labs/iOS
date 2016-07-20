@@ -11,9 +11,6 @@ import MapKit
 import Popover
 
 extension ViewController: MKMapViewDelegate {
-    func buttonAction() ->String {
-        return "hello world"
-    }
     
     // 1
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
@@ -25,6 +22,7 @@ extension ViewController: MKMapViewDelegate {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
             } else {
+                
                 // 3
                 view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
                 view.canShowCallout = true
