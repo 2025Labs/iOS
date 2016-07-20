@@ -25,6 +25,16 @@
 		781A8C1A1D3EE21300963931 /* bangalore.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C191D3EE21300963931 /* bangalore.jpg */; };
 		781A8C1C1D3EE5CE00963931 /* hongkong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C1B1D3EE5CE00963931 /* hongkong.jpg */; };
 		781A8C1E1D3EEBC900963931 /* telaviv.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C1D1D3EEBC900963931 /* telaviv.jpg */; };
+		781A8C251D3F646000963931 /* boston.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C211D3F646000963931 /* boston.jpg */; };
+		781A8C261D3F646000963931 /* dublin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C221D3F646000963931 /* dublin.jpg */; };
+		781A8C271D3F646000963931 /* london.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C231D3F646000963931 /* london.jpg */; };
+		781A8C281D3F646000963931 /* shenzhen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C241D3F646000963931 /* shenzhen.jpg */; };
+		781A8C2F1D3F696600963931 /* austin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C291D3F696600963931 /* austin.jpg */; };
+		781A8C301D3F696600963931 /* losangeles.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C2A1D3F696600963931 /* losangeles.jpg */; };
+		781A8C311D3F696600963931 /* newyorkcity.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C2B1D3F696600963931 /* newyorkcity.jpg */; };
+		781A8C321D3F696600963931 /* sanfrancisco.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C2C1D3F696600963931 /* sanfrancisco.jpg */; };
+		781A8C331D3F696600963931 /* seattle.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C2D1D3F696600963931 /* seattle.jpg */; };
+		781A8C341D3F696600963931 /* washingtondc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 781A8C2E1D3F696600963931 /* washingtondc.jpg */; };
 		781D774A1D1BA7A000D9417C /* wordsearch.png in Resources */ = {isa = PBXBuildFile; fileRef = 781D77491D1BA7A000D9417C /* wordsearch.png */; };
 		781D77511D1CA8CC00D9417C /* Puzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 781D77501D1CA8CC00D9417C /* Puzzle.m */; };
 		784A316F1D248CA200AC8AB9 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = 784A316C1D248CA200AC8AB9 /* quiz.json */; };
@@ -120,6 +130,16 @@
 		781A8C191D3EE21300963931 /* bangalore.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bangalore.jpg; sourceTree = "<group>"; };
 		781A8C1B1D3EE5CE00963931 /* hongkong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = hongkong.jpg; sourceTree = "<group>"; };
 		781A8C1D1D3EEBC900963931 /* telaviv.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = telaviv.jpg; sourceTree = "<group>"; };
+		781A8C211D3F646000963931 /* boston.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boston.jpg; sourceTree = "<group>"; };
+		781A8C221D3F646000963931 /* dublin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dublin.jpg; sourceTree = "<group>"; };
+		781A8C231D3F646000963931 /* london.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = london.jpg; sourceTree = "<group>"; };
+		781A8C241D3F646000963931 /* shenzhen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shenzhen.jpg; sourceTree = "<group>"; };
+		781A8C291D3F696600963931 /* austin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = austin.jpg; sourceTree = "<group>"; };
+		781A8C2A1D3F696600963931 /* losangeles.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = losangeles.jpg; sourceTree = "<group>"; };
+		781A8C2B1D3F696600963931 /* newyorkcity.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = newyorkcity.jpg; sourceTree = "<group>"; };
+		781A8C2C1D3F696600963931 /* sanfrancisco.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sanfrancisco.jpg; sourceTree = "<group>"; };
+		781A8C2D1D3F696600963931 /* seattle.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = seattle.jpg; sourceTree = "<group>"; };
+		781A8C2E1D3F696600963931 /* washingtondc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = washingtondc.jpg; sourceTree = "<group>"; };
 		781D77491D1BA7A000D9417C /* wordsearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordsearch.png; sourceTree = "<group>"; };
 		781D774F1D1CA8CC00D9417C /* Puzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Puzzle.h; sourceTree = "<group>"; };
 		781D77501D1CA8CC00D9417C /* Puzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Puzzle.m; sourceTree = "<group>"; };
@@ -241,6 +261,16 @@
 				78A9FBAD1D1DEC250055B029 /* 2025KidsLogo.png */,
 				78A9FBB41D21CB790055B029 /* article1.jpg */,
 				78A9FBB51D21CB790055B029 /* article2.jpg */,
+				781A8C211D3F646000963931 /* boston.jpg */,
+				781A8C221D3F646000963931 /* dublin.jpg */,
+				781A8C231D3F646000963931 /* london.jpg */,
+				781A8C241D3F646000963931 /* shenzhen.jpg */,
+				781A8C291D3F696600963931 /* austin.jpg */,
+				781A8C2A1D3F696600963931 /* losangeles.jpg */,
+				781A8C2B1D3F696600963931 /* newyorkcity.jpg */,
+				781A8C2C1D3F696600963931 /* sanfrancisco.jpg */,
+				781A8C2D1D3F696600963931 /* seattle.jpg */,
+				781A8C2E1D3F696600963931 /* washingtondc.jpg */,
 				781A8C191D3EE21300963931 /* bangalore.jpg */,
 				78A9FBB61D21CB790055B029 /* article3.jpg */,
 				78A9FBB71D21CB790055B029 /* article4.jpg */,
@@ -433,11 +463,13 @@
 				785BDB261D3D756800D16189 /* news_icon_70x70.png in Resources */,
 				78A9FBAE1D1DEC250055B029 /* 2025KidsLogo.png in Resources */,
 				78D410291D39D27F004742A7 /* circleChevronUp.png in Resources */,
+				781A8C281D3F646000963931 /* shenzhen.jpg in Resources */,
 				781A8C1C1D3EE5CE00963931 /* hongkong.jpg in Resources */,
 				780B94681D36F25A00ADFE12 /* zoom-out.png in Resources */,
 				78D07FE41D2F0B6B0090D72B /* 2025KidsLogo.jpg in Resources */,
 				7816C77C1D318752005696ED /* LICENSE in Resources */,
 				78D07FEF1D2F0B6B0090D72B /* cross2@3x.png in Resources */,
+				781A8C271D3F646000963931 /* london.jpg in Resources */,
 				781A8C1A1D3EE21300963931 /* bangalore.jpg in Resources */,
 				78D410251D39BBD4004742A7 /* newspapersmall.png in Resources */,
 				78D07FED1D2F0B6B0090D72B /* checkmark.png in Resources */,
@@ -451,7 +483,10 @@
 				780B94641D36EFF900ADFE12 /* zoom-in.png in Resources */,
 				78D07FF71D2F0B6B0090D72B /* wrong.png in Resources */,
 				78D410231D39B73E004742A7 /* globe.png in Resources */,
+				781A8C251D3F646000963931 /* boston.jpg in Resources */,
 				785BDB2C1D3D767F00D16189 /* quiz_icon_70x70.png in Resources */,
+				781A8C341D3F696600963931 /* washingtondc.jpg in Resources */,
+				781A8C321D3F696600963931 /* sanfrancisco.jpg in Resources */,
 				78D4102F1D39D4DA004742A7 /* keyFilled.png in Resources */,
 				785BDB2E1D3D76A700D16189 /* world-icon_70x70.png in Resources */,
 				781A8C1E1D3EEBC900963931 /* telaviv.jpg in Resources */,
@@ -459,13 +494,17 @@
 				78D07FF31D2F0B6B0090D72B /* page12.jpg in Resources */,
 				78D410211D39B6BC004742A7 /* project.png in Resources */,
 				78A9FBB81D21CB790055B029 /* article1.jpg in Resources */,
+				781A8C261D3F646000963931 /* dublin.jpg in Resources */,
+				781A8C311D3F696600963931 /* newyorkcity.jpg in Resources */,
 				785BDB2B1D3D767F00D16189 /* globe.png in Resources */,
 				78D07FFB1D2F0FF50090D72B /* newspaper.png in Resources */,
+				781A8C301D3F696600963931 /* losangeles.jpg in Resources */,
 				78D4102E1D39D4DA004742A7 /* keyEmpty.png in Resources */,
 				78E4D4551D1B1CF200FAFC1C /* Assets.xcassets in Resources */,
 				784A316F1D248CA200AC8AB9 /* quiz.json in Resources */,
 				78D07FF21D2F0B6B0090D72B /* materialtime.jpg in Resources */,
 				78D080101D2F29F90090D72B /* passwordIcon.png in Resources */,
+				781A8C2F1D3F696600963931 /* austin.jpg in Resources */,
 				78D07FF41D2F0B6B0090D72B /* plus.png in Resources */,
 				780B94621D36EEEA00ADFE12 /* wrongSmall.png in Resources */,
 				78D07FEE1D2F0B6B0090D72B /* cipher.jpg in Resources */,
@@ -473,6 +512,7 @@
 				78D0800A1D2F23CA0090D72B /* background.jpg in Resources */,
 				78A9FBBA1D21CB790055B029 /* article3.jpg in Resources */,
 				784A31811D26CE1E00AC8AB9 /* conrete.jpg in Resources */,
+				781A8C331D3F696600963931 /* seattle.jpg in Resources */,
 				78A9FBF81D2341120055B029 /* aroundtheworld1.jpg in Resources */,
 				78A9FBF71D2341120055B029 /* aroundtheworld2.jpg in Resources */,
 				78D4102B1D39D449004742A7 /* userIcon.png in Resources */,
