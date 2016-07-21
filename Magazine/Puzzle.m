@@ -8,8 +8,8 @@
 
 #import "Puzzle.h"
 #import "IGCMenu.h"
-#import "AsyncImageView.h"
 #import <libpq/libpq-fe.h>
+@import WebImage;
 
 @implementation Puzzle
 
@@ -24,14 +24,19 @@
     
     //Make the edge of the view underneath the nav bar
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    //Get the fileName, which was passed by whichever segue brought us here
-    //UIImage *image = [UIImage imageNamed: self.fileName];
     
-    //setting imageURL starts downloading the image in the background
-    _tempDrawingImage.imageURL = [NSURL URLWithString:[fileArray objectAtIndex:0]];
-    
-    //[self.tempDrawingImage setImage:image];
-    NSLog(@"tempDrawingImage has been set to %@", [fileArray objectAtIndex:0]);
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadImageWithURL:[NSURL URLWithString:[fileArray objectAtIndex:0]]
+                          options:0
+                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                             NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
+                         }
+                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                            if (image) {
+                                NSLog(@"Finished downloading");
+                                [_tempDrawingImage setImage:image];
+                            }
+                        }];
 }
 
 -(void) connectToDatabase {

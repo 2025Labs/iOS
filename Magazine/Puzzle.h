@@ -10,12 +10,11 @@
 #import <UIKit/UIKit.h>
 #import "IGCMenu.h"
 #import <libpq/libpq-fe.h>
-#import "AsyncImageView.h"
 
 
 @interface Puzzle : UIViewController<IGCMenuDelegate>
-@property (weak, nonatomic) IBOutlet AsyncImageView *cipher;
-@property (weak, nonatomic) IBOutlet AsyncImageView *tempDrawingImage;
+@property (weak, nonatomic) IBOutlet UIImageView *cipher;
+@property (weak, nonatomic) IBOutlet UIImageView *tempDrawingImage;
 @property (weak, nonatomic) IBOutlet UIButton *moreButton;
 
 @property CGPoint lastPoint;

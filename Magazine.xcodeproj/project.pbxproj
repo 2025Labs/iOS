@@ -84,7 +84,6 @@
 		78A9FBE11D21DEF80055B029 /* ArticleViewing.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBE01D21DEF70055B029 /* ArticleViewing.m */; };
 		78A9FBF41D233A9B0055B029 /* AroundTheWorld.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBF31D233A9B0055B029 /* AroundTheWorld.m */; };
 		78D07FCE1D2EFBB90090D72B /* IGCMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D07FCD1D2EFBB90090D72B /* IGCMenu.m */; };
-		78D40FF11D38402B004742A7 /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D40FF01D38402B004742A7 /* AsyncImageView.m */; };
 		78E4D44A1D1B1CF100FAFC1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4D4491D1B1CF100FAFC1C /* main.m */; };
 		78E4D44D1D1B1CF200FAFC1C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4D44C1D1B1CF200FAFC1C /* AppDelegate.m */; };
 		78E4D4501D1B1CF200FAFC1C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4D44F1D1B1CF200FAFC1C /* ViewController.m */; };
@@ -198,8 +197,6 @@
 		78A9FBF31D233A9B0055B029 /* AroundTheWorld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AroundTheWorld.m; path = ../AroundTheWorld.m; sourceTree = "<group>"; };
 		78D07FCC1D2EFBB90090D72B /* IGCMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGCMenu.h; sourceTree = "<group>"; };
 		78D07FCD1D2EFBB90090D72B /* IGCMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IGCMenu.m; sourceTree = "<group>"; };
-		78D40FEF1D38402B004742A7 /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
-		78D40FF01D38402B004742A7 /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
 		78E4D4451D1B1CF100FAFC1C /* Magazine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magazine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78E4D4491D1B1CF100FAFC1C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		78E4D44B1D1B1CF200FAFC1C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -333,15 +330,6 @@
 			path = IGCMenu;
 			sourceTree = "<group>";
 		};
-		78D40FEE1D38402B004742A7 /* AsyncImageView */ = {
-			isa = PBXGroup;
-			children = (
-				78D40FEF1D38402B004742A7 /* AsyncImageView.h */,
-				78D40FF01D38402B004742A7 /* AsyncImageView.m */,
-			);
-			path = AsyncImageView;
-			sourceTree = "<group>";
-		};
 		78E4D43C1D1B1CF000FAFC1C = {
 			isa = PBXGroup;
 			children = (
@@ -366,7 +354,6 @@
 				788D96C81D2C701300CFA895 /* Assets.bundle */,
 				78D07FCB1D2EFBB90090D72B /* IGCMenu */,
 				784A31851D26E4D200AC8AB9 /* CircleProgressBar.h */,
-				78D40FEE1D38402B004742A7 /* AsyncImageView */,
 				7816C76E1D318752005696ED /* AESCrypt-ObjC-master */,
 				780C6A3B1D3FE9120004CD98 /* images */,
 				7816C7811D341DB8005696ED /* libpq.framework */,
@@ -567,7 +554,6 @@
 				7816C77D1D318752005696ED /* NSData+Base64.m in Sources */,
 				78E4D4501D1B1CF200FAFC1C /* ViewController.m in Sources */,
 				7816C77F1D318752005696ED /* NSString+Base64.m in Sources */,
-				78D40FF11D38402B004742A7 /* AsyncImageView.m in Sources */,
 				7816C75D1D317EBD005696ED /* Login.m in Sources */,
 				78A9FBB31D1E15300055B029 /* PuzzleNavigation.m in Sources */,
 				781A8C181D3EE08E00963931 /* ViewController.swift in Sources */,

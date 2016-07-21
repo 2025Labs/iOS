@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import WebImage
 
 class ViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
@@ -18,7 +19,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         map.delegate = self
         let initialLocation = CLLocation(latitude: 12.9, longitude: 77.6)
-        connectToDatabase()
+        retrieveCityInformation()
         centerMapOnLocation(initialLocation)
         
         for i in 0...cityArray.count-1 {
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
 
     }
     
-    func connectToDatabase() {
+    func retrieveCityInformation() {
         let connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219"
         let connection = PQconnectdb(connectionString)
         if(PQstatus(connection) != CONNECTION_OK) {
@@ -53,10 +54,18 @@ class ViewController: UIViewController {
             let country = String.fromCString(PQgetvalue(result, i, 3))
             let image = String.fromCString(PQgetvalue(result, i, 4))
             let information = String.fromCString(PQgetvalue(result, i, 5))
-        
-            let newCity = City(title: title!, coordinate: CLLocationCoordinate2DMake(Double(latitude!)!, Double(longitude!)!), country: country!, image: image!, information: information!)
+            let imageFilePath = String.fromCString(PQgetvalue(result, i, 6))
+            let newCity = City(title: title!, coordinate: CLLocationCoordinate2DMake(Double(latitude!)!, Double(longitude!)!), country: country!, image: image!, information: information!, imageFilePath: imageFilePath!)
             
             cityArray.append(newCity)
+            //var manager:SDWebImageManager = SDWebImageManager.sharedManager()
+            
+            SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL.fileURLWithPath(imageFilePath!), options: [], progress: nil, completed: {[weak self] (image, data, error, finished) in
+                if self != nil {
+                    print("I have downloaded the image")
+                }
+                })
+
         }
     }
     func centerMapOnLocation(location: CLLocation) {

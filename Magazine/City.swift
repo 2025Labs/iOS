@@ -17,12 +17,14 @@ class City: NSObject, MKAnnotation {
     let country: String
     let image: String
     let information: String
-    init(title: String, coordinate: CLLocationCoordinate2D, country: String, image: String, information: String) {
+    let imageFilePath: String
+    init(title: String, coordinate: CLLocationCoordinate2D, country: String, image: String, information: String, imageFilePath: String) {
         self.title = title
         self.coordinate = coordinate
         self.country = country
         self.image = image
         self.information = information
+        self.imageFilePath = imageFilePath
         super.init()
     }
     

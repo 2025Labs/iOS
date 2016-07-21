@@ -9,6 +9,7 @@
 import Foundation
 import MapKit
 import Popover
+import WebImage
 
 extension ViewController: MKMapViewDelegate {
     
@@ -49,10 +50,10 @@ extension ViewController: MKMapViewDelegate {
             }
             let aView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: width))
             print(width)
-            let imageName = (annView!.image)
-            let image = UIImage(named: imageName)
-            let imageView = UIImageView(image: image)
-            
+
+            let imageView:UIImageView = UIImageView()
+            imageView.sd_setImageWithURL(NSURL.fileURLWithPath(annView!.imageFilePath))
+            print("%s", annView!.imageFilePath)
             imageView.frame = CGRect(x: 0, y: 0, width: width, height: width/1.8)
             aView.addSubview(imageView)
             

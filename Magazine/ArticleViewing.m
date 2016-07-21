@@ -8,7 +8,6 @@
 
 #import "ArticleViewing.h"
 #import <libpq/libpq-fe.h>
-#import "AsyncImageView.h"
 @import WebImage;
 
 @implementation ArticleViewing
@@ -25,17 +24,26 @@
     for (int i = 0; i < [articleArray count]; i++) {
         CGFloat xOrigin = i * self.view.frame.size.width;
         
-        AsyncImageView *imageView = [[AsyncImageView alloc] initWithFrame:
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:
                               CGRectMake(xOrigin, 0,
                                          self.view.frame.size.width,
                                          self.view.frame.size.height)];
         
-        //setting imageURL starts downloading the image in the background
-        NSLog(@"Loading URL");
-        imageView.imageURL = [NSURL URLWithString:[articleArray objectAtIndex:i]];
-        NSLog(@"Done loading URL");
-        imageView.contentMode = UIViewContentModeScaleAspectFit;
-        [self.scrollView addSubview:imageView];
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        [manager downloadImageWithURL:[NSURL URLWithString:[articleArray objectAtIndex:i]]
+                              options:0
+                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                 NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
+                             }
+                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                if (image) {
+                                    [imageView setImage:image];
+                                    imageView.contentMode = UIViewContentModeScaleAspectFit;
+                                    [self.scrollView addSubview:imageView];
+
+                                }
+                            }];
+        
     }
     //set the scroll view content size
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width *

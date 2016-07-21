@@ -715,7 +715,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irl-W2-dol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1002" y="614.25"/>
+            <point key="canvasLocation" x="391" y="928"/>
         </scene>
         <!--Puzzle Navigation-->
         <scene sceneID="Tbd-w0-JiA">
@@ -1427,7 +1427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWS-eM-nne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2627.25" y="1209"/>
+            <point key="canvasLocation" x="2577" y="1451"/>
         </scene>
         <!--Article Viewing-->
         <scene sceneID="yHD-QR-LR8">
