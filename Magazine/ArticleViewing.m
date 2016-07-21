@@ -9,6 +9,7 @@
 #import "ArticleViewing.h"
 #import <libpq/libpq-fe.h>
 #import "AsyncImageView.h"
+@import WebImage;
 
 @implementation ArticleViewing
 
@@ -69,7 +70,7 @@
     }
     PQclear(_result);
     
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename like 'article_' AND topic = '%@'", _currentTopic];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename like 'article_.png' AND topic = '%@'", _currentTopic];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     
     NSLog(@"Query: %s", query);

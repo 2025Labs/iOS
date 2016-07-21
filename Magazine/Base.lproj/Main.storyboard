@@ -416,11 +416,11 @@
                                         <exclude reference="sMt-Pf-vo4"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="NjR-wV-5rD"/>
+                                        <exclude reference="Yct-Tj-9Tz"/>
                                         <exclude reference="QVc-Ly-BJT"/>
                                         <exclude reference="ugw-zg-xz8"/>
                                         <exclude reference="z1I-0Y-cDE"/>
-                                        <exclude reference="NjR-wV-5rD"/>
-                                        <exclude reference="Yct-Tj-9Tz"/>
                                         <exclude reference="Bzc-NI-IDx"/>
                                         <exclude reference="gyC-as-QYb"/>
                                         <exclude reference="GLk-G5-iV1"/>
@@ -435,11 +435,11 @@
                                         <include reference="sMt-Pf-vo4"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="NjR-wV-5rD"/>
+                                        <include reference="Yct-Tj-9Tz"/>
                                         <include reference="QVc-Ly-BJT"/>
                                         <include reference="ugw-zg-xz8"/>
                                         <include reference="z1I-0Y-cDE"/>
-                                        <include reference="NjR-wV-5rD"/>
-                                        <include reference="Yct-Tj-9Tz"/>
                                         <include reference="Bzc-NI-IDx"/>
                                         <include reference="gyC-as-QYb"/>
                                         <include reference="GLk-G5-iV1"/>
@@ -1264,11 +1264,11 @@
                                     </mask>
                                     <mask key="constraints">
                                         <exclude reference="fxx-na-yPf"/>
+                                        <exclude reference="CO2-YX-BMJ"/>
+                                        <exclude reference="mtu-xL-CQV"/>
                                         <exclude reference="GIb-gF-471"/>
                                         <exclude reference="iLN-ny-QpQ"/>
                                         <exclude reference="sKm-H1-Hi2"/>
-                                        <exclude reference="CO2-YX-BMJ"/>
-                                        <exclude reference="mtu-xL-CQV"/>
                                         <exclude reference="kZG-V8-A5y"/>
                                         <exclude reference="t7Q-mM-d4f"/>
                                         <exclude reference="YPi-2P-AA1"/>
@@ -1284,11 +1284,11 @@
                                     </mask>
                                     <mask key="constraints">
                                         <include reference="fxx-na-yPf"/>
+                                        <include reference="CO2-YX-BMJ"/>
+                                        <include reference="mtu-xL-CQV"/>
                                         <include reference="GIb-gF-471"/>
                                         <include reference="iLN-ny-QpQ"/>
                                         <include reference="sKm-H1-Hi2"/>
-                                        <include reference="CO2-YX-BMJ"/>
-                                        <include reference="mtu-xL-CQV"/>
                                         <include reference="kZG-V8-A5y"/>
                                         <include reference="t7Q-mM-d4f"/>
                                         <include reference="YPi-2P-AA1"/>
@@ -1380,7 +1380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9i-s1-rUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2149.5" y="556.5"/>
+            <point key="canvasLocation" x="2365.5" y="657"/>
         </scene>
         <!--Around The World-->
         <scene sceneID="uE8-cx-ygd">
@@ -1391,14 +1391,14 @@
                         <viewControllerLayoutGuide type="bottom" id="AVd-BS-Ayq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wEs-m3-ced">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcG-9X-cFX">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CDH-WF-uQT">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -1609,7 +1609,7 @@
         <image name="world-icon_70x70.png" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dIY-n0-kxo"/>
         <segue reference="CM3-m5-7gA"/>
+        <segue reference="dIY-n0-kxo"/>
     </inferredMetricsTieBreakers>
 </document>

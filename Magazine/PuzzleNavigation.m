@@ -25,19 +25,19 @@
     NSLog(@"Hello");
     if([segue.identifier isEqualToString:@"showCipher"]) {
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"cipher";
+        controller.fileName = @"cipher.png";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showWordSearch"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"wordsearch";
+        controller.fileName = @"wordsearch.png";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showFillInTheBlank"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"fillintheblank";
+        controller.fileName = @"fillintheblank.png";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showMaterialTime"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"materialtime";
+        controller.fileName = @"materialtime.png";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         ArticleViewing* controller = [segue destinationViewController];

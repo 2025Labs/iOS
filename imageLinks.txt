@@ -61,6 +61,41 @@ INSERT INTO images (uid, filename, file path, topic) VALUES
 (7, 'materialtime','https://s31.postimg.org/7aa3u9d15/materialtime.jpg', ‘computing’);
 
 
+
+Computing 
+
+Cipher:
+https://orig12.deviantart.net/99be/f/2016/203/f/6/cipher_by_hellorichardpham-daazazn.png
+
+Fill in the blanks:
+https://orig12.deviantart.net/d143/f/2016/203/8/f/fillintheblank_by_hellorichardpham-daazazx.png
+
+Material Time:
+https://orig10.deviantart.net/fcb8/f/2016/203/b/f/material_by_hellorichardpham-daazbdd.png
+
+Project 1:
+https://orig06.deviantart.net/315e/f/2016/203/4/7/project1_by_hellorichardpham-daazbdw.png
+
+Project 2:
+https://orig08.deviantart.net/156c/f/2016/203/d/5/project2_by_hellorichardpham-daazbe6.png
+
+Article 1:
+https://orig09.deviantart.net/2e84/f/2016/203/b/b/article1_by_hellorichardpham-daazaye.png
+
+Article 2:
+https://orig01.deviantart.net/83e5/f/2016/203/e/e/article2_by_hellorichardpham-daazayu.png
+
+Article 3:
+https://orig06.deviantart.net/cb89/f/2016/203/c/d/article3_by_hellorichardpham-daazazd.png
+
+Article 4:
+https://orig14.deviantart.net/c3f1/f/2016/203/0/0/article4_by_hellorichardpham-daazaze.png
+
+
+
+
+
+
 get # of tuples received
 
 get file link

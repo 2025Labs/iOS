@@ -75,6 +75,7 @@
 		781A8C141D3EDFEC00963931 /* Popover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781A8C131D3EDFEC00963931 /* Popover.framework */; };
 		781A8C181D3EE08E00963931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781A8C171D3EE08E00963931 /* ViewController.swift */; };
 		781D77511D1CA8CC00D9417C /* Puzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 781D77501D1CA8CC00D9417C /* Puzzle.m */; };
+		782592051D41700E00556A66 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782592041D41700E00556A66 /* WebImage.framework */; };
 		784A316F1D248CA200AC8AB9 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = 784A316C1D248CA200AC8AB9 /* quiz.json */; };
 		784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31831D26CE6700AC8AB9 /* Quiz.m */; };
 		784A31871D26E4D200AC8AB9 /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31861D26E4D200AC8AB9 /* CircleProgressBar.m */; };
@@ -182,6 +183,7 @@
 		781A8C171D3EE08E00963931 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		781D774F1D1CA8CC00D9417C /* Puzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Puzzle.h; sourceTree = "<group>"; };
 		781D77501D1CA8CC00D9417C /* Puzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Puzzle.m; sourceTree = "<group>"; };
+		782592041D41700E00556A66 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
 		784A316C1D248CA200AC8AB9 /* quiz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = quiz.json; path = /Users/mbpro/Desktop/Quiz/Quiz/../../../Downloads/quiz.json; sourceTree = "<absolute>"; };
 		784A31821D26CE6700AC8AB9 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
 		784A31831D26CE6700AC8AB9 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 			files = (
 				7816C7821D341DB8005696ED /* libpq.framework in Frameworks */,
 				781A8C141D3EDFEC00963931 /* Popover.framework in Frameworks */,
+				782592051D41700E00556A66 /* WebImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +345,7 @@
 		78E4D43C1D1B1CF000FAFC1C = {
 			isa = PBXGroup;
 			children = (
+				782592041D41700E00556A66 /* WebImage.framework */,
 				781A8C131D3EDFEC00963931 /* Popover.framework */,
 				78E4D4471D1B1CF100FAFC1C /* Magazine */,
 				78E4D4461D1B1CF100FAFC1C /* Products */,
@@ -541,6 +545,7 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Popover.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/WebImage.framework",
 			);
 			outputPaths = (
 			);
