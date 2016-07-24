@@ -130,12 +130,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/VCMapView.swift"
-            timestampString = "490831199.695709"
+            timestampString = "491086539.176554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
             landmarkName = "mapView(_:annotationView:calloutAccessoryControlTapped:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Magazine/VCMapView.swift"
+            timestampString = "491085547.892319"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "mapView(_:didSelectAnnotationView:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
