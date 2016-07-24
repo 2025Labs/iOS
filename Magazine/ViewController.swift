@@ -58,13 +58,7 @@ class ViewController: UIViewController {
             let newCity = City(title: title!, coordinate: CLLocationCoordinate2DMake(Double(latitude!)!, Double(longitude!)!), country: country!, image: image!, information: information!, imageFilePath: imageFilePath!)
             
             cityArray.append(newCity)
-            //var manager:SDWebImageManager = SDWebImageManager.sharedManager()
-            
-            SDWebImageDownloader.sharedDownloader().downloadImageWithURL(NSURL.fileURLWithPath(imageFilePath!), options: [], progress: nil, completed: {[weak self] (image, data, error, finished) in
-                if self != nil {
-                    print("I have downloaded the image")
-                }
-                })
+
 
         }
     }
