@@ -17,16 +17,28 @@
     [super viewDidLoad];
     [self preparePencil];
     [self prepareMenu];
-    [self connectToDatabase];
+    //[self connectToDatabase];
+    //_fileArray = [self getImageFilesFromDatabase];
     
-    NSMutableArray *fileArray = [self getImageFilesFromDatabase:_fileName];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    if([defaults objectForKey:_fileName] != nil) {
+        NSLog(@"Data already loaded from defaults with key: %@. Don't connect", _fileName);
+        _fileArray = [defaults objectForKey:_fileName];
+    } else {
+        NSLog(@"Connecting to database and retrieve images");
+        NSLog(@"Defaults: %@", defaults);
+        [self connectToDatabase];
+        _fileArray = [self getImageFilesFromDatabase];
+    }
+
     // Do any additional setup after loading the view, typically from a nib.
     
     //Make the edge of the view underneath the nav bar
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    [manager downloadImageWithURL:[NSURL URLWithString:[fileArray objectAtIndex:0]]
+    [manager downloadImageWithURL:[NSURL URLWithString:[_fileArray objectAtIndex:0]]
                           options:0
                          progress:^(NSInteger receivedSize, NSInteger expectedSize) {
                              NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
@@ -50,14 +62,14 @@
     
 }
 
--(NSMutableArray*) getImageFilesFromDatabase: (NSString*) filename{
+-(NSMutableArray*) getImageFilesFromDatabase {
     _result = PQexec(_connection, "begin");
     if(PQresultStatus(_result) != PGRES_COMMAND_OK) {
         NSLog(@"Begin command failed");
     }
     PQclear(_result);
     
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = '%@' AND topic = '%@'", filename, _currentTopic];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = '%@' AND topic = '%@'", _fileName, _currentTopic];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     NSLog(@"Query: %s", query);
     _result = PQexec(_connection, query);
@@ -71,6 +83,10 @@
         NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
         [resultArray addObject:temp];
     }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:resultArray forKey:_fileName];
+    [defaults synchronize];
+    
     PQclear(_result);
     return resultArray;
 }

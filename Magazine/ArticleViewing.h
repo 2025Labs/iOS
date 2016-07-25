@@ -16,7 +16,9 @@
 @property NSString *fileName;
 @property NSInteger numPages;
 @property NSString *currentTopic;
-
+@property BOOL setupDone;
+//@property NSUserDefaults *defaults;
+@property NSMutableArray *articleArray;
 @property const char *connectionString;
 @property PGresult *result;
 @property PGconn *connection;

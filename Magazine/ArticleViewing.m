@@ -14,14 +14,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupScrollview];
-    [self connectToDatabase];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
+    if([defaults objectForKey:@"articleURLArray"] != nil) {
+        NSLog(@"Data already loaded from defaults. Don't connect");
+        _articleArray = [defaults objectForKey:@"articleURLArray"];
+    } else {
+        NSLog(@"Connecting to database and retrieve images");
+        NSLog(@"Defaults: %@", defaults);
+        [self connectToDatabase];
+        _articleArray = [self getImageFilesFromDatabase];
+        if(defaults == nil) {
+            NSLog(@"Default is nil");
+        } else {
+            NSLog(@"Default is not nil");
+        }
+    }
+    [self setupScrollview];
     
-    NSMutableArray *articleArray = [[NSMutableArray alloc]init];
-    articleArray = [self getImageFilesFromDatabase];
-    
-    for (int i = 0; i < [articleArray count]; i++) {
+
+    for (int i = 0; i < [_articleArray count]; i++) {
         CGFloat xOrigin = i * self.view.frame.size.width;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:
@@ -30,7 +42,7 @@
                                          self.view.frame.size.height)];
         
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
-        [manager downloadImageWithURL:[NSURL URLWithString:[articleArray objectAtIndex:i]]
+        [manager downloadImageWithURL:[NSURL URLWithString:[_articleArray objectAtIndex:i]]
                               options:0
                              progress:^(NSInteger receivedSize, NSInteger expectedSize) {
                                  NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
@@ -47,7 +59,7 @@
     }
     //set the scroll view content size
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width *
-                                             [articleArray count],
+                                             [_articleArray count],
                                              self.view.frame.size.height);
     //add the scrollview to this view
     [self.view addSubview:self.scrollView];
@@ -58,6 +70,7 @@
     self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, self.view.frame.size.height)];
     self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];
+    _setupDone = true;
 
 }
 -(void) connectToDatabase {
@@ -93,6 +106,10 @@
         NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
         [resultArray addObject:temp];
     }
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:resultArray forKey:@"articleURLArray"];
+    [defaults synchronize];
+
     PQclear(_result);
     return resultArray;
 }
