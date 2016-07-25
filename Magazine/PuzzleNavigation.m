@@ -37,7 +37,7 @@
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showMaterialTime"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"materialtime.png";
+        controller.fileName = @"material.png";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         ArticleViewing* controller = [segue destinationViewController];
@@ -45,6 +45,11 @@
         controller.fileName = @"aroundtheworld";
         controller.currentTopic = _currentTopic;
     }  else if([segue.identifier isEqualToString:@"showArticle"]) {
+        ArticleViewing* controller = [segue destinationViewController];
+        //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
+        controller.fileName = @"article";
+        controller.currentTopic = _currentTopic;
+    }  else if([segue.identifier isEqualToString:@"showProject"]) {
         ArticleViewing* controller = [segue destinationViewController];
         //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
         controller.fileName = @"article";

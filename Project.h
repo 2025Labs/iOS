@@ -7,12 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AsyncImageView.h"
 #import <libpq/libpq-fe.h>
 
-@interface AroundTheWorld : UIViewController <UIScrollViewDelegate>
+@interface Project : UIViewController <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet AsyncImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIButton *zoomButton;
 
 -(void)view:(UIView*)view setCenter:(CGPoint) centerPoint;

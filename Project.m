@@ -6,15 +6,15 @@
 //  Copyright © 2016 MBPro. All rights reserved.
 //
 
-#import "AroundTheWorld.h"
-#import "AsyncImageView.h"
+#import "Project.h"
 #import <libpq/libpq-fe.h>
+@import WebImage;
 
-@interface AroundTheWorld ()
+@interface Project ()
 
 @end
 
-@implementation AroundTheWorld
+@implementation Project
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -29,7 +29,7 @@
 }
 
 -(void) connectToDatabase {
-    _connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219";
+    _connectionString = "user=rwpham password=richard1 dbname=postgres port=5432 host=52.9.114.219";
     _connection = PQconnectdb(_connectionString);
     
     if(PQstatus(_connection) != CONNECTION_OK) {
@@ -46,7 +46,7 @@
     }
     PQclear(_result);
     
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = 'aroundtheworld' AND topic = '%@'", _currentTopic];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = 'aroundtheworld.png' AND topic = '%@'", _currentTopic];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     NSLog(@"Query: %s", query);
     _result = PQexec(_connection, query);
@@ -73,11 +73,24 @@
 
 - (void) setUpScrollview {
     NSMutableArray *imageArray = [self getImageFilesFromDatabase];
-    if([imageArray count] > 0)
-    _imageView.imageURL = [NSURL URLWithString:[imageArray objectAtIndex:0]];
-    
-    [_imageView sizeToFit];
-    
+    if([imageArray count] > 0){
+        
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        [manager downloadImageWithURL:[NSURL URLWithString:[imageArray objectAtIndex:0]]
+                              options:0
+                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                 NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
+                             }
+                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                if (image) {
+                                    [_imageView setImage:image];
+                                    _imageView.contentMode = UIViewContentModeScaleAspectFit;
+                                    [self.scrollView addSubview:_imageView];
+                                    
+                                }
+                            }];
+        
+    }
     self.scrollView.contentSize = _imageView.image.size;
     self.scrollView.delegate = self;
     self.scrollView.minimumZoomScale = 1.0;
