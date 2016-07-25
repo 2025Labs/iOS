@@ -21,10 +21,11 @@
     //_fileArray = [self getImageFilesFromDatabase];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
     
-    if([defaults objectForKey:_fileName] != nil) {
+    if([defaults objectForKey:userDefaultKey] != nil) {
         NSLog(@"Data already loaded from defaults with key: %@. Don't connect", _fileName);
-        _fileArray = [defaults objectForKey:_fileName];
+        _fileArray = [defaults objectForKey:userDefaultKey];
     } else {
         NSLog(@"Connecting to database and retrieve images");
         NSLog(@"Defaults: %@", defaults);
@@ -83,8 +84,9 @@
         NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
         [resultArray addObject:temp];
     }
+    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:resultArray forKey:_fileName];
+    [defaults setObject:resultArray forKey:userDefaultKey];
     [defaults synchronize];
     
     PQclear(_result);
@@ -100,9 +102,6 @@
 }
 
 -(void) prepareMenu {
-    //_moreButton.clipsToBounds = YES;
-    //_moreButton.layer.cornerRadius = self.moreButton.frame.size.width / 2;
-    //[_moreButton setImage:[UIImage imageNamed:@"plus.png"] forState:UIControlStateNormal];
     if(_menu == nil) {
         _menu = [[IGCMenu alloc] init];
     }

@@ -26,7 +26,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kvC-wk-0dh" userLabel="Frontpage">
                                         <rect key="frame" x="0.0" y="0.0" width="558" height="192"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuP-un-3Oo">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TuP-un-3Oo" userLabel="coverPage">
                                                 <rect key="frame" x="0.0" y="0.0" width="558" height="192"/>
                                                 <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
@@ -38,9 +38,6 @@
                                                         <integer key="value" value="10"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
-                                                <connections>
-                                                    <segue destination="4b9-iq-1Vy" kind="show" identifier="showCipher" id="UZ0-md-rKD"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" cyan="0.0" magenta="0.88" yellow="1" black="0.001144812559" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
@@ -65,12 +62,15 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0S7-Kd-SRi">
                                                         <rect key="frame" x="0.0" y="0.0" width="274" height="91"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ak-hC-Htd">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ak-hC-Htd" userLabel="topArticle">
                                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="91"/>
                                                                 <color key="backgroundColor" red="1" green="0.11764705882352941" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="141" id="zW2-QC-P6C"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="160" maxY="0.0"/>
-                                                                <state key="normal" title="History of the Internet" image="newspaper.png">
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="210" maxY="0.0"/>
+                                                                <state key="normal" image="newspaper.png">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -78,6 +78,19 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <variation key="default">
+                                                                    <mask key="constraints">
+                                                                        <exclude reference="zW2-QC-P6C"/>
+                                                                    </mask>
+                                                                </variation>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <mask key="constraints">
+                                                                        <include reference="zW2-QC-P6C"/>
+                                                                    </mask>
+                                                                </variation>
+                                                                <connections>
+                                                                    <segue destination="oH0-f1-6eg" kind="show" identifier="showTopArticle" id="aLT-CM-YLK"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="tintColor" red="1" green="0.84339835350000003" blue="0.3042693635" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,14 +109,30 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4z-NA-A2D">
                                                         <rect key="frame" x="0.0" y="101" width="274" height="91"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR6-5x-f1h">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qR6-5x-f1h" userLabel="bottomArticle">
                                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="91"/>
                                                                 <color key="backgroundColor" red="1" green="0.1176470588" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="141" id="rS3-Hn-QaJ"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="160" maxY="0.0"/>
-                                                                <state key="normal" title="Internet of Things" image="newspaper.png">
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="210" maxY="0.0"/>
+                                                                <state key="normal" image="newspaper.png">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <variation key="default">
+                                                                    <mask key="constraints">
+                                                                        <exclude reference="rS3-Hn-QaJ"/>
+                                                                    </mask>
+                                                                </variation>
+                                                                <variation key="heightClass=regular-widthClass=regular">
+                                                                    <mask key="constraints">
+                                                                        <include reference="rS3-Hn-QaJ"/>
+                                                                    </mask>
+                                                                </variation>
+                                                                <connections>
+                                                                    <segue destination="oH0-f1-6eg" kind="show" identifier="showBottomArticle" id="bYI-Xr-g7W"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <constraints>
@@ -150,11 +179,12 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UiX-1N-AcF">
                                                         <rect key="frame" x="0.0" y="0.0" width="274" height="91"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aoc-zU-4h9">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aoc-zU-4h9" userLabel="topPuzzle">
                                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="91"/>
-                                                                <color key="backgroundColor" red="0.59607843137254901" green="0.31372549019607843" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" red="0.4823529412" green="0.26274509800000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                <state key="normal" title="Puzzle 1">
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="240" maxY="0.0"/>
+                                                                <state key="normal" image="Puzzle-150.png">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
                                                                 <userDefinedRuntimeAttributes>
@@ -162,12 +192,9 @@
                                                                         <integer key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <segue destination="4b9-iq-1Vy" kind="show" identifier="showWordSearch" id="ALg-7K-mR0"/>
-                                                                </connections>
+                                                                <variation key="heightClass=regular-widthClass=regular"/>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.5490196078431373" green="0.1803921568627451" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <color key="tintColor" red="1" green="0.84339835350000003" blue="0.3042693635" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="Aoc-zU-4h9" firstAttribute="height" secondItem="UiX-1N-AcF" secondAttribute="height" id="1Mv-Li-Eba"/>
@@ -184,16 +211,17 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gxn-nI-HHV">
                                                         <rect key="frame" x="0.0" y="101" width="274" height="91"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtt-ta-HsO">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtt-ta-HsO" userLabel="bottomPuzzle">
                                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="91"/>
-                                                                <color key="backgroundColor" red="0.59607843137254901" green="0.31372549019607843" blue="0.62352941176470589" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <color key="backgroundColor" red="0.4823529412" green="0.26274509800000001" blue="0.49019607840000001" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                                <state key="normal" title="Puzzle 2">
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="240" maxY="0.0"/>
+                                                                <state key="normal" image="Puzzle-150.png">
                                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </state>
+                                                                <variation key="heightClass=regular-widthClass=regular"/>
                                                             </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" red="0.0" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
                                                             <constraint firstItem="Rtt-ta-HsO" firstAttribute="centerY" secondItem="gxn-nI-HHV" secondAttribute="centerY" id="8NC-v8-5Zh"/>
                                                             <constraint firstItem="Rtt-ta-HsO" firstAttribute="height" secondItem="gxn-nI-HHV" secondAttribute="height" id="FN3-zI-mCi"/>
@@ -541,12 +569,15 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="2025 Kids Homepage" id="HrE-O8-tfd"/>
                     <connections>
-                        <outlet property="article1" destination="8ak-hC-Htd" id="TfX-f6-R3w"/>
-                        <outlet property="article2" destination="qR6-5x-f1h" id="RWC-El-HbL"/>
+                        <outlet property="bottomArticle" destination="qR6-5x-f1h" id="DvO-HX-jQc"/>
+                        <outlet property="bottomPuzzle" destination="Rtt-ta-HsO" id="1Ks-5M-nzj"/>
+                        <outlet property="coverPage" destination="TuP-un-3Oo" id="V0U-Fh-kND"/>
                         <outlet property="gameButton" destination="6Kz-PQ-POI" id="hbG-cj-XxT"/>
                         <outlet property="logoImage" destination="7Cw-xS-PHQ" id="hA0-aM-wdo"/>
                         <outlet property="menuButton" destination="xbc-nS-Ofi" id="hrL-B0-xIt"/>
                         <outlet property="puzzleButton" destination="lwI-SH-1cx" id="FWr-7u-Xke"/>
+                        <outlet property="topArticle" destination="8ak-hC-Htd" id="elZ-kk-4SX"/>
+                        <outlet property="topPuzzle" destination="Aoc-zU-4h9" id="pTf-nG-wdA"/>
                         <outlet property="triviaButton" destination="3if-Yi-Z21" id="BSr-sG-8Gn"/>
                     </connections>
                 </viewController>
@@ -1537,7 +1568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXU-ig-GDD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2821.5" y="292.5"/>
+            <point key="canvasLocation" x="3055.5" y="436.5"/>
         </scene>
         <!--Puzzle Title-->
         <scene sceneID="I9I-tf-UZa">
@@ -1711,6 +1742,7 @@
     </scenes>
     <resources>
         <image name="2025KidsLogo.png" width="600" height="180"/>
+        <image name="Puzzle-150.png" width="150" height="150"/>
         <image name="circleChevronUp.png" width="100" height="100"/>
         <image name="news_icon.png" width="70" height="70"/>
         <image name="newspaper.png" width="138" height="136"/>
@@ -1722,8 +1754,9 @@
         <image name="world_icon.png" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="bYI-Xr-g7W"/>
+        <segue reference="Pol-rh-iW9"/>
+        <segue reference="aMm-YA-PGH"/>
         <segue reference="dIY-n0-kxo"/>
-        <segue reference="HJ9-vH-Gyx"/>
-        <segue reference="CM3-m5-7gA"/>
     </inferredMetricsTieBreakers>
 </document>

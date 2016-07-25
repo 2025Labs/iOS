@@ -18,16 +18,36 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _currentTopic = @"computing";
     // Do any additional setup after loading the view, typically from a nib.
     [self.playerView loadWithVideoId:@"lZxJgTiKDis"];
     [self prepareNavigationMenu];
     [self prepareMenu];
-    UILabel *label1 = _article1.titleLabel;
-    label1.adjustsFontSizeToFitWidth = YES;
-    UILabel *label2 = _article2.titleLabel;
-    label2.adjustsFontSizeToFitWidth = YES;
-    _currentTopic = @"computing";
+    [self prepareHomepage];
     }
+
+-(void) prepareHomepage {
+    
+    UILabel *label1 = _topArticle.titleLabel;
+    label1.adjustsFontSizeToFitWidth = YES;
+    UILabel *label2 = _bottomArticle.titleLabel;
+    label2.adjustsFontSizeToFitWidth = YES;
+    if([_currentTopic isEqualToString:@"computing"]) {
+        NSLog(@"Hello computing");
+        [_coverPage setTitle:@"Cover Page: Computing" forState:UIControlStateNormal];
+        [_bottomArticle setTitle: @"History of the Internet" forState: UIControlStateNormal];
+        [_topArticle setTitle: @"Internet of Things" forState: UIControlStateNormal];
+        _topArticlePageIndex = 2;
+        _bottomArticlePageIndex = 0;
+    } else if([_currentTopic isEqualToString:@"energy"]) {
+        NSLog(@"Hello energy");
+        [_coverPage setTitle: @"Cover Page: Energy" forState:UIControlStateNormal];
+        [_bottomArticle setTitle: @"The Grid?" forState: UIControlStateNormal];
+        [_topArticle setTitle: @"Solar Power Overload" forState: UIControlStateNormal];
+        _topArticlePageIndex = 0;
+        _bottomArticlePageIndex = 2;
+    }
+}
 
 -(void) prepareNavigationMenu {
     self.logoImage.contentMode =UIViewContentModeScaleAspectFit;
@@ -72,7 +92,7 @@
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showMaterialTime"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"materialtime";
+        controller.fileName = @"material";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showArticle"]) {
         ArticleViewing* controller = [segue destinationViewController];
@@ -87,6 +107,14 @@
     }  else if([segue.identifier isEqualToString:@"showProject"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
+    }  else if([segue.identifier isEqualToString:@"showTopArticle"]) {
+        ArticleViewing* controller = [segue destinationViewController];
+        controller.currentTopic = _currentTopic;
+        controller.pageToJumpTo = _topArticlePageIndex;
+    }  else if([segue.identifier isEqualToString:@"showBottomArticle"]) {
+        ArticleViewing* controller = [segue destinationViewController];
+        controller.currentTopic = _currentTopic;
+        controller.pageToJumpTo = _bottomArticlePageIndex;
     }
 }
 
@@ -112,6 +140,7 @@
             [_menu hideCircularMenu];
             _isMenuActive = false;
             [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
+            [self prepareHomepage];
             break;
         case 1:
             NSLog(@"Transition to Energy");
@@ -119,7 +148,7 @@
             [_menu hideCircularMenu];
             _isMenuActive = false;
             [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
-
+            [self prepareHomepage];
             break;
         case 2:
             NSLog(@"Transition to Materials");

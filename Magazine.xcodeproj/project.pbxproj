@@ -68,6 +68,8 @@
 		7825920E1D45694500556A66 /* puzzle_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 782592091D45694500556A66 /* puzzle_icon.png */; };
 		7825920F1D45694500556A66 /* quiz_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7825920A1D45694500556A66 /* quiz_icon.png */; };
 		782592101D45694500556A66 /* world_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7825920B1D45694500556A66 /* world_icon.png */; };
+		782592121D46913F00556A66 /* Puzzle-250.png in Resources */ = {isa = PBXBuildFile; fileRef = 782592111D46913F00556A66 /* Puzzle-250.png */; };
+		782592141D46963E00556A66 /* Puzzle-150.png in Resources */ = {isa = PBXBuildFile; fileRef = 782592131D46963E00556A66 /* Puzzle-150.png */; };
 		784A316F1D248CA200AC8AB9 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = 784A316C1D248CA200AC8AB9 /* quiz.json */; };
 		784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31831D26CE6700AC8AB9 /* Quiz.m */; };
 		784A31871D26E4D200AC8AB9 /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31861D26E4D200AC8AB9 /* CircleProgressBar.m */; };
@@ -167,6 +169,8 @@
 		782592091D45694500556A66 /* puzzle_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = puzzle_icon.png; sourceTree = "<group>"; };
 		7825920A1D45694500556A66 /* quiz_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quiz_icon.png; sourceTree = "<group>"; };
 		7825920B1D45694500556A66 /* world_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world_icon.png; sourceTree = "<group>"; };
+		782592111D46913F00556A66 /* Puzzle-250.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puzzle-250.png"; sourceTree = "<group>"; };
+		782592131D46963E00556A66 /* Puzzle-150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puzzle-150.png"; sourceTree = "<group>"; };
 		784A316C1D248CA200AC8AB9 /* quiz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = quiz.json; path = /Users/mbpro/Desktop/Quiz/Quiz/../../../Downloads/quiz.json; sourceTree = "<absolute>"; };
 		784A31821D26CE6700AC8AB9 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
 		784A31831D26CE6700AC8AB9 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
@@ -220,6 +224,7 @@
 				780C6A3F1D3FE9120004CD98 /* circleChevronDown.png */,
 				780C6A401D3FE9120004CD98 /* circleChevronUp.png */,
 				780C6A4F1D3FE9120004CD98 /* cross2@3x.png */,
+				782592111D46913F00556A66 /* Puzzle-250.png */,
 				780C6A501D3FE9120004CD98 /* globe.png */,
 				780C6A511D3FE9120004CD98 /* keyEmpty.png */,
 				780C6A521D3FE9130004CD98 /* keyFilled.png */,
@@ -233,6 +238,7 @@
 				780C6A6A1D3FE9130004CD98 /* quiz.json */,
 				780C6A6C1D3FE9130004CD98 /* userIcon.png */,
 				780C6A6D1D3FE9130004CD98 /* userIcon2.jpg */,
+				782592131D46963E00556A66 /* Puzzle-150.png */,
 				780C6A6E1D3FE9130004CD98 /* w.png */,
 				780C6A701D3FE9130004CD98 /* wrong.png */,
 				780C6A711D3FE9130004CD98 /* wrongSmall.png */,
@@ -462,6 +468,7 @@
 				780C6AAB1D3FFA950004CD98 /* siliconvalley.jpg in Resources */,
 				780C6A7C1D3FE9130004CD98 /* dublin.jpg in Resources */,
 				780C6AA71D3FE9130004CD98 /* wrongSmall.png in Resources */,
+				782592121D46913F00556A66 /* Puzzle-250.png in Resources */,
 				780C6A871D3FE9130004CD98 /* globe.png in Resources */,
 				780C6A751D3FE9130004CD98 /* 2025KidsLogo.png in Resources */,
 				780C6A741D3FE9130004CD98 /* 2025KidsLogo.jpg in Resources */,
@@ -494,6 +501,7 @@
 				780C6A801D3FE9130004CD98 /* newyorkcity.jpg in Resources */,
 				780C6A7B1D3FE9130004CD98 /* boston.jpg in Resources */,
 				780C6A9C1D3FE9130004CD98 /* plus.png in Resources */,
+				782592141D46963E00556A66 /* Puzzle-150.png in Resources */,
 				780C6AA41D3FE9130004CD98 /* w.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

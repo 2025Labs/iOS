@@ -14,11 +14,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", _currentTopic];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-    if([defaults objectForKey:@"articleURLArray"] != nil) {
+    if([defaults objectForKey:userDefaultKey] != nil) {
         NSLog(@"Data already loaded from defaults. Don't connect");
-        _articleArray = [defaults objectForKey:@"articleURLArray"];
+        _articleArray = [defaults objectForKey:userDefaultKey];
     } else {
         NSLog(@"Connecting to database and retrieve images");
         NSLog(@"Defaults: %@", defaults);
@@ -37,7 +40,7 @@
         CGFloat xOrigin = i * self.view.frame.size.width;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:
-                              CGRectMake(xOrigin, 0,
+                              CGRectMake(xOrigin, -20,
                                          self.view.frame.size.width,
                                          self.view.frame.size.height)];
         
@@ -55,6 +58,8 @@
 
                                 }
                             }];
+        _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width*_pageToJumpTo, 0);
+
         
     }
     //set the scroll view content size
@@ -91,7 +96,7 @@
     }
     PQclear(_result);
     
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename like 'article_.png' AND topic = '%@'", _currentTopic];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename like 'article_.png' AND topic = '%@' ORDER BY uid", _currentTopic];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     
     NSLog(@"Query: %s", query);
@@ -104,10 +109,11 @@
     for(int i =0; i < PQntuples(_result); i++) {
     NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
         NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
-        [resultArray addObject:temp];
+     [resultArray addObject:temp];
     }
+     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", _currentTopic];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:resultArray forKey:@"articleURLArray"];
+    [defaults setObject:resultArray forKey:userDefaultKey];
     [defaults synchronize];
 
     PQclear(_result);

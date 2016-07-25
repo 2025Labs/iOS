@@ -82,11 +82,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/ViewController.m"
-            timestampString = "490552092.35284"
+            timestampString = "491169230.628673"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "-prepareMenu"
             landmarkType = "5">
          </BreakpointContent>

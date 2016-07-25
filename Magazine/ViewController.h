@@ -19,14 +19,19 @@
 @property (weak, nonatomic) IBOutlet YTPlayerView *playerView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
-@property (weak, nonatomic) IBOutlet UIButton *article1;
-@property (weak, nonatomic) IBOutlet UIButton *article2;
+@property (weak, nonatomic) IBOutlet UIButton *coverPage;
+
+@property (weak, nonatomic) IBOutlet UIButton *topArticle;
+@property (weak, nonatomic) IBOutlet UIButton *bottomArticle;
+@property (weak, nonatomic) IBOutlet UIButton *topPuzzle;
+@property (weak, nonatomic) IBOutlet UIButton *bottomPuzzle;
 
 
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @property NSString *currentTopic;
-
+@property int topArticlePageIndex;
+@property int bottomArticlePageIndex;
 
 @property IGCMenu *menu;
 @property BOOL isMenuActive;

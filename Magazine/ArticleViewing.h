@@ -20,6 +20,7 @@
 //@property NSUserDefaults *defaults;
 @property NSMutableArray *articleArray;
 @property const char *connectionString;
+@property int pageToJumpTo;
 @property PGresult *result;
 @property PGconn *connection;
 @end
