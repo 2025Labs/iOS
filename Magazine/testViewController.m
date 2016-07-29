@@ -54,10 +54,13 @@
                         completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                             if (image) {
                                 NSLog(@"Finished downloading");
-                                [_tempDrawingImage setImage:image];
+                                //[_tempDrawingImage setImage:image];
                             }
                         }];
     
+    UIImage *image = [UIImage imageNamed:@"cipherforapp.png"];
+    [_tempDrawingImage setImage:image];
+
     //NSLog(@"Cipher: %@", _cipher);
     //NSLog(@"Temp: %@", _tempDrawingImage);
 }

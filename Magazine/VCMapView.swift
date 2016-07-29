@@ -57,15 +57,16 @@ extension ViewController: MKMapViewDelegate {
     let image = UIImage(named: imageName)
     let imageView = UIImageView(image: image)
     
-    imageView.frame = CGRect(x: 0, y: 0, width: width, height: width/1.8)
+    imageView.frame = CGRect(x: 0, y: 0, width: width, height: width/2)
     aView.addSubview(imageView)
     
-    let label = UILabel(frame: CGRect(x:0, y:width/2, width: width, height: width/2))
+    let label = UILabel(frame: CGRect(x:0, y:width/2 + 3, width: width, height: width/2-3))
     label.text = (annView!.information)
     label.numberOfLines = 0
     label.textAlignment = NSTextAlignment.Center
-    label.font = label.font.fontWithSize(12)
-    aView.addSubview(label);
+    //label.font = label.font.fontWithSize(12)
+        label.adjustsFontSizeToFitWidth = true
+        aView.addSubview(label);
     var options:[PopoverOption]
     
     if(annotationView.frame.origin.y - width < 15) {

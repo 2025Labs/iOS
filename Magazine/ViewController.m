@@ -110,14 +110,14 @@
         [_coverPage setTitle:@"Cover Page: Computing" forState:UIControlStateNormal];
         [_bottomArticle setTitle: @"History of the Internet" forState: UIControlStateNormal];
         [_topArticle setTitle: @"Internet of Things" forState: UIControlStateNormal];
-        _topArticlePageIndex = 2;
-        _bottomArticlePageIndex = 0;
+        _leftArticlePageToJumpTo = 0;
+        _rightArticlePageToJumpTo = 2;
     } else if([_currentTopic isEqualToString:@"energy"]) {
         [_coverPage setTitle: @"Cover Page: Energy" forState:UIControlStateNormal];
         [_bottomArticle setTitle: @"The Grid?" forState: UIControlStateNormal];
         [_topArticle setTitle: @"Solar Power Overload" forState: UIControlStateNormal];
-        _topArticlePageIndex = 0;
-        _bottomArticlePageIndex = 2;
+        _leftArticlePageToJumpTo = 0;
+        _rightArticlePageToJumpTo = 2;
     }
 }
 
@@ -152,19 +152,19 @@
     NSLog(@"Hello");
     if([segue.identifier isEqualToString:@"showCipher"]) {
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"cipher";
+        controller.fileName = @"cipher.png";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showWordSearch"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"wordsearch";
+        controller.fileName = @"wordsearch.png";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showFillInTheBlank"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"fillintheblank";
+        controller.fileName = @"fillintheblank.png";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showMaterialTime"]){
         Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"material";
+        controller.fileName = @"material.png";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showArticle"]) {
         ArticleViewing* controller = [segue destinationViewController];
@@ -179,14 +179,14 @@
     }  else if([segue.identifier isEqualToString:@"showProject"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
-    }  else if([segue.identifier isEqualToString:@"showTopArticle"]) {
+    }  else if([segue.identifier isEqualToString:@"showLeftArticle"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
-        controller.pageToJumpTo = _topArticlePageIndex;
-    }  else if([segue.identifier isEqualToString:@"showBottomArticle"]) {
+        controller.pageToJumpTo = _leftArticlePageToJumpTo;
+    }  else if([segue.identifier isEqualToString:@"showRightArticle"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
-        controller.pageToJumpTo = _bottomArticlePageIndex;
+        controller.pageToJumpTo = _rightArticlePageToJumpTo;
     }
 }
 

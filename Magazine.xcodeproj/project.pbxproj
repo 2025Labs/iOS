@@ -77,6 +77,7 @@
 		7861CADD1D4BF3F90029256A /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861CADC1D4BF3F90029256A /* testViewController.m */; };
 		7861CADF1D4BFC400029256A /* ciphercopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7861CADE1D4BFC400029256A /* ciphercopy.jpg */; };
 		7861CAE11D4BFCA20029256A /* ciphercopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE01D4BFCA20029256A /* ciphercopy.jpg */; };
+		7861CAE31D4C03420029256A /* cipherforapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE21D4C03420029256A /* cipherforapp.png */; };
 		788D96C91D2C701300CFA895 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 788D96C81D2C701300CFA895 /* Assets.bundle */; };
 		78A9FBB31D1E15300055B029 /* PuzzleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */; };
 		78A9FBE11D21DEF80055B029 /* ArticleViewing.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBE01D21DEF70055B029 /* ArticleViewing.m */; };
@@ -185,6 +186,7 @@
 		7861CADC1D4BF3F90029256A /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
 		7861CADE1D4BFC400029256A /* ciphercopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ciphercopy.jpg; path = OldResources/ciphercopy.jpg; sourceTree = "<group>"; };
 		7861CAE01D4BFCA20029256A /* ciphercopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ciphercopy.jpg; path = OldResources/ciphercopy.jpg; sourceTree = "<group>"; };
+		7861CAE21D4C03420029256A /* cipherforapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cipherforapp.png; sourceTree = "<group>"; };
 		788D96C81D2C701300CFA895 /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		78A9FBB11D1E15300055B029 /* PuzzleNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleNavigation.h; sourceTree = "<group>"; };
 		78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleNavigation.m; sourceTree = "<group>"; };
@@ -240,6 +242,7 @@
 				780C6A521D3FE9130004CD98 /* keyFilled.png */,
 				780C6A541D3FE9130004CD98 /* newspaper.png */,
 				780C6A551D3FE9130004CD98 /* newspapersmall.png */,
+				7861CAE21D4C03420029256A /* cipherforapp.png */,
 				780C6A641D3FE9130004CD98 /* page12.jpg */,
 				780C6A651D3FE9130004CD98 /* passwordIcon.png */,
 				7861CADE1D4BFC400029256A /* ciphercopy.jpg */,
@@ -371,9 +374,9 @@
 				78E4D44C1D1B1CF200FAFC1C /* AppDelegate.m */,
 				78A9FBF21D233A9B0055B029 /* Project.h */,
 				78A9FBF31D233A9B0055B029 /* Project.m */,
-				78E4D44E1D1B1CF200FAFC1C /* ViewController.h */,
 				7861CADB1D4BF3F90029256A /* testViewController.h */,
 				7861CADC1D4BF3F90029256A /* testViewController.m */,
+				78E4D44E1D1B1CF200FAFC1C /* ViewController.h */,
 				78E4D44F1D1B1CF200FAFC1C /* ViewController.m */,
 				78E4D4511D1B1CF200FAFC1C /* Main.storyboard */,
 				781A8C0F1D3EDEAB00963931 /* City.swift */,
@@ -479,6 +482,7 @@
 				780C6AA61D3FE9130004CD98 /* wrong.png in Resources */,
 				780C6A7D1D3FE9130004CD98 /* hongkong.jpg in Resources */,
 				780C6A881D3FE9130004CD98 /* keyEmpty.png in Resources */,
+				7861CAE31D4C03420029256A /* cipherforapp.png in Resources */,
 				780C6AAB1D3FFA950004CD98 /* siliconvalley.jpg in Resources */,
 				7861CAE11D4BFCA20029256A /* ciphercopy.jpg in Resources */,
 				780C6A7C1D3FE9130004CD98 /* dublin.jpg in Resources */,

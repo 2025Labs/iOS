@@ -20,8 +20,7 @@
     
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    _fileName = @"cipher.png";
-    _currentTopic = @"computing";
+
     
     //NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"cipher.png", @"computing"];
     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];

@@ -36,8 +36,8 @@
 
 
 @property NSString *currentTopic;
-@property int topArticlePageIndex;
-@property int bottomArticlePageIndex;
+@property int leftArticlePageToJumpTo;
+@property int rightArticlePageToJumpTo;
 @property int pageNumber;
 @property int maxPageNumber;
 
