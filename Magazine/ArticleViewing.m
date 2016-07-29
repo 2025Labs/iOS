@@ -15,8 +15,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", _currentTopic];
-    
+    //NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", _currentTopic];
+    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", @"computing"];
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
     if([defaults objectForKey:userDefaultKey] != nil) {
@@ -76,8 +77,8 @@
     self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];
     _setupDone = true;
-
 }
+
 -(void) connectToDatabase {
     _connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219";
     _connection = PQconnectdb(_connectionString);

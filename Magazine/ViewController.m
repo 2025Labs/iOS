@@ -10,7 +10,7 @@
 #import "Puzzle.h"
 #import "ArticleViewing.h"
 #import "IGCMenu.h"
-
+#import "testViewController.h"
 @interface ViewController ()
 @end
 
@@ -18,13 +18,87 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _pageNumber = 0;
+    _maxPageNumber = 3;
     _currentTopic = @"computing";
     // Do any additional setup after loading the view, typically from a nib.
     [self.playerView loadWithVideoId:@"lZxJgTiKDis"];
     [self prepareNavigationMenu];
     [self prepareMenu];
     [self prepareHomepage];
+    [self setupScrollview];
+    
+    UIStoryboard *mainStoryboard = self.storyboard;
+
+    ViewController *testController = [mainStoryboard instantiateViewControllerWithIdentifier:@"testView"];
+    
+    CGRect frame = testController.view.frame;
+    frame.origin.x = 0;
+    testController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+    
+    NSLog(@"width: %f height: %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
+
+    testController.view.contentMode = UIViewContentModeScaleToFill;
+    
+    [self addChildViewController:testController];
+    [testController didMoveToParentViewController:self];
+    testController.view.autoresizesSubviews = YES;
+    [self.scrollView addSubview:testController.view];
+
+    
+
+    
+    ViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
+    
+    mapController.view.frame = CGRectMake (self.view.frame.size.width,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+    
+    [self addChildViewController:mapController];
+    [mapController didMoveToParentViewController:self];
+    [self.scrollView addSubview:mapController.view];
+    
+    
+    ViewController *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"testView"];
+    
+    //CGRect puzzleFrame = mapController.view.frame;
+    //puzzleFrame.origin.x = self.view.frame.size.width*2;
+    //testController.view.frame = CGRectMake (self.view.frame.size.width*2,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);;
+    puzzleController2.view.frame = CGRectMake (self.view.frame.size.width*2,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+    
+    [self addChildViewController:puzzleController2];
+    [puzzleController2 didMoveToParentViewController:self];
+    [self.scrollView addSubview:puzzleController2.view];
+
     }
+
+-(void) setupScrollview {
+    self.scrollView.scrollEnabled = NO;
+     self.scrollView.pagingEnabled = YES;
+    [self.scrollView setAlwaysBounceVertical:NO];
+    
+    
+}
+
+-(IBAction)nextScreen:(id)sender {
+    if(_pageNumber + 1 < _maxPageNumber) {
+    _pageNumber += 1;
+    CGRect frame = _scrollView.frame;
+    frame.origin.x = 768 * _pageNumber;
+    NSLog(@"Now: %f", frame.origin.x);
+    [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
+    }
+}
+
+-(IBAction)prevScreen:(id)sender {
+    if(_pageNumber - 1 >= 0) {
+    _pageNumber -= 1;
+    CGRect frame = _scrollView.frame;
+    frame.origin.x = 768 * _pageNumber;
+    NSLog(@"Now: %f", frame.origin.x);
+
+    [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
+    }
+
+}
 
 -(void) prepareHomepage {
     
@@ -33,14 +107,12 @@
     UILabel *label2 = _bottomArticle.titleLabel;
     label2.adjustsFontSizeToFitWidth = YES;
     if([_currentTopic isEqualToString:@"computing"]) {
-        NSLog(@"Hello computing");
         [_coverPage setTitle:@"Cover Page: Computing" forState:UIControlStateNormal];
         [_bottomArticle setTitle: @"History of the Internet" forState: UIControlStateNormal];
         [_topArticle setTitle: @"Internet of Things" forState: UIControlStateNormal];
         _topArticlePageIndex = 2;
         _bottomArticlePageIndex = 0;
     } else if([_currentTopic isEqualToString:@"energy"]) {
-        NSLog(@"Hello energy");
         [_coverPage setTitle: @"Cover Page: Energy" forState:UIControlStateNormal];
         [_bottomArticle setTitle: @"The Grid?" forState: UIControlStateNormal];
         [_topArticle setTitle: @"Solar Power Overload" forState: UIControlStateNormal];
@@ -119,6 +191,7 @@
 }
 
 - (IBAction)menuPressed:(id)sender {
+    NSLog(@"Menu Pressed");
     if(_isMenuActive) {
         [_menu hideCircularMenu];
         _isMenuActive = false;
@@ -156,7 +229,6 @@
             [_menu hideCircularMenu];
             _isMenuActive = false;
             [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
-
             break;
         default:
             break;

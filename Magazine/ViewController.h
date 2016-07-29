@@ -29,9 +29,18 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+@property (weak, nonatomic) IBOutlet UIButton *nextButton;
+@property (weak, nonatomic) IBOutlet UIButton *prevButton;
+
+
 @property NSString *currentTopic;
 @property int topArticlePageIndex;
 @property int bottomArticlePageIndex;
+@property int pageNumber;
+@property int maxPageNumber;
+
 
 @property IGCMenu *menu;
 @property BOOL isMenuActive;

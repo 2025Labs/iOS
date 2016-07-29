@@ -6,17 +6,17 @@
 //  Copyright © 2016 MBPro. All rights reserved.
 //
 
-#import "Puzzle.h"
+#import "testViewController.h"
 #import "IGCMenu.h"
 #import <libpq/libpq-fe.h>
 @import WebImage;
 
-@implementation Puzzle
+@implementation testViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self preparePencil];
-    [self prepareMenu];
+    //[self prepareMenu];
     
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -25,7 +25,7 @@
     
     //NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"cipher.png", @"computing"];
     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
-
+    
     if([defaults objectForKey:userDefaultKey] != nil) {
         NSLog(@"Data already loaded from defaults with key: %@. Don't connect", _fileName);
         _fileArray = [defaults objectForKey:userDefaultKey];
@@ -34,12 +34,12 @@
         NSLog(@"Defaults: %@", defaults);
         [self connectToDatabase];
         NSLog(@"hi");
-
+        
         _fileArray = [self getImageFilesFromDatabase];
         NSLog(@"Hello");
-
+        
     }
-
+    
     // Do any additional setup after loading the view, typically from a nib.
     
     //Make the edge of the view underneath the nav bar
@@ -58,8 +58,8 @@
                             }
                         }];
     
-    NSLog(@"Cipher: %@", _cipher);
-    NSLog(@"Temp: %@", _tempDrawingImage);
+    //NSLog(@"Cipher: %@", _cipher);
+    //NSLog(@"Temp: %@", _tempDrawingImage);
 }
 
 
@@ -123,7 +123,7 @@
     if(_menu == nil) {
         _menu = [[IGCMenu alloc] init];
     }
-    _menu.menuButton = self.moreButton;
+    //_menu.menuButton = self.moreButton;
     _menu.menuSuperView = self.view;
     _menu.disableBackground = YES;
     _menu.numberOfMenuItem = 4;

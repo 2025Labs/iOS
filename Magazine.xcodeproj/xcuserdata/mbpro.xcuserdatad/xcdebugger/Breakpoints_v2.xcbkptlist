@@ -82,11 +82,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/ViewController.m"
-            timestampString = "491169230.628673"
+            timestampString = "491519470.61189"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "-prepareMenu"
             landmarkType = "5">
          </BreakpointContent>
@@ -130,7 +130,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/VCMapView.swift"
-            timestampString = "491086539.176554"
+            timestampString = "491519675.25422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"

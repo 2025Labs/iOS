@@ -73,6 +73,10 @@
 		784A316F1D248CA200AC8AB9 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = 784A316C1D248CA200AC8AB9 /* quiz.json */; };
 		784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31831D26CE6700AC8AB9 /* Quiz.m */; };
 		784A31871D26E4D200AC8AB9 /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31861D26E4D200AC8AB9 /* CircleProgressBar.m */; };
+		7861CADA1D4B24510029256A /* rightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAD91D4B24510029256A /* rightarrow.png */; };
+		7861CADD1D4BF3F90029256A /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861CADC1D4BF3F90029256A /* testViewController.m */; };
+		7861CADF1D4BFC400029256A /* ciphercopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7861CADE1D4BFC400029256A /* ciphercopy.jpg */; };
+		7861CAE11D4BFCA20029256A /* ciphercopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE01D4BFCA20029256A /* ciphercopy.jpg */; };
 		788D96C91D2C701300CFA895 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 788D96C81D2C701300CFA895 /* Assets.bundle */; };
 		78A9FBB31D1E15300055B029 /* PuzzleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */; };
 		78A9FBE11D21DEF80055B029 /* ArticleViewing.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBE01D21DEF70055B029 /* ArticleViewing.m */; };
@@ -176,6 +180,11 @@
 		784A31831D26CE6700AC8AB9 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
 		784A31851D26E4D200AC8AB9 /* CircleProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressBar.h; sourceTree = "<group>"; };
 		784A31861D26E4D200AC8AB9 /* CircleProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressBar.m; sourceTree = "<group>"; };
+		7861CAD91D4B24510029256A /* rightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightarrow.png; sourceTree = "<group>"; };
+		7861CADB1D4BF3F90029256A /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
+		7861CADC1D4BF3F90029256A /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
+		7861CADE1D4BFC400029256A /* ciphercopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ciphercopy.jpg; path = OldResources/ciphercopy.jpg; sourceTree = "<group>"; };
+		7861CAE01D4BFCA20029256A /* ciphercopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ciphercopy.jpg; path = OldResources/ciphercopy.jpg; sourceTree = "<group>"; };
 		788D96C81D2C701300CFA895 /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		78A9FBB11D1E15300055B029 /* PuzzleNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleNavigation.h; sourceTree = "<group>"; };
 		78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleNavigation.m; sourceTree = "<group>"; };
@@ -227,11 +236,13 @@
 				782592111D46913F00556A66 /* Puzzle-250.png */,
 				780C6A501D3FE9120004CD98 /* globe.png */,
 				780C6A511D3FE9120004CD98 /* keyEmpty.png */,
+				7861CAD91D4B24510029256A /* rightarrow.png */,
 				780C6A521D3FE9130004CD98 /* keyFilled.png */,
 				780C6A541D3FE9130004CD98 /* newspaper.png */,
 				780C6A551D3FE9130004CD98 /* newspapersmall.png */,
 				780C6A641D3FE9130004CD98 /* page12.jpg */,
 				780C6A651D3FE9130004CD98 /* passwordIcon.png */,
+				7861CADE1D4BFC400029256A /* ciphercopy.jpg */,
 				780C6A661D3FE9130004CD98 /* plus.png */,
 				780C6A671D3FE9130004CD98 /* project.png */,
 				780C6A681D3FE9130004CD98 /* project_icon_70x70.png */,
@@ -243,6 +254,7 @@
 				780C6A701D3FE9130004CD98 /* wrong.png */,
 				780C6A711D3FE9130004CD98 /* wrongSmall.png */,
 				780C6A721D3FE9130004CD98 /* zoom-in.png */,
+				7861CAE01D4BFCA20029256A /* ciphercopy.jpg */,
 				780C6A731D3FE9130004CD98 /* zoom-out.png */,
 				780C6A561D3FE9130004CD98 /* OldResources */,
 			);
@@ -360,6 +372,8 @@
 				78A9FBF21D233A9B0055B029 /* Project.h */,
 				78A9FBF31D233A9B0055B029 /* Project.m */,
 				78E4D44E1D1B1CF200FAFC1C /* ViewController.h */,
+				7861CADB1D4BF3F90029256A /* testViewController.h */,
+				7861CADC1D4BF3F90029256A /* testViewController.m */,
 				78E4D44F1D1B1CF200FAFC1C /* ViewController.m */,
 				78E4D4511D1B1CF200FAFC1C /* Main.storyboard */,
 				781A8C0F1D3EDEAB00963931 /* City.swift */,
@@ -466,12 +480,14 @@
 				780C6A7D1D3FE9130004CD98 /* hongkong.jpg in Resources */,
 				780C6A881D3FE9130004CD98 /* keyEmpty.png in Resources */,
 				780C6AAB1D3FFA950004CD98 /* siliconvalley.jpg in Resources */,
+				7861CAE11D4BFCA20029256A /* ciphercopy.jpg in Resources */,
 				780C6A7C1D3FE9130004CD98 /* dublin.jpg in Resources */,
 				780C6AA71D3FE9130004CD98 /* wrongSmall.png in Resources */,
 				782592121D46913F00556A66 /* Puzzle-250.png in Resources */,
 				780C6A871D3FE9130004CD98 /* globe.png in Resources */,
 				780C6A751D3FE9130004CD98 /* 2025KidsLogo.png in Resources */,
 				780C6A741D3FE9130004CD98 /* 2025KidsLogo.jpg in Resources */,
+				7861CADA1D4B24510029256A /* rightarrow.png in Resources */,
 				7825920E1D45694500556A66 /* puzzle_icon.png in Resources */,
 				780C6A9B1D3FE9130004CD98 /* passwordIcon.png in Resources */,
 				780C6A971D3FE9130004CD98 /* linen.jpg in Resources */,
@@ -489,6 +505,7 @@
 				780C6A831D3FE9130004CD98 /* shenzhen.jpg in Resources */,
 				780C6A851D3FE9130004CD98 /* washingtondc.jpg in Resources */,
 				780C6AA31D3FE9130004CD98 /* userIcon2.jpg in Resources */,
+				7861CADF1D4BFC400029256A /* ciphercopy.jpg in Resources */,
 				780C6A9E1D3FE9130004CD98 /* project_icon_70x70.png in Resources */,
 				780C6A811D3FE9130004CD98 /* sanfrancisco.jpg in Resources */,
 				784A316F1D248CA200AC8AB9 /* quiz.json in Resources */,
@@ -545,6 +562,7 @@
 				78D07FCE1D2EFBB90090D72B /* IGCMenu.m in Sources */,
 				784A31871D26E4D200AC8AB9 /* CircleProgressBar.m in Sources */,
 				78E4D44D1D1B1CF200FAFC1C /* AppDelegate.m in Sources */,
+				7861CADD1D4BF3F90029256A /* testViewController.m in Sources */,
 				781D77511D1CA8CC00D9417C /* Puzzle.m in Sources */,
 				78E4D4611D1B2D9400FAFC1C /* YTPlayerView.m in Sources */,
 				784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */,
