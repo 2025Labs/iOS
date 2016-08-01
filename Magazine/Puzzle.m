@@ -17,12 +17,21 @@
     [super viewDidLoad];
     [self preparePencil];
     [self prepareMenu];
+    SDImageCache *imageCache = [SDImageCache sharedImageCache];
+    [imageCache clearMemory];
+    [imageCache clearDisk];
+        [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadImage:)
+                                                 name:@"reload"
+                                               object:nil];
     
+    NSLog(@"Loading View. filename: %@ topic: %@", _fileName, _currentTopic);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
+
     
-    //NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"cipher.png", @"computing"];
     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
 
     if([defaults objectForKey:userDefaultKey] != nil) {
@@ -36,7 +45,6 @@
 
         _fileArray = [self getImageFilesFromDatabase];
         NSLog(@"Hello");
-
     }
 
     // Do any additional setup after loading the view, typically from a nib.
@@ -61,12 +69,6 @@
     NSLog(@"Temp: %@", _tempDrawingImage);
 }
 
-
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    //...
-    NSLog(@"View will appeaar");
-}
 
 
 -(void) connectToDatabase {
@@ -248,6 +250,44 @@
             UIImage *image = [UIImage imageNamed:@"WordSearchFull.png"];
             [self.cipher setImage:image];
     }
+}
+
+-(void)reloadImage:(NSNotification *)notification {
+    NSLog(@"Loading View. filename: %@ topic: %@", _fileName, _currentTopic);
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
+    
+    if([defaults objectForKey:userDefaultKey] != nil) {
+        NSLog(@"Data already loaded from defaults with key: %@. Don't connect", _fileName);
+        _fileArray = [defaults objectForKey:userDefaultKey];
+    } else {
+        NSLog(@"Connecting to database and retrieve images");
+        [self connectToDatabase];
+        
+        _fileArray = [self getImageFilesFromDatabase];
+    }
+    
+    // Do any additional setup after loading the view, typically from a nib.
+    
+    //Make the edge of the view underneath the nav bar
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadImageWithURL:[NSURL URLWithString:[_fileArray objectAtIndex:0]]
+                          options:0
+                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                             //NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
+                         }
+                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                            if (image) {
+                                NSLog(@"Finished downloading");
+                                [_tempDrawingImage setImage:image];
+                            }
+                        }];
+    NSLog(@"end of reload function");
+
 }
 
 

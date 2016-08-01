@@ -11,6 +11,7 @@
 #import "ArticleViewing.h"
 #import "IGCMenu.h"
 #import "testViewController.h"
+#import "PuzzleNavigation.h"
 @interface ViewController ()
 @end
 
@@ -30,20 +31,21 @@
     
     UIStoryboard *mainStoryboard = self.storyboard;
 
-    ViewController *testController = [mainStoryboard instantiateViewControllerWithIdentifier:@"testView"];
-    
-    CGRect frame = testController.view.frame;
+    Puzzle *puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
+    puzzleController.fileName = @"cipher.png";
+    puzzleController.currentTopic = @"computing";
+    CGRect frame = puzzleController.view.frame;
     frame.origin.x = 0;
-    testController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+    puzzleController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
     
     NSLog(@"width: %f height: %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
 
-    testController.view.contentMode = UIViewContentModeScaleToFill;
+    puzzleController.view.contentMode = UIViewContentModeScaleToFill;
     
-    [self addChildViewController:testController];
-    [testController didMoveToParentViewController:self];
-    testController.view.autoresizesSubviews = YES;
-    [self.scrollView addSubview:testController.view];
+    [self addChildViewController:puzzleController];
+    [puzzleController didMoveToParentViewController:self];
+    puzzleController.view.autoresizesSubviews = YES;
+    [self.scrollView addSubview:puzzleController.view];
 
     
 
@@ -57,8 +59,9 @@
     [self.scrollView addSubview:mapController.view];
     
     
-    ViewController *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"testView"];
-    
+    Puzzle *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
+    puzzleController2.fileName = @"howfastistheinternet.png";
+    puzzleController2.currentTopic = @"computing";
     //CGRect puzzleFrame = mapController.view.frame;
     //puzzleFrame.origin.x = self.view.frame.size.width*2;
     //testController.view.frame = CGRectMake (self.view.frame.size.width*2,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);;
@@ -171,8 +174,10 @@
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
-        Puzzle* controller = [segue destinationViewController];
+        PuzzleNavigation* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
+        controller.fileName = @"wordsearch.png";
+        NSLog(@"Segue to Puzzle Nav");
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;

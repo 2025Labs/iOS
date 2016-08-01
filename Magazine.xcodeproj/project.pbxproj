@@ -78,6 +78,10 @@
 		7861CADF1D4BFC400029256A /* ciphercopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7861CADE1D4BFC400029256A /* ciphercopy.jpg */; };
 		7861CAE11D4BFCA20029256A /* ciphercopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE01D4BFCA20029256A /* ciphercopy.jpg */; };
 		7861CAE31D4C03420029256A /* cipherforapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE21D4C03420029256A /* cipherforapp.png */; };
+		7861CAE51D4C0F480029256A /* puzzle-piece.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE41D4C0F480029256A /* puzzle-piece.png */; };
+		7861CAE91D4FAAF30029256A /* fillintheblankcomputing.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE61D4FAAF30029256A /* fillintheblankcomputing.png */; };
+		7861CAEA1D4FAAF30029256A /* howfastistheinternet.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE71D4FAAF30029256A /* howfastistheinternet.png */; };
+		7861CAEB1D4FAAF30029256A /* wordsearchcomputing.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE81D4FAAF30029256A /* wordsearchcomputing.png */; };
 		788D96C91D2C701300CFA895 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 788D96C81D2C701300CFA895 /* Assets.bundle */; };
 		78A9FBB31D1E15300055B029 /* PuzzleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */; };
 		78A9FBE11D21DEF80055B029 /* ArticleViewing.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBE01D21DEF70055B029 /* ArticleViewing.m */; };
@@ -187,6 +191,10 @@
 		7861CADE1D4BFC400029256A /* ciphercopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ciphercopy.jpg; path = OldResources/ciphercopy.jpg; sourceTree = "<group>"; };
 		7861CAE01D4BFCA20029256A /* ciphercopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ciphercopy.jpg; path = OldResources/ciphercopy.jpg; sourceTree = "<group>"; };
 		7861CAE21D4C03420029256A /* cipherforapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cipherforapp.png; sourceTree = "<group>"; };
+		7861CAE41D4C0F480029256A /* puzzle-piece.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "puzzle-piece.png"; sourceTree = "<group>"; };
+		7861CAE61D4FAAF30029256A /* fillintheblankcomputing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fillintheblankcomputing.png; sourceTree = "<group>"; };
+		7861CAE71D4FAAF30029256A /* howfastistheinternet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = howfastistheinternet.png; sourceTree = "<group>"; };
+		7861CAE81D4FAAF30029256A /* wordsearchcomputing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordsearchcomputing.png; sourceTree = "<group>"; };
 		788D96C81D2C701300CFA895 /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		78A9FBB11D1E15300055B029 /* PuzzleNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleNavigation.h; sourceTree = "<group>"; };
 		78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleNavigation.m; sourceTree = "<group>"; };
@@ -236,12 +244,16 @@
 				780C6A401D3FE9120004CD98 /* circleChevronUp.png */,
 				780C6A4F1D3FE9120004CD98 /* cross2@3x.png */,
 				782592111D46913F00556A66 /* Puzzle-250.png */,
+				7861CAE61D4FAAF30029256A /* fillintheblankcomputing.png */,
+				7861CAE71D4FAAF30029256A /* howfastistheinternet.png */,
+				7861CAE81D4FAAF30029256A /* wordsearchcomputing.png */,
 				780C6A501D3FE9120004CD98 /* globe.png */,
 				780C6A511D3FE9120004CD98 /* keyEmpty.png */,
 				7861CAD91D4B24510029256A /* rightarrow.png */,
 				780C6A521D3FE9130004CD98 /* keyFilled.png */,
 				780C6A541D3FE9130004CD98 /* newspaper.png */,
 				780C6A551D3FE9130004CD98 /* newspapersmall.png */,
+				7861CAE41D4C0F480029256A /* puzzle-piece.png */,
 				7861CAE21D4C03420029256A /* cipherforapp.png */,
 				780C6A641D3FE9130004CD98 /* page12.jpg */,
 				780C6A651D3FE9130004CD98 /* passwordIcon.png */,
@@ -465,6 +477,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				788D96C91D2C701300CFA895 /* Assets.bundle in Resources */,
+				7861CAE91D4FAAF30029256A /* fillintheblankcomputing.png in Resources */,
+				7861CAEA1D4FAAF30029256A /* howfastistheinternet.png in Resources */,
 				780C6A771D3FE9130004CD98 /* circleChevronDown.png in Resources */,
 				780C6A7F1D3FE9130004CD98 /* losangeles.jpg in Resources */,
 				780C6A8B1D3FE9130004CD98 /* newspaper.png in Resources */,
@@ -480,6 +494,7 @@
 				780C6A791D3FE9130004CD98 /* austin.jpg in Resources */,
 				7816C77A1D318752005696ED /* .gitignore in Resources */,
 				780C6AA61D3FE9130004CD98 /* wrong.png in Resources */,
+				7861CAEB1D4FAAF30029256A /* wordsearchcomputing.png in Resources */,
 				780C6A7D1D3FE9130004CD98 /* hongkong.jpg in Resources */,
 				780C6A881D3FE9130004CD98 /* keyEmpty.png in Resources */,
 				7861CAE31D4C03420029256A /* cipherforapp.png in Resources */,
@@ -488,6 +503,7 @@
 				780C6A7C1D3FE9130004CD98 /* dublin.jpg in Resources */,
 				780C6AA71D3FE9130004CD98 /* wrongSmall.png in Resources */,
 				782592121D46913F00556A66 /* Puzzle-250.png in Resources */,
+				7861CAE51D4C0F480029256A /* puzzle-piece.png in Resources */,
 				780C6A871D3FE9130004CD98 /* globe.png in Resources */,
 				780C6A751D3FE9130004CD98 /* 2025KidsLogo.png in Resources */,
 				780C6A741D3FE9130004CD98 /* 2025KidsLogo.jpg in Resources */,
