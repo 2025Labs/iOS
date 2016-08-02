@@ -10,17 +10,30 @@
 #import "Puzzle.h"
 #import "ArticleViewing.h"
 #import "IGCMenu.h"
-#import "testViewController.h"
+#import "youtubeViewController.h"
 #import "PuzzleNavigation.h"
+#import <AVFoundation/AVFoundation.h>
+
 @interface ViewController ()
+
 @end
 
 @implementation ViewController
+    AVAudioPlayer *_audioPlayer;
+
+-(void) setupAudio{
+    // Construct URL to sound file
+    NSString *path = [NSString stringWithFormat:@"%@/drum01.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    
+    // Create audio player object and initialize with URL to sound
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     _pageNumber = 0;
-    _maxPageNumber = 3;
+    _maxPageNumber = 4;
     _currentTopic = @"computing";
     // Do any additional setup after loading the view, typically from a nib.
     [self.playerView loadWithVideoId:@"lZxJgTiKDis"];
@@ -28,6 +41,7 @@
     [self prepareMenu];
     [self prepareHomepage];
     [self setupScrollview];
+    [self setupAudio];
     
     UIStoryboard *mainStoryboard = self.storyboard;
 
@@ -38,7 +52,6 @@
     frame.origin.x = 0;
     puzzleController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
     
-    NSLog(@"width: %f height: %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
 
     puzzleController.view.contentMode = UIViewContentModeScaleToFill;
     
@@ -62,22 +75,29 @@
     Puzzle *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
     puzzleController2.fileName = @"howfastistheinternet.png";
     puzzleController2.currentTopic = @"computing";
-    //CGRect puzzleFrame = mapController.view.frame;
-    //puzzleFrame.origin.x = self.view.frame.size.width*2;
-    //testController.view.frame = CGRectMake (self.view.frame.size.width*2,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);;
+    
     puzzleController2.view.frame = CGRectMake (self.view.frame.size.width*2,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
     
     [self addChildViewController:puzzleController2];
     [puzzleController2 didMoveToParentViewController:self];
     [self.scrollView addSubview:puzzleController2.view];
+    
+    
+    youtubeViewController *youtubeController = [mainStoryboard instantiateViewControllerWithIdentifier:@"youtubeScene"];
 
+    youtubeController.view.frame = CGRectMake (self.view.frame.size.width*3, self.view.frame.size.height/10, self.view.frame.size.width, self.view.frame.size.height/2-35);
+    
+    [self addChildViewController:youtubeController];
+    [youtubeController didMoveToParentViewController:self];
+    [self.scrollView addSubview:youtubeController.view];
+    
+    
     }
 
 -(void) setupScrollview {
     self.scrollView.scrollEnabled = NO;
      self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];
-    
     
 }
 
@@ -88,6 +108,10 @@
     frame.origin.x = 768 * _pageNumber;
     NSLog(@"Now: %f", frame.origin.x);
     [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
+        NSLog(@"sound");
+
+    [_audioPlayer play];
+
     }
 }
 
@@ -99,6 +123,9 @@
     NSLog(@"Now: %f", frame.origin.x);
 
     [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
+        NSLog(@"sound");
+    [_audioPlayer play];
+
     }
 
 }
@@ -152,7 +179,7 @@
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSLog(@"Hello");
+    [_audioPlayer play];
     if([segue.identifier isEqualToString:@"showCipher"]) {
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"cipher.png";
@@ -169,7 +196,7 @@
         Puzzle* controller = [segue destinationViewController];
         controller.fileName = @"material.png";
         controller.currentTopic = _currentTopic;
-    } else if([segue.identifier isEqualToString:@"showArticle"]) {
+    } else if([segue.identifier isEqualToString:@"showNews"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;

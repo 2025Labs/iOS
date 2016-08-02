@@ -41,9 +41,9 @@
         CGFloat xOrigin = i * self.view.frame.size.width;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:
-                              CGRectMake(xOrigin, -20,
-                                         self.view.frame.size.width,
-                                         self.view.frame.size.height)];
+                              CGRectMake(xOrigin, 0,
+                                         self.scrollView.frame.size.width,
+                                         self.scrollView.frame.size.height)];
         
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
         [manager downloadImageWithURL:[NSURL URLWithString:[_articleArray objectAtIndex:i]]
@@ -64,16 +64,17 @@
         
     }
     //set the scroll view content size
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width *
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width *
                                              [_articleArray count],
-                                             self.view.frame.size.height);
+                                             self.scrollView.frame.size.height);
     //add the scrollview to this view
     [self.view addSubview:self.scrollView];
     
 }
 
 -(void) setupScrollview {
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width, self.view.frame.size.height)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 80,self.view.frame.size.width, 760)];
+    NSLog(@"width: %f height: %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
     self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];
     _setupDone = true;

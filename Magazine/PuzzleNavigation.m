@@ -26,9 +26,9 @@
     _puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
     _puzzleController.currentTopic = _currentTopic;
     _puzzleController.fileName = _fileName;
-    CGRect frame = _puzzleController.view.frame;
-    frame.origin.x = 0;
+    
     _puzzleController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+    NSLog(@"width: %f height: %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
     _puzzleController.view.contentMode = UIViewContentModeScaleToFill;
     
 

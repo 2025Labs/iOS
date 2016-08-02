@@ -17,9 +17,7 @@
     [super viewDidLoad];
     [self preparePencil];
     [self prepareMenu];
-    SDImageCache *imageCache = [SDImageCache sharedImageCache];
-    [imageCache clearMemory];
-    [imageCache clearDisk];
+    
         [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
     
     [[NSNotificationCenter defaultCenter] addObserver:self

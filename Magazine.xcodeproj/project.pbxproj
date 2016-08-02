@@ -70,11 +70,13 @@
 		782592101D45694500556A66 /* world_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7825920B1D45694500556A66 /* world_icon.png */; };
 		782592121D46913F00556A66 /* Puzzle-250.png in Resources */ = {isa = PBXBuildFile; fileRef = 782592111D46913F00556A66 /* Puzzle-250.png */; };
 		782592141D46963E00556A66 /* Puzzle-150.png in Resources */ = {isa = PBXBuildFile; fileRef = 782592131D46963E00556A66 /* Puzzle-150.png */; };
+		7837DF501D504A6C00E17401 /* drum01.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7837DF4F1D504A6C00E17401 /* drum01.mp3 */; };
+		7837DF531D504EEB00E17401 /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7837DF521D504EEB00E17401 /* YTPlayerView.m */; };
 		784A316F1D248CA200AC8AB9 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = 784A316C1D248CA200AC8AB9 /* quiz.json */; };
 		784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31831D26CE6700AC8AB9 /* Quiz.m */; };
 		784A31871D26E4D200AC8AB9 /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31861D26E4D200AC8AB9 /* CircleProgressBar.m */; };
 		7861CADA1D4B24510029256A /* rightarrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAD91D4B24510029256A /* rightarrow.png */; };
-		7861CADD1D4BF3F90029256A /* testViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861CADC1D4BF3F90029256A /* testViewController.m */; };
+		7861CADD1D4BF3F90029256A /* youtubeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7861CADC1D4BF3F90029256A /* youtubeViewController.m */; };
 		7861CADF1D4BFC400029256A /* ciphercopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7861CADE1D4BFC400029256A /* ciphercopy.jpg */; };
 		7861CAE11D4BFCA20029256A /* ciphercopy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE01D4BFCA20029256A /* ciphercopy.jpg */; };
 		7861CAE31D4C03420029256A /* cipherforapp.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE21D4C03420029256A /* cipherforapp.png */; };
@@ -93,7 +95,6 @@
 		78E4D4531D1B1CF200FAFC1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E4D4511D1B1CF200FAFC1C /* Main.storyboard */; };
 		78E4D4551D1B1CF200FAFC1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78E4D4541D1B1CF200FAFC1C /* Assets.xcassets */; };
 		78E4D4581D1B1CF200FAFC1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E4D4561D1B1CF200FAFC1C /* LaunchScreen.storyboard */; };
-		78E4D4611D1B2D9400FAFC1C /* YTPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4D4601D1B2D9300FAFC1C /* YTPlayerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -180,14 +181,17 @@
 		7825920B1D45694500556A66 /* world_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = world_icon.png; sourceTree = "<group>"; };
 		782592111D46913F00556A66 /* Puzzle-250.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puzzle-250.png"; sourceTree = "<group>"; };
 		782592131D46963E00556A66 /* Puzzle-150.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Puzzle-150.png"; sourceTree = "<group>"; };
+		7837DF4F1D504A6C00E17401 /* drum01.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = drum01.mp3; sourceTree = "<group>"; };
+		7837DF511D504EEB00E17401 /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YTPlayerView.h; sourceTree = "<group>"; };
+		7837DF521D504EEB00E17401 /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YTPlayerView.m; sourceTree = "<group>"; };
 		784A316C1D248CA200AC8AB9 /* quiz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = quiz.json; path = /Users/mbpro/Desktop/Quiz/Quiz/../../../Downloads/quiz.json; sourceTree = "<absolute>"; };
 		784A31821D26CE6700AC8AB9 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
 		784A31831D26CE6700AC8AB9 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
 		784A31851D26E4D200AC8AB9 /* CircleProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressBar.h; sourceTree = "<group>"; };
 		784A31861D26E4D200AC8AB9 /* CircleProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressBar.m; sourceTree = "<group>"; };
 		7861CAD91D4B24510029256A /* rightarrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightarrow.png; sourceTree = "<group>"; };
-		7861CADB1D4BF3F90029256A /* testViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testViewController.h; sourceTree = "<group>"; };
-		7861CADC1D4BF3F90029256A /* testViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = testViewController.m; sourceTree = "<group>"; };
+		7861CADB1D4BF3F90029256A /* youtubeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = youtubeViewController.h; sourceTree = "<group>"; };
+		7861CADC1D4BF3F90029256A /* youtubeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = youtubeViewController.m; sourceTree = "<group>"; };
 		7861CADE1D4BFC400029256A /* ciphercopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ciphercopy.jpg; path = OldResources/ciphercopy.jpg; sourceTree = "<group>"; };
 		7861CAE01D4BFCA20029256A /* ciphercopy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ciphercopy.jpg; path = OldResources/ciphercopy.jpg; sourceTree = "<group>"; };
 		7861CAE21D4C03420029256A /* cipherforapp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cipherforapp.png; sourceTree = "<group>"; };
@@ -214,8 +218,6 @@
 		78E4D4541D1B1CF200FAFC1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78E4D4571D1B1CF200FAFC1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78E4D4591D1B1CF200FAFC1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		78E4D45F1D1B2D9300FAFC1C /* YTPlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YTPlayerView.h; path = "../../Magazine copy/Magazine/Magazine/YTPlayerView.h"; sourceTree = "<group>"; };
-		78E4D4601D1B2D9300FAFC1C /* YTPlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YTPlayerView.m; path = "../../Magazine copy/Magazine/Magazine/YTPlayerView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,19 +377,19 @@
 				780C6A3B1D3FE9120004CD98 /* images */,
 				7816C7811D341DB8005696ED /* libpq.framework */,
 				7816C75B1D317EBD005696ED /* Login.h */,
-				78E4D45F1D1B2D9300FAFC1C /* YTPlayerView.h */,
 				7816C75C1D317EBD005696ED /* Login.m */,
 				784A31861D26E4D200AC8AB9 /* CircleProgressBar.m */,
+				7837DF511D504EEB00E17401 /* YTPlayerView.h */,
+				7837DF521D504EEB00E17401 /* YTPlayerView.m */,
 				784A316C1D248CA200AC8AB9 /* quiz.json */,
-				78E4D4601D1B2D9300FAFC1C /* YTPlayerView.m */,
 				784A31821D26CE6700AC8AB9 /* Quiz.h */,
 				784A31831D26CE6700AC8AB9 /* Quiz.m */,
 				78E4D44B1D1B1CF200FAFC1C /* AppDelegate.h */,
 				78E4D44C1D1B1CF200FAFC1C /* AppDelegate.m */,
 				78A9FBF21D233A9B0055B029 /* Project.h */,
 				78A9FBF31D233A9B0055B029 /* Project.m */,
-				7861CADB1D4BF3F90029256A /* testViewController.h */,
-				7861CADC1D4BF3F90029256A /* testViewController.m */,
+				7861CADB1D4BF3F90029256A /* youtubeViewController.h */,
+				7861CADC1D4BF3F90029256A /* youtubeViewController.m */,
 				78E4D44E1D1B1CF200FAFC1C /* ViewController.h */,
 				78E4D44F1D1B1CF200FAFC1C /* ViewController.m */,
 				78E4D4511D1B1CF200FAFC1C /* Main.storyboard */,
@@ -398,6 +400,7 @@
 				78A9FBE01D21DEF70055B029 /* ArticleViewing.m */,
 				78A9FBB11D1E15300055B029 /* PuzzleNavigation.h */,
 				78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */,
+				7837DF4F1D504A6C00E17401 /* drum01.mp3 */,
 				781D774F1D1CA8CC00D9417C /* Puzzle.h */,
 				781D77501D1CA8CC00D9417C /* Puzzle.m */,
 				78E4D4541D1B1CF200FAFC1C /* Assets.xcassets */,
@@ -481,6 +484,7 @@
 				7861CAEA1D4FAAF30029256A /* howfastistheinternet.png in Resources */,
 				780C6A771D3FE9130004CD98 /* circleChevronDown.png in Resources */,
 				780C6A7F1D3FE9130004CD98 /* losangeles.jpg in Resources */,
+				7837DF501D504A6C00E17401 /* drum01.mp3 in Resources */,
 				780C6A8B1D3FE9130004CD98 /* newspaper.png in Resources */,
 				782592101D45694500556A66 /* world_icon.png in Resources */,
 				780C6A9A1D3FE9130004CD98 /* page12.jpg in Resources */,
@@ -582,11 +586,11 @@
 				78D07FCE1D2EFBB90090D72B /* IGCMenu.m in Sources */,
 				784A31871D26E4D200AC8AB9 /* CircleProgressBar.m in Sources */,
 				78E4D44D1D1B1CF200FAFC1C /* AppDelegate.m in Sources */,
-				7861CADD1D4BF3F90029256A /* testViewController.m in Sources */,
+				7861CADD1D4BF3F90029256A /* youtubeViewController.m in Sources */,
 				781D77511D1CA8CC00D9417C /* Puzzle.m in Sources */,
-				78E4D4611D1B2D9400FAFC1C /* YTPlayerView.m in Sources */,
 				784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */,
 				7816C77B1D318752005696ED /* AESCrypt.m in Sources */,
+				7837DF531D504EEB00E17401 /* YTPlayerView.m in Sources */,
 				78E4D44A1D1B1CF100FAFC1C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
