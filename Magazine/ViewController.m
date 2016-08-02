@@ -188,7 +188,6 @@
         PuzzleNavigation* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
         controller.fileName = @"wordsearch.png";
-        NSLog(@"Segue to Puzzle Nav");
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
@@ -200,6 +199,11 @@
         ArticleViewing* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
         controller.pageToJumpTo = _rightArticlePageToJumpTo;
+    }   else if([segue.identifier isEqualToString:@"showFillInTheBlank"]) {
+        PuzzleNavigation* controller = [segue destinationViewController];
+        controller.currentTopic = _currentTopic;
+        controller.fileName = @"fillintheblank.png";
+
     }
 }
 
