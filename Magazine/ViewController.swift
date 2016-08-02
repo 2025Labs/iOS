@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         }
         PQclear(result)
         
-        result = PQexec(connection, "SELECT * FROM cities")
+        result = PQexec(connection, "SELECT * FROM cities ORDER BY title")
         
         if(PQresultStatus(result) != PGRES_TUPLES_OK) {
             print("Couldn't fetch anything")

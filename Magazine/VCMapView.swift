@@ -37,7 +37,7 @@ extension ViewController: MKMapViewDelegate {
     func mapView(mapView: MKMapView, didSelectAnnotationView annotationView: MKAnnotationView)
     {
         
-        print("I'm calling didSelectAnnotationView with origin of x: %f y:%f", annotationView.frame.origin.x, annotationView.frame.origin.y)
+        //print("I'm calling didSelectAnnotationView with origin of x: %f y:%f", annotationView.frame.origin.x, annotationView.frame.origin.y)
         let pin = annotationView.annotation
         mapView.deselectAnnotation(pin, animated: false)
         
@@ -85,11 +85,26 @@ extension ViewController: MKMapViewDelegate {
     
     let popover = Popover(options: options, showHandler: nil, dismissHandler: nil)
     
-    print(annotationView.frame.origin.x)
-    print(annotationView.frame.origin.y)
+    print("AnnotationView x origin: ", annotationView.frame.origin.x)
+    print("AnnotationView y origin: ", annotationView.frame.origin.y)
     
     popover.show(aView, fromView: annotationView)
     
 }
 
+    
+    
+    
+    
+    
+    func mapView(mapView: MKMapView,
+                 didAddAnnotationViews views: [MKAnnotationView]) {
+        //[mapView selectAnnotation:[[mapView annotations] lastObject] animated:YES];
+
+        //mapView.selectAnnotation(mapView.annotations.last!, animated: true)
+        //print("View coordinates: x: %f y:%f", views[0].frame.origin.x, views[0].frame.origin.x)
+        
+        
+    }
+    
 }

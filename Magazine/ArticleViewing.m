@@ -8,6 +8,7 @@
 
 #import "ArticleViewing.h"
 #import <libpq/libpq-fe.h>
+#import "PuzzleNavigation.h"
 @import WebImage;
 
 @implementation ArticleViewing
@@ -19,6 +20,9 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
+    _leftArticlePageToJumpTo = 0;
+    _rightArticlePageToJumpTo = 5;
+    
     if([defaults objectForKey:userDefaultKey] != nil) {
         NSLog(@"Data already loaded from defaults. Don't connect");
         _articleArray = [defaults objectForKey:userDefaultKey];
@@ -58,8 +62,6 @@
 
                                 }
                             }];
-        _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width*_pageToJumpTo, 0);
-
         
     }
     //set the scroll view content size
@@ -87,7 +89,14 @@
         NSLog(@"Error: Couldn't connect to the database");
         NSLog(@"Error message: %s", PQerrorMessage(_connection));
     }
+}
+
+-(IBAction)jumpToPage:(id) sender {
+    int pageToJumpTo = [sender tag];
+    _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width*pageToJumpTo, 0);
     
+    NSLog(@"page to jump to: %d", pageToJumpTo);
+
 }
 
 -(NSMutableArray*) getImageFilesFromDatabase {
@@ -106,7 +115,6 @@
         NSLog(@"Couldn't fetch anything");
     }
     NSMutableArray* resultArray = [[NSMutableArray alloc] init];
-    //If successful, this should be a hashed password
     for(int i =0; i < PQntuples(_result); i++) {
     NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
         NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
@@ -119,6 +127,19 @@
 
     PQclear(_result);
     return resultArray;
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"showNews"]) {
+        ArticleViewing* controller = [segue destinationViewController];
+        controller.fileName = @"article";
+        controller.currentTopic = _currentTopic;
+    } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
+        PuzzleNavigation* controller = [segue destinationViewController];
+        controller.currentTopic = _currentTopic;
+        controller.fileName = @"wordsearch.png";
+        NSLog(@"Segue to Puzzle Nav");
+    } 
 }
 
 @end

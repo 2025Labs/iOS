@@ -163,15 +163,12 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    NSLog(@"Touches Began");
     _mouseSwiped = NO;
     UITouch *touch = [touches anyObject];
     _lastPoint = [touch locationInView:self.view];
 }
 
 -(void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"Touches Moved");
     _mouseSwiped = YES;
     UITouch *touch = [touches anyObject];
     CGPoint currentPoint = [touch locationInView:self.view];

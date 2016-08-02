@@ -192,9 +192,6 @@
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
-    }  else if([segue.identifier isEqualToString:@"showProject"]) {
-        ArticleViewing* controller = [segue destinationViewController];
-        controller.currentTopic = _currentTopic;
     }  else if([segue.identifier isEqualToString:@"showLeftArticle"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
