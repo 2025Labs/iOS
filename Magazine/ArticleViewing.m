@@ -15,7 +15,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", _currentTopic];
     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", @"computing"];
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -98,7 +97,7 @@
     }
     PQclear(_result);
     
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename like 'historyoftheinternet_.png' AND topic = '%@' ORDER BY uid", _currentTopic];
+    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE notes = 'article' AND topic = '%@' ORDER BY uid", _currentTopic];
     const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
     
     NSLog(@"Query: %s", query);

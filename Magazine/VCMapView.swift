@@ -92,14 +92,4 @@ extension ViewController: MKMapViewDelegate {
     
 }
 
-
-
-
-
-func mapView(mapView: MKMapView,
-               didAddAnnotationViews views: [MKAnnotationView]) {
-    print("YOWZA")
-    let yourAnnotationAtIndex = 0
-    mapView.selectAnnotation(mapView.annotations[yourAnnotationAtIndex], animated: true)
-    }
 }

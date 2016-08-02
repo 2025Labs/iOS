@@ -42,20 +42,17 @@
 
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- if([segue.identifier isEqualToString:@"showWorld"]) {
+    if([segue.identifier isEqualToString:@"showNews"]) {
         ArticleViewing* controller = [segue destinationViewController];
-        //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
-        controller.fileName = @"aroundtheworld";
-        controller.currentTopic = _currentTopic;
-    }  else if([segue.identifier isEqualToString:@"showArticle"]) {
-        ArticleViewing* controller = [segue destinationViewController];
-        //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
-    }  else if([segue.identifier isEqualToString:@"showProject"]) {
+    } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
+        PuzzleNavigation* controller = [segue destinationViewController];
+        controller.currentTopic = _currentTopic;
+        controller.fileName = @"wordsearch.png";
+        NSLog(@"Segue to Puzzle Nav");
+    } else if([segue.identifier isEqualToString:@"showWorld"]) {
         ArticleViewing* controller = [segue destinationViewController];
-        //aroundtheworld not aroundtheworld.jpg because the scrollview appends the filetype in the method
-        controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
     }
 }

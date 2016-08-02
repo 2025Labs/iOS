@@ -180,23 +180,7 @@
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [_audioPlayer play];
-    if([segue.identifier isEqualToString:@"showCipher"]) {
-        Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"cipher.png";
-        controller.currentTopic = _currentTopic;
-    } else if([segue.identifier isEqualToString:@"showWordSearch"]){
-        Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"wordsearch.png";
-        controller.currentTopic = _currentTopic;
-    } else if([segue.identifier isEqualToString:@"showFillInTheBlank"]){
-        Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"fillintheblank.png";
-        controller.currentTopic = _currentTopic;
-    } else if([segue.identifier isEqualToString:@"showMaterialTime"]){
-        Puzzle* controller = [segue destinationViewController];
-        controller.fileName = @"material.png";
-        controller.currentTopic = _currentTopic;
-    } else if([segue.identifier isEqualToString:@"showNews"]) {
+    if([segue.identifier isEqualToString:@"showNews"]) {
         ArticleViewing* controller = [segue destinationViewController];
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
