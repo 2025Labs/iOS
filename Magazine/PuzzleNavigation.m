@@ -10,7 +10,7 @@
 #import "Puzzle.h"
 #import "IGCMenu.h"
 #import <libpq/libpq-fe.h>
-#import "ArticleViewing.h"
+#import "News.h"
 @import WebImage;
 
 @implementation PuzzleNavigation
@@ -18,8 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-
-
+    
     
     UIStoryboard *mainStoryboard = self.storyboard;
     
@@ -31,19 +30,19 @@
     NSLog(@"width: %f height: %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
     _puzzleController.view.contentMode = UIViewContentModeScaleToFill;
     
-
+    
     [self addChildViewController:_puzzleController];
     [_puzzleController didMoveToParentViewController:self];
     _puzzleController.view.autoresizesSubviews = YES;
     [self.scrollView addSubview:_puzzleController.view];
     
-
+    
 }
 
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"showNews"]) {
-        ArticleViewing* controller = [segue destinationViewController];
+        News* controller = [segue destinationViewController];
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
@@ -52,13 +51,13 @@
         controller.fileName = @"wordsearch.png";
         NSLog(@"Segue to Puzzle Nav");
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
-        ArticleViewing* controller = [segue destinationViewController];
+        News* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
     }
 }
 
 -(void) connectToDatabase {
-    _connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219";
+    _connectionString = "user=labs2025 password=engrRgr8 dbname=iOSDatabase  port=5432 host=labs2025ios.clygqyctjtg6.us-west-2.rds.amazonaws.com";
     _connection = PQconnectdb(_connectionString);
     
     if(PQstatus(_connection) != CONNECTION_OK) {
@@ -102,32 +101,32 @@
     NSLog(@"start change to fillintheblank");
     _puzzleController.fileName = @"fillintheblank.png";
     _puzzleController.currentTopic = @"computing";
-    [self notify];
+    [self notifyWithReason:@"reload"];
 }
 
 -(IBAction)changeToWordsearch:(id)sender {
     _puzzleController.fileName = @"wordsearch.png";
     _puzzleController.currentTopic = @"computing";
-    [self notify];
+    [self notifyWithReason:@"reload"];
     
 }
 
 -(IBAction)changeToMaterial:(id)sender {
     _puzzleController.fileName = @"material.png";
     _puzzleController.currentTopic = @"computing";
-    [self notify];
+    [self notifyWithReason:@"reload"];
 }
 
 -(IBAction)changeToCipher:(id)sender {
     _puzzleController.fileName = @"cipher.png";
     _puzzleController.currentTopic = @"computing";
-    [self notify];
+    [self notifyWithReason:@"reload"];
 }
 
--(void) notify {
-    NSLog(@"Start notify");
-    NSLog(@"Puzzle controller filename: %@ topic: %@", _puzzleController.fileName, _puzzleController.currentTopic);
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"reload" object:nil];
-    NSLog(@"Called notification");
+-(void) notifyWithReason: (NSString*) reason {
+    [[NSNotificationCenter defaultCenter]postNotificationName:reason object:nil];
+    NSLog(@"Called notification with reason: %@", reason);
 }
+
+
 @end

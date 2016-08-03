@@ -1,5 +1,5 @@
 //
-//  ArticleViewing.h
+//  News
 //  Magazine
 //
 //  Created by MBPro on 6/27/16.
@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <libpq/libpq-fe.h>
 
-@interface ArticleViewing : UIViewController
+@interface News : UIViewController
 @property (nonatomic, strong) IBOutlet UIScrollView *scrollView;
 
 @property NSString *fileName;

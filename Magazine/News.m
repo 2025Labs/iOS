@@ -1,25 +1,25 @@
 //
-//  ArticleViewing.m
+//  News
 //  Magazine
 //
 //  Created by MBPro on 6/27/16.
 //  Copyright © 2016 MBPro. All rights reserved.
 //
 
-#import "ArticleViewing.h"
+#import "News.h"
 #import <libpq/libpq-fe.h>
 #import "PuzzleNavigation.h"
 @import WebImage;
 
-@implementation ArticleViewing
+@implementation News
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", @"computing"];
-
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
+    
     _leftArticlePageToJumpTo = 0;
     _rightArticlePageToJumpTo = 5;
     
@@ -39,14 +39,14 @@
     }
     [self setupScrollview];
     
-
+    
     for (int i = 0; i < [_articleArray count]; i++) {
         CGFloat xOrigin = i * self.view.frame.size.width;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:
-                              CGRectMake(xOrigin, 0,
-                                         self.scrollView.frame.size.width,
-                                         self.scrollView.frame.size.height)];
+                                  CGRectMake(xOrigin, 0,
+                                             self.scrollView.frame.size.width,
+                                             self.scrollView.frame.size.height)];
         
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
         [manager downloadImageWithURL:[NSURL URLWithString:[_articleArray objectAtIndex:i]]
@@ -59,7 +59,7 @@
                                     [imageView setImage:image];
                                     imageView.contentMode = UIViewContentModeScaleAspectFit;
                                     [self.scrollView addSubview:imageView];
-
+                                    
                                 }
                             }];
         
@@ -96,7 +96,7 @@
     _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width*pageToJumpTo, 0);
     
     NSLog(@"page to jump to: %d", pageToJumpTo);
-
+    
 }
 
 -(NSMutableArray*) getImageFilesFromDatabase {
@@ -116,22 +116,22 @@
     }
     NSMutableArray* resultArray = [[NSMutableArray alloc] init];
     for(int i =0; i < PQntuples(_result); i++) {
-    NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
+        NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
         NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
-     [resultArray addObject:temp];
+        [resultArray addObject:temp];
     }
-     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", _currentTopic];
+    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", _currentTopic];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:resultArray forKey:userDefaultKey];
     [defaults synchronize];
-
+    
     PQclear(_result);
     return resultArray;
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"showNews"]) {
-        ArticleViewing* controller = [segue destinationViewController];
+        News* controller = [segue destinationViewController];
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {

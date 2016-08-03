@@ -28,8 +28,13 @@
 @property NSMutableArray *fileArray;
 @property NSString *currentTopic;
 
+@property BOOL isDrawingEnabled;
+
+
 @property IGCMenu *menu;
 @property BOOL isMenuActive;
+
+
 
 @property const char *connectionString;
 @property PGresult *result;

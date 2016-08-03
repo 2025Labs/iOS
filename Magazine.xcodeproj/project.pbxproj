@@ -86,7 +86,7 @@
 		7861CAEB1D4FAAF30029256A /* wordsearchcomputing.png in Resources */ = {isa = PBXBuildFile; fileRef = 7861CAE81D4FAAF30029256A /* wordsearchcomputing.png */; };
 		788D96C91D2C701300CFA895 /* Assets.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 788D96C81D2C701300CFA895 /* Assets.bundle */; };
 		78A9FBB31D1E15300055B029 /* PuzzleNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */; };
-		78A9FBE11D21DEF80055B029 /* ArticleViewing.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBE01D21DEF70055B029 /* ArticleViewing.m */; };
+		78A9FBE11D21DEF80055B029 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBE01D21DEF70055B029 /* News.m */; };
 		78A9FBF41D233A9B0055B029 /* Project.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A9FBF31D233A9B0055B029 /* Project.m */; };
 		78D07FCE1D2EFBB90090D72B /* IGCMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 78D07FCD1D2EFBB90090D72B /* IGCMenu.m */; };
 		78E4D44A1D1B1CF100FAFC1C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 78E4D4491D1B1CF100FAFC1C /* main.m */; };
@@ -202,8 +202,8 @@
 		788D96C81D2C701300CFA895 /* Assets.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Assets.bundle; sourceTree = "<group>"; };
 		78A9FBB11D1E15300055B029 /* PuzzleNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PuzzleNavigation.h; sourceTree = "<group>"; };
 		78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PuzzleNavigation.m; sourceTree = "<group>"; };
-		78A9FBDF1D21DEF70055B029 /* ArticleViewing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleViewing.h; sourceTree = "<group>"; };
-		78A9FBE01D21DEF70055B029 /* ArticleViewing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleViewing.m; sourceTree = "<group>"; };
+		78A9FBDF1D21DEF70055B029 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		78A9FBE01D21DEF70055B029 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		78A9FBF21D233A9B0055B029 /* Project.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Project.h; path = ../Project.h; sourceTree = "<group>"; };
 		78A9FBF31D233A9B0055B029 /* Project.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Project.m; path = ../Project.m; sourceTree = "<group>"; };
 		78D07FCC1D2EFBB90090D72B /* IGCMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IGCMenu.h; sourceTree = "<group>"; };
@@ -396,8 +396,8 @@
 				781A8C0F1D3EDEAB00963931 /* City.swift */,
 				781A8C111D3EDEEC00963931 /* VCMapView.swift */,
 				781A8C171D3EE08E00963931 /* ViewController.swift */,
-				78A9FBDF1D21DEF70055B029 /* ArticleViewing.h */,
-				78A9FBE01D21DEF70055B029 /* ArticleViewing.m */,
+				78A9FBDF1D21DEF70055B029 /* News.h */,
+				78A9FBE01D21DEF70055B029 /* News.m */,
 				78A9FBB11D1E15300055B029 /* PuzzleNavigation.h */,
 				78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */,
 				7837DF4F1D504A6C00E17401 /* drum01.mp3 */,
@@ -573,7 +573,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7816C77E1D318752005696ED /* NSData+CommonCrypto.m in Sources */,
-				78A9FBE11D21DEF80055B029 /* ArticleViewing.m in Sources */,
+				78A9FBE11D21DEF80055B029 /* News.m in Sources */,
 				781A8C101D3EDEAB00963931 /* City.swift in Sources */,
 				78A9FBF41D233A9B0055B029 /* Project.m in Sources */,
 				7816C77D1D318752005696ED /* NSData+Base64.m in Sources */,

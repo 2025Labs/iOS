@@ -41,6 +41,7 @@
 @property int pageNumber;
 @property int maxPageNumber;
 
+@property BOOL isScrollingEnabled;
 
 @property IGCMenu *menu;
 @property BOOL isMenuActive;

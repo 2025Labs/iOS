@@ -17,21 +17,18 @@
     [super viewDidLoad];
     [self preparePencil];
     [self prepareMenu];
+    _isDrawingEnabled = true;
+    [self registerForNotifications];
+    [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
     
-        [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reloadImage:)
-                                                 name:@"reload"
-                                               object:nil];
     
     NSLog(@"Loading View. filename: %@ topic: %@", _fileName, _currentTopic);
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-
+    
+    
     
     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
-
+    
     if([defaults objectForKey:userDefaultKey] != nil) {
         NSLog(@"Data already loaded from defaults with key: %@. Don't connect", _fileName);
         _fileArray = [defaults objectForKey:userDefaultKey];
@@ -40,11 +37,11 @@
         NSLog(@"Defaults: %@", defaults);
         [self connectToDatabase];
         NSLog(@"hi");
-
+        
         _fileArray = [self getImageFilesFromDatabase];
         NSLog(@"Hello");
     }
-
+    
     // Do any additional setup after loading the view, typically from a nib.
     
     //Make the edge of the view underneath the nav bar
@@ -67,10 +64,26 @@
     NSLog(@"Temp: %@", _tempDrawingImage);
 }
 
-
+- (void)registerForNotifications {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(performNotificationAction:)
+                                                 name:@"reload"
+                                               object:nil];
+    
+    /*[[NSNotificationCenter defaultCenter] addObserver:self
+     selector:@selector(performNotificationAction:)
+     name:@"enableDrawing"
+     object:nil];
+     */
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(performNotificationAction:)
+                                                 name:@"disableDrawing"
+                                               object:nil];
+}
 
 -(void) connectToDatabase {
-    _connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219";
+    _connectionString = "user=labs2025 password=engrRgr8 dbname=iOSDatabase  port=5432 host=labs2025ios.clygqyctjtg6.us-west-2.rds.amazonaws.com";
     _connection = PQconnectdb(_connectionString);
     
     if(PQstatus(_connection) != CONNECTION_OK) {
@@ -163,59 +176,64 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    _mouseSwiped = NO;
-    UITouch *touch = [touches anyObject];
-    _lastPoint = [touch locationInView:self.view];
+    if(_isDrawingEnabled) {
+        
+        _mouseSwiped = NO;
+        UITouch *touch = [touches anyObject];
+        _lastPoint = [touch locationInView:self.view];
+    }
 }
 
--(void) touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    _mouseSwiped = YES;
-    UITouch *touch = [touches anyObject];
-    CGPoint currentPoint = [touch locationInView:self.view];
-    
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [self.tempDrawingImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    CGContextMoveToPoint(UIGraphicsGetCurrentContext(), _lastPoint.x, _lastPoint.y);
-    CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
-    CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-    CGContextSetLineWidth(UIGraphicsGetCurrentContext(), _brush );
-    CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), _red, _green, _blue, 1.0);
-    CGContextSetBlendMode(UIGraphicsGetCurrentContext(),kCGBlendModeNormal);
-    
-    CGContextStrokePath(UIGraphicsGetCurrentContext());
-    self.tempDrawingImage.image = UIGraphicsGetImageFromCurrentImageContext();
-    [self.tempDrawingImage setAlpha:_opacity];
-    _tempDrawingImage.contentMode = UIViewContentModeScaleAspectFit;
-    
-    UIGraphicsEndImageContext();
-    
-    _lastPoint = currentPoint;
-    
+-(void) touchesMoved:(NSSet<UITouch*> *)touches withEvent:(UIEvent *)event {
+    if(_isDrawingEnabled) {
+        _mouseSwiped = YES;
+        UITouch *touch = [touches anyObject];
+        CGPoint currentPoint = [touch locationInView:self.view];
+        
+        UIGraphicsBeginImageContext(self.view.frame.size);
+        [self.tempDrawingImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), _lastPoint.x, _lastPoint.y);
+        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), currentPoint.x, currentPoint.y);
+        CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), _brush );
+        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), _red, _green, _blue, 1.0);
+        CGContextSetBlendMode(UIGraphicsGetCurrentContext(),kCGBlendModeNormal);
+        
+        CGContextStrokePath(UIGraphicsGetCurrentContext());
+        self.tempDrawingImage.image = UIGraphicsGetImageFromCurrentImageContext();
+        [self.tempDrawingImage setAlpha:_opacity];
+        _tempDrawingImage.contentMode = UIViewContentModeScaleAspectFit;
+        
+        UIGraphicsEndImageContext();
+        
+        _lastPoint = currentPoint;
+    }
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    if(!_mouseSwiped) {
-        UIGraphicsBeginImageContext(self.view.frame.size);
-        [self.tempDrawingImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
-        CGContextSetLineWidth(UIGraphicsGetCurrentContext(), _brush);
-        CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), _red, _green, _blue, _opacity);
-        CGContextMoveToPoint(UIGraphicsGetCurrentContext(), _lastPoint.x, _lastPoint.y);
-        CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), _lastPoint.x, _lastPoint.y);
-        CGContextStrokePath(UIGraphicsGetCurrentContext());
-        CGContextFlush(UIGraphicsGetCurrentContext());
-        self.tempDrawingImage.image = UIGraphicsGetImageFromCurrentImageContext();
+    if(_isDrawingEnabled) {
+        
+        if(!_mouseSwiped) {
+            UIGraphicsBeginImageContext(self.view.frame.size);
+            [self.tempDrawingImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+            CGContextSetLineCap(UIGraphicsGetCurrentContext(), kCGLineCapRound);
+            CGContextSetLineWidth(UIGraphicsGetCurrentContext(), _brush);
+            CGContextSetRGBStrokeColor(UIGraphicsGetCurrentContext(), _red, _green, _blue, _opacity);
+            CGContextMoveToPoint(UIGraphicsGetCurrentContext(), _lastPoint.x, _lastPoint.y);
+            CGContextAddLineToPoint(UIGraphicsGetCurrentContext(), _lastPoint.x, _lastPoint.y);
+            CGContextStrokePath(UIGraphicsGetCurrentContext());
+            CGContextFlush(UIGraphicsGetCurrentContext());
+            self.tempDrawingImage.image = UIGraphicsGetImageFromCurrentImageContext();
+            UIGraphicsEndImageContext();
+        }
+        
+        UIGraphicsBeginImageContext(self.cipher.frame.size);
+        [self.cipher.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:1.0];
+        [self.tempDrawingImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:_opacity];
+        self.cipher.image = UIGraphicsGetImageFromCurrentImageContext();
+        self.tempDrawingImage.image = nil;
         UIGraphicsEndImageContext();
     }
-    
-    UIGraphicsBeginImageContext(self.cipher.frame.size);
-    [self.cipher.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:1.0];
-    [self.tempDrawingImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) blendMode:kCGBlendModeNormal alpha:_opacity];
-    self.cipher.image = UIGraphicsGetImageFromCurrentImageContext();
-    self.tempDrawingImage.image = nil;
-    UIGraphicsEndImageContext();
-    
 }
 
 -(IBAction)buttonPressed:(id)sender {
@@ -247,42 +265,59 @@
     }
 }
 
--(void)reloadImage:(NSNotification *)notification {
-    NSLog(@"Loading View. filename: %@ topic: %@", _fileName, _currentTopic);
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+-(void)enableDisableScrolling:(NSNotification *)notification {
     
-    
-    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
-    
-    if([defaults objectForKey:userDefaultKey] != nil) {
-        NSLog(@"Data already loaded from defaults with key: %@. Don't connect", _fileName);
-        _fileArray = [defaults objectForKey:userDefaultKey];
-    } else {
-        NSLog(@"Connecting to database and retrieve images");
-        [self connectToDatabase];
-        
-        _fileArray = [self getImageFilesFromDatabase];
-    }
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    //Make the edge of the view underneath the nav bar
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    [manager downloadImageWithURL:[NSURL URLWithString:[_fileArray objectAtIndex:0]]
-                          options:0
-                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                             //NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
-                         }
-                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                            if (image) {
-                                NSLog(@"Finished downloading");
-                                [_tempDrawingImage setImage:image];
-                            }
-                        }];
-    NSLog(@"end of reload function");
+}
 
+-(void)performNotificationAction:(NSNotification *)notification {
+    
+    NSString *reason = [notification name];
+    NSLog(@"I am in performNotificationAction located in Puzzle.m The notification reason: %@", reason);
+    
+    if([reason isEqualToString:@"reload"]) {
+        NSLog(@"Loading View. filename: %@ topic: %@", _fileName, _currentTopic);
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        
+        
+        NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
+        
+        if([defaults objectForKey:userDefaultKey] != nil) {
+            NSLog(@"Data already loaded from defaults with key: %@. Don't connect", _fileName);
+            _fileArray = [defaults objectForKey:userDefaultKey];
+        } else {
+            NSLog(@"Connecting to database and retrieve images");
+            [self connectToDatabase];
+            
+            _fileArray = [self getImageFilesFromDatabase];
+        }
+        
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        //Make the edge of the view underneath the nav bar
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+        
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        [manager downloadImageWithURL:[NSURL URLWithString:[_fileArray objectAtIndex:0]]
+                              options:0
+                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                 //NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
+                             }
+                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                if (image) {
+                                    NSLog(@"Finished downloading");
+                                    [_tempDrawingImage setImage:image];
+                                }
+                            }];
+        NSLog(@"end of reload function");
+    } else if([reason isEqualToString:@"enableDrawing"]) {
+        NSLog(@"reason isEqualTo: enableDrawing");
+        _isDrawingEnabled = true;
+        
+    } else if([reason isEqualToString:@"disableDrawing"]) {
+        NSLog(@"reason isEqualTo: disableDrawing");
+        
+        _isDrawingEnabled = false;
+    }
 }
 
 

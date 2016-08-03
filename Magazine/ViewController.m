@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "Puzzle.h"
-#import "ArticleViewing.h"
+#import "News.h"
 #import "IGCMenu.h"
 #import "youtubeViewController.h"
 #import "PuzzleNavigation.h"
@@ -19,7 +19,7 @@
 @end
 
 @implementation ViewController
-    AVAudioPlayer *_audioPlayer;
+AVAudioPlayer *_audioPlayer;
 
 -(void) setupAudio{
     // Construct URL to sound file
@@ -42,9 +42,9 @@
     [self prepareHomepage];
     [self setupScrollview];
     [self setupAudio];
-    
+    _isScrollingEnabled = false;
     UIStoryboard *mainStoryboard = self.storyboard;
-
+    
     Puzzle *puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
     puzzleController.fileName = @"cipher.png";
     puzzleController.currentTopic = @"computing";
@@ -52,16 +52,16 @@
     frame.origin.x = 0;
     puzzleController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
     
-
+    
     puzzleController.view.contentMode = UIViewContentModeScaleToFill;
     
     [self addChildViewController:puzzleController];
     [puzzleController didMoveToParentViewController:self];
     puzzleController.view.autoresizesSubviews = YES;
     [self.scrollView addSubview:puzzleController.view];
-
     
-
+    
+    
     
     ViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
     
@@ -84,7 +84,7 @@
     
     
     youtubeViewController *youtubeController = [mainStoryboard instantiateViewControllerWithIdentifier:@"youtubeScene"];
-
+    
     youtubeController.view.frame = CGRectMake (self.view.frame.size.width*3, self.view.frame.size.height/10, self.view.frame.size.width, self.view.frame.size.height/2-35);
     
     [self addChildViewController:youtubeController];
@@ -92,42 +92,42 @@
     [self.scrollView addSubview:youtubeController.view];
     
     
-    }
+}
 
 -(void) setupScrollview {
     self.scrollView.scrollEnabled = NO;
-     self.scrollView.pagingEnabled = YES;
+    self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];
     
 }
 
 -(IBAction)nextScreen:(id)sender {
     if(_pageNumber + 1 < _maxPageNumber) {
-    _pageNumber += 1;
-    CGRect frame = _scrollView.frame;
-    frame.origin.x = 768 * _pageNumber;
-    NSLog(@"Now: %f", frame.origin.x);
-    [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
+        _pageNumber += 1;
+        CGRect frame = _scrollView.frame;
+        frame.origin.x = 768 * _pageNumber;
+        NSLog(@"Now: %f", frame.origin.x);
+        [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
         NSLog(@"sound");
-
-    [_audioPlayer play];
-
+        
+        [_audioPlayer play];
+        
     }
 }
 
 -(IBAction)prevScreen:(id)sender {
     if(_pageNumber - 1 >= 0) {
-    _pageNumber -= 1;
-    CGRect frame = _scrollView.frame;
-    frame.origin.x = 768 * _pageNumber;
-    NSLog(@"Now: %f", frame.origin.x);
-
-    [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
+        _pageNumber -= 1;
+        CGRect frame = _scrollView.frame;
+        frame.origin.x = 768 * _pageNumber;
+        NSLog(@"Now: %f", frame.origin.x);
+        
+        [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
         NSLog(@"sound");
-    [_audioPlayer play];
-
+        [_audioPlayer play];
+        
     }
-
+    
 }
 
 -(void) prepareHomepage {
@@ -175,13 +175,13 @@
     _menu.menuItemsNameArray = [NSArray arrayWithObjects:@"Computing", @"Energy", @"Materials", nil];
     _isMenuActive = false;
     _menu.delegate = self;
-
+    
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [_audioPlayer play];
     if([segue.identifier isEqualToString:@"showNews"]) {
-        ArticleViewing* controller = [segue destinationViewController];
+        News* controller = [segue destinationViewController];
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
@@ -189,21 +189,34 @@
         controller.currentTopic = _currentTopic;
         controller.fileName = @"wordsearch.png";
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
-        ArticleViewing* controller = [segue destinationViewController];
+        News* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
     }  else if([segue.identifier isEqualToString:@"showLeftArticle"]) {
-        ArticleViewing* controller = [segue destinationViewController];
+        News* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
         controller.pageToJumpTo = _leftArticlePageToJumpTo;
     }  else if([segue.identifier isEqualToString:@"showRightArticle"]) {
-        ArticleViewing* controller = [segue destinationViewController];
+        News* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
         controller.pageToJumpTo = _rightArticlePageToJumpTo;
     }   else if([segue.identifier isEqualToString:@"showFillInTheBlank"]) {
         PuzzleNavigation* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
         controller.fileName = @"fillintheblank.png";
+        
+    }
+}
 
+-(IBAction) enableDisableScrolling:(id) sender {
+    NSLog(@"Calling enableDisableScrolling. _isScrollingEnabled = %d", _isScrollingEnabled);
+    if(_isScrollingEnabled) {
+        //Scrolling is enabled -> Make it disabled
+        self.scrollView.scrollEnabled = NO;
+        [self notifyWithReason:@"enableDrawing"];
+        //Disable Scrolling and send signal to embedded view controller that you cannot draw
+    } else {
+        self.scrollView.scrollEnabled = YES;
+        [self notifyWithReason:@"disableDrawing"];
     }
 }
 
@@ -217,12 +230,12 @@
         [_menu showCircularMenu];
         _isMenuActive = true;
         [self.menuButton setImage:[UIImage imageNamed:@"circleChevronDown.png"] forState:UIControlStateNormal];
-
+        
     }
 }
 
 - (void)igcMenuSelected:(NSString *)selectedMenuName atIndex:(NSInteger)index{
-
+    
     switch (index) {
         case 0:
             NSLog(@"Transition to Computing");
@@ -251,6 +264,12 @@
             break;
     }
 }
+
+-(void) notifyWithReason: (NSString*) reason {
+    [[NSNotificationCenter defaultCenter]postNotificationName:reason object:nil];
+    NSLog(@"Called notification with reason: %@", reason);
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
