@@ -29,7 +29,8 @@ class ViewController: UIViewController {
     }
     
     func retrieveCityInformation() {
-        let connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219"
+        let connectionString = "user=labs2025 password=engrRgr8 dbname=iOSDatabase  port=5432 host=labs2025ios.clygqyctjtg6.us-west-2.rds.amazonaws.com"
+        
         let connection = PQconnectdb(connectionString)
         if(PQstatus(connection) != CONNECTION_OK) {
             print("Error: Couldn't connect to the database")

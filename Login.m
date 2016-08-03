@@ -19,7 +19,7 @@
 #import <libpq/libpq-fe.h>
 
 @implementation Login
-
+/*
 
 
 - (void)viewDidLoad {
@@ -97,7 +97,7 @@
 }
 
 - (IBAction)registerNewUser:(id)sender {
-   /* NSString *username = _username.text;
+    NSString *username = _username.text;
     NSString *password = _password.text;
     NSString *key = [self randomStringWithLength:32];
     NSString *salt = [self randomStringWithLength:32];
@@ -108,8 +108,8 @@
     //NSLog(@"Encrypted: %@", encryptedData);
     //NSString *message2 = [AESCrypt decrypt:encryptedData password:key];
     //NSLog(@"Message: %@", message2);
-    */
-}
 
+}
+*/
 @end
 

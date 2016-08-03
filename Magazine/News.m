@@ -17,9 +17,9 @@
     [super viewDidLoad];
     
     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", @"computing"];
-    
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
+
     _leftArticlePageToJumpTo = 0;
     _rightArticlePageToJumpTo = 5;
     
@@ -39,27 +39,27 @@
     }
     [self setupScrollview];
     
-    
+
     for (int i = 0; i < [_articleArray count]; i++) {
         CGFloat xOrigin = i * self.view.frame.size.width;
         
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:
-                                  CGRectMake(xOrigin, 0,
-                                             self.scrollView.frame.size.width,
-                                             self.scrollView.frame.size.height)];
+                              CGRectMake(xOrigin, 0,
+                                         self.scrollView.frame.size.width,
+                                         self.scrollView.frame.size.height)];
         
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
         [manager downloadImageWithURL:[NSURL URLWithString:[_articleArray objectAtIndex:i]]
                               options:0
                              progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                 NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
+                                 NSLog(@"Received: %ld expected: %ld", (long)receivedSize, (long)expectedSize);
                              }
                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                                 if (image) {
                                     [imageView setImage:image];
                                     imageView.contentMode = UIViewContentModeScaleAspectFit;
                                     [self.scrollView addSubview:imageView];
-                                    
+
                                 }
                             }];
         
@@ -82,7 +82,7 @@
 }
 
 -(void) connectToDatabase {
-    _connectionString = "user=rwpham password=richard1 dbname=postgres  port=5432 host=52.9.114.219";
+    _connectionString = "user=labs2025 password=engrRgr8 dbname=iOSDatabase  port=5432 host=labs2025ios.clygqyctjtg6.us-west-2.rds.amazonaws.com";
     _connection = PQconnectdb(_connectionString);
     
     if(PQstatus(_connection) != CONNECTION_OK) {
@@ -92,11 +92,11 @@
 }
 
 -(IBAction)jumpToPage:(id) sender {
-    int pageToJumpTo = [sender tag];
+    int pageToJumpTo = (int) [sender tag];
     _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width*pageToJumpTo, 0);
     
     NSLog(@"page to jump to: %d", pageToJumpTo);
-    
+
 }
 
 -(NSMutableArray*) getImageFilesFromDatabase {
@@ -116,15 +116,15 @@
     }
     NSMutableArray* resultArray = [[NSMutableArray alloc] init];
     for(int i =0; i < PQntuples(_result); i++) {
-        NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
+    NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
         NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
-        [resultArray addObject:temp];
+     [resultArray addObject:temp];
     }
-    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", _currentTopic];
+     NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", @"articles", _currentTopic];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:resultArray forKey:userDefaultKey];
     [defaults synchronize];
-    
+
     PQclear(_result);
     return resultArray;
 }

@@ -18,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+
     
     UIStoryboard *mainStoryboard = self.storyboard;
     
@@ -30,13 +30,13 @@
     NSLog(@"width: %f height: %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
     _puzzleController.view.contentMode = UIViewContentModeScaleToFill;
     
-    
+
     [self addChildViewController:_puzzleController];
     [_puzzleController didMoveToParentViewController:self];
     _puzzleController.view.autoresizesSubviews = YES;
     [self.scrollView addSubview:_puzzleController.view];
     
-    
+
 }
 
 

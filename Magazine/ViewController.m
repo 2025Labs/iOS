@@ -19,7 +19,7 @@
 @end
 
 @implementation ViewController
-AVAudioPlayer *_audioPlayer;
+    AVAudioPlayer *_audioPlayer;
 
 -(void) setupAudio{
     // Construct URL to sound file
@@ -44,7 +44,7 @@ AVAudioPlayer *_audioPlayer;
     [self setupAudio];
     _isScrollingEnabled = false;
     UIStoryboard *mainStoryboard = self.storyboard;
-    
+
     Puzzle *puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
     puzzleController.fileName = @"cipher.png";
     puzzleController.currentTopic = @"computing";
@@ -52,16 +52,16 @@ AVAudioPlayer *_audioPlayer;
     frame.origin.x = 0;
     puzzleController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
     
-    
+
     puzzleController.view.contentMode = UIViewContentModeScaleToFill;
     
     [self addChildViewController:puzzleController];
     [puzzleController didMoveToParentViewController:self];
     puzzleController.view.autoresizesSubviews = YES;
     [self.scrollView addSubview:puzzleController.view];
+
     
-    
-    
+
     
     ViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
     
@@ -84,7 +84,7 @@ AVAudioPlayer *_audioPlayer;
     
     
     youtubeViewController *youtubeController = [mainStoryboard instantiateViewControllerWithIdentifier:@"youtubeScene"];
-    
+
     youtubeController.view.frame = CGRectMake (self.view.frame.size.width*3, self.view.frame.size.height/10, self.view.frame.size.width, self.view.frame.size.height/2-35);
     
     [self addChildViewController:youtubeController];
@@ -92,42 +92,42 @@ AVAudioPlayer *_audioPlayer;
     [self.scrollView addSubview:youtubeController.view];
     
     
-}
+    }
 
 -(void) setupScrollview {
     self.scrollView.scrollEnabled = NO;
-    self.scrollView.pagingEnabled = YES;
+     self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];
     
 }
 
 -(IBAction)nextScreen:(id)sender {
     if(_pageNumber + 1 < _maxPageNumber) {
-        _pageNumber += 1;
-        CGRect frame = _scrollView.frame;
-        frame.origin.x = 768 * _pageNumber;
-        NSLog(@"Now: %f", frame.origin.x);
-        [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
+    _pageNumber += 1;
+    CGRect frame = _scrollView.frame;
+    frame.origin.x = 768 * _pageNumber;
+    NSLog(@"Now: %f", frame.origin.x);
+    [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
         NSLog(@"sound");
-        
-        [_audioPlayer play];
-        
+
+    [_audioPlayer play];
+
     }
 }
 
 -(IBAction)prevScreen:(id)sender {
     if(_pageNumber - 1 >= 0) {
-        _pageNumber -= 1;
-        CGRect frame = _scrollView.frame;
-        frame.origin.x = 768 * _pageNumber;
-        NSLog(@"Now: %f", frame.origin.x);
-        
-        [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
+    _pageNumber -= 1;
+    CGRect frame = _scrollView.frame;
+    frame.origin.x = 768 * _pageNumber;
+    NSLog(@"Now: %f", frame.origin.x);
+
+    [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
         NSLog(@"sound");
-        [_audioPlayer play];
-        
+    [_audioPlayer play];
+
     }
-    
+
 }
 
 -(void) prepareHomepage {
@@ -175,7 +175,7 @@ AVAudioPlayer *_audioPlayer;
     _menu.menuItemsNameArray = [NSArray arrayWithObjects:@"Computing", @"Energy", @"Materials", nil];
     _isMenuActive = false;
     _menu.delegate = self;
-    
+
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -203,7 +203,7 @@ AVAudioPlayer *_audioPlayer;
         PuzzleNavigation* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
         controller.fileName = @"fillintheblank.png";
-        
+
     }
 }
 
@@ -230,12 +230,12 @@ AVAudioPlayer *_audioPlayer;
         [_menu showCircularMenu];
         _isMenuActive = true;
         [self.menuButton setImage:[UIImage imageNamed:@"circleChevronDown.png"] forState:UIControlStateNormal];
-        
+
     }
 }
 
 - (void)igcMenuSelected:(NSString *)selectedMenuName atIndex:(NSInteger)index{
-    
+
     switch (index) {
         case 0:
             NSLog(@"Transition to Computing");

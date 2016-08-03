@@ -35,7 +35,7 @@
     [_choice3.titleLabel setAdjustsFontSizeToFitWidth:YES];
     [_choice4.titleLabel setAdjustsFontSizeToFitWidth:YES];
     
-    _navigationBarTitle = [NSString stringWithFormat:@"Question %d/%d", _questionIndex+1, [_jsonArray count]];
+    //_navigationBarTitle = [NSString stringWithFormat:@"Question %%lu%d", _questionIndex+1(unsigned long), [_jsonArray count]];
                       
     self.navigationItem.title= _navigationBarTitle;
     
@@ -59,7 +59,7 @@
             }
         }
     }
-     _navigationBarTitle = [NSString stringWithFormat:@"Question %d/%d", _questionIndex+1, [_jsonArray count]];
+     //_navigationBarTitle = [NSString stringWithFormat:@"Question %d/%d", _questionIndex+1, [_jsonArray count]];
     self.navigationItem.title = _navigationBarTitle;
 }
 

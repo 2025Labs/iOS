@@ -79,7 +79,7 @@
         [manager downloadImageWithURL:[NSURL URLWithString:[imageArray objectAtIndex:0]]
                               options:0
                              progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                                 NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
+                                 NSLog(@"Received: %ld expected: %ld", (long)receivedSize, (long)expectedSize);
                              }
                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                                 if (image) {
@@ -209,4 +209,5 @@
         self.scrollView.zoomScale = (self.scrollView.zoomScale - 0.4);
     }
 }
+
 @end
