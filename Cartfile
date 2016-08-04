@@ -1,2 +1,3 @@
 github "corin8823/Popover"
 github "rs/SDWebImage"
+github "SwiftyJSON/SwiftyJSON"

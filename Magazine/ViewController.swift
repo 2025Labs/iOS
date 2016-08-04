@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import WebImage
+import Foundation
+import SwiftyJSON
 
 class ViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
@@ -18,49 +20,32 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
-        let initialLocation = CLLocation(latitude: 12.9, longitude: 77.6)
         retrieveCityInformation()
+
+        let initialLocation = CLLocation(latitude: 12.9, longitude: 77.6)
         centerMapOnLocation(initialLocation)
         
         for i in 0...cityArray.count-1 {
             map.addAnnotation(cityArray[i])
         }
-
     }
     
     func retrieveCityInformation() {
-        let connectionString = "user=labs2025 password=engrRgr8 dbname=iOSDatabase  port=5432 host=labs2025ios.clygqyctjtg6.us-west-2.rds.amazonaws.com"
-        
-        let connection = PQconnectdb(connectionString)
-        if(PQstatus(connection) != CONNECTION_OK) {
-            print("Error: Couldn't connect to the database")
-        }
-        
-        var result = PQexec(connection, "begin")
-        if(PQresultStatus(result) != PGRES_COMMAND_OK) {
-            print("Begin command failed")
-        }
-        PQclear(result)
-        
-        result = PQexec(connection, "SELECT * FROM cities ORDER BY title")
-        
-        if(PQresultStatus(result) != PGRES_TUPLES_OK) {
-            print("Couldn't fetch anything")
-        }
-        for i in 0...PQntuples(result)-1 {
-            
-            let title = String.fromCString(PQgetvalue(result, i, 0))
-            let latitude = String.fromCString(PQgetvalue(result, i, 1))
-            let longitude = String.fromCString(PQgetvalue(result, i, 2))
-            let country = String.fromCString(PQgetvalue(result, i, 3))
-            let image = String.fromCString(PQgetvalue(result, i, 4))
-            let information = String.fromCString(PQgetvalue(result, i, 5))
-            let imageFilePath = String.fromCString(PQgetvalue(result, i, 6))
+
+        let jsonFilePath:NSString = NSBundle.mainBundle().pathForResource("citiesJSON", ofType: "json")!
+        let jsonData:NSData = NSData.dataWithContentsOfMappedFile(jsonFilePath as String) as! NSData
+        let json = JSON(data: jsonData) // Note: data: parameter name
+        print(json)
+        for item in json.arrayValue {
+            let title = item["title"].rawString()
+            let latitude = item["latitude"].rawString()
+            let longitude = item["longitude"].rawString()
+            let country = item["country"].rawString()
+            let image = item["imagefilename"].rawString()
+            let information = item["information"].rawString()
+            let imageFilePath = item["filepath"].rawString()
             let newCity = City(title: title!, coordinate: CLLocationCoordinate2DMake(Double(latitude!)!, Double(longitude!)!), country: country!, image: image!, information: information!, imageFilePath: imageFilePath!)
-            
             cityArray.append(newCity)
-
-
         }
     }
     func centerMapOnLocation(location: CLLocation) {

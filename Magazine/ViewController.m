@@ -46,7 +46,7 @@
     UIStoryboard *mainStoryboard = self.storyboard;
 
     Puzzle *puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
-    puzzleController.fileName = @"cipher.png";
+    puzzleController.filename = @"cipher.png";
     puzzleController.currentTopic = @"computing";
     CGRect frame = puzzleController.view.frame;
     frame.origin.x = 0;
@@ -73,7 +73,7 @@
     
     
     Puzzle *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
-    puzzleController2.fileName = @"howfastistheinternet.png";
+    puzzleController2.filename = @"howfastistheinternet.png";
     puzzleController2.currentTopic = @"computing";
     
     puzzleController2.view.frame = CGRectMake (self.view.frame.size.width*2,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
@@ -98,7 +98,6 @@
     self.scrollView.scrollEnabled = NO;
      self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];
-    
 }
 
 -(IBAction)nextScreen:(id)sender {
@@ -217,6 +216,7 @@
     } else {
         self.scrollView.scrollEnabled = YES;
         [self notifyWithReason:@"disableDrawing"];
+        NSLog(@"Scrolling is enabled? %d", self.scrollView.scrollEnabled);
     }
 }
 
@@ -274,5 +274,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

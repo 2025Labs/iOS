@@ -19,36 +19,14 @@
     [self prepareMenu];
     _isDrawingEnabled = true;
     [self registerForNotifications];
-        [[NSUserDefaults standardUserDefaults] setPersistentDomain:[NSDictionary dictionary] forName:[[NSBundle mainBundle] bundleIdentifier]];
-    
-    
-    NSLog(@"Loading View. filename: %@ topic: %@", _fileName, _currentTopic);
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-
-    
-    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
-
-    if([defaults objectForKey:userDefaultKey] != nil) {
-        NSLog(@"Data already loaded from defaults with key: %@. Don't connect", _fileName);
-        _fileArray = [defaults objectForKey:userDefaultKey];
-    } else {
-        NSLog(@"Connecting to database and retrieve images");
-        NSLog(@"Defaults: %@", defaults);
-        [self connectToDatabase];
-        NSLog(@"hi");
-
-        _fileArray = [self getImageFilesFromDatabase];
-        NSLog(@"Hello");
-    }
-
-    // Do any additional setup after loading the view, typically from a nib.
+    [self getFilepathFromJSON];
     
     //Make the edge of the view underneath the nav bar
     self.edgesForExtendedLayout = UIRectEdgeNone;
-    
+
+    //Download image with URL
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    [manager downloadImageWithURL:[NSURL URLWithString:[_fileArray objectAtIndex:0]]
+    [manager downloadImageWithURL:[NSURL URLWithString:_filepath]
                           options:0
                          progress:^(NSInteger receivedSize, NSInteger expectedSize) {
                              NSLog(@"Received: %ld expected: %ld", (long)receivedSize, (long)expectedSize);
@@ -59,9 +37,21 @@
                                 [_tempDrawingImage setImage:image];
                             }
                         }];
+}
+
+-(void) getFilepathFromJSON {
     
-    NSLog(@"Cipher: %@", _cipher);
-    NSLog(@"Temp: %@", _tempDrawingImage);
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"imagesJSON" ofType:@"json"];
+    
+    NSString *myJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    NSError *error =  nil;
+    NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:[myJSON dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
+    
+    for(NSDictionary *item in jsonDataArray) {
+        if([[item objectForKey:@"filename"] isEqual: _filename]) {
+            _filepath = [item objectForKey:@"filepath"];
+        }
+    }
 }
 
 - (void)registerForNotifications {
@@ -71,57 +61,17 @@
                                                  name:@"reload"
                                                object:nil];
     
-    /*[[NSNotificationCenter defaultCenter] addObserver:self
+    [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(performNotificationAction:)
                                                  name:@"enableDrawing"
                                                object:nil];
-    */
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(performNotificationAction:)
                                                  name:@"disableDrawing"
                                                object:nil];
 }
 
--(void) connectToDatabase {
-    _connectionString = "user=labs2025 password=engrRgr8 dbname=iOSDatabase  port=5432 host=labs2025ios.clygqyctjtg6.us-west-2.rds.amazonaws.com";    
-    _connection = PQconnectdb(_connectionString);
-    
-    if(PQstatus(_connection) != CONNECTION_OK) {
-        NSLog(@"Error: Couldn't connect to the database");
-        NSLog(@"Error message: %s", PQerrorMessage(_connection));
-    }
-    
-}
-
--(NSMutableArray*) getImageFilesFromDatabase {
-    _result = PQexec(_connection, "begin");
-    if(PQresultStatus(_result) != PGRES_COMMAND_OK) {
-        NSLog(@"Begin command failed");
-    }
-    PQclear(_result);
-    
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = '%@' AND topic = '%@'", _fileName, _currentTopic];
-    const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
-    NSLog(@"Query: %s", query);
-    _result = PQexec(_connection, query);
-    if(PQresultStatus(_result) !=PGRES_TUPLES_OK) {
-        NSLog(@"Couldn't fetch anything");
-    }
-    NSMutableArray* resultArray = [[NSMutableArray alloc] init];
-    //If successful, this should be a hashed password
-    for(int i =0; i < PQntuples(_result); i++) {
-        NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
-        NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
-        [resultArray addObject:temp];
-    }
-    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:resultArray forKey:userDefaultKey];
-    [defaults synchronize];
-    
-    PQclear(_result);
-    return resultArray;
-}
 
 -(void) preparePencil {
     _red = 0.0;
@@ -176,6 +126,8 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"i'm being touched (touchesBegan)");
+
     if(_isDrawingEnabled) {
 
     _mouseSwiped = NO;
@@ -185,6 +137,7 @@
 }
 
 -(void) touchesMoved:(NSSet<UITouch*> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"i'm being touched (touchesMoved)");
     if(_isDrawingEnabled) {
     _mouseSwiped = YES;
     UITouch *touch = [touches anyObject];
@@ -275,47 +228,27 @@
     NSLog(@"I am in performNotificationAction located in Puzzle.m The notification reason: %@", reason);
     
     if([reason isEqualToString:@"reload"]) {
-    NSLog(@"Loading View. filename: %@ topic: %@", _fileName, _currentTopic);
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
-    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
-    
-    if([defaults objectForKey:userDefaultKey] != nil) {
-        NSLog(@"Data already loaded from defaults with key: %@. Don't connect", _fileName);
-        _fileArray = [defaults objectForKey:userDefaultKey];
-    } else {
-        NSLog(@"Connecting to database and retrieve images");
-        [self connectToDatabase];
+
+        [self getFilepathFromJSON];
         
-        _fileArray = [self getImageFilesFromDatabase];
-    }
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    
-    //Make the edge of the view underneath the nav bar
-    self.edgesForExtendedLayout = UIRectEdgeNone;
-    
-    SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    [manager downloadImageWithURL:[NSURL URLWithString:[_fileArray objectAtIndex:0]]
-                          options:0
-                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                             //NSLog(@"Received: %d expected: %d", receivedSize, expectedSize);
-                         }
-                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                            if (image) {
-                                NSLog(@"Finished downloading");
-                                [_tempDrawingImage setImage:image];
-                            }
-                        }];
-    NSLog(@"end of reload function");
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        [manager downloadImageWithURL:[NSURL URLWithString:_filepath]
+                              options:0
+                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                 NSLog(@"Received: %ld expected: %ld", (long)receivedSize, (long)expectedSize);
+                             }
+                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                if (image) {
+                                    NSLog(@"Finished downloading");
+                                    [_tempDrawingImage setImage:image];
+                                }
+                            }];
     } else if([reason isEqualToString:@"enableDrawing"]) {
         NSLog(@"reason isEqualTo: enableDrawing");
         _isDrawingEnabled = true;
         
     } else if([reason isEqualToString:@"disableDrawing"]) {
         NSLog(@"reason isEqualTo: disableDrawing");
-
         _isDrawingEnabled = false;
     }
 }

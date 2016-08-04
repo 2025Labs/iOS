@@ -24,7 +24,7 @@
     
     _puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
     _puzzleController.currentTopic = _currentTopic;
-    _puzzleController.fileName = _fileName;
+    _puzzleController.filename = _fileName;
     
     _puzzleController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
     NSLog(@"width: %f height: %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
@@ -56,69 +56,29 @@
     }
 }
 
--(void) connectToDatabase {
-    _connectionString = "user=labs2025 password=engrRgr8 dbname=iOSDatabase  port=5432 host=labs2025ios.clygqyctjtg6.us-west-2.rds.amazonaws.com";
-    _connection = PQconnectdb(_connectionString);
-    
-    if(PQstatus(_connection) != CONNECTION_OK) {
-        NSLog(@"Error: Couldn't connect to the database");
-        NSLog(@"Error message: %s", PQerrorMessage(_connection));
-    }
-    
-}
-
--(NSMutableArray*) getImageFilesFromDatabase {
-    _result = PQexec(_connection, "begin");
-    if(PQresultStatus(_result) != PGRES_COMMAND_OK) {
-        NSLog(@"Begin command failed");
-    }
-    PQclear(_result);
-    
-    NSString *tempQuery = [NSString stringWithFormat:@"SELECT * FROM images WHERE filename = '%@' AND topic = '%@'", _fileName, _currentTopic];
-    const char *query = [tempQuery cStringUsingEncoding:NSASCIIStringEncoding];
-    NSLog(@"Query: %s", query);
-    _result = PQexec(_connection, query);
-    if(PQresultStatus(_result) !=PGRES_TUPLES_OK) {
-        NSLog(@"Couldn't fetch anything");
-    }
-    NSMutableArray* resultArray = [[NSMutableArray alloc] init];
-    //If successful, this should be a hashed password
-    for(int i =0; i < PQntuples(_result); i++) {
-        NSLog(@"value: %s ",PQgetvalue(_result, i, 2));
-        NSString *temp = [NSString stringWithUTF8String:PQgetvalue(_result, i, 2)];
-        [resultArray addObject:temp];
-    }
-    NSString *userDefaultKey = [NSString stringWithFormat:@"%@,%@", _fileName, _currentTopic];
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:resultArray forKey:userDefaultKey];
-    [defaults synchronize];
-    
-    PQclear(_result);
-    return resultArray;
-}
 
 -(IBAction)changeToFillInTheBlank:(id)sender {
     NSLog(@"start change to fillintheblank");
-    _puzzleController.fileName = @"fillintheblank.png";
+    _puzzleController.filename = @"fillintheblank.png";
     _puzzleController.currentTopic = @"computing";
     [self notifyWithReason:@"reload"];
 }
 
 -(IBAction)changeToWordsearch:(id)sender {
-    _puzzleController.fileName = @"wordsearch.png";
+    _puzzleController.filename = @"wordsearch.png";
     _puzzleController.currentTopic = @"computing";
     [self notifyWithReason:@"reload"];
     
 }
 
 -(IBAction)changeToMaterial:(id)sender {
-    _puzzleController.fileName = @"material.png";
+    _puzzleController.filename = @"material.png";
     _puzzleController.currentTopic = @"computing";
     [self notifyWithReason:@"reload"];
 }
 
 -(IBAction)changeToCipher:(id)sender {
-    _puzzleController.fileName = @"cipher.png";
+    _puzzleController.filename = @"cipher.png";
     _puzzleController.currentTopic = @"computing";
     [self notifyWithReason:@"reload"];
 }

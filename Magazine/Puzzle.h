@@ -24,8 +24,9 @@
 @property CGFloat brush;
 @property CGFloat opacity;
 @property BOOL mouseSwiped;
-@property NSString *fileName;
-@property NSMutableArray *fileArray;
+@property NSString *filename;
+
+@property NSString *filepath;
 @property NSString *currentTopic;
 
 @property BOOL isDrawingEnabled;

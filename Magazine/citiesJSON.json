@@ -1,0 +1,113 @@
+ [{
+  "title": "Bangalore",
+  "latitude": 12.9716,
+  "longitude": 77.5946,
+  "country": "India",
+  "imagefilename": "bangalore.jpg",
+  "information": "Bangalore, India is well known for information technology companies to which other companies hire out their work. Among these IT outsourcers: Infosys, Tata, and Wipro. Tech companies all over the world make use of IT talent from Indian companies. India hopes to move beyond outsourcing to more home grown companies.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/bangalore.jpg"
+  },{
+  "title": "Tel Aviv",
+  "latitude": 32.0853,
+  "longitude": 34.7818,
+  "country": "Isarel",
+  "imagefilename": "telaviv.jpg",
+  "information": "Tel Aviv, Israel is not big, but it is an emerging technology center with a thriving startup scene. According to the bbc, high tech exports amounted to about $18 billion per year, and about 45% of Israels exports. There is so much startup activity that there is one startup for every 431 residents.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/telaviv.jpg"
+  },{
+  "title": "London",
+  "latitude": 51.5074,
+  "longitude": 0.1278,
+  "country": "England",
+  "imagefilename": "london.jpg",
+  "information": "London's technology industry is growing quickly, thanksk to government investment in developing an area rich in startup support and tech infrastructure. According to the Boston Globe, London has the highest rate of startup companies in Europe.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/london.jpg"
+  },{
+  "title": "Boston",
+  "latitude": 42.3601,
+  "longitude": -71.0589,
+  "country": "USA",
+  "imagefilename": "boston.jpg",
+  "information": "Boston, Massachusetts has been a high tech hub for a long time. A Boston-based company (BBN) and a Boston area university (MIT) created technology that implemented the early Internet as part of the ARPANET work funded by the Pentagon. The Boston area still has many technology companies and lots of startup activity, receiving more than $6 billion in startup funding in 2015.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/boston.jpg"
+  },{
+  "title": "Hong Kong",
+  "latitude": 22.3964,
+  "longitude": 114.1095,
+  "country": "China",
+  "imagefilename": "hongkong.jpg",
+  "information": "Hong Kong, China is compared to hot startup locations like London and New York. It is considered an emerging tech hub by sources such as Forbes, Inc. In face, Hong Kong has one of the fastest growing startup communities in the world. With only 7 million residents, a whopping 150,000 new businesses were started in 2011 alone. With its rich startup environment, it is nicknamed \"Silicon Harbour\" in comparison to Silicon Valley.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/hongkong.jpg"
+  },{
+  "title": "Dublin",
+  "latitude": 53.3498,
+  "longitude": -6.2603,
+  "country": "Ireland",
+  "imagefilename": "dublin.jpg",
+  "information": "Many US companies locate their European headquarters in Dublin, Ireland. Among the reasons: a low tax rate for businesses (12.5% vs 39% in the US), a well-educated and talented work force, a set of laws that do not create much extra work for businesses. In addition, Dublin has a much lower cost of living (such as housing expenses) compared to expensive places like London and Silicon Valley.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/dublin.jpg"
+  },{
+  "title": "Seattle",
+  "latitude": 47.6062,
+  "longitude": -122.3321,
+  "country": "USA",
+  "imagefilename": "seattle.jpg",
+  "information": "Seattle, Washington is home to well-known companies like Amazon, Microsoft, Code.org, and Expedia. Many Silicon Valley companies have Seattle offices as well. Not only that - the University of Washington has one of the best Computer Science programs in the country, according to US News and World Report Rankings.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/seattle.jpg"
+  },{
+  "title": "Silicon Valley",
+  "latitude": 37.3382,
+  "longitude": -121.8863,
+  "country": "USA",
+  "imagefilename": "siliconvalley.jpg",
+  "information": "Silicon Valley in California is known all over the world for its technology businesses. Silicon Valley cities are home to companies such as Google, Facebook, Adobe, and Intel. The second computer on the early Internet was at the Stanford Research Institute (SRI) in Palo Alto, a city in the northern part of Silicon Valley. In addition to many large tech businesses, Silicon Valley has a huge startup economy.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/siliconvalley.jpg"
+  },{
+  "title": "Los Angeles",
+  "latitude": 34.0522,
+  "longitude": -118.2437,
+  "country": "USA",
+  "imagefilename": "losangeles.jpg",
+  "information": "Forbes Magazine lists the Los Angeles area as a fast-growing area for startups. The area received more than $5 billion in startup funding in 2015. LA is historically important, too. Two of the first computers of the early internet were in the greater Los Angeles area at two of California's flagship public universities: one at UCLA, and one at UCSB.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/losangeles.jpg"
+  },{
+  "title": "San Francisco",
+  "latitude": 37.7749,
+  "longitude": -122.4194,
+  "country": "USA",
+  "imagefilename": "sanfrancisco.jpg",
+  "information": "San Francisco, California is north of what is typically included in Silicon Valley. Recently, though, it has become a hot spot for new technology companies, with firms like Twitter, Pinterest, Uber, Square, and DropBox calling San Francisco home.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/sanfrancisco.jpg"
+  },{
+  "title": "Austin",
+  "latitude": 30.2672,
+  "longitude": -97.7431,
+  "country": "USA",
+  "imagefilename": "austin.jpg",
+  "information": "Austin, Texas has seen incredible growth in tech industry jobs, creating technology jobs at a higher rate than anywhere else in the country, according to a recent Forbes list. Companies with a presence in Austin include Dell, IBM, and Oracle.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/austin.jpg"
+  },{
+  "title": "Washington D.C",
+  "latitude": 38.9072,
+  "longitude": -77.0369,
+  "country": "USA",
+  "imagefilename": "washingtondc.jpg",
+  "information": "You may know Washington, D.C as our nation's capital. It is also a hub for high tech companies such as LivingSocial. And, the APARNET, the precursor to our modern Internet, was funded out of the Pentagon's advanced research organization there. So, we can thank the country's leadership for our ability to tweet and share photos on Instagram!",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/washingtondc.jpg"
+  },{
+  "title": "New York City",
+  "latitude": 40.7128,
+  "longitude": -74.0059,
+  "country": "USA",
+  "imagefilename": "newyorkcity.jpg",
+  "information": "New York City (NYC) is included on many lists of US high tech centers. In 2013, nearly 7000 tech companies in New York City provided more than 100,000 jobs. In 2015 alone, more than $7 billion of venture (startup) funding was invested in NYC-based startup companies. In fact, the increase in 2015 NYC-area venture funding was greater than any other region.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/newyorkcity.jpg"
+  },{
+  "title": "Shenzhen",
+  "latitude": 22.5431,
+  "longitude": 114.0579,
+  "country": "China",
+  "imagefilename": "shenzhen.jpg",
+  "information": "Shenzhen, China was a fishing village 30 years ago, but is now a high tech world power. Shenzen makes much of the world's computing devices like smartphones and computers. Taiwan and Hong Kong firms were first to begin manufacturing in Shenzhen. Then companies like Apple and Cisco began outsourcing to Shenzhen as well. It is also home to successful Chinese companies like Tencent and Huawei, and has a thriving startup environment.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/shenzhen.jpg"
+  }]
