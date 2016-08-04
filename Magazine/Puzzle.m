@@ -230,7 +230,7 @@
     if([reason isEqualToString:@"reload"]) {
 
         [self getFilepathFromJSON];
-        
+        [self.tempDrawingImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
         [manager downloadImageWithURL:[NSURL URLWithString:_filepath]
                               options:0

@@ -262,7 +262,7 @@
                                             <constraint firstAttribute="width" constant="75" id="fH5-LF-lpb"/>
                                             <constraint firstAttribute="height" constant="75" id="oSi-tX-Eyi"/>
                                         </constraints>
-                                        <state key="normal" title="Button" image="8AF3BE04-B5E7-4226-AFAF-91DBF9A976A7"/>
+                                        <state key="normal" title="Button" image="C3F65BA1-79E2-4543-A750-1F2C1092C503"/>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="fH5-LF-lpb"/>
@@ -990,7 +990,9 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="KAh-XR-1Hv" firstAttribute="top" secondItem="xHc-kd-dBh" secondAttribute="top" constant="8" id="CO2-YX-BMJ"/>
+                                    <constraint firstItem="KAh-XR-1Hv" firstAttribute="top" secondItem="xHc-kd-dBh" secondAttribute="top" constant="8" id="CO2-YX-BMJ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="6"/>
+                                    </constraint>
                                     <constraint firstAttribute="bottom" secondItem="QAS-hW-0eM" secondAttribute="bottom" constant="7" id="GIb-gF-471">
                                         <variation key="heightClass=regular-widthClass=regular" constant="9"/>
                                     </constraint>
@@ -1002,18 +1004,20 @@
                                     </constraint>
                                     <constraint firstItem="QAS-hW-0eM" firstAttribute="leading" secondItem="xHc-kd-dBh" secondAttribute="leading" id="iLN-ny-QpQ"/>
                                     <constraint firstItem="xz8-5U-Wgf" firstAttribute="leading" secondItem="KAh-XR-1Hv" secondAttribute="trailing" constant="8" id="kZG-V8-A5y"/>
-                                    <constraint firstAttribute="bottom" secondItem="KAh-XR-1Hv" secondAttribute="bottom" constant="7" id="mtu-xL-CQV"/>
+                                    <constraint firstAttribute="bottom" secondItem="KAh-XR-1Hv" secondAttribute="bottom" constant="7" id="mtu-xL-CQV">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="9"/>
+                                    </constraint>
                                     <constraint firstItem="845-KQ-nza" firstAttribute="centerY" secondItem="xz8-5U-Wgf" secondAttribute="centerY" id="qNJ-gZ-8RX">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="-2"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                                     </constraint>
                                     <constraint firstItem="QAS-hW-0eM" firstAttribute="top" secondItem="xHc-kd-dBh" secondAttribute="top" constant="8" id="sKm-H1-Hi2">
                                         <variation key="heightClass=regular-widthClass=regular" constant="6"/>
                                     </constraint>
                                     <constraint firstItem="xz8-5U-Wgf" firstAttribute="top" secondItem="xHc-kd-dBh" secondAttribute="top" id="t7Q-mM-d4f">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="8"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="6"/>
                                     </constraint>
                                     <constraint firstItem="WJ1-b6-oHB" firstAttribute="centerY" secondItem="xz8-5U-Wgf" secondAttribute="centerY" id="ydU-Kg-Vm7">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="-2"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
                                     </constraint>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -1294,6 +1298,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="E0M-VQ-Gfk" firstAttribute="top" secondItem="xHc-kd-dBh" secondAttribute="bottom" constant="8" id="0po-ik-xTw"/>
+                            <constraint firstItem="xHc-kd-dBh" firstAttribute="top" secondItem="VYo-VR-eq7" secondAttribute="bottom" constant="3" id="6Qs-cE-Bw1"/>
                             <constraint firstItem="xHc-kd-dBh" firstAttribute="leading" secondItem="3Kx-h3-dG2" secondAttribute="leadingMargin" id="GfH-rk-FMt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xHc-kd-dBh" secondAttribute="trailing" id="LIH-Xe-3dN"/>
                             <constraint firstItem="gji-QA-t5s" firstAttribute="leading" secondItem="3Kx-h3-dG2" secondAttribute="leadingMargin" id="Ltd-fQ-nw0"/>
@@ -1311,16 +1316,17 @@
                                 <exclude reference="E0M-VQ-Gfk"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="6Qs-cE-Bw1"/>
                                 <exclude reference="GfH-rk-FMt"/>
                                 <exclude reference="LIH-Xe-3dN"/>
                                 <exclude reference="s0M-3s-5lR"/>
-                                <exclude reference="rFV-xN-vxT"/>
                                 <exclude reference="0po-ik-xTw"/>
                                 <exclude reference="iIv-qT-Z0x"/>
                                 <exclude reference="jRB-cF-IbJ"/>
                                 <exclude reference="Ltd-fQ-nw0"/>
                                 <exclude reference="oNz-Mc-XrO"/>
                                 <exclude reference="qOy-jt-fc1"/>
+                                <exclude reference="rFV-xN-vxT"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1330,16 +1336,17 @@
                                 <include reference="E0M-VQ-Gfk"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="6Qs-cE-Bw1"/>
                                 <include reference="GfH-rk-FMt"/>
                                 <include reference="LIH-Xe-3dN"/>
-                                <include reference="s0M-3s-5lR"/>
-                                <include reference="rFV-xN-vxT"/>
+                                <exclude reference="s0M-3s-5lR"/>
                                 <include reference="0po-ik-xTw"/>
                                 <include reference="iIv-qT-Z0x"/>
                                 <include reference="jRB-cF-IbJ"/>
                                 <include reference="Ltd-fQ-nw0"/>
                                 <include reference="oNz-Mc-XrO"/>
                                 <include reference="qOy-jt-fc1"/>
+                                <include reference="rFV-xN-vxT"/>
                             </mask>
                         </variation>
                     </view>
@@ -1458,10 +1465,10 @@
             </objects>
             <point key="canvasLocation" x="777" y="-332"/>
         </scene>
-        <!--View Controller-->
+        <!--Around the World-->
         <scene sceneID="XiQ-5Y-PbL">
             <objects>
-                <viewController storyboardIdentifier="mapScene" id="sRK-kn-abJ" customClass="ViewController" customModule="Magazine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mapScene" id="sRK-kn-abJ" userLabel="Around the World" customClass="ViewController" customModule="Magazine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Qn-QZ-qb1"/>
                         <viewControllerLayoutGuide type="bottom" id="Rho-OQ-hwq"/>
@@ -1473,14 +1480,45 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CU6-Rl-fKj">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </mapView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="newspaper.png" translatesAutoresizingMaskIntoConstraints="NO" id="gy5-UO-IDc">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CU6-Rl-fKj" firstAttribute="height" secondItem="ctm-41-dNS" secondAttribute="height" id="4sH-1Q-ns3"/>
+                            <constraint firstItem="Rho-OQ-hwq" firstAttribute="top" secondItem="CU6-Rl-fKj" secondAttribute="bottom" id="Lg6-3L-mUB"/>
+                            <constraint firstItem="CU6-Rl-fKj" firstAttribute="top" secondItem="ctm-41-dNS" secondAttribute="topMargin" id="RdD-E2-ChI"/>
                             <constraint firstItem="CU6-Rl-fKj" firstAttribute="centerY" secondItem="ctm-41-dNS" secondAttribute="centerY" id="VKI-25-Wjw"/>
                             <constraint firstItem="CU6-Rl-fKj" firstAttribute="centerX" secondItem="ctm-41-dNS" secondAttribute="centerX" id="m7E-TZ-2PF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gy5-UO-IDc" secondAttribute="trailing" constant="-20" id="rxV-r1-PXT"/>
+                            <constraint firstItem="gy5-UO-IDc" firstAttribute="top" secondItem="7Qn-QZ-qb1" secondAttribute="bottom" id="tmQ-Wh-dF6"/>
                             <constraint firstItem="CU6-Rl-fKj" firstAttribute="width" secondItem="ctm-41-dNS" secondAttribute="width" id="wRq-Gm-YXV"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="gy5-UO-IDc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="RdD-E2-ChI"/>
+                                <exclude reference="rxV-r1-PXT"/>
+                                <exclude reference="tmQ-Wh-dF6"/>
+                                <exclude reference="Lg6-3L-mUB"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="gy5-UO-IDc"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="4sH-1Q-ns3"/>
+                                <include reference="RdD-E2-ChI"/>
+                                <exclude reference="VKI-25-Wjw"/>
+                                <include reference="rxV-r1-PXT"/>
+                                <include reference="tmQ-Wh-dF6"/>
+                                <include reference="Lg6-3L-mUB"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="map" destination="CU6-Rl-fKj" id="3Wx-UE-kEC"/>
@@ -1524,7 +1562,7 @@
                     </connections>
                 </button>
             </objects>
-            <point key="canvasLocation" x="1646" y="788"/>
+            <point key="canvasLocation" x="1645.5" y="787.5"/>
         </scene>
         <!--News-->
         <scene sceneID="nnH-vc-f7h">
@@ -2059,7 +2097,7 @@
     </scenes>
     <resources>
         <image name="2025KidsLogo.png" width="600" height="180"/>
-        <image name="8AF3BE04-B5E7-4226-AFAF-91DBF9A976A7" width="278" height="278">
+        <image name="C3F65BA1-79E2-4543-A750-1F2C1092C503" width="278" height="278">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOjtYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBEW
 GxwgISgrLjQ3VSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05TQ29sb3KA
@@ -7275,8 +7313,8 @@ tQAEwboABMHCAATBxQAEwdcABMHaAATB3wAAAAAAAAQBAAAAAAAAAD4AAAAAAAAAAAAAAAAABMHhA
         <image name="world_icon.png" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Znr-cX-E7D"/>
         <segue reference="5q8-Yb-HDe"/>
-        <segue reference="QKB-Zu-Kf1"/>
-        <segue reference="anB-I7-f2y"/>
+        <segue reference="aIH-OH-XeP"/>
     </inferredMetricsTieBreakers>
 </document>

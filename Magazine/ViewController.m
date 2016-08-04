@@ -81,7 +81,7 @@
     [self addChildViewController:puzzleController2];
     [puzzleController2 didMoveToParentViewController:self];
     [self.scrollView addSubview:puzzleController2.view];
-    
+
     
     youtubeViewController *youtubeController = [mainStoryboard instantiateViewControllerWithIdentifier:@"youtubeScene"];
 
@@ -91,13 +91,13 @@
     [youtubeController didMoveToParentViewController:self];
     [self.scrollView addSubview:youtubeController.view];
     
-    
     }
 
 -(void) setupScrollview {
-    self.scrollView.scrollEnabled = NO;
+    self.scrollView.scrollEnabled = YES;
      self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];
+
 }
 
 -(IBAction)nextScreen:(id)sender {
@@ -275,5 +275,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@" Offset = %@ ",NSStringFromCGPoint(scrollView.contentOffset));
+}
 
 @end
