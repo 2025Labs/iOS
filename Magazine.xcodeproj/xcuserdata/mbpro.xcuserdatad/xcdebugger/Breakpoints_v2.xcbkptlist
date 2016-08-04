@@ -82,11 +82,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/ViewController.m"
-            timestampString = "492027158.61405"
+            timestampString = "492033684.200143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "160"
-            endingLineNumber = "160"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "-prepareMenu"
             landmarkType = "5">
          </BreakpointContent>
@@ -114,11 +114,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/ViewController.swift"
-            timestampString = "492017986.649338"
+            timestampString = "492034508.000365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -130,11 +130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/VCMapView.swift"
-            timestampString = "491800953.383778"
+            timestampString = "492034508.000365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
             landmarkName = "mapView(_:didSelectAnnotationView:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -162,11 +162,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/VCMapView.swift"
-            timestampString = "491945946.366657"
+            timestampString = "492034508.000365"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "mapView(_:didSelectAnnotationView:)"
             landmarkType = "5">
          </BreakpointContent>

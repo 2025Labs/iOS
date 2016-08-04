@@ -12,7 +12,6 @@ import Popover
 import WebImage
 
 extension ViewController: MKMapViewDelegate {
-    
     // 1
     func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? City {
@@ -42,9 +41,9 @@ extension ViewController: MKMapViewDelegate {
         mapView.deselectAnnotation(pin, animated: false)
         
         
-    var width = self.view.frame.width / 3
+    var width = self.view.frame.width / 2.5
     if(self.view.frame.height > self.view.frame.width) {
-    width = self.view.frame.height / 3
+    width = self.view.frame.height / 2.5
     }
     let annView = annotationView.annotation as? City;
 
@@ -92,19 +91,4 @@ extension ViewController: MKMapViewDelegate {
     
 }
 
-    
-    
-    
-    
-    
-    func mapView(mapView: MKMapView,
-                 didAddAnnotationViews views: [MKAnnotationView]) {
-        //[mapView selectAnnotation:[[mapView annotations] lastObject] animated:YES];
-
-        //mapView.selectAnnotation(mapView.annotations.last!, animated: true)
-        //print("View coordinates: x: %f y:%f", views[0].frame.origin.x, views[0].frame.origin.x)
-        
-        
-    }
-    
 }

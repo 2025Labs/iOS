@@ -126,7 +126,7 @@
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    NSLog(@"i'm being touched (touchesBegan)");
+    //NSLog(@"i'm being touched (touchesBegan)");
 
     if(_isDrawingEnabled) {
 
@@ -137,7 +137,7 @@
 }
 
 -(void) touchesMoved:(NSSet<UITouch*> *)touches withEvent:(UIEvent *)event {
-    NSLog(@"i'm being touched (touchesMoved)");
+    //NSLog(@"i'm being touched (touchesMoved)");
     if(_isDrawingEnabled) {
     _mouseSwiped = YES;
     UITouch *touch = [touches anyObject];

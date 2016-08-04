@@ -22,31 +22,7 @@
 	"filepath": "http://www.2025kids.com/AppIcons/puzzles/materialslogicpuzzle.png",
 	"topic": "computing",
 	"notes": "puzzle"
-}, {
-	"uid": 5,
-	"filename": "howinternetworks1.png",
-	"filepath": "http://www.2025kids.com/AppIcons/articles/howinternetworks.png",
-	"topic": "computing",
-	"notes": "article"
-}, {
-	"uid": 6,
-	"filename": "howinternetworks2.png",
-	"filepath": "http://www.2025kids.com/AppIcons/articles/howinternetworks2.png",
-	"topic": "computing",
-	"notes": "article"
-}, {
-	"uid": 7,
-	"filename": "howinternetworks3.png",
-	"filepath": "http://www.2025kids.com/AppIcons/articles/howinternetworks3.png",
-	"topic": "computing",
-	"notes": "article"
-}, {
-	"uid": 8,
-	"filename": "howinternetworks4.png",
-	"filepath": "http://www.2025kids.com/AppIcons/articles/howinternetworks4.png",
-	"topic": "computing",
-	"notes": "article"
-}, {
+},  {
 	"uid": 9,
 	"filename": "historyoftheinternet1.png",
 	"filepath": "http://www.2025kids.com/AppIcons/articles/histinternet1.png",
@@ -74,6 +50,30 @@
 	"uid": 13,
 	"filename": "historyoftheinternet5.png",
 	"filepath": "http://www.2025kids.com/AppIcons/articles/histinternet5.png",
+	"topic": "computing",
+	"notes": "article"
+}, {
+	"uid": 5,
+	"filename": "howinternetworks1.png",
+	"filepath": "http://www.2025kids.com/AppIcons/articles/howinternetworks.png",
+	"topic": "computing",
+	"notes": "article"
+}, {
+	"uid": 6,
+	"filename": "howinternetworks2.png",
+	"filepath": "http://www.2025kids.com/AppIcons/articles/howinternetworks2.png",
+	"topic": "computing",
+	"notes": "article"
+}, {
+	"uid": 7,
+	"filename": "howinternetworks3.png",
+	"filepath": "http://www.2025kids.com/AppIcons/articles/howinternetworks3.png",
+	"topic": "computing",
+	"notes": "article"
+}, {
+	"uid": 8,
+	"filename": "howinternetworks4.png",
+	"filepath": "http://www.2025kids.com/AppIcons/articles/howinternetworks4.png",
 	"topic": "computing",
 	"notes": "article"
 }, {

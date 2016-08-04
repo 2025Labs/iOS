@@ -21,15 +21,6 @@
 @implementation ViewController
     AVAudioPlayer *_audioPlayer;
 
--(void) setupAudio{
-    // Construct URL to sound file
-    NSString *path = [NSString stringWithFormat:@"%@/drum01.mp3", [[NSBundle mainBundle] resourcePath]];
-    NSURL *soundUrl = [NSURL fileURLWithPath:path];
-    
-    // Create audio player object and initialize with URL to sound
-    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     _pageNumber = 0;
@@ -45,12 +36,22 @@
     _isScrollingEnabled = false;
     UIStoryboard *mainStoryboard = self.storyboard;
 
+    
+    ViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
+    
+    mapController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+    
+    [self addChildViewController:mapController];
+    [mapController didMoveToParentViewController:self];
+    [self.scrollView addSubview:mapController.view];
+    
+    
     Puzzle *puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
     puzzleController.filename = @"cipher.png";
     puzzleController.currentTopic = @"computing";
     CGRect frame = puzzleController.view.frame;
     frame.origin.x = 0;
-    puzzleController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+    puzzleController.view.frame = CGRectMake (self.view.frame.size.width,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
     
 
     puzzleController.view.contentMode = UIViewContentModeScaleToFill;
@@ -59,17 +60,6 @@
     [puzzleController didMoveToParentViewController:self];
     puzzleController.view.autoresizesSubviews = YES;
     [self.scrollView addSubview:puzzleController.view];
-
-    
-
-    
-    ViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
-    
-    mapController.view.frame = CGRectMake (self.view.frame.size.width,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
-    
-    [self addChildViewController:mapController];
-    [mapController didMoveToParentViewController:self];
-    [self.scrollView addSubview:mapController.view];
     
     
     Puzzle *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
@@ -94,7 +84,7 @@
     }
 
 -(void) setupScrollview {
-    self.scrollView.scrollEnabled = YES;
+    self.scrollView.scrollEnabled = NO;
      self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];
 
@@ -213,10 +203,12 @@
         self.scrollView.scrollEnabled = NO;
         [self notifyWithReason:@"enableDrawing"];
         //Disable Scrolling and send signal to embedded view controller that you cannot draw
+        _isScrollingEnabled = false;
     } else {
         self.scrollView.scrollEnabled = YES;
         [self notifyWithReason:@"disableDrawing"];
         NSLog(@"Scrolling is enabled? %d", self.scrollView.scrollEnabled);
+        _isScrollingEnabled = true;
     }
 }
 
@@ -279,5 +271,16 @@
 {
     NSLog(@" Offset = %@ ",NSStringFromCGPoint(scrollView.contentOffset));
 }
+
+
+-(void) setupAudio{
+    // Construct URL to sound file
+    NSString *path = [NSString stringWithFormat:@"%@/drum01.mp3", [[NSBundle mainBundle] resourcePath]];
+    NSURL *soundUrl = [NSURL fileURLWithPath:path];
+    
+    // Create audio player object and initialize with URL to sound
+    _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
+}
+
 
 @end

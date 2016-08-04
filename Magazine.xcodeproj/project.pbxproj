@@ -81,6 +81,9 @@
 		7837DFBC1D53989400E17401 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7837DFBB1D53989400E17401 /* SwiftyJSON.framework */; };
 		7837DFBD1D53996F00E17401 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7837DFBB1D53989400E17401 /* SwiftyJSON.framework */; };
 		7837DFBE1D53996F00E17401 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 7837DFBB1D53989400E17401 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		7837DFC11D53CDDD00E17401 /* globe_thick.png in Resources */ = {isa = PBXBuildFile; fileRef = 7837DFC01D53CDDD00E17401 /* globe_thick.png */; };
+		7837DFC31D53CF3800E17401 /* computing_around_the_world.png in Resources */ = {isa = PBXBuildFile; fileRef = 7837DFC21D53CF3800E17401 /* computing_around_the_world.png */; };
+		7837DFC51D53D09A00E17401 /* computing_around_the_world2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7837DFC41D53D09A00E17401 /* computing_around_the_world2.png */; };
 		784A316F1D248CA200AC8AB9 /* quiz.json in Resources */ = {isa = PBXBuildFile; fileRef = 784A316C1D248CA200AC8AB9 /* quiz.json */; };
 		784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31831D26CE6700AC8AB9 /* Quiz.m */; };
 		784A31871D26E4D200AC8AB9 /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 784A31861D26E4D200AC8AB9 /* CircleProgressBar.m */; };
@@ -211,6 +214,9 @@
 		7837DFB71D52A50700E17401 /* citiesJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citiesJSON.json; sourceTree = "<group>"; };
 		7837DFB81D52A50700E17401 /* imagesJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = imagesJSON.json; sourceTree = "<group>"; };
 		7837DFBB1D53989400E17401 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		7837DFC01D53CDDD00E17401 /* globe_thick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = globe_thick.png; sourceTree = "<group>"; };
+		7837DFC21D53CF3800E17401 /* computing_around_the_world.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = computing_around_the_world.png; sourceTree = "<group>"; };
+		7837DFC41D53D09A00E17401 /* computing_around_the_world2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = computing_around_the_world2.png; sourceTree = "<group>"; };
 		784A316C1D248CA200AC8AB9 /* quiz.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = quiz.json; path = /Users/mbpro/Desktop/Quiz/Quiz/../../../Downloads/quiz.json; sourceTree = "<absolute>"; };
 		784A31821D26CE6700AC8AB9 /* Quiz.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Quiz.h; sourceTree = "<group>"; };
 		784A31831D26CE6700AC8AB9 /* Quiz.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Quiz.m; sourceTree = "<group>"; };
@@ -278,6 +284,7 @@
 				7861CAE61D4FAAF30029256A /* fillintheblankcomputing.png */,
 				7861CAE71D4FAAF30029256A /* howfastistheinternet.png */,
 				7861CAE81D4FAAF30029256A /* wordsearchcomputing.png */,
+				7837DFC01D53CDDD00E17401 /* globe_thick.png */,
 				780C6A501D3FE9120004CD98 /* globe.png */,
 				780C6A511D3FE9120004CD98 /* keyEmpty.png */,
 				7861CAD91D4B24510029256A /* rightarrow.png */,
@@ -299,10 +306,12 @@
 				780C6A6D1D3FE9130004CD98 /* userIcon2.jpg */,
 				782592131D46963E00556A66 /* Puzzle-150.png */,
 				780C6A701D3FE9130004CD98 /* wrong.png */,
+				7837DFC21D53CF3800E17401 /* computing_around_the_world.png */,
 				780C6A711D3FE9130004CD98 /* wrongSmall.png */,
 				780C6A721D3FE9130004CD98 /* zoom-in.png */,
 				7861CAE01D4BFCA20029256A /* ciphercopy.jpg */,
 				780C6A731D3FE9130004CD98 /* zoom-out.png */,
+				7837DFC41D53D09A00E17401 /* computing_around_the_world2.png */,
 				780C6A561D3FE9130004CD98 /* OldResources */,
 			);
 			path = images;
@@ -522,6 +531,7 @@
 				7837DFB91D52A50700E17401 /* citiesJSON.json in Resources */,
 				7837DF7A1D527F8800E17401 /* losangeles.jpg in Resources */,
 				7861CAE91D4FAAF30029256A /* fillintheblankcomputing.png in Resources */,
+				7837DFC11D53CDDD00E17401 /* globe_thick.png in Resources */,
 				7837DF5E1D5276BC00E17401 /* project_icon.png in Resources */,
 				7861CAEA1D4FAAF30029256A /* howfastistheinternet.png in Resources */,
 				780C6A771D3FE9130004CD98 /* circleChevronDown.png in Resources */,
@@ -535,6 +545,7 @@
 				780C6AA01D3FE9130004CD98 /* quiz.json in Resources */,
 				7837DF601D5276BC00E17401 /* quiz_icon.png in Resources */,
 				7816C77C1D318752005696ED /* LICENSE in Resources */,
+				7837DFC31D53CF3800E17401 /* computing_around_the_world.png in Resources */,
 				78E4D4581D1B1CF200FAFC1C /* LaunchScreen.storyboard in Resources */,
 				7837DF791D527F8800E17401 /* london.jpg in Resources */,
 				7816C77A1D318752005696ED /* .gitignore in Resources */,
@@ -576,6 +587,7 @@
 				7861CADF1D4BFC400029256A /* ciphercopy.jpg in Resources */,
 				780C6A9E1D3FE9130004CD98 /* project_icon_70x70.png in Resources */,
 				784A316F1D248CA200AC8AB9 /* quiz.json in Resources */,
+				7837DFC51D53D09A00E17401 /* computing_around_the_world2.png in Resources */,
 				780C6A951D3FE9130004CD98 /* cipher.jpg in Resources */,
 				780C6A991D3FE9130004CD98 /* wordsearch.png in Resources */,
 				780C6AA91D3FE9130004CD98 /* zoom-out.png in Resources */,

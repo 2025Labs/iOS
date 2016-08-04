@@ -14,7 +14,6 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
-    @IBOutlet weak var leftBottomButton: UIButton!
     var cityArray = [City]()
 
     override func viewDidLoad() {
@@ -22,7 +21,7 @@ class ViewController: UIViewController {
         map.delegate = self
         retrieveCityInformation()
 
-        let initialLocation = CLLocation(latitude: 12.9, longitude: 77.6)
+        let initialLocation = CLLocation(latitude: 46.31, longitude: 53.62)
         centerMapOnLocation(initialLocation)
         
         for i in 0...cityArray.count-1 {
