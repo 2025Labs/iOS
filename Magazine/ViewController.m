@@ -27,12 +27,15 @@
     _maxPageNumber = 4;
     _currentTopic = @"computing";
     // Do any additional setup after loading the view, typically from a nib.
+    /*
     [self.playerView loadWithVideoId:@"lZxJgTiKDis"];
     [self prepareNavigationMenu];
     [self prepareMenu];
-    [self prepareHomepage];
+     */
+    NSLog(@"Calling viewDidLoad");
     [self setupScrollview];
     [self setupAudio];
+    [self setCurrentActivity];
     _isScrollingEnabled = false;
     UIStoryboard *mainStoryboard = self.storyboard;
 
@@ -83,6 +86,25 @@
     
     }
 
+-(void) setCurrentActivity {
+    switch (_pageNumber) {
+        case 0:
+            _currentActivity.text = @"Computing Around the World";
+            break;
+        case 1:
+            _currentActivity.text = @"Cipher Puzzle";
+            break;
+        case 2:
+            _currentActivity.text = @"News: How Fast is the Internet?";
+            break;
+        case 3:
+            _currentActivity.text = @"Computing for Kids";
+            break;
+        default:
+            break;
+    }
+}
+
 -(void) setupScrollview {
     self.scrollView.scrollEnabled = NO;
      self.scrollView.pagingEnabled = YES;
@@ -92,54 +114,35 @@
 
 -(IBAction)nextScreen:(id)sender {
     if(_pageNumber + 1 < _maxPageNumber) {
+    [_audioPlayer play];
     _pageNumber += 1;
     CGRect frame = _scrollView.frame;
-    frame.origin.x = 768 * _pageNumber;
+    frame.origin.x = self.view.frame.size.width * _pageNumber;
     NSLog(@"Now: %f", frame.origin.x);
     [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
         NSLog(@"sound");
 
-    [_audioPlayer play];
+    [self setCurrentActivity];
 
     }
 }
 
 -(IBAction)prevScreen:(id)sender {
     if(_pageNumber - 1 >= 0) {
+        [_audioPlayer play];
     _pageNumber -= 1;
     CGRect frame = _scrollView.frame;
-    frame.origin.x = 768 * _pageNumber;
+    frame.origin.x = self.view.frame.size.width * _pageNumber;
     NSLog(@"Now: %f", frame.origin.x);
 
     [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
-        NSLog(@"sound");
-    [_audioPlayer play];
+        [self setCurrentActivity];
 
     }
 
 }
 
--(void) prepareHomepage {
-    
-    UILabel *label1 = _topArticle.titleLabel;
-    label1.adjustsFontSizeToFitWidth = YES;
-    UILabel *label2 = _bottomArticle.titleLabel;
-    label2.adjustsFontSizeToFitWidth = YES;
-    if([_currentTopic isEqualToString:@"computing"]) {
-        [_coverPage setTitle:@"Cover Page: Computing" forState:UIControlStateNormal];
-        [_bottomArticle setTitle: @"History of the Internet" forState: UIControlStateNormal];
-        [_topArticle setTitle: @"Internet of Things" forState: UIControlStateNormal];
-        _leftArticlePageToJumpTo = 0;
-        _rightArticlePageToJumpTo = 2;
-    } else if([_currentTopic isEqualToString:@"energy"]) {
-        [_coverPage setTitle: @"Cover Page: Energy" forState:UIControlStateNormal];
-        [_bottomArticle setTitle: @"The Grid?" forState: UIControlStateNormal];
-        [_topArticle setTitle: @"Solar Power Overload" forState: UIControlStateNormal];
-        _leftArticlePageToJumpTo = 0;
-        _rightArticlePageToJumpTo = 2;
-    }
-}
-
+/*
 -(void) prepareNavigationMenu {
     self.logoImage.contentMode =UIViewContentModeScaleAspectFit;
     self.puzzleButton.layer.cornerRadius = self.puzzleButton.frame.size.width/2;
@@ -166,6 +169,7 @@
     _menu.delegate = self;
 
 }
+ */
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [_audioPlayer play];
@@ -173,6 +177,7 @@
         News* controller = [segue destinationViewController];
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
+        controller.pageNumber = 0;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
         PuzzleNavigation* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
@@ -180,19 +185,22 @@
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         News* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
-    }  else if([segue.identifier isEqualToString:@"showLeftArticle"]) {
+    }  else if([segue.identifier isEqualToString:@"showFirstArticle"]) {
         News* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
-        controller.pageToJumpTo = _leftArticlePageToJumpTo;
-    }  else if([segue.identifier isEqualToString:@"showRightArticle"]) {
+        controller.pageNumber = 0; //figure out how to automate this
+    }  else if([segue.identifier isEqualToString:@"showSecondArticle"]) {
         News* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
-        controller.pageToJumpTo = _rightArticlePageToJumpTo;
+        controller.pageNumber = 9; //figure out how to automate this
     }   else if([segue.identifier isEqualToString:@"showFillInTheBlank"]) {
         PuzzleNavigation* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
         controller.fileName = @"fillintheblank.png";
-
+    }   else if([segue.identifier isEqualToString:@"showMaterial"]) {
+        PuzzleNavigation* controller = [segue destinationViewController];
+        controller.currentTopic = _currentTopic;
+        controller.fileName = @"material.png";
     }
 }
 
@@ -212,6 +220,14 @@
     }
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    _pageNumber = 0;
+    CGRect frame = _scrollView.frame;
+    frame.origin.x = 0;
+    [self setCurrentActivity];
+}
+/*
 - (IBAction)menuPressed:(id)sender {
     NSLog(@"Menu Pressed");
     if(_isMenuActive) {
@@ -226,6 +242,7 @@
     }
 }
 
+ 
 - (void)igcMenuSelected:(NSString *)selectedMenuName atIndex:(NSInteger)index{
 
     switch (index) {
@@ -235,7 +252,6 @@
             [_menu hideCircularMenu];
             _isMenuActive = false;
             [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
-            [self prepareHomepage];
             break;
         case 1:
             NSLog(@"Transition to Energy");
@@ -243,7 +259,6 @@
             [_menu hideCircularMenu];
             _isMenuActive = false;
             [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
-            [self prepareHomepage];
             break;
         case 2:
             NSLog(@"Transition to Materials");
@@ -257,6 +272,9 @@
     }
 }
 
+*/
+
+
 -(void) notifyWithReason: (NSString*) reason {
     [[NSNotificationCenter defaultCenter]postNotificationName:reason object:nil];
     NSLog(@"Called notification with reason: %@", reason);
@@ -265,11 +283,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
-    NSLog(@" Offset = %@ ",NSStringFromCGPoint(scrollView.contentOffset));
 }
 
 

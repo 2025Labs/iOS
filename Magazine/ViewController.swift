@@ -23,10 +23,14 @@ class ViewController: UIViewController {
 
         let initialLocation = CLLocation(latitude: 46.31, longitude: 53.62)
         centerMapOnLocation(initialLocation)
-        
-        for i in 0...cityArray.count-1 {
-            map.addAnnotation(cityArray[i])
+
+        for city in cityArray {
+            map.addAnnotation(city)
         }
+        
+        
+        
+        
     }
     
     func retrieveCityInformation() {

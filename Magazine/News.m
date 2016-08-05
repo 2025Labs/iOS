@@ -51,7 +51,8 @@
                                              self.scrollView.frame.size.height);
     //add the scrollview to this view
     [self.view addSubview:self.scrollView];
-    
+    _scrollView.contentOffset = CGPointMake(_scrollView.frame.size.width*_pageNumber, 0);
+
 }
 
 -(void) getFilepathFromJSON {

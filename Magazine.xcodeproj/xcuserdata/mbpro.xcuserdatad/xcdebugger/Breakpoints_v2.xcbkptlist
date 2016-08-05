@@ -82,13 +82,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/ViewController.m"
-            timestampString = "492033684.200143"
+            timestampString = "492106548.174416"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "-prepareMenu"
-            landmarkType = "5">
+            startingLineNumber = "153"
+            endingLineNumber = "153"
+            landmarkName = "@implementation ViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -130,11 +130,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/VCMapView.swift"
-            timestampString = "492034508.000365"
+            timestampString = "492104131.068112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "mapView(_:didSelectAnnotationView:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -162,7 +162,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magazine/VCMapView.swift"
-            timestampString = "492034508.000365"
+            timestampString = "492109435.048477"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "88"

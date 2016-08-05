@@ -12,22 +12,8 @@
 
 @interface ViewController : UIViewController<IGCMenuDelegate>
 
-@property (weak, nonatomic) IBOutlet UIButton *puzzleButton;
-@property (weak, nonatomic) IBOutlet UIButton *gameButton;
-@property (weak, nonatomic) IBOutlet UIButton *triviaButton;
-
-@property (weak, nonatomic) IBOutlet YTPlayerView *playerView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *logoImage;
-@property (weak, nonatomic) IBOutlet UIButton *coverPage;
-
-@property (weak, nonatomic) IBOutlet UIButton *topArticle;
-@property (weak, nonatomic) IBOutlet UIButton *bottomArticle;
-@property (weak, nonatomic) IBOutlet UIButton *topPuzzle;
-@property (weak, nonatomic) IBOutlet UIButton *bottomPuzzle;
-
-
-@property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
@@ -43,7 +29,7 @@
 
 @property BOOL isScrollingEnabled;
 
-@property IGCMenu *menu;
-@property BOOL isMenuActive;
+@property (weak, nonatomic) IBOutlet UILabel *currentActivity;
+
 @end
 

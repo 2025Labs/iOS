@@ -45,6 +45,7 @@
         News* controller = [segue destinationViewController];
         controller.fileName = @"article";
         controller.currentTopic = _currentTopic;
+        controller.pageNumber = 0;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
         PuzzleNavigation* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
