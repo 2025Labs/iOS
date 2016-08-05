@@ -225,6 +225,16 @@
     }
 }
 
+
+/*
+ This function was still a work in progress. I was trying to send a NSNotification to Puzzle.m
+ that says stop being able to draw in the form of _isDrawingEnabled so that in the touchesMoved function
+ in Puzzle.m, it would not draw.
+ 
+ The big problem right now with enabling scrolling is that even if you disable drawing using this method
+ (which DOES disable drawing), the touches are still being registered in the "child view controller" (search "child view controller to see"). So if we are able to redirect the touches
+ from the child view to the "parent view" we would likely be able to enable scrolling. (after setting _scrollview.scrollEnabled = YES)
+ */
 -(IBAction) enableDisableScrolling:(id) sender {
     NSLog(@"Calling enableDisableScrolling. _isScrollingEnabled = %d", _isScrollingEnabled);
     if(_isScrollingEnabled) {

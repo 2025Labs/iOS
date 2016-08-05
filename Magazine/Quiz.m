@@ -1,10 +1,10 @@
-//
-//  ViewController.m
-//  Quiz
-//
-//  Created by MBPro on 6/29/16.
-//  Copyright © 2016 MBPro. All rights reserved.
-//
+/*
+ 
+ 
+ Quiz has full functionality that depends on a json file that was formatted with this program in mind.
+ See: quiz.json
+ 
+ */
 
 #import "Quiz.h"
 

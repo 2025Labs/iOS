@@ -991,8 +991,7 @@
                                         <exclude reference="qNJ-gZ-8RX"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="20" y="23" width="760" height="85"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="fxx-na-yPf"/>
                                         <include reference="GIb-gF-471"/>
@@ -1234,9 +1233,6 @@
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0M-VQ-Gfk">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="20" y="116" width="760" height="509"/>
-                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2035,8 +2031,8 @@
         <image name="world_icon.png" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5Wn-qE-ZlW"/>
-        <segue reference="eAP-hw-AFr"/>
+        <segue reference="Q5E-zJ-VdD"/>
         <segue reference="W7I-Oy-nuj"/>
+        <segue reference="oWJ-9e-xL9"/>
     </inferredMetricsTieBreakers>
 </document>
