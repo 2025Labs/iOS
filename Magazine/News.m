@@ -29,6 +29,12 @@
                                   CGRectMake(xOrigin, 0,
                                              self.scrollView.frame.size.width,
                                              self.scrollView.frame.size.height)];
+        
+        /*
+         SDWebImageManager is the library that allows us to download an image from its URL if
+         we do not already have that image in our storage/cache
+         */
+        
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
         [manager downloadImageWithURL:[NSURL URLWithString:[_articleArray objectAtIndex:i]]
                               options:0
@@ -89,6 +95,15 @@
     
 }
 
+/*
+ **
+ 
+ prepareForSegue is where we pass the topic and filename for which we wish to display
+ when we transition into a new scene. The new scene will load up by looking at its
+ current topic and/or the filename and display content accordingly
+ 
+ **
+ */
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"showNews"]) {

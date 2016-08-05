@@ -39,6 +39,15 @@
 
 }
 
+/*
+ **
+ 
+ prepareForSegue is where we pass the topic and filename for which we wish to display
+ when we transition into a new scene. The new scene will load up by looking at its
+ current topic and/or the filename and display content accordingly
+ 
+ **
+ */
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"showNews"]) {
@@ -60,6 +69,12 @@
 /*
     The changeTo___() functions are combined with the notify function to tell
     Puzzle.m to change what puzzle that it is currently displaying
+    It is changing the filename and currentTopic property of Puzzle.m
+    HOWEVER, usually it would only reload the puzzle it's showing in 
+    viewDidLoad() which we cannot access. Instead, we send a notification to
+    Puzzle.m that says "Call some code that mimics the code found in viewDidLoad() 
+    with the new filename and currentTopic"
+ 
  */
 -(IBAction)changeToFillInTheBlank:(id)sender {
     NSLog(@"start change to fillintheblank");

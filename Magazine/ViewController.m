@@ -6,6 +6,19 @@
 //  Copyright © 2016 MBPro. All rights reserved.
 //
 
+/*
+ 
+ Libraries Used:
+ SwiftJSON - Parses JSON files in the map file in Swift
+ WebImage - Downloads URL and caches it. Does NOT download if already in cache/storage
+ Popover - The popover menu that appears in the map
+ 
+ Libraries Not Currently Being Used:
+ IGCMenu - The menu that stylizes a way to change the current topic
+ AESCrypt - Encryption/Decryption used in Login.h/Login.m to secure username/password info
+ 
+ */
+
 #import "ViewController.h"
 #import "Puzzle.h"
 #import "News.h"
@@ -32,7 +45,6 @@
     [self prepareNavigationMenu];
     [self prepareMenu];
      */
-    NSLog(@"Calling viewDidLoad");
     [self setupScrollview];
     [self setupAudio];
     [self setCurrentActivity];
@@ -144,7 +156,6 @@
     _pageNumber -= 1;
     CGRect frame = _scrollView.frame;
     frame.origin.x = self.view.frame.size.width * _pageNumber;
-    NSLog(@"Now: %f", frame.origin.x);
 
     [_scrollView setContentOffset:CGPointMake(frame.origin.x, 0) animated:YES];
         [self setCurrentActivity];
@@ -154,6 +165,9 @@
 }
 
 /*
+ 
+ The library used for this menu is called IGCMenu
+ 
 -(void) prepareNavigationMenu {
     self.logoImage.contentMode =UIViewContentModeScaleAspectFit;
     self.puzzleButton.layer.cornerRadius = self.puzzleButton.frame.size.width/2;

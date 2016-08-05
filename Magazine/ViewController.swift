@@ -35,6 +35,7 @@ class ViewController: UIViewController {
         
     }
     
+    //The library used to pull JSON information in this file is called SwiftyJSON
     func retrieveCityInformation() {
 
         let jsonFilePath:NSString = NSBundle.mainBundle().pathForResource("citiesJSON", ofType: "json")!
@@ -51,14 +52,6 @@ class ViewController: UIViewController {
             let imageFilePath = item["filepath"].rawString()
             let newCity = City(title: title!, coordinate: CLLocationCoordinate2DMake(Double(latitude!)!, Double(longitude!)!), country: country!, image: image!, information: information!, imageFilePath: imageFilePath!)
             cityArray.append(newCity)
-            
-            
-            let manager = SDWebImageManager.sharedManager();
-            //let imageURL = NSURL.fileURLWithPath(imageFilePath!)
-            let bannerImageView = UIImageView()
-            bannerImageView.sd_setImageWithURL(NSURL(string: imageFilePath!))
- 
-            
             
         }
     }
