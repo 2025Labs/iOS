@@ -1,0 +1,43 @@
+Things To Do:
+
+
+Make the homepage able to enable/disable scrolling through the different activities so the nav pattern matches that of the other activities
+Add eraser/reset option to activities that you're able to draw in
+Possibly reposition globe because it remains the same size as you zoom in
+Quiz
+Make map show a city be default
+Add energy information to JSON files
+See if there is a way to show an entire globe scale because kids may not know to scroll through the map to see other cities
+
+
+Structure of imagesJSON
+
+{
+	"uid": 11,
+	"filename": "historyoftheinternet3.png",
+	"filepath": "http://www.2025kids.com/AppIcons/articles/histinternet3.png",
+	"topic": "computing",
+	"notes": "article"
+},
+
+The program checks "notes" to see if it's a news article.
+You can add a check on "topic" to see if it's in the correct topic combined with the _currentTopic property
+
+
+Structure of citiesJSON
+{
+  "title": "Boston",
+  "latitude": 42.3601,
+  "longitude": -71.0589,
+  "country": "USA",
+  "imagefilename": "boston.jpg",
+  "information": "Boston, Massachusetts has been a high tech hub for a long time. A Boston-based company (BBN) and a Boston area university (MIT) created technology that implemented the early Internet as part of the ARPANET work funded by the Pentagon. The Boston area still has many technology companies and lots of startup activity, receiving more than $6 billion in startup funding in 2015.",
+  "filepath": "http://www.2025kids.com/AppIcons/cities/boston.jpg"
+}
+
+What I did in postgresql was something like
+
+update CITIES
+SET filepath = 'http://http://www.2025kids.com/AppIcons/cities' || imagefilename
+
+|| is to append the variable onto that string

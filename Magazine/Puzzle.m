@@ -16,7 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self preparePencil];
-    [self prepareMenu];
+    //[self prepareMenu];
     _isDrawingEnabled = true;
     [self registerForNotifications];
     [self getFilepathFromJSON];
