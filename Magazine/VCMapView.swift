@@ -52,10 +52,9 @@ extension ViewController: MKMapViewDelegate {
     let aView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: width))
     print(width)
     
-    let imageName = (annView!.image)
-    let image = UIImage(named: imageName)
-    let imageView = UIImageView(image: image)
-    
+    let imageView = UIImageView()
+    imageView.sd_setImageWithURL(NSURL(string: (annView?.imageFilePath)!))
+
     imageView.frame = CGRect(x: 0, y: 0, width: width, height: width/2)
     aView.addSubview(imageView)
     
