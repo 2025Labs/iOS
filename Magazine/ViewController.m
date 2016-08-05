@@ -27,8 +27,8 @@
     _maxPageNumber = 4;
     _currentTopic = @"computing";
     // Do any additional setup after loading the view, typically from a nib.
+    
     /*
-    [self.playerView loadWithVideoId:@"lZxJgTiKDis"];
     [self prepareNavigationMenu];
     [self prepareMenu];
      */
@@ -39,7 +39,13 @@
     _isScrollingEnabled = false;
     UIStoryboard *mainStoryboard = self.storyboard;
 
+    /*In order to maintain the unique functionality found in our objects, we must make each 
+     object a "child view controller" of our "parent view controller" (ViewController.m).
+     We make it a child to maintain functionality and then add the view of this controller into our
+     scrollView so we can actually see the contents of the child view controller 
+     */
     
+    //First Controller
     ViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
     
     mapController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
@@ -48,15 +54,13 @@
     [mapController didMoveToParentViewController:self];
     [self.scrollView addSubview:mapController.view];
     
-    
+    //Second Controller
     Puzzle *puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
     puzzleController.filename = @"cipher.png";
     puzzleController.currentTopic = @"computing";
     CGRect frame = puzzleController.view.frame;
     frame.origin.x = 0;
     puzzleController.view.frame = CGRectMake (self.view.frame.size.width,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
-    
-
     puzzleController.view.contentMode = UIViewContentModeScaleToFill;
     
     [self addChildViewController:puzzleController];
@@ -64,7 +68,7 @@
     puzzleController.view.autoresizesSubviews = YES;
     [self.scrollView addSubview:puzzleController.view];
     
-    
+    //Third Controller
     Puzzle *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
     puzzleController2.filename = @"howfastistheinternet.png";
     puzzleController2.currentTopic = @"computing";
@@ -75,7 +79,7 @@
     [puzzleController2 didMoveToParentViewController:self];
     [self.scrollView addSubview:puzzleController2.view];
 
-    
+    //Fourth Controller
     youtubeViewController *youtubeController = [mainStoryboard instantiateViewControllerWithIdentifier:@"youtubeScene"];
 
     youtubeController.view.frame = CGRectMake (self.view.frame.size.width*3, self.view.frame.size.height/10, self.view.frame.size.width, self.view.frame.size.height/2-35);
@@ -86,6 +90,7 @@
     
     }
 
+//This works with next/prevScreen to change the text of what activity we are looking at
 -(void) setCurrentActivity {
     switch (_pageNumber) {
         case 0:
@@ -112,6 +117,12 @@
 
 }
 
+/*
+    nextScreen and prevScreen change the position of the scrollView that is currently being displayed
+    view.frame.size.width is the width in pixels of one "page". Multiply this by the _pageNumber to 
+    obtain the "page"'s x coordinate
+ 
+ */
 -(IBAction)nextScreen:(id)sender {
     if(_pageNumber + 1 < _maxPageNumber) {
     [_audioPlayer play];
@@ -171,6 +182,16 @@
 }
  */
 
+
+/*
+ **
+
+    prepareForSegue is where we pass the topic and filename for which we wish to display
+    when we transition into a new scene. The new scene will load up by looking at its
+    current topic and/or the filename and display content accordingly
+ 
+ **
+ */
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [_audioPlayer play];
     if([segue.identifier isEqualToString:@"showNews"]) {
@@ -220,6 +241,10 @@
     }
 }
 
+
+//We have this here so when you press the back button, it'll revert back to the default info
+//Earlier, it would revert back to the default view but the currentActivity would not be default
+
 -(void)viewWillAppear:(BOOL)animated
 {
     _pageNumber = 0;
@@ -242,6 +267,14 @@
     }
 }
 
+ ** 
+    This is where the _currentTopic is changed. By selecting one of the menus,
+    currentTopic will change to either computing, energy, or materials. 
+    In prepareForSegue, we pass the currentTopic variable to the other objects
+    so that they know what topic we are in. In the other objects, they'll reference
+    their own property value _currentTopic, which is now equal to whatever it was we 
+    selected 
+ **
  
 - (void)igcMenuSelected:(NSString *)selectedMenuName atIndex:(NSInteger)index{
 
@@ -286,6 +319,10 @@
 }
 
 
+/*
+ The sound that is currently being played is a mp3 file found in the project. This filename can be
+ changed once there is a satisfactory sound found. Alternatively, if you wish to stop sounds for now, find [audioPlayer play] and comment it out.
+ */
 -(void) setupAudio{
     // Construct URL to sound file
     NSString *path = [NSString stringWithFormat:@"%@/drum01.mp3", [[NSBundle mainBundle] resourcePath]];

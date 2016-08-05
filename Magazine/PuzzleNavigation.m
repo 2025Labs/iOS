@@ -57,7 +57,10 @@
     }
 }
 
-
+/*
+    The changeTo___() functions are combined with the notify function to tell
+    Puzzle.m to change what puzzle that it is currently displaying
+ */
 -(IBAction)changeToFillInTheBlank:(id)sender {
     NSLog(@"start change to fillintheblank");
     _puzzleController.filename = @"fillintheblank.png";
@@ -84,6 +87,9 @@
     [self notifyWithReason:@"reload"];
 }
 
+/*This sends a signal to Puzzle.m that says reload with the new filename that we have specified
+ in the above functions that say changeTo____()
+ */
 -(void) notifyWithReason: (NSString*) reason {
     [[NSNotificationCenter defaultCenter]postNotificationName:reason object:nil];
     NSLog(@"Called notification with reason: %@", reason);

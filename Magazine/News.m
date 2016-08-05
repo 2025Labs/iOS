@@ -63,6 +63,8 @@
     NSError *error =  nil;
     NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:[myJSON dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
     
+    //To pull item based on topic, add a conditional that says
+    //[item objectForKey:@"topic"] isEqual: @"energy"] in addition to the @"notes" key
     for(NSDictionary *item in jsonDataArray) {
         if([[item objectForKey:@"notes"] isEqual: @"article"]) {
             [_articleArray addObject:[item objectForKey:@"filepath"]];

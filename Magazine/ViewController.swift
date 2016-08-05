@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
-        map.zoomEnabled = false;
+        //map.zoomEnabled = false;
 
         retrieveCityInformation()
 

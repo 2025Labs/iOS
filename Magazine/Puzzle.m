@@ -24,7 +24,11 @@
     //Make the edge of the view underneath the nav bar
     self.edgesForExtendedLayout = UIRectEdgeNone;
 
-    //Download image with URL
+    
+    /*
+     SDWebImageManager is the library that allows us to download an image from its URL if
+     we do not already have that image in our storage/cache
+     */
     SDWebImageManager *manager = [SDWebImageManager sharedManager];
     [manager downloadImageWithURL:[NSURL URLWithString:_filepath]
                           options:0
@@ -47,6 +51,8 @@
     NSError *error =  nil;
     NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:[myJSON dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
     
+    //To pull item based on topic, add a conditional that says
+    //[item objectForKey:@"topic"] isEqual: @"energy"] in addition to the @"notes" key
     for(NSDictionary *item in jsonDataArray) {
         if([[item objectForKey:@"filename"] isEqual: _filename]) {
             _filepath = [item objectForKey:@"filepath"];
@@ -54,6 +60,9 @@
     }
 }
 
+/*
+ This allows Puzzle to begin listening to notifications from other objects and perform an action in response
+ */
 - (void)registerForNotifications {
     
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -81,6 +90,8 @@
     _opacity = 1.0;
 }
 
+/*
+ These are functions that allow us to switch topics
 -(void) prepareMenu {
     if(_menu == nil) {
         _menu = [[IGCMenu alloc] init];
@@ -125,6 +136,7 @@
     }
 }
 
+*/
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     //NSLog(@"i'm being touched (touchesBegan)");
 
@@ -231,6 +243,7 @@
 
         [self getFilepathFromJSON];
         [self.tempDrawingImage.image drawInRect:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+
         SDWebImageManager *manager = [SDWebImageManager sharedManager];
         [manager downloadImageWithURL:[NSURL URLWithString:_filepath]
                               options:0
@@ -243,6 +256,7 @@
                                     [_tempDrawingImage setImage:image];
                                 }
                             }];
+        
     } else if([reason isEqualToString:@"enableDrawing"]) {
         NSLog(@"reason isEqualTo: enableDrawing");
         _isDrawingEnabled = true;
