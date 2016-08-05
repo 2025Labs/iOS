@@ -114,6 +114,7 @@
                                     <constraint firstAttribute="trailing" secondItem="lwI-SH-1cx" secondAttribute="trailing" id="1gr-g8-vwb">
                                         <variation key="heightClass=regular-widthClass=regular" constant="10"/>
                                     </constraint>
+                                    <constraint firstAttribute="trailing" secondItem="lwI-SH-1cx" secondAttribute="trailing" id="6PO-Jh-R9j"/>
                                     <constraint firstItem="6Kz-PQ-POI" firstAttribute="leading" secondItem="3if-Yi-Z21" secondAttribute="trailing" constant="8" id="GLk-G5-iV1"/>
                                     <constraint firstItem="7Cw-xS-PHQ" firstAttribute="height" secondItem="IDY-Fh-iam" secondAttribute="height" id="QVc-Ly-BJT"/>
                                     <constraint firstItem="lwI-SH-1cx" firstAttribute="leading" secondItem="6Kz-PQ-POI" secondAttribute="trailing" constant="8" id="ccR-Ur-i7j"/>
@@ -139,6 +140,7 @@
                                         <exclude reference="GLk-G5-iV1"/>
                                         <exclude reference="wNd-eq-8QJ"/>
                                         <exclude reference="1gr-g8-vwb"/>
+                                        <exclude reference="6PO-Jh-R9j"/>
                                         <exclude reference="ccR-Ur-i7j"/>
                                         <exclude reference="knS-69-OEC"/>
                                     </mask>
@@ -152,7 +154,8 @@
                                         <include reference="gyC-as-QYb"/>
                                         <include reference="GLk-G5-iV1"/>
                                         <include reference="wNd-eq-8QJ"/>
-                                        <include reference="1gr-g8-vwb"/>
+                                        <exclude reference="1gr-g8-vwb"/>
+                                        <include reference="6PO-Jh-R9j"/>
                                         <include reference="ccR-Ur-i7j"/>
                                         <include reference="knS-69-OEC"/>
                                     </mask>
@@ -988,7 +991,8 @@
                                         <exclude reference="qNJ-gZ-8RX"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="23" width="760" height="85"/>
                                     <mask key="constraints">
                                         <include reference="fxx-na-yPf"/>
                                         <include reference="GIb-gF-471"/>
@@ -1230,6 +1234,9 @@
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0M-VQ-Gfk">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="116" width="760" height="509"/>
+                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1625,6 +1632,7 @@
                                         <variation key="heightClass=regular-widthClass=regular" constant="10"/>
                                     </constraint>
                                     <constraint firstItem="mUl-w0-wve" firstAttribute="leading" secondItem="Sfi-HN-QXn" secondAttribute="leading" id="jnJ-qT-AVq"/>
+                                    <constraint firstAttribute="trailing" secondItem="r1d-Wl-dcL" secondAttribute="trailing" id="jyt-d3-Yyu"/>
                                     <constraint firstItem="Lsl-IU-eH7" firstAttribute="leading" secondItem="SSj-cH-xYB" secondAttribute="trailing" constant="8" id="p1L-K2-uqU"/>
                                     <constraint firstAttribute="height" constant="70" id="vSa-U5-77o"/>
                                 </constraints>
@@ -1645,6 +1653,7 @@
                                         <exclude reference="EjY-zq-eeF"/>
                                         <exclude reference="I3c-Ex-Sdq"/>
                                         <exclude reference="f4t-Uq-Wy3"/>
+                                        <exclude reference="jyt-d3-Yyu"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular-widthClass=regular">
@@ -1658,7 +1667,8 @@
                                         <include reference="p1L-K2-uqU"/>
                                         <include reference="EjY-zq-eeF"/>
                                         <include reference="I3c-Ex-Sdq"/>
-                                        <include reference="f4t-Uq-Wy3"/>
+                                        <exclude reference="f4t-Uq-Wy3"/>
+                                        <include reference="jyt-d3-Yyu"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2025,8 +2035,8 @@
         <image name="world_icon.png" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q5E-zJ-VdD"/>
+        <segue reference="5Wn-qE-ZlW"/>
+        <segue reference="eAP-hw-AFr"/>
         <segue reference="W7I-Oy-nuj"/>
-        <segue reference="oWJ-9e-xL9"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -84,16 +84,7 @@ extension ViewController: MKMapViewDelegate {
     
     let popover = Popover(options: options, showHandler: nil, dismissHandler: nil)
     
-    print("AnnotationView x origin: ", annotationView.frame.origin.x)
-    print("AnnotationView y origin: ", annotationView.frame.origin.y)
-    print("annotationView width: %f height: %f", annotationView.frame.size.width, annotationView.frame.size.height)
-        
-        let view = UIView(frame: CGRect(x: 467, y: 489, width: 32.0, height: 39.0))
-
-        print("view x origin: ", view.frame.origin.x)
-        print("view y origin: ", view.frame.origin.y)
-        print("view width: %f height: %f", view.frame.size.width, annotationView.frame.size.height)
-        popover.show(aView, fromView: view)
+        popover.show(aView, fromView: annotationView)
 }
     
         /*
