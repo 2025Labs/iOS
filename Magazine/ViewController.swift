@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
+        map.zoomEnabled = false;
+
         retrieveCityInformation()
 
         let initialLocation = CLLocation(latitude: 46.31, longitude: 53.62)
