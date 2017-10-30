@@ -2,8 +2,8 @@
 //  Login.h
 //  Magazine
 //
-//  Created by MBPro on 7/9/16.
-//  Copyright © 2016 MBPro. All rights reserved.
+//  Created by 2025 Labs LLC. on 7/9/16.
+//  Copyright © 2017 2025 Lab LLC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

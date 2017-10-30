@@ -44,7 +44,7 @@
                             completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
                                 if (image) {
                                     [imageView setImage:image];
-                                    imageView.contentMode = UIViewContentModeScaleAspectFit;
+                                    imageView.contentMode = UIViewContentModeScaleToFill;
                                     [self.scrollView addSubview:imageView];
                                     
                                 }
@@ -79,7 +79,7 @@
 }
 
 -(void) setupScrollview {
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 80,self.view.frame.size.width, 760)];
+    //self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 80,self.view.frame.size.width, 760)];
     NSLog(@"width: %f height: %f", self.scrollView.frame.size.width, self.scrollView.frame.size.height);
     self.scrollView.pagingEnabled = YES;
     [self.scrollView setAlwaysBounceVertical:NO];

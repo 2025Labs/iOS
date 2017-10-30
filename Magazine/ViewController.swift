@@ -19,13 +19,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         map.delegate = self
-        //map.zoomEnabled = false;
+        //map.isZoomEnabled = false
 
         retrieveCityInformation()
+        
+        //let initialLocation = CLLocation(latitude: 36.87, longitude: -1.15)
+        //centerMapOnLocation(initialLocation)
 
-        let initialLocation = CLLocation(latitude: 46.31, longitude: 53.62)
-        centerMapOnLocation(initialLocation)
-
+        let span = MKCoordinateSpanMake(180, 360)
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 35.56, longitude: -42.16), span: span)
+        map.setRegion(region, animated: true)
+        
         for city in cityArray {
             map.addAnnotation(city)
         }
@@ -38,9 +42,10 @@ class ViewController: UIViewController {
     //The library used to pull JSON information in this file is called SwiftyJSON
     func retrieveCityInformation() {
 
-        let jsonFilePath:NSString = NSBundle.mainBundle().pathForResource("citiesJSON", ofType: "json")!
+        let jsonFilePath:NSString = Bundle.main.path(forResource: "citiesJSON", ofType: "json")! as NSString
         let jsonData:NSData = NSData.dataWithContentsOfMappedFile(jsonFilePath as String) as! NSData
-        let json = JSON(data: jsonData) // Note: data: parameter name
+        //let jsonData:NSData = NSData.withContentsOfFile(jsonFilePath as String) as NSData!
+        let json = JSON(data: jsonData as Data) // Note: data: parameter name
         print(json)
         for item in json.arrayValue {
             let title = item["title"].rawString()
@@ -55,7 +60,8 @@ class ViewController: UIViewController {
             
         }
     }
-    func centerMapOnLocation(location: CLLocation) {
+    
+    func centerMapOnLocation(_ location: CLLocation) {
         let regionRadius: CLLocationDistance = 5000000
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         map.setRegion(coordinateRegion, animated:true)

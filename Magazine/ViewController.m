@@ -164,38 +164,37 @@
 
 }
 
-/*
+
  
- The library used for this menu is called IGCMenu
- 
+ // The library used for this menu is called IGCMenu
+ /*
 -(void) prepareNavigationMenu {
     self.logoImage.contentMode =UIViewContentModeScaleAspectFit;
     self.puzzleButton.layer.cornerRadius = self.puzzleButton.frame.size.width/2;
     self.gameButton.layer.cornerRadius = self.gameButton.frame.size.width/2;
     self.triviaButton.layer.cornerRadius = self.triviaButton.frame.size.width/2;
-    
 }
+
 -(void) prepareMenu {
     _menuButton.clipsToBounds = YES;
     _menuButton.layer.cornerRadius = self.menuButton.frame.size.width / 2;
     [_menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
     
-    if(_menu == nil) {
-        _menu = [[IGCMenu alloc] init];
+    if(__menu == nil) {
+        __menu = [[IGCMenu alloc] init];
     }
-    _menu.menuButton = self.menuButton;
-    _menu.menuSuperView = self.view;
-    _menu.disableBackground = YES;
-    _menu.numberOfMenuItem = 3;
-    _menu.menuRadius = 125; //How far apart the menu displays
-    _menu.menuHeight = 90; //Size of the circles
-    _menu.menuItemsNameArray = [NSArray arrayWithObjects:@"Computing", @"Energy", @"Materials", nil];
-    _isMenuActive = false;
-    _menu.delegate = self;
+    __menu.menuButton = self.menuButton;
+    __menu.menuSuperView = self.view;
+    __menu.disableBackground = YES;
+    __menu.numberOfMenuItem = 3;
+    __menu.menuRadius = 125; //How far apart the menu displays
+    __menu.menuHeight = 90; //Size of the circles
+    __menu.menuItemsNameArray = [NSArray arrayWithObjects:@"Computing", @"Energy", @"Materials", nil];
+    __isMenuActive = false;
+    __menu.delegate = self;
 
 }
- */
-
+*/
 
 /*
  **
@@ -276,29 +275,29 @@
     frame.origin.x = 0;
     [self setCurrentActivity];
 }
-/*
+
 - (IBAction)menuPressed:(id)sender {
     NSLog(@"Menu Pressed");
-    if(_isMenuActive) {
-        [_menu hideCircularMenu];
-        _isMenuActive = false;
+    if(__isMenuActive) {
+        [__menu hideCircularMenu];
+        __isMenuActive = false;
         [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
     } else {
-        [_menu showCircularMenu];
-        _isMenuActive = true;
+        [__menu showCircularMenu];
+        __isMenuActive = true;
         [self.menuButton setImage:[UIImage imageNamed:@"circleChevronDown.png"] forState:UIControlStateNormal];
 
     }
 }
 
- ** 
+ /*
     This is where the _currentTopic is changed. By selecting one of the menus,
     currentTopic will change to either computing, energy, or materials. 
     In prepareForSegue, we pass the currentTopic variable to the other objects
     so that they know what topic we are in. In the other objects, they'll reference
     their own property value _currentTopic, which is now equal to whatever it was we 
     selected 
- **
+ */
  
 - (void)igcMenuSelected:(NSString *)selectedMenuName atIndex:(NSInteger)index{
 
@@ -306,22 +305,22 @@
         case 0:
             NSLog(@"Transition to Computing");
             _currentTopic = @"computing";
-            [_menu hideCircularMenu];
-            _isMenuActive = false;
+            [__menu hideCircularMenu];
+            __isMenuActive = false;
             [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
             break;
         case 1:
             NSLog(@"Transition to Energy");
             _currentTopic = @"energy";
-            [_menu hideCircularMenu];
-            _isMenuActive = false;
+            [__menu hideCircularMenu];
+            __isMenuActive = false;
             [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
             break;
         case 2:
             NSLog(@"Transition to Materials");
             _currentTopic = @"materials";
-            [_menu hideCircularMenu];
-            _isMenuActive = false;
+            [__menu hideCircularMenu];
+            __isMenuActive = false;
             [self.menuButton setImage:[UIImage imageNamed:@"circleChevronUp.png"] forState:UIControlStateNormal];
             break;
         default:
@@ -329,7 +328,6 @@
     }
 }
 
-*/
 
 
 -(void) notifyWithReason: (NSString*) reason {

@@ -15,11 +15,11 @@ extension ViewController: MKMapViewDelegate {
 
     
     // 1
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if let annotation = annotation as? City {
             let identifier = annotation.country
             var view: MKPinAnnotationView
-            if let dequeuedView = mapView.dequeueReusableAnnotationViewWithIdentifier(identifier)
+            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
                 as? MKPinAnnotationView {
                 dequeuedView.annotation = annotation
                 view = dequeuedView
@@ -34,7 +34,7 @@ extension ViewController: MKMapViewDelegate {
         return nil
     }
 
-    func mapView(mapView: MKMapView, didSelectAnnotationView annotationView: MKAnnotationView)
+    func mapView(_ mapView: MKMapView, didSelect annotationView: MKAnnotationView)
     {
 
         print(annotationView)
@@ -53,7 +53,7 @@ extension ViewController: MKMapViewDelegate {
     print(width)
     
     let imageView = UIImageView()
-    imageView.sd_setImageWithURL(NSURL(string: (annView?.imageFilePath)!))
+    imageView.sd_setImage(with: URL(string: (annView?.imageFilePath)!))
 
     imageView.frame = CGRect(x: 0, y: 0, width: width, height: width/2)
     aView.addSubview(imageView)
@@ -61,23 +61,23 @@ extension ViewController: MKMapViewDelegate {
     let label = UILabel(frame: CGRect(x:0, y:width/2 + 3, width: width, height: width/2-3))
     label.text = (annView!.information)
     label.numberOfLines = 0
-    label.textAlignment = NSTextAlignment.Center
+    label.textAlignment = NSTextAlignment.center
     label.adjustsFontSizeToFitWidth = true
     aView.addSubview(label);
     var options:[PopoverOption]
     
     if(annotationView.frame.origin.y - width < 15) {
     options = [
-    .Type(.Down),
-    .AnimationIn(0.3),
-    .ArrowSize(CGSize(width: 15.0, height: 15.0))
+    .type(.down),
+    .animationIn(0.3),
+    .arrowSize(CGSize(width: 15.0, height: 15.0))
     ] as [PopoverOption]
     
     } else {
     options = [
-    .Type(.Up),
-    .AnimationIn(0.3),
-    .ArrowSize(CGSize(width: 15.0, height: 15.0))
+    .type(.up),
+    .animationIn(0.3),
+    .arrowSize(CGSize(width: 15.0, height: 15.0))
     ] as [PopoverOption]
     }
     
