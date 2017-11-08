@@ -105,6 +105,15 @@
 		78E4D4531D1B1CF200FAFC1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E4D4511D1B1CF200FAFC1C /* Main.storyboard */; };
 		78E4D4551D1B1CF200FAFC1C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78E4D4541D1B1CF200FAFC1C /* Assets.xcassets */; };
 		78E4D4581D1B1CF200FAFC1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78E4D4561D1B1CF200FAFC1C /* LaunchScreen.storyboard */; };
+		A11F72161FB10105001907D2 /* engineering_process.png in Resources */ = {isa = PBXBuildFile; fileRef = A11F72151FB10105001907D2 /* engineering_process.png */; };
+		A11F72181FB10112001907D2 /* machines.png in Resources */ = {isa = PBXBuildFile; fileRef = A11F72171FB10112001907D2 /* machines.png */; };
+		A11F721A1FB10122001907D2 /* materials.png in Resources */ = {isa = PBXBuildFile; fileRef = A11F72191FB10122001907D2 /* materials.png */; };
+		A11F721C1FB10133001907D2 /* computing.png in Resources */ = {isa = PBXBuildFile; fileRef = A11F721B1FB10133001907D2 /* computing.png */; };
+		A11F721E1FB1013B001907D2 /* energy.png in Resources */ = {isa = PBXBuildFile; fileRef = A11F721D1FB1013B001907D2 /* energy.png */; };
+		A11F72201FB10148001907D2 /* structures.png in Resources */ = {isa = PBXBuildFile; fileRef = A11F721F1FB10148001907D2 /* structures.png */; };
+		A1671FE21FB130E100BCDB28 /* app-computing-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE11FB130E100BCDB28 /* app-computing-icon.png */; };
+		A1671FE41FB130ED00BCDB28 /* app-energy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE31FB130ED00BCDB28 /* app-energy-icon.png */; };
+		A1671FE61FB1329100BCDB28 /* logo_kids_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE51FB1329100BCDB28 /* logo_kids_small.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -249,6 +258,15 @@
 		78E4D4541D1B1CF200FAFC1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78E4D4571D1B1CF200FAFC1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78E4D4591D1B1CF200FAFC1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A11F72151FB10105001907D2 /* engineering_process.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = engineering_process.png; sourceTree = "<group>"; };
+		A11F72171FB10112001907D2 /* machines.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = machines.png; sourceTree = "<group>"; };
+		A11F72191FB10122001907D2 /* materials.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = materials.png; sourceTree = "<group>"; };
+		A11F721B1FB10133001907D2 /* computing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = computing.png; sourceTree = "<group>"; };
+		A11F721D1FB1013B001907D2 /* energy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = energy.png; sourceTree = "<group>"; };
+		A11F721F1FB10148001907D2 /* structures.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = structures.png; sourceTree = "<group>"; };
+		A1671FE11FB130E100BCDB28 /* app-computing-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-computing-icon.png"; sourceTree = "<group>"; };
+		A1671FE31FB130ED00BCDB28 /* app-energy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-energy-icon.png"; sourceTree = "<group>"; };
+		A1671FE51FB1329100BCDB28 /* logo_kids_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kids_small.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,14 +301,23 @@
 				7861CAE71D4FAAF30029256A /* howfastistheinternet.png */,
 				7861CAE81D4FAAF30029256A /* wordsearchcomputing.png */,
 				7837DFC01D53CDDD00E17401 /* globe_thick.png */,
+				A1671FE11FB130E100BCDB28 /* app-computing-icon.png */,
 				780C6A501D3FE9120004CD98 /* globe.png */,
 				780C6A511D3FE9120004CD98 /* keyEmpty.png */,
+				A1671FE31FB130ED00BCDB28 /* app-energy-icon.png */,
 				7861CAD91D4B24510029256A /* rightarrow.png */,
 				780C6A521D3FE9130004CD98 /* keyFilled.png */,
 				780C6A541D3FE9130004CD98 /* newspaper.png */,
 				780C6A551D3FE9130004CD98 /* newspapersmall.png */,
+				A11F72151FB10105001907D2 /* engineering_process.png */,
 				7861CAE41D4C0F480029256A /* puzzle-piece.png */,
 				7861CAE21D4C03420029256A /* cipherforapp.png */,
+				A11F721F1FB10148001907D2 /* structures.png */,
+				A11F721D1FB1013B001907D2 /* energy.png */,
+				A1671FE51FB1329100BCDB28 /* logo_kids_small.png */,
+				A11F721B1FB10133001907D2 /* computing.png */,
+				A11F72191FB10122001907D2 /* materials.png */,
+				A11F72171FB10112001907D2 /* machines.png */,
 				780C6A641D3FE9130004CD98 /* page12.jpg */,
 				780C6A651D3FE9130004CD98 /* passwordIcon.png */,
 				7861CADE1D4BFC400029256A /* ciphercopy.jpg */,
@@ -536,6 +563,7 @@
 				7837DF501D504A6C00E17401 /* drum01.mp3 in Resources */,
 				780C6A8B1D3FE9130004CD98 /* newspaper.png in Resources */,
 				7878C50D1D53F6030084F996 /* saltlakecity.jpg in Resources */,
+				A11F721E1FB1013B001907D2 /* energy.png in Resources */,
 				7878C5101D53F6030084F996 /* shenzhen.jpg in Resources */,
 				780C6A9A1D3FE9130004CD98 /* page12.jpg in Resources */,
 				7878C50C1D53F6030084F996 /* raleigh.jpg in Resources */,
@@ -545,7 +573,9 @@
 				780C6AA01D3FE9130004CD98 /* quiz.json in Resources */,
 				7878C5051D53F6030084F996 /* boston.jpg in Resources */,
 				7837DF601D5276BC00E17401 /* quiz_icon.png in Resources */,
+				A1671FE41FB130ED00BCDB28 /* app-energy-icon.png in Resources */,
 				7816C77C1D318752005696ED /* LICENSE in Resources */,
+				A11F72181FB10112001907D2 /* machines.png in Resources */,
 				7837DFC31D53CF3800E17401 /* computing_around_the_world.png in Resources */,
 				7878C5131D53F6030084F996 /* washingtondc.jpg in Resources */,
 				78E4D4581D1B1CF200FAFC1C /* LaunchScreen.storyboard in Resources */,
@@ -556,6 +586,7 @@
 				7837DF561D5251C000E17401 /* Black.png in Resources */,
 				7878C50A1D53F6030084F996 /* mumbai.jpg in Resources */,
 				7878C5151D54E3980084F996 /* leftArrow.png in Resources */,
+				A1671FE21FB130E100BCDB28 /* app-computing-icon.png in Resources */,
 				780C6A881D3FE9130004CD98 /* keyEmpty.png in Resources */,
 				7861CAE31D4C03420029256A /* cipherforapp.png in Resources */,
 				7861CAE11D4BFCA20029256A /* ciphercopy.jpg in Resources */,
@@ -566,6 +597,7 @@
 				7878C50B1D53F6030084F996 /* newyorkcity.jpg in Resources */,
 				7878C5081D53F6030084F996 /* london.jpg in Resources */,
 				780C6A751D3FE9130004CD98 /* 2025KidsLogo.png in Resources */,
+				A1671FE61FB1329100BCDB28 /* logo_kids_small.png in Resources */,
 				780C6A741D3FE9130004CD98 /* 2025KidsLogo.jpg in Resources */,
 				7861CADA1D4B24510029256A /* rightarrow.png in Resources */,
 				780C6A9B1D3FE9130004CD98 /* passwordIcon.png in Resources */,
@@ -584,7 +616,9 @@
 				780C6A9E1D3FE9130004CD98 /* project_icon_70x70.png in Resources */,
 				7837DFC51D53D09A00E17401 /* computing_around_the_world2.png in Resources */,
 				780C6A951D3FE9130004CD98 /* cipher.jpg in Resources */,
+				A11F721A1FB10122001907D2 /* materials.png in Resources */,
 				780C6A991D3FE9130004CD98 /* wordsearch.png in Resources */,
+				A11F721C1FB10133001907D2 /* computing.png in Resources */,
 				780C6AA91D3FE9130004CD98 /* zoom-out.png in Resources */,
 				780C6A891D3FE9130004CD98 /* keyFilled.png in Resources */,
 				7878C5041D53F6030084F996 /* bangalore.jpg in Resources */,
@@ -594,6 +628,8 @@
 				780C6A781D3FE9130004CD98 /* circleChevronUp.png in Resources */,
 				78E4D4531D1B1CF200FAFC1C /* Main.storyboard in Resources */,
 				780C6A9C1D3FE9130004CD98 /* plus.png in Resources */,
+				A11F72161FB10105001907D2 /* engineering_process.png in Resources */,
+				A11F72201FB10148001907D2 /* structures.png in Resources */,
 				7878C5111D53F6030084F996 /* siliconvalley.jpg in Resources */,
 				782592141D46963E00556A66 /* Puzzle-150.png in Resources */,
 			);

@@ -3,7 +3,7 @@
 //  Magazine
 //
 //  Created by 2025 Labs LLC. on 7/9/16.
-//  Copyright © 2017 2025 Lab LLC. All rights reserved.
+//  Copyright © 2017 2025 Labs LLC. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
