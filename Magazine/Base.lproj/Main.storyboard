@@ -414,7 +414,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="irl-W2-dol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="830"/>
+            <point key="canvasLocation" x="-580" y="597"/>
         </scene>
         <!--Youtube View Controller-->
         <scene sceneID="e2n-VO-Gpb">
@@ -447,7 +447,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmb-VJ-TKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="799.20000000000005" y="596.85157421289364"/>
+            <point key="canvasLocation" x="1697" y="-1190"/>
         </scene>
         <!--Puzzle-->
         <scene sceneID="Tbd-w0-JiA">
@@ -619,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9i-s1-rUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="63"/>
+            <point key="canvasLocation" x="2860" y="-240"/>
         </scene>
         <!--Project-->
         <scene sceneID="uE8-cx-ygd">
@@ -666,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWS-eM-nne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734" y="597"/>
+            <point key="canvasLocation" x="3942" y="706"/>
         </scene>
         <!--Puzzle Title-->
         <scene sceneID="I9I-tf-UZa">
@@ -707,7 +707,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZt-Qr-VPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1735" y="-1189"/>
+            <point key="canvasLocation" x="2860" y="671"/>
         </scene>
         <!--2025 Kids Homepage-->
         <scene sceneID="qhR-tc-Tr5">
@@ -781,6 +781,9 @@
                                         <rect key="frame" x="4" y="176" width="335" height="122"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="app-energy-icon.png"/>
+                                        <connections>
+                                            <segue destination="L85-Ya-8gF" kind="show" identifier="webView" id="ZoU-UG-nq5"/>
+                                        </connections>
                                     </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="logo_kids_small.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sg-jm-9mW">
                                         <rect key="frame" x="0.0" y="0.0" width="75" height="45"/>
@@ -806,7 +809,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38k-Se-aJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="776.79999999999995" y="-1188.7556221889056"/>
+            <point key="canvasLocation" x="641" y="-296"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yHD-G4-Jpd">
@@ -825,7 +828,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eV0-iK-IQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="777" y="-332"/>
+            <point key="canvasLocation" x="-580" y="-295"/>
         </scene>
         <!--Around the World-->
         <scene sceneID="XiQ-5Y-PbL">
@@ -867,7 +870,35 @@
                     </connections>
                 </button>
             </objects>
-            <point key="canvasLocation" x="2860" y="-1190"/>
+            <point key="canvasLocation" x="1697" y="671"/>
+        </scene>
+        <!--Web View Controller-->
+        <scene sceneID="v5w-2Z-yO3">
+            <objects>
+                <viewController storyboardIdentifier="webView" id="L85-Ya-8gF" customClass="WebViewController" customModule="Magazine" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fHF-ns-Bfc"/>
+                        <viewControllerLayoutGuide type="bottom" id="0MA-eE-tcl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iWv-k3-4Ww">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xqi-kY-Yqr">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="Xqi-kY-Yqr" id="gHW-qe-dLW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CQn-yQ-4lh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="640.79999999999995" y="596.85157421289364"/>
         </scene>
         <!--News-->
         <scene sceneID="nnH-vc-f7h">
@@ -1054,6 +1085,6 @@
         <segue reference="GEx-tS-nlC"/>
         <segue reference="W7I-Oy-nuj"/>
         <segue reference="oWJ-9e-xL9"/>
-        <segue reference="5Wn-qE-ZlW"/>
+        <segue reference="Q5E-zJ-VdD"/>
     </inferredMetricsTieBreakers>
 </document>

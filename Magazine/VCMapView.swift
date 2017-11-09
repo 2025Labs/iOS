@@ -2,8 +2,8 @@
 //  VCMapView.swift
 //  mapTest
 //
-//  Created by MBPro on 7/18/16.
-//  Copyright © 2016 MBPro. All rights reserved.
+//  Created by 2025 Labs on 7/18/16.
+//  Copyright @ 2017 2025 Labs LLC. All rights reserved.
 //
 
 import Foundation

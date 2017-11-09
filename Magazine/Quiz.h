@@ -2,8 +2,8 @@
 //  Quiz.h
 //  Quiz
 //
-//  Created by MBPro on 6/29/16.
-//  Copyright © 2016 MBPro. All rights reserved.
+//  Created by 2025 Labs on 6/29/16.
+//  Copyright @ 2017 2025 Labs LLC. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

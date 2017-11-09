@@ -114,6 +114,8 @@
 		A1671FE21FB130E100BCDB28 /* app-computing-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE11FB130E100BCDB28 /* app-computing-icon.png */; };
 		A1671FE41FB130ED00BCDB28 /* app-energy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE31FB130ED00BCDB28 /* app-energy-icon.png */; };
 		A1671FE61FB1329100BCDB28 /* logo_kids_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE51FB1329100BCDB28 /* logo_kids_small.png */; };
+		A1671FED1FB3A0EE00BCDB28 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1671FEC1FB3A0EE00BCDB28 /* WebViewController.swift */; };
+		A1671FEF1FB4F48F00BCDB28 /* MainHomepageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1671FEE1FB4F48F00BCDB28 /* MainHomepageController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -267,6 +269,9 @@
 		A1671FE11FB130E100BCDB28 /* app-computing-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-computing-icon.png"; sourceTree = "<group>"; };
 		A1671FE31FB130ED00BCDB28 /* app-energy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-energy-icon.png"; sourceTree = "<group>"; };
 		A1671FE51FB1329100BCDB28 /* logo_kids_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kids_small.png; sourceTree = "<group>"; };
+		A1671FEC1FB3A0EE00BCDB28 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		A1671FEE1FB4F48F00BCDB28 /* MainHomepageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHomepageController.m; sourceTree = "<group>"; };
+		A1671FF01FB4F4AC00BCDB28 /* MainHomepageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainHomepageController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +461,8 @@
 				78A9FBF21D233A9B0055B029 /* Project.h */,
 				78A9FBF31D233A9B0055B029 /* Project.m */,
 				7861CADB1D4BF3F90029256A /* youtubeViewController.h */,
+				A1671FF01FB4F4AC00BCDB28 /* MainHomepageController.h */,
+				A1671FEE1FB4F48F00BCDB28 /* MainHomepageController.m */,
 				7861CADC1D4BF3F90029256A /* youtubeViewController.m */,
 				78E4D44E1D1B1CF200FAFC1C /* ViewController.h */,
 				78E4D44F1D1B1CF200FAFC1C /* ViewController.m */,
@@ -463,6 +470,7 @@
 				781A8C0F1D3EDEAB00963931 /* City.swift */,
 				781A8C111D3EDEEC00963931 /* VCMapView.swift */,
 				781A8C171D3EE08E00963931 /* ViewController.swift */,
+				A1671FEC1FB3A0EE00BCDB28 /* WebViewController.swift */,
 				78A9FBDF1D21DEF70055B029 /* News.h */,
 				78A9FBE01D21DEF70055B029 /* News.m */,
 				78A9FBB11D1E15300055B029 /* PuzzleNavigation.h */,
@@ -664,6 +672,7 @@
 				78A9FBE11D21DEF80055B029 /* News.m in Sources */,
 				781A8C101D3EDEAB00963931 /* City.swift in Sources */,
 				78A9FBF41D233A9B0055B029 /* Project.m in Sources */,
+				A1671FED1FB3A0EE00BCDB28 /* WebViewController.swift in Sources */,
 				7816C77D1D318752005696ED /* NSData+Base64.m in Sources */,
 				78E4D4501D1B1CF200FAFC1C /* ViewController.m in Sources */,
 				7816C77F1D318752005696ED /* NSString+Base64.m in Sources */,
@@ -677,6 +686,7 @@
 				7861CADD1D4BF3F90029256A /* youtubeViewController.m in Sources */,
 				781D77511D1CA8CC00D9417C /* Puzzle.m in Sources */,
 				784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */,
+				A1671FEF1FB4F48F00BCDB28 /* MainHomepageController.m in Sources */,
 				7816C77B1D318752005696ED /* AESCrypt.m in Sources */,
 				7837DF531D504EEB00E17401 /* YTPlayerView.m in Sources */,
 				78E4D44A1D1B1CF100FAFC1C /* main.m in Sources */,
