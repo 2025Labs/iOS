@@ -1,0 +1,72 @@
+ [{
+ 	"title": "North Dakota",
+	"latitude": 47.4497236,
+	"longitude": -102.545242,
+	"country": "USA",
+	"imagefilename": "NDak_oil_273537326.jpg",
+	"information": "This image is of an oil pump in North Dakota, one of two states leading the growth in U.S. oil production as of November 2015. The top oil-producing states in the U.S. are Alaska, Louisiana, North Dakota, Oklahoma, and Texas. When oil prices are higher, these economies of these states improve. For example, there are more jobs, and those employees spend money on local business, making those businesses better off. In addition, the higher tax revenues paid to the states help the states balance their budgets and provide for the needs of their residents. In 2014, the U.S. became the biggest producer of petroleum in the world, primarily due to dramatic growth in production in North Dakota and Texas. Afterwards, Saudi Arabia and other countries vastly increased oil production around the world to force the price of oil lower, and try to drive new oil producers out of the market.",
+	"filepath": "http://staging.2025kids.com/AppIcons/cities/NDak_oil_273537326.jpg"
+  },
+  {
+	  "title": "Itaipu Dam, Brazil",
+	  "latitude": -25.4080511 ,
+	  "longitude":-54.5910777 ,
+	  "country": "Brazil",
+	  "imagefilename": "itaipu_254440330.jpg",
+	  "information": "The Itaipu Dam between Brazil and Paraguay is the second largest hydroelectric dam in the world. Hydroelectric power uses the kinetic energy of falling water to turn turbines, which generate electricity.",
+	  "filepath": "http://staging.2025kids.com/AppIcons/cities/itaipu_254440330.jpg" 	
+  },
+  {
+	  "title": "Tricastin Nuclear Power Plant",
+	  "latitude": 44.329722, 
+	  "longitude": 4.732222,
+	  "country": "France",
+	  "imagefilename": "Tricastin_FR_80866174.jpg",
+	  "information": "Tricastin Nuclear Power Plant in France. France gets more than 70% of its power from nuclear power.",
+	  "filepath": "http://staging.2025kids.com/AppIcons/cities/Tricastin_FR_80866174.jpg" 	
+  },
+  {
+	  "title": "Wind Farm in Hesse, Germany",
+	  "latitude":50.666111, 
+	  "longitude": 8.591111,
+	  "country": "Germany",
+	  "imagefilename": "windfarm_hesse_ger_110242874.jpg",
+	  "information": "Wind farm in Hesse, Germany. Germany was ranked fourth in renewable energy capacity in the world in 2015. Germany was also ranked third in the world in wind power generation, behind China and the USA.",
+	  "filepath": "http://staging.2025kids.com/AppIcons/cities/windfarm_hesse_ger_110242874.jpg" 	
+  },
+  {
+	  "title": "China",
+	  "latitude": 30.823056, 
+	  "longitude": 111.003333,
+	  "country": "China",
+	  "imagefilename": "three_gorges_dam_128863591.jpg",
+	  "information": "The Three Gorges Dam in China is the largest power facility of any kind in the world.",
+	  "filepath": "http://staging.2025kids.com/AppIcons/cities/three_gorges_dam_128863591.jpg" 	
+  },
+  {
+	  "title": "Saudi Arabia",
+	  "latitude":26.266667, 
+	  "longitude": 50.15,
+	  "country": "Saudi Arabia",
+	  "imagefilename": "saudi_arabia_288678785.jpg",
+	  "information": "Saudi Arabia is well-known for oil production, with 16% of the world’s proven oil reserves.",
+	  "filepath": "http://staging.2025kids.com/AppIcons/cities/saudi_arabia_288678785.jpg" 	
+  },
+  {
+	  "title": "Russia",
+	  "latitude":55.7498598 ,
+	  "longitude": 37.3523165,
+	  "country": "Russia",
+	  "imagefilename": "siberia_oil_156632204.jpg",
+	  "information": "Money from exporting oil contributes significantly to Russia's federal budget. When oil prices began to drop in late 2014, Russia is one of the countries whose economy was impacted. ",
+	  "filepath": "http://staging.2025kids.com/AppIcons/cities/siberia_oil_156632204.jpg" 	
+  },
+  {
+	  "title": "Venezuela",
+	  "latitude": 6.647729,
+	  "longitude": -71.1132444,
+	  "country": "Venezuela",
+	  "imagefilename": "venezuela_289060586.jpg",
+	  "information": "Venezuela is another country whose economy depends on money earned from exporting oil. According to Business Insider, about 95% of Venezuela's export revenues come from oil. In 2014, the price of oil started dropping, from more than $100 per barrel in June to less than $40 per barrel by the following December, 2015. As a result, Venezuela has been dealing with food shortages, increased crime, unemployment, malnutrition, and other issues.",
+	  "filepath": "http://staging.2025kids.com/AppIcons/cities/venezuela_289060586.jpg" 	
+  }]

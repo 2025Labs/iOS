@@ -458,11 +458,11 @@
                         <viewControllerLayoutGuide type="bottom" id="cO9-Ti-ZbT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3Kx-h3-dG2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="xHc-kd-dBh" userLabel="headerView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="79"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2025KidsLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-hW-0eM">
                                         <rect key="frame" x="0.0" y="-22" width="153" height="123"/>
@@ -499,10 +499,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0M-VQ-Gfk">
-                                <rect key="frame" x="0.0" y="99" width="375" height="462"/>
+                                <rect key="frame" x="0.0" y="99" width="375" height="398"/>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xdp-hs-03h">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="@ 2017 2025 Labs LLC. All rights reserved. " id="IHc-4w-ZYI">
@@ -512,7 +512,7 @@
                                 <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gji-QA-t5s">
-                                <rect key="frame" x="0.0" y="531" width="375" height="92"/>
+                                <rect key="frame" x="0.0" y="467" width="375" height="92"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJN-92-Ha1">
                                         <rect key="frame" x="12" y="36" width="68" height="12"/>
@@ -619,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9i-s1-rUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="-240"/>
+            <point key="canvasLocation" x="2860" y="39"/>
         </scene>
         <!--Project-->
         <scene sceneID="uE8-cx-ygd">
@@ -666,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eWS-eM-nne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3942" y="706"/>
+            <point key="canvasLocation" x="3942" y="758"/>
         </scene>
         <!--Puzzle Title-->
         <scene sceneID="I9I-tf-UZa">
@@ -707,12 +707,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZt-Qr-VPH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="671"/>
+            <point key="canvasLocation" x="2860" y="758"/>
         </scene>
         <!--2025 Kids Homepage-->
         <scene sceneID="qhR-tc-Tr5">
             <objects>
-                <viewController storyboardIdentifier="mainHomepage" id="saL-YF-yQm" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainHomepage" id="saL-YF-yQm" customClass="MainHomepageController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mBV-k4-fKk"/>
                         <viewControllerLayoutGuide type="bottom" id="4zt-M0-9hj"/>
@@ -738,34 +738,79 @@
                                                 <rect key="frame" x="0.0" y="182" width="113" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="structures" image="structures.png"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showStructures" id="d1e-pP-H3L"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyz-Oo-Ut3">
                                                 <rect key="frame" x="115" y="182" width="113" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="engineering process" image="engineering_process.png"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showEngineering" id="v7O-gY-zfq"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8c-A7-fnE">
                                                 <rect key="frame" x="230" y="95" width="113" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="energy" image="energy.png"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showEnergy" id="xij-MQ-aJU"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh7-09-ACq">
                                                 <rect key="frame" x="230" y="182" width="113" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="computing" image="computing.png"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="3"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="Computing" id="GEx-tS-nlC"/>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showComputing" id="GEx-tS-nlC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgR-YL-rrc">
                                                 <rect key="frame" x="230" y="8" width="113" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="machines" image="machines.png"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showMachines" id="Jbg-TC-eAD"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uao-3B-c80">
                                                 <rect key="frame" x="115" y="95" width="113" height="85"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="materials" image="materials.png"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="tag">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showMaterials" id="FmC-5E-JO7"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Copyright (c) 2017, 2025 Labs LLC" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y73-Xv-7x3">
                                                 <rect key="frame" x="0.0" y="267" width="343" height="20"/>
@@ -782,7 +827,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="app-energy-icon.png"/>
                                         <connections>
-                                            <segue destination="L85-Ya-8gF" kind="show" identifier="webView" id="ZoU-UG-nq5"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="showEnergy" id="bJN-nO-pI6"/>
                                         </connections>
                                     </button>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="logo_kids_small.png" translatesAutoresizingMaskIntoConstraints="NO" id="6sg-jm-9mW">
@@ -794,7 +839,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="app-computing-icon.png"/>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="Computing" id="4ie-Wy-xwe"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="showComputing" id="4ie-Wy-xwe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -843,7 +888,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CU6-Rl-fKj">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -870,7 +915,7 @@
                     </connections>
                 </button>
             </objects>
-            <point key="canvasLocation" x="1697" y="671"/>
+            <point key="canvasLocation" x="1697" y="758"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="v5w-2Z-yO3">
@@ -909,7 +954,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nRg-nh-pSQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4dA-JF-9f5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sfi-HN-QXn" userLabel="headerView">
@@ -955,7 +1000,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qnz-1g-Sjq">
-                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="@ 2017 2025 Labs LLC. All rights reserved." id="Qod-0Z-pKp">
@@ -1082,9 +1127,9 @@
         <image name="world_icon.png" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GEx-tS-nlC"/>
-        <segue reference="W7I-Oy-nuj"/>
-        <segue reference="oWJ-9e-xL9"/>
-        <segue reference="Q5E-zJ-VdD"/>
+        <segue reference="bJN-nO-pI6"/>
+        <segue reference="eAP-hw-AFr"/>
+        <segue reference="vfc-TQ-k7y"/>
+        <segue reference="afc-zq-gJ8"/>
     </inferredMetricsTieBreakers>
 </document>

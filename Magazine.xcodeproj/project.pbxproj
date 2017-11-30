@@ -116,6 +116,13 @@
 		A1671FE61FB1329100BCDB28 /* logo_kids_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE51FB1329100BCDB28 /* logo_kids_small.png */; };
 		A1671FED1FB3A0EE00BCDB28 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1671FEC1FB3A0EE00BCDB28 /* WebViewController.swift */; };
 		A1671FEF1FB4F48F00BCDB28 /* MainHomepageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1671FEE1FB4F48F00BCDB28 /* MainHomepageController.m */; };
+		A1C428FC1FC51A72008DE8E3 /* cipher_energy.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C428FB1FC51A72008DE8E3 /* cipher_energy.png */; };
+		A1C428FE1FC51A7E008DE8E3 /* fillintheblank_energy.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C428FD1FC51A7E008DE8E3 /* fillintheblank_energy.png */; };
+		A1C429001FC51A87008DE8E3 /* materials_energyissue.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C428FF1FC51A87008DE8E3 /* materials_energyissue.png */; };
+		A1C429021FC51A91008DE8E3 /* wordsearchenergy.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C429011FC51A91008DE8E3 /* wordsearchenergy.png */; };
+		A1C429041FC51C81008DE8E3 /* hawaiisolarissues_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C429031FC51C81008DE8E3 /* hawaiisolarissues_2.png */; };
+		A1C429061FC51C9E008DE8E3 /* hawaiisolarissues_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C429051FC51C9E008DE8E3 /* hawaiisolarissues_1.png */; };
+		A1E046CE1FBE3C050085E477 /* energy2017JSON-stage.json in Resources */ = {isa = PBXBuildFile; fileRef = A1E046CD1FBE3C050085E477 /* energy2017JSON-stage.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -272,6 +279,13 @@
 		A1671FEC1FB3A0EE00BCDB28 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A1671FEE1FB4F48F00BCDB28 /* MainHomepageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHomepageController.m; sourceTree = "<group>"; };
 		A1671FF01FB4F4AC00BCDB28 /* MainHomepageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainHomepageController.h; sourceTree = "<group>"; };
+		A1C428FB1FC51A72008DE8E3 /* cipher_energy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cipher_energy.png; sourceTree = "<group>"; };
+		A1C428FD1FC51A7E008DE8E3 /* fillintheblank_energy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fillintheblank_energy.png; sourceTree = "<group>"; };
+		A1C428FF1FC51A87008DE8E3 /* materials_energyissue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = materials_energyissue.png; sourceTree = "<group>"; };
+		A1C429011FC51A91008DE8E3 /* wordsearchenergy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordsearchenergy.png; sourceTree = "<group>"; };
+		A1C429031FC51C81008DE8E3 /* hawaiisolarissues_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hawaiisolarissues_2.png; sourceTree = "<group>"; };
+		A1C429051FC51C9E008DE8E3 /* hawaiisolarissues_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hawaiisolarissues_1.png; sourceTree = "<group>"; };
+		A1E046CD1FBE3C050085E477 /* energy2017JSON-stage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "energy2017JSON-stage.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,8 +327,12 @@
 				7861CAD91D4B24510029256A /* rightarrow.png */,
 				780C6A521D3FE9130004CD98 /* keyFilled.png */,
 				780C6A541D3FE9130004CD98 /* newspaper.png */,
+				A1C428FF1FC51A87008DE8E3 /* materials_energyissue.png */,
 				780C6A551D3FE9130004CD98 /* newspapersmall.png */,
+				A1C429011FC51A91008DE8E3 /* wordsearchenergy.png */,
+				A1C428FD1FC51A7E008DE8E3 /* fillintheblank_energy.png */,
 				A11F72151FB10105001907D2 /* engineering_process.png */,
+				A1C428FB1FC51A72008DE8E3 /* cipher_energy.png */,
 				7861CAE41D4C0F480029256A /* puzzle-piece.png */,
 				7861CAE21D4C03420029256A /* cipherforapp.png */,
 				A11F721F1FB10148001907D2 /* structures.png */,
@@ -326,8 +344,10 @@
 				780C6A641D3FE9130004CD98 /* page12.jpg */,
 				780C6A651D3FE9130004CD98 /* passwordIcon.png */,
 				7861CADE1D4BFC400029256A /* ciphercopy.jpg */,
+				A1C429051FC51C9E008DE8E3 /* hawaiisolarissues_1.png */,
 				780C6A661D3FE9130004CD98 /* plus.png */,
 				7837DF541D5251C000E17401 /* Black.png */,
+				A1C429031FC51C81008DE8E3 /* hawaiisolarissues_2.png */,
 				7837DF551D5251C000E17401 /* Eraser.png */,
 				780C6A671D3FE9130004CD98 /* project.png */,
 				780C6A681D3FE9130004CD98 /* project_icon_70x70.png */,
@@ -461,9 +481,9 @@
 				78A9FBF21D233A9B0055B029 /* Project.h */,
 				78A9FBF31D233A9B0055B029 /* Project.m */,
 				7861CADB1D4BF3F90029256A /* youtubeViewController.h */,
+				7861CADC1D4BF3F90029256A /* youtubeViewController.m */,
 				A1671FF01FB4F4AC00BCDB28 /* MainHomepageController.h */,
 				A1671FEE1FB4F48F00BCDB28 /* MainHomepageController.m */,
-				7861CADC1D4BF3F90029256A /* youtubeViewController.m */,
 				78E4D44E1D1B1CF200FAFC1C /* ViewController.h */,
 				78E4D44F1D1B1CF200FAFC1C /* ViewController.m */,
 				78E4D4511D1B1CF200FAFC1C /* Main.storyboard */,
@@ -478,6 +498,7 @@
 				7837DF4F1D504A6C00E17401 /* drum01.mp3 */,
 				781D774F1D1CA8CC00D9417C /* Puzzle.h */,
 				781D77501D1CA8CC00D9417C /* Puzzle.m */,
+				A1E046CD1FBE3C050085E477 /* energy2017JSON-stage.json */,
 				7837DFB71D52A50700E17401 /* citiesJSON.json */,
 				7837DFB81D52A50700E17401 /* imagesJSON.json */,
 				78E4D4541D1B1CF200FAFC1C /* Assets.xcassets */,
@@ -526,6 +547,9 @@
 		78E4D43D1D1B1CF100FAFC1C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					structures,
+				);
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = MBPro;
 				TargetAttributes = {
@@ -566,6 +590,7 @@
 				7837DFC11D53CDDD00E17401 /* globe_thick.png in Resources */,
 				7837DF5E1D5276BC00E17401 /* project_icon.png in Resources */,
 				7878C50F1D53F6030084F996 /* seattle.jpg in Resources */,
+				A1C429021FC51A91008DE8E3 /* wordsearchenergy.png in Resources */,
 				7861CAEA1D4FAAF30029256A /* howfastistheinternet.png in Resources */,
 				780C6A771D3FE9130004CD98 /* circleChevronDown.png in Resources */,
 				7837DF501D504A6C00E17401 /* drum01.mp3 in Resources */,
@@ -576,6 +601,7 @@
 				780C6A9A1D3FE9130004CD98 /* page12.jpg in Resources */,
 				7878C50C1D53F6030084F996 /* raleigh.jpg in Resources */,
 				7837DF5F1D5276BC00E17401 /* puzzle_icon.png in Resources */,
+				A1E046CE1FBE3C050085E477 /* energy2017JSON-stage.json in Resources */,
 				780C6A861D3FE9130004CD98 /* cross2@3x.png in Resources */,
 				780C6A761D3FE9130004CD98 /* checkmark.png in Resources */,
 				780C6AA01D3FE9130004CD98 /* quiz.json in Resources */,
@@ -599,16 +625,19 @@
 				7861CAE31D4C03420029256A /* cipherforapp.png in Resources */,
 				7861CAE11D4BFCA20029256A /* ciphercopy.jpg in Resources */,
 				780C6AA71D3FE9130004CD98 /* wrongSmall.png in Resources */,
+				A1C429041FC51C81008DE8E3 /* hawaiisolarissues_2.png in Resources */,
 				782592121D46913F00556A66 /* Puzzle-250.png in Resources */,
 				7861CAE51D4C0F480029256A /* puzzle-piece.png in Resources */,
 				780C6A871D3FE9130004CD98 /* globe.png in Resources */,
 				7878C50B1D53F6030084F996 /* newyorkcity.jpg in Resources */,
 				7878C5081D53F6030084F996 /* london.jpg in Resources */,
+				A1C429061FC51C9E008DE8E3 /* hawaiisolarissues_1.png in Resources */,
 				780C6A751D3FE9130004CD98 /* 2025KidsLogo.png in Resources */,
 				A1671FE61FB1329100BCDB28 /* logo_kids_small.png in Resources */,
 				780C6A741D3FE9130004CD98 /* 2025KidsLogo.jpg in Resources */,
 				7861CADA1D4B24510029256A /* rightarrow.png in Resources */,
 				780C6A9B1D3FE9130004CD98 /* passwordIcon.png in Resources */,
+				A1C428FE1FC51A7E008DE8E3 /* fillintheblank_energy.png in Resources */,
 				780C6A971D3FE9130004CD98 /* linen.jpg in Resources */,
 				7837DF611D5276BC00E17401 /* world_icon.png in Resources */,
 				780C6A941D3FE9130004CD98 /* background.jpg in Resources */,
@@ -625,6 +654,7 @@
 				7837DFC51D53D09A00E17401 /* computing_around_the_world2.png in Resources */,
 				780C6A951D3FE9130004CD98 /* cipher.jpg in Resources */,
 				A11F721A1FB10122001907D2 /* materials.png in Resources */,
+				A1C428FC1FC51A72008DE8E3 /* cipher_energy.png in Resources */,
 				780C6A991D3FE9130004CD98 /* wordsearch.png in Resources */,
 				A11F721C1FB10133001907D2 /* computing.png in Resources */,
 				780C6AA91D3FE9130004CD98 /* zoom-out.png in Resources */,
@@ -633,6 +663,7 @@
 				7878C5061D53F6030084F996 /* dublin.jpg in Resources */,
 				7878C5071D53F6030084F996 /* hongkong.jpg in Resources */,
 				7837DFBA1D52A50700E17401 /* imagesJSON.json in Resources */,
+				A1C429001FC51A87008DE8E3 /* materials_energyissue.png in Resources */,
 				780C6A781D3FE9130004CD98 /* circleChevronUp.png in Resources */,
 				78E4D4531D1B1CF200FAFC1C /* Main.storyboard in Resources */,
 				780C6A9C1D3FE9130004CD98 /* plus.png in Resources */,

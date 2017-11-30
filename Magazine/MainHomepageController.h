@@ -8,11 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-#ifndef MainHomepageController_h
-#define MainHomepageController_h
-
 @interface MainHomepageController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UIButton *sender;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property NSString *currentTopic;
 
-#endif /* MainHomepageController_h */
+@end
+

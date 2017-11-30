@@ -72,8 +72,18 @@
     //To pull item based on topic, add a conditional that says
     //[item objectForKey:@"topic"] isEqual: @"energy"] in addition to the @"notes" key
     for(NSDictionary *item in jsonDataArray) {
-        if([[item objectForKey:@"notes"] isEqual: @"article"]) {
-            [_articleArray addObject:[item objectForKey:@"filepath"]];
+        if([[item objectForKey:@"topic"] isEqual: _currentTopic]) {
+            if([[item objectForKey:@"notes"] isEqual: _note]) {
+               [_articleArray addObject:[item objectForKey:@"filepath"]];
+            } /*else if([[item objectForKey:@"notes"] isEqual: @"article"]) {
+                [_articleArray addObject:[item objectForKey:@"filepath"]];
+            }*/
+        /*} else if([[item objectForKey:@"notes"] isEqual: @"puzzle"]){
+            if([[item objectForKey:@"topic"] isEqual: @"energy"]) {
+                [_articleArray addObject:[item objectForKey:@"filepath"]];
+            } else if([[item objectForKey:@"topic"] isEqual: @"computing"]){
+                [_articleArray addObject:[item objectForKey:@"filepath"]];
+            }*/
         }
     }
 }

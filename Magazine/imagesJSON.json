@@ -88,4 +88,40 @@
 	"filepath": "http://www.2025kids.com/AppIcons/articles/howfastistheinternet.png",
 	"topic": "computing",
 	"notes": "article"
+}, {
+	"uid": 16,
+	"filename": "cipher_energy.png",
+	"filepath": "http://staging.2025kids.com/AppIcons/puzzles/cipher_energy.png",
+	"topic": "energy",
+	"notes": "puzzle"
+}, {
+	"uid": 17,
+	"filename": "fillintheblank_energy.png",
+	"filepath": "http://staging.2025kids.com/AppIcons/puzzles/fillintheblank_energy.png",
+	"topic": "energy",
+	"notes": "puzzle"
+}, {
+	"uid": 18,
+	"filename": "materials_energyissue.png",
+	"filepath": "http://staging.2025kids.com/AppIcons/puzzles/materials_energyissue.png",
+	"topic": "energy",
+	"notes": "puzzle"
+}, {
+	"uid": 19,
+	"filename": "wordsearchenergy.png",
+	"filepath": "http://staging.2025kids.com/AppIcons/puzzles/wordsearchenergy.png",
+	"topic": "energy",
+	"notes": "puzzle"
+}, {
+	"uid": 20,
+	"filename": "hawaiisolarissues_1.png",
+	"filepath": "http://staging.2025kids.com/AppIcons/articles/hawaiisolarissues_1.png",
+	"topic": "energy",
+	"notes": "article"
+}, {
+	"uid": 21,
+	"filename": "hawaiisolarissues_2.png",
+	"filepath": "http://staging.2025kids.com/AppIcons/articles/hawaiisolarissues_2.png",
+	"topic": "energy",
+	"notes": "article"
 }]

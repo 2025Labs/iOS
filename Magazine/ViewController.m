@@ -26,6 +26,8 @@
 #import "youtubeViewController.h"
 #import "PuzzleNavigation.h"
 #import <AVFoundation/AVFoundation.h>
+#import <libpq/libpq-fe.h>
+@import WebImage;
 
 @interface ViewController ()
 
@@ -36,30 +38,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupScrollview];
     _pageNumber = 0;
     _maxPageNumber = 4;
-    _currentTopic = @"computing";
+    //_currentTopic = @"energy";
     // Do any additional setup after loading the view, typically from a nib.
     
     /*
     [self prepareNavigationMenu];
     [self prepareMenu];
      */
-    [self setupScrollview];
     [self setupAudio];
     [self setCurrentActivity];
     _isScrollingEnabled = false;
-    UIStoryboard *mainStoryboard = self.storyboard;
-
-    /*In order to maintain the unique functionality found in our objects, we must make each 
+    //UIStoryboard *mainStoryboard = self.storyboard;
+    
+    /*In order to maintain the unique functionality found in our objects, we must make each
      object a "child view controller" of our "parent view controller" (ViewController.m).
      We make it a child to maintain functionality and then add the view of this controller into our
-     scrollView so we can actually see the contents of the child view controller 
+     scrollView so we can actually see the contents of the child view controller
      */
+    
+    UIStoryboard *mainStoryboard = self.storyboard;
     
     //First Controller
     ViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
-    
     mapController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
     
     [self addChildViewController:mapController];
@@ -90,17 +93,50 @@
     [self addChildViewController:puzzleController2];
     [puzzleController2 didMoveToParentViewController:self];
     [self.scrollView addSubview:puzzleController2.view];
-
+    
     //Fourth Controller
     youtubeViewController *youtubeController = [mainStoryboard instantiateViewControllerWithIdentifier:@"youtubeScene"];
-
+    
     youtubeController.view.frame = CGRectMake (self.view.frame.size.width*3, self.view.frame.size.height/10, self.view.frame.size.width, self.view.frame.size.height/2-35);
     
     [self addChildViewController:youtubeController];
     [youtubeController didMoveToParentViewController:self];
     [self.scrollView addSubview:youtubeController.view];
     
+    _issueArray = [[NSMutableArray alloc] init];
+    
+    [self getFilepathFromJSON];
+    for (int i = 0; i < [_issueArray count]; i++) {
+        CGFloat xOrigin = i * self.view.frame.size.width;
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:
+                                  CGRectMake(xOrigin, 0,
+                                             self.scrollView.frame.size.width,
+                                             self.scrollView.frame.size.height)];
+    
+    /*
+     SDWebImageManager is the library that allows us to download an image from its URL if
+     we do not already have that image in our storage/cache
+     */
+     
+    SDWebImageManager *manager = [SDWebImageManager sharedManager];
+    [manager downloadImageWithURL:[NSURL URLWithString:[_issueArray objectAtIndex:i]]
+                          options:0
+                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                             NSLog(@"Received: %ld expected: %ld", (long)receivedSize, (long)expectedSize);
+                         }
+                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                            if (image) {
+                                [imageView setImage:image];
+                                imageView.contentMode = UIViewContentModeScaleToFill;
+                                [self.scrollView addSubview:imageView];
+                                
+                            }
+                        }];
     }
+    
+    
+}
 
 //This works with next/prevScreen to change the text of what activity we are looking at
 -(void) setCurrentActivity {
@@ -194,7 +230,30 @@
     __menu.delegate = self;
 
 }
+  
+
 */
+
+-(void) getFilepathFromJSON {
+    
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"imagesJSON" ofType:@"json"];
+    
+    NSString *myJSON = [[NSString alloc] initWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:NULL];
+    NSError *error =  nil;
+    NSArray *jsonDataArray = [NSJSONSerialization JSONObjectWithData:[myJSON dataUsingEncoding:NSUTF8StringEncoding] options:kNilOptions error:&error];
+    
+    //To pull item based on topic, add a conditional that says
+    //[item objectForKey:@"topic"] isEqual: @"energy"] in addition to the @"notes" key
+    for(NSDictionary *item in jsonDataArray) {
+        if([[item objectForKey:@"topic"] isEqual: _currentTopic]) {
+            if([[item objectForKey:@"notes"] isEqual: _note]) {
+                [_issueArray addObject:[item objectForKey:@"filepath"]];
+            } else if([[item objectForKey:@"filename"] isEqual: _filename]) {
+                [_issueArray addObject:[item objectForKey:@"filepath"]];
+            }
+        }
+    }
+}
 
 /*
  **
@@ -209,7 +268,8 @@
     [_audioPlayer play];
     if([segue.identifier isEqualToString:@"showNews"]) {
         News* controller = [segue destinationViewController];
-        controller.fileName = @"article";
+        _currentTopic = @"computing";
+        controller.note = @"article";
         controller.currentTopic = _currentTopic;
         controller.pageNumber = 0;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {

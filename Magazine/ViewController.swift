@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     //The library used to pull JSON information in this file is called SwiftyJSON
     func retrieveCityInformation() {
 
-        let jsonFilePath:NSString = Bundle.main.path(forResource: "citiesJSON", ofType: "json")! as NSString
+        let jsonFilePath:NSString = Bundle.main.path(forResource: "energy2017JSON-stage", ofType: "json")! as NSString
         let jsonData:NSData = NSData.dataWithContentsOfMappedFile(jsonFilePath as String) as! NSData
         //let jsonData:NSData = NSData.withContentsOfFile(jsonFilePath as String) as NSData!
         let json = JSON(data: jsonData as Data) // Note: data: parameter name

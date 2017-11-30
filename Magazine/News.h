@@ -16,6 +16,7 @@
 @property NSString *fileName;
 @property NSInteger numPages;
 @property NSString *currentTopic;
+@property NSString *note;
 @property BOOL setupDone;
 
 @property NSMutableArray *articleArray;

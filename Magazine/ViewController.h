@@ -6,9 +6,11 @@
 //  Copyright @ 2017 2025 Labs LLC. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "YTPlayerView.h"
 #import "IGCMenu.h"
+#import <libpq/libpq-fe.h>
 
 @interface ViewController : UIViewController<IGCMenuDelegate>
 
@@ -25,7 +27,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *triviaButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 
+@property NSMutableArray *issueArray;
 @property NSString *currentTopic;
+@property NSString *filename;
+@property NSString *filepath;
+@property NSString *note;
 @property int leftArticlePageToJumpTo;
 @property int rightArticlePageToJumpTo;
 @property int pageNumber;
