@@ -9,6 +9,7 @@
 #import "Puzzle.h"
 #import "IGCMenu.h"
 #import <libpq/libpq-fe.h>
+#import "News.h"
 @import WebImage;
 
 @implementation Puzzle
@@ -264,6 +265,16 @@
     } else if([reason isEqualToString:@"disableDrawing"]) {
         NSLog(@"reason isEqualTo: disableDrawing");
         _isDrawingEnabled = false;
+    }
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([segue.identifier isEqualToString:@"showNews"]) {
+        News* controller = [segue destinationViewController];
+        _currentTopic = @"computing";
+        controller.note = @"article";
+        controller.currentTopic = _currentTopic;
+        controller.pageNumber = 0;
     }
 }
 

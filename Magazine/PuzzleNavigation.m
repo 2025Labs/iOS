@@ -42,7 +42,7 @@
 /*
  **
  
- prepareForSegue is where we pass the topic and filename for which we wish to display
+ prepareForSegue is where we pass the  and filename for which we wish to display
  when we transition into a new scene. The new scene will load up by looking at its
  current topic and/or the filename and display content accordingly
  
@@ -52,7 +52,8 @@
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"showNews"]) {
         News* controller = [segue destinationViewController];
-        controller.fileName = @"article";
+        _currentTopic = @"computing";
+        controller.note = @"article";
         controller.currentTopic = _currentTopic;
         controller.pageNumber = 0;
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {

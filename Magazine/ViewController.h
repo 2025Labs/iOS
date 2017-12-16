@@ -26,6 +26,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *gameButton;
 @property (weak, nonatomic) IBOutlet UIButton *triviaButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
+@property (nonatomic, strong) NSString *incomingSegue;
 
 @property NSMutableArray *issueArray;
 @property NSString *currentTopic;
@@ -37,6 +38,7 @@
 @property int pageNumber;
 @property int maxPageNumber;
 @property IGCMenu *_menu;
+
 
 @property BOOL isScrollingEnabled;
 @property BOOL _isMenuActive;

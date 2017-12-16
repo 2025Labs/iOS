@@ -12,6 +12,7 @@ import WebImage
 import Foundation
 import SwiftyJSON
 
+
 class ViewController: UIViewController {
     @IBOutlet weak var map: MKMapView!
     var cityArray = [City]()
@@ -57,7 +58,6 @@ class ViewController: UIViewController {
             let imageFilePath = item["filepath"].rawString()
             let newCity = City(title: title!, coordinate: CLLocationCoordinate2DMake(Double(latitude!)!, Double(longitude!)!), country: country!, image: image!, information: information!, imageFilePath: imageFilePath!)
             cityArray.append(newCity)
-            
         }
     }
     
@@ -66,6 +66,23 @@ class ViewController: UIViewController {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 2.0, regionRadius * 2.0)
         map.setRegion(coordinateRegion, animated:true)
     }
+    
+    /*
+    // function used to pass data via segue from one controller to another
+    func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "showPuzzle") {
+            var controller = segue.destination as? News
+            let currentTopic = "computing"
+            controller.note = "article"
+            controller.currentTopic = currentTopic
+            controller.pageNumber = 0
+        } else if (segue.identifier == "showPuzzle") {
+            var controller = segue.destination as? PuzzleNavigation
+            let currentTopic = "computing"
+            controller.currentTopic = currentTopic
+            controller.fileName = "wordsearch.png"
+        }
+    }*/
     
     
 }

@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--2025 Kids Computing Homepage-->
+        <!--Category-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Computing" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Computing" title="Category" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XJY-Da-C6p"/>
                         <viewControllerLayoutGuide type="bottom" id="HYz-YX-qxw"/>
@@ -28,35 +28,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2025KidsLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="7Cw-xS-PHQ">
-                                        <rect key="frame" x="0.0" y="-31" width="161" height="141"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="161" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kz-PQ-POI" userLabel="Puzzle Button">
-                                        <rect key="frame" x="305" y="5" width="60" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="world_icon.png"/>
-                                        <connections>
-                                            <segue destination="sRK-kn-abJ" kind="show" id="vfc-TQ-k7y"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3if-Yi-Z21" userLabel="World Button">
-                                        <rect key="frame" x="169" y="5" width="60" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="news_icon.png"/>
-                                        <connections>
-                                            <segue destination="pDq-T7-iyd" kind="show" identifier="showNews" id="eAP-hw-AFr"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwI-SH-1cx" userLabel="Quiz Button">
-                                        <rect key="frame" x="237" y="5" width="60" height="69"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="puzzle_icon.png">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="k1E-y6-Ala" kind="show" identifier="showPuzzle" id="52z-86-L0m"/>
-                                        </connections>
-                                    </button>
+                                    <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PtF-Me-hZV">
+                                        <rect key="frame" x="161" y="0.0" width="214" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </searchBar>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -65,21 +44,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bEu-1B-ivw">
-                                <rect key="frame" x="0.0" y="133" width="375" height="367"/>
+                                <rect key="frame" x="0.0" y="105" width="375" height="445"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fsg-aj-y0P">
-                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="@ 2017 2025 Labs LLC. All rights reserved." id="HtE-BF-yhq">
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </toolbar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIL-3S-2MU">
-                                <rect key="frame" x="0.0" y="78" width="374" height="52"/>
+                                <rect key="frame" x="0.0" y="51" width="374" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OW3-O7-KgN">
@@ -118,81 +87,45 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Copyright 2017 2025 Labs LLC. All rights reserved." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vbr-Uc-cxK">
+                                <rect key="frame" x="0.0" y="591" width="375" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mcX-Mu-Ckp">
-                                <rect key="frame" x="0.0" y="492" width="375" height="67"/>
+                                <rect key="frame" x="0.0" y="548" width="375" height="47"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Plb-UP-hSD" userLabel="Left Article Button">
-                                        <rect key="frame" x="213" y="30" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lwI-SH-1cx" userLabel="Quiz Button">
+                                        <rect key="frame" x="167" y="4" width="40" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="words" image="newspaper.png"/>
+                                        <state key="normal" image="puzzle_icon.png">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
-                                            <segue destination="pDq-T7-iyd" kind="show" identifier="showFirstArticle" id="IGX-5E-hae"/>
+                                            <segue destination="k1E-y6-Ala" kind="show" identifier="showPuzzle" id="52z-86-L0m"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Internet of Things" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tl4-gO-Yeh">
-                                        <rect key="frame" x="279" y="7" width="88" height="22"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3if-Yi-Z21" userLabel="World Button">
+                                        <rect key="frame" x="39" y="3" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="History of the Internet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wE5-ot-dJc">
-                                        <rect key="frame" x="165" y="8" width="113" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6A5-Ob-uiC" userLabel="Right Article Button">
-                                        <rect key="frame" x="301" y="30" width="45" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="newspaper.png"/>
+                                        <state key="normal" image="news_icon.png"/>
                                         <connections>
-                                            <segue destination="pDq-T7-iyd" kind="show" identifier="showSecondArticle" id="HOE-X3-pwL"/>
+                                            <segue destination="pDq-T7-iyd" kind="show" identifier="showNews" id="eAP-hw-AFr"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="It's Material" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11o-hf-uTa">
-                                        <rect key="frame" x="96" y="8" width="68" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kz-PQ-POI" userLabel="Puzzle Button">
+                                        <rect key="frame" x="295" y="3" width="40" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fill in the Blanks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uA-CK-9m9">
-                                        <rect key="frame" x="7" y="8" width="81" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UVe-F8-8zc" userLabel="Puzzle Button">
-                                        <rect key="frame" x="24" y="30" width="47" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="puzzle-piece.png"/>
+                                        <state key="normal" image="world_icon.png"/>
                                         <connections>
-                                            <segue destination="k1E-y6-Ala" kind="show" identifier="showFillInTheBlank" id="5YP-GH-eCZ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkp-KZ-V8j" userLabel="Puzzle Button">
-                                        <rect key="frame" x="111" y="30" width="47" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="puzzle-piece.png"/>
-                                        <connections>
-                                            <segue destination="k1E-y6-Ala" kind="show" identifier="showMaterial" id="afc-zq-gJ8"/>
+                                            <segue destination="sRK-kn-abJ" kind="show" id="vfc-TQ-k7y"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="subviews">
-                                        <include reference="Plb-UP-hSD"/>
-                                        <include reference="tl4-gO-Yeh"/>
-                                        <include reference="wE5-ot-dJc"/>
-                                        <include reference="6A5-Ob-uiC"/>
-                                        <include reference="11o-hf-uTa"/>
-                                        <include reference="1uA-CK-9m9"/>
-                                    </mask>
-                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -204,7 +137,7 @@
                         </variation>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" title="2025 Kids Computing Homepage" id="HrE-O8-tfd" userLabel="2025 Kids Computing Homepage">
+                    <navigationItem key="navigationItem" title="2025 Kids Computing Homepage" id="HrE-O8-tfd" userLabel="2025 Kids Category">
                         <barButtonItem key="backBarButtonItem" title="2025 Kids Computing" id="Vqp-4c-IPA"/>
                     </navigationItem>
                     <connections>
@@ -217,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="-332"/>
+            <point key="canvasLocation" x="1505" y="-296"/>
         </scene>
         <!--Login-->
         <scene sceneID="20x-ds-CNT">
@@ -416,10 +349,10 @@
             </objects>
             <point key="canvasLocation" x="-580" y="597"/>
         </scene>
-        <!--Youtube View Controller-->
+        <!--Youtube-->
         <scene sceneID="e2n-VO-Gpb">
             <objects>
-                <viewController storyboardIdentifier="youtubeScene" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4ov-xY-tYq" customClass="youtubeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="youtubeScene" title="Youtube" useStoryboardIdentifierAsRestorationIdentifier="YES" id="4ov-xY-tYq" customClass="youtubeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CJO-wQ-FZA"/>
                         <viewControllerLayoutGuide type="bottom" id="9Fp-ZG-hjg"/>
@@ -447,50 +380,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kmb-VJ-TKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1697" y="-1190"/>
+            <point key="canvasLocation" x="-1838" y="597"/>
         </scene>
         <!--Puzzle-->
         <scene sceneID="Tbd-w0-JiA">
             <objects>
-                <viewController storyboardIdentifier="Puzzle" id="k1E-y6-Ala" customClass="PuzzleNavigation" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Puzzle Nav" id="k1E-y6-Ala" customClass="PuzzleNavigation" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="VYo-VR-eq7"/>
                         <viewControllerLayoutGuide type="bottom" id="cO9-Ti-ZbT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3Kx-h3-dG2">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="xHc-kd-dBh" userLabel="headerView">
+                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xHc-kd-dBh" userLabel="headerView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="2025KidsLogo.png" translatesAutoresizingMaskIntoConstraints="NO" id="QAS-hW-0eM">
-                                        <rect key="frame" x="0.0" y="-22" width="153" height="123"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="153" height="67"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz8-5U-Wgf" userLabel="World Button">
-                                        <rect key="frame" x="161" y="-20" width="70" height="118"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="news_icon.png"/>
-                                        <connections>
-                                            <segue destination="pDq-T7-iyd" kind="show" identifier="showNews" id="oWJ-9e-xL9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="845-KQ-nza" userLabel="Quiz Button">
-                                        <rect key="frame" x="239" y="-3" width="60" height="84"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="puzzle_icon.png">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-b6-oHB" userLabel="Puzzle Button">
-                                        <rect key="frame" x="307" y="-10" width="60" height="98"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="world_icon.png"/>
-                                        <connections>
-                                            <segue destination="sRK-kn-abJ" kind="show" id="Q5E-zJ-VdD"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -498,52 +409,44 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E0M-VQ-Gfk">
-                                <rect key="frame" x="0.0" y="99" width="375" height="398"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E0M-VQ-Gfk">
+                                <rect key="frame" x="0.0" y="138" width="375" height="410"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xdp-hs-03h">
-                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="@ 2017 2025 Labs LLC. All rights reserved. " id="IHc-4w-ZYI">
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </toolbar>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gji-QA-t5s">
-                                <rect key="frame" x="0.0" y="467" width="375" height="92"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gji-QA-t5s">
+                                <rect key="frame" x="0.0" y="67" width="375" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Word Search" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WJN-92-Ha1">
-                                        <rect key="frame" x="12" y="36" width="68" height="12"/>
+                                        <rect key="frame" x="12" y="8" width="68" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fill in the Blank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sey-68-Xq3">
-                                        <rect key="frame" x="94" y="31" width="78" height="22"/>
+                                        <rect key="frame" x="94" y="3" width="78" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cipher" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2f-BB-usW">
-                                        <rect key="frame" x="211" y="37" width="42" height="11"/>
+                                        <rect key="frame" x="211" y="8" width="42" height="11"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Materials" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hK9-wK-Nnq">
-                                        <rect key="frame" x="288" y="36" width="67" height="12"/>
+                                        <rect key="frame" x="288" y="7" width="67" height="12"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhz-Bk-AR0" userLabel="Left Puzzle Button">
-                                        <rect key="frame" x="23" y="56" width="46" height="30"/>
+                                        <rect key="frame" x="23" y="36" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="puzzle-piece.png"/>
                                         <connections>
@@ -551,7 +454,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Oj-Qh-s8s" userLabel="Left Puzzle Button">
-                                        <rect key="frame" x="209" y="56" width="46" height="30"/>
+                                        <rect key="frame" x="207" y="36" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="puzzle-piece.png"/>
                                         <connections>
@@ -559,7 +462,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EPM-4a-wgQ" userLabel="Left Puzzle Button">
-                                        <rect key="frame" x="110" y="56" width="46" height="30"/>
+                                        <rect key="frame" x="110" y="36" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" image="puzzle-piece.png"/>
                                         <connections>
@@ -567,7 +470,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y4I-Uq-MPf" userLabel="Right Puzzle Button">
-                                        <rect key="frame" x="298" y="56" width="46" height="30"/>
+                                        <rect key="frame" x="298" y="36" width="46" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Button" image="puzzle-piece.png"/>
                                         <connections>
@@ -575,6 +478,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.51764705882352935" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="subviews">
                                         <include reference="WJN-92-Ha1"/>
@@ -587,22 +491,39 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz8-5U-Wgf" userLabel="World Button">
+                                <rect key="frame" x="34" y="549" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="news_icon.png"/>
+                                <connections>
+                                    <segue destination="pDq-T7-iyd" kind="show" identifier="showNews" id="MR6-aM-fez"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="845-KQ-nza" userLabel="Quiz Button">
+                                <rect key="frame" x="167" y="549" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="puzzle_icon.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Copyright 2017 2025 Labs LLC. All rights reserved." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lGk-mn-Xev">
+                                <rect key="frame" x="0.0" y="591" width="375" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WJ1-b6-oHB" userLabel="Puzzle Button">
+                                <rect key="frame" x="303" y="549" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="world_icon.png"/>
+                                <connections>
+                                    <segue destination="sRK-kn-abJ" kind="show" id="Q5E-zJ-VdD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="gji-QA-t5s" firstAttribute="leading" secondItem="E0M-VQ-Gfk" secondAttribute="leading" id="3YU-wt-0VT"/>
-                            <constraint firstItem="xHc-kd-dBh" firstAttribute="top" secondItem="VYo-VR-eq7" secondAttribute="bottom" id="57c-xf-WXK"/>
-                            <constraint firstItem="xHc-kd-dBh" firstAttribute="leading" secondItem="E0M-VQ-Gfk" secondAttribute="leading" id="6Pd-YI-AmU"/>
-                            <constraint firstItem="E0M-VQ-Gfk" firstAttribute="top" secondItem="3Kx-h3-dG2" secondAttribute="top" constant="99" id="9C6-eB-wbB"/>
-                            <constraint firstItem="gji-QA-t5s" firstAttribute="top" secondItem="E0M-VQ-Gfk" secondAttribute="bottom" constant="-30" id="IgT-qr-faF"/>
-                            <constraint firstAttribute="trailing" secondItem="E0M-VQ-Gfk" secondAttribute="trailing" id="MnX-Rx-D8r"/>
-                            <constraint firstItem="gji-QA-t5s" firstAttribute="bottom" secondItem="cO9-Ti-ZbT" secondAttribute="top" constant="-44" id="Q0N-Yx-wRN"/>
-                            <constraint firstItem="xHc-kd-dBh" firstAttribute="trailing" secondItem="E0M-VQ-Gfk" secondAttribute="trailing" id="gex-D2-SSZ"/>
-                            <constraint firstItem="E0M-VQ-Gfk" firstAttribute="top" secondItem="xHc-kd-dBh" secondAttribute="bottom" id="nvS-ZH-eaL"/>
-                            <constraint firstItem="gji-QA-t5s" firstAttribute="trailing" secondItem="E0M-VQ-Gfk" secondAttribute="trailing" id="tg3-WF-zdS"/>
-                            <constraint firstAttribute="bottom" secondItem="E0M-VQ-Gfk" secondAttribute="bottom" constant="106" id="yp1-6i-h47"/>
-                            <constraint firstItem="E0M-VQ-Gfk" firstAttribute="leading" secondItem="3Kx-h3-dG2" secondAttribute="leading" id="zmD-hF-EbQ"/>
-                        </constraints>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="xHc-kd-dBh"/>
@@ -619,7 +540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A9i-s1-rUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2860" y="39"/>
+            <point key="canvasLocation" x="2765.5999999999999" y="-711.09445277361328"/>
         </scene>
         <!--Project-->
         <scene sceneID="uE8-cx-ygd">
@@ -712,7 +633,7 @@
         <!--2025 Kids Homepage-->
         <scene sceneID="qhR-tc-Tr5">
             <objects>
-                <viewController storyboardIdentifier="mainHomepage" id="saL-YF-yQm" customClass="MainHomepageController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="mainHomepage" id="saL-YF-yQm" customClass="MainViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mBV-k4-fKk"/>
                         <viewControllerLayoutGuide type="bottom" id="4zt-M0-9hj"/>
@@ -744,7 +665,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showStructures" id="d1e-pP-H3L"/>
+                                                    <segue destination="L85-Ya-8gF" kind="show" identifier="webStructures" id="N1V-zs-gDg"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyz-Oo-Ut3">
@@ -770,7 +691,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showEnergy" id="xij-MQ-aJU"/>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showEnergy" id="AZh-DA-eG8"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yh7-09-ACq">
@@ -783,7 +704,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showComputing" id="GEx-tS-nlC"/>
+                                                    <segue destination="BYZ-38-t0r" kind="show" identifier="showComputing" id="BUy-wk-rMn"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MgR-YL-rrc">
@@ -816,7 +737,7 @@
                                                 <rect key="frame" x="0.0" y="267" width="343" height="20"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="12"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="10"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
@@ -854,7 +775,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="38k-Se-aJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="641" y="-296"/>
+            <point key="canvasLocation" x="277" y="-274"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="yHD-G4-Jpd">
@@ -873,7 +794,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eV0-iK-IQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-580" y="-295"/>
+            <point key="canvasLocation" x="-665" y="-296"/>
         </scene>
         <!--Around the World-->
         <scene sceneID="XiQ-5Y-PbL">
@@ -887,17 +808,50 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CU6-Rl-fKj">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CU6-Rl-fKj">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="613"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Qp-9t-ZOn" userLabel="World Button">
+                                <rect key="frame" x="45" y="614" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="news_icon.png"/>
+                                <connections>
+                                    <segue destination="pDq-T7-iyd" kind="show" identifier="showNews" id="2Xh-qP-GOv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1F5-Me-qbl" userLabel="Quiz Button">
+                                <rect key="frame" x="167" y="614" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="puzzle_icon.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="k1E-y6-Ala" kind="show" identifier="showPuzzle" id="7R3-Cc-0kH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Copyright 2017 2025 Labs LLC. All rights reserved." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Tr-Cu-tra">
+                                <rect key="frame" x="0.0" y="655" width="375" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FuV-qO-5q1" userLabel="Puzzle Button">
+                                <rect key="frame" x="287" y="614" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="world_icon.png"/>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZBh-tK-wUL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="llj-mt-hqY"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Rho-OQ-hwq" firstAttribute="top" secondItem="CU6-Rl-fKj" secondAttribute="bottom" id="03l-rp-s4A"/>
-                            <constraint firstAttribute="trailing" secondItem="CU6-Rl-fKj" secondAttribute="trailing" id="60w-mr-r53"/>
-                            <constraint firstItem="CU6-Rl-fKj" firstAttribute="top" secondItem="7Qn-QZ-qb1" secondAttribute="bottom" id="H6A-QX-yU0"/>
-                            <constraint firstItem="CU6-Rl-fKj" firstAttribute="leading" secondItem="ctm-41-dNS" secondAttribute="leading" id="mkf-Be-bDq"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="map" destination="CU6-Rl-fKj" id="3Wx-UE-kEC"/>
@@ -915,12 +869,12 @@
                     </connections>
                 </button>
             </objects>
-            <point key="canvasLocation" x="1697" y="758"/>
+            <point key="canvasLocation" x="1696.8" y="757.87106446776613"/>
         </scene>
-        <!--Web View Controller-->
+        <!--Web View-->
         <scene sceneID="v5w-2Z-yO3">
             <objects>
-                <viewController storyboardIdentifier="webView" id="L85-Ya-8gF" customClass="WebViewController" customModule="Magazine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="webView" title="Web View" id="L85-Ya-8gF" customClass="WebViewController" customModule="Magazine" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fHF-ns-Bfc"/>
                         <viewControllerLayoutGuide type="bottom" id="0MA-eE-tcl"/>
@@ -954,7 +908,7 @@
                         <viewControllerLayoutGuide type="bottom" id="nRg-nh-pSQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4dA-JF-9f5">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sfi-HN-QXn" userLabel="headerView">
@@ -965,29 +919,6 @@
                                         <rect key="frame" x="8" y="11" width="153" height="56"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSj-cH-xYB" userLabel="World Button">
-                                        <rect key="frame" x="169" y="7" width="60" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="news_icon.png"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lsl-IU-eH7" userLabel="Puzzle Button">
-                                        <rect key="frame" x="304" y="5" width="60" height="67"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="world_icon.png"/>
-                                        <connections>
-                                            <segue destination="sRK-kn-abJ" kind="show" id="5Wn-qE-ZlW"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1d-Wl-dcL" userLabel="Quiz Button">
-                                        <rect key="frame" x="236" y="6" width="60" height="66"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="puzzle_icon.png">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="k1E-y6-Ala" kind="show" id="W7I-Oy-nuj"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -996,21 +927,11 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoZ-a2-DKZ">
-                                <rect key="frame" x="0.0" y="76" width="375" height="407"/>
+                                <rect key="frame" x="0.0" y="145" width="375" height="405"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qnz-1g-Sjq">
-                                <rect key="frame" x="0.0" y="559" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem title="@ 2017 2025 Labs LLC. All rights reserved." id="Qod-0Z-pKp">
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    </barButtonItem>
-                                </items>
-                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </toolbar>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sxt-Md-XVq">
-                                <rect key="frame" x="-1" y="476" width="375" height="83"/>
+                                <rect key="frame" x="0.0" y="65" width="375" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxY-dd-ZwP" userLabel="Right Article Button">
@@ -1074,6 +995,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" red="0.97254901960784312" green="0.51764705882352935" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
                                 <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="subviews">
                                         <include reference="cxY-dd-ZwP"/>
@@ -1085,6 +1007,37 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSj-cH-xYB" userLabel="World Button">
+                                <rect key="frame" x="36" y="550" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="news_icon.png"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1d-Wl-dcL" userLabel="Quiz Button">
+                                <rect key="frame" x="167" y="550" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="puzzle_icon.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="k1E-y6-Ala" kind="show" identifier="showPuzzle" id="CEI-om-hmR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Copyright 2017 2025 Labs LLC. All rights reserved. " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M8b-lG-8Y6">
+                                <rect key="frame" x="0.0" y="591" width="375" height="12"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lsl-IU-eH7" userLabel="Puzzle Button">
+                                <rect key="frame" x="303" y="550" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="world_icon.png"/>
+                                <connections>
+                                    <segue destination="sRK-kn-abJ" kind="show" id="5Wn-qE-ZlW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -1101,7 +1054,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hKG-KA-Vwd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3942" y="-332"/>
+            <point key="canvasLocation" x="3941.5999999999999" y="-332.38380809595208"/>
         </scene>
     </scenes>
     <resources>
@@ -1127,9 +1080,9 @@
         <image name="world_icon.png" width="70" height="70"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="bJN-nO-pI6"/>
-        <segue reference="eAP-hw-AFr"/>
-        <segue reference="vfc-TQ-k7y"/>
-        <segue reference="afc-zq-gJ8"/>
+        <segue reference="AZh-DA-eG8"/>
+        <segue reference="Q5E-zJ-VdD"/>
+        <segue reference="7R3-Cc-0kH"/>
+        <segue reference="MR6-aM-fez"/>
     </inferredMetricsTieBreakers>
 </document>

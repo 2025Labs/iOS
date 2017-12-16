@@ -25,6 +25,7 @@
 @property CGFloat opacity;
 @property BOOL mouseSwiped;
 @property NSString *filename;
+@property NSString *note;
 
 @property NSString *filepath;
 @property NSString *currentTopic;

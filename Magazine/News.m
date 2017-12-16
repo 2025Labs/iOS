@@ -75,15 +75,7 @@
         if([[item objectForKey:@"topic"] isEqual: _currentTopic]) {
             if([[item objectForKey:@"notes"] isEqual: _note]) {
                [_articleArray addObject:[item objectForKey:@"filepath"]];
-            } /*else if([[item objectForKey:@"notes"] isEqual: @"article"]) {
-                [_articleArray addObject:[item objectForKey:@"filepath"]];
-            }*/
-        /*} else if([[item objectForKey:@"notes"] isEqual: @"puzzle"]){
-            if([[item objectForKey:@"topic"] isEqual: @"energy"]) {
-                [_articleArray addObject:[item objectForKey:@"filepath"]];
-            } else if([[item objectForKey:@"topic"] isEqual: @"computing"]){
-                [_articleArray addObject:[item objectForKey:@"filepath"]];
-            }*/
+            }
         }
     }
 }

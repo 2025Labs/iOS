@@ -114,8 +114,8 @@
 		A1671FE21FB130E100BCDB28 /* app-computing-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE11FB130E100BCDB28 /* app-computing-icon.png */; };
 		A1671FE41FB130ED00BCDB28 /* app-energy-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE31FB130ED00BCDB28 /* app-energy-icon.png */; };
 		A1671FE61FB1329100BCDB28 /* logo_kids_small.png in Resources */ = {isa = PBXBuildFile; fileRef = A1671FE51FB1329100BCDB28 /* logo_kids_small.png */; };
-		A1671FED1FB3A0EE00BCDB28 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1671FEC1FB3A0EE00BCDB28 /* WebViewController.swift */; };
-		A1671FEF1FB4F48F00BCDB28 /* MainHomepageController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1671FEE1FB4F48F00BCDB28 /* MainHomepageController.m */; };
+		A1A1B3361FE1D4CC00B45978 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A1B3351FE1D4CC00B45978 /* MainViewController.m */; };
+		A1A1B3391FE2062400B45978 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A1B3381FE2062400B45978 /* WebViewController.swift */; };
 		A1C428FC1FC51A72008DE8E3 /* cipher_energy.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C428FB1FC51A72008DE8E3 /* cipher_energy.png */; };
 		A1C428FE1FC51A7E008DE8E3 /* fillintheblank_energy.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C428FD1FC51A7E008DE8E3 /* fillintheblank_energy.png */; };
 		A1C429001FC51A87008DE8E3 /* materials_energyissue.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C428FF1FC51A87008DE8E3 /* materials_energyissue.png */; };
@@ -276,9 +276,9 @@
 		A1671FE11FB130E100BCDB28 /* app-computing-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-computing-icon.png"; sourceTree = "<group>"; };
 		A1671FE31FB130ED00BCDB28 /* app-energy-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-energy-icon.png"; sourceTree = "<group>"; };
 		A1671FE51FB1329100BCDB28 /* logo_kids_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_kids_small.png; sourceTree = "<group>"; };
-		A1671FEC1FB3A0EE00BCDB28 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		A1671FEE1FB4F48F00BCDB28 /* MainHomepageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainHomepageController.m; sourceTree = "<group>"; };
-		A1671FF01FB4F4AC00BCDB28 /* MainHomepageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainHomepageController.h; sourceTree = "<group>"; };
+		A1A1B3351FE1D4CC00B45978 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		A1A1B3371FE1D5AD00B45978 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A1A1B3381FE2062400B45978 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		A1C428FB1FC51A72008DE8E3 /* cipher_energy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cipher_energy.png; sourceTree = "<group>"; };
 		A1C428FD1FC51A7E008DE8E3 /* fillintheblank_energy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fillintheblank_energy.png; sourceTree = "<group>"; };
 		A1C428FF1FC51A87008DE8E3 /* materials_energyissue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = materials_energyissue.png; sourceTree = "<group>"; };
@@ -482,16 +482,16 @@
 				78A9FBF31D233A9B0055B029 /* Project.m */,
 				7861CADB1D4BF3F90029256A /* youtubeViewController.h */,
 				7861CADC1D4BF3F90029256A /* youtubeViewController.m */,
-				A1671FF01FB4F4AC00BCDB28 /* MainHomepageController.h */,
-				A1671FEE1FB4F48F00BCDB28 /* MainHomepageController.m */,
+				A1A1B3371FE1D5AD00B45978 /* MainViewController.h */,
+				A1A1B3351FE1D4CC00B45978 /* MainViewController.m */,
 				78E4D44E1D1B1CF200FAFC1C /* ViewController.h */,
 				78E4D44F1D1B1CF200FAFC1C /* ViewController.m */,
 				78E4D4511D1B1CF200FAFC1C /* Main.storyboard */,
 				781A8C0F1D3EDEAB00963931 /* City.swift */,
+				78A9FBDF1D21DEF70055B029 /* News.h */,
+				A1A1B3381FE2062400B45978 /* WebViewController.swift */,
 				781A8C111D3EDEEC00963931 /* VCMapView.swift */,
 				781A8C171D3EE08E00963931 /* ViewController.swift */,
-				A1671FEC1FB3A0EE00BCDB28 /* WebViewController.swift */,
-				78A9FBDF1D21DEF70055B029 /* News.h */,
 				78A9FBE01D21DEF70055B029 /* News.m */,
 				78A9FBB11D1E15300055B029 /* PuzzleNavigation.h */,
 				78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */,
@@ -700,16 +700,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				7816C77E1D318752005696ED /* NSData+CommonCrypto.m in Sources */,
+				A1A1B3391FE2062400B45978 /* WebViewController.swift in Sources */,
 				78A9FBE11D21DEF80055B029 /* News.m in Sources */,
 				781A8C101D3EDEAB00963931 /* City.swift in Sources */,
 				78A9FBF41D233A9B0055B029 /* Project.m in Sources */,
-				A1671FED1FB3A0EE00BCDB28 /* WebViewController.swift in Sources */,
 				7816C77D1D318752005696ED /* NSData+Base64.m in Sources */,
 				78E4D4501D1B1CF200FAFC1C /* ViewController.m in Sources */,
 				7816C77F1D318752005696ED /* NSString+Base64.m in Sources */,
 				7816C75D1D317EBD005696ED /* Login.m in Sources */,
 				78A9FBB31D1E15300055B029 /* PuzzleNavigation.m in Sources */,
 				781A8C181D3EE08E00963931 /* ViewController.swift in Sources */,
+				A1A1B3361FE1D4CC00B45978 /* MainViewController.m in Sources */,
 				781A8C121D3EDEEC00963931 /* VCMapView.swift in Sources */,
 				78D07FCE1D2EFBB90090D72B /* IGCMenu.m in Sources */,
 				784A31871D26E4D200AC8AB9 /* CircleProgressBar.m in Sources */,
@@ -717,7 +718,6 @@
 				7861CADD1D4BF3F90029256A /* youtubeViewController.m in Sources */,
 				781D77511D1CA8CC00D9417C /* Puzzle.m in Sources */,
 				784A31841D26CE6700AC8AB9 /* Quiz.m in Sources */,
-				A1671FEF1FB4F48F00BCDB28 /* MainHomepageController.m in Sources */,
 				7816C77B1D318752005696ED /* AESCrypt.m in Sources */,
 				7837DF531D504EEB00E17401 /* YTPlayerView.m in Sources */,
 				78E4D44A1D1B1CF100FAFC1C /* main.m in Sources */,

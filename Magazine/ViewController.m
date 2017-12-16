@@ -27,6 +27,7 @@
 #import "PuzzleNavigation.h"
 #import <AVFoundation/AVFoundation.h>
 #import <libpq/libpq-fe.h>
+#import "MainViewController.h"
 @import WebImage;
 
 @interface ViewController ()
@@ -35,12 +36,13 @@
 
 @implementation ViewController
     AVAudioPlayer *_audioPlayer;
+@synthesize incomingSegue = _incomingSegue;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupScrollview];
     _pageNumber = 0;
     _maxPageNumber = 4;
+    _issueArray = [[NSMutableArray alloc] init];
     //_currentTopic = @"energy";
     // Do any additional setup after loading the view, typically from a nib.
     
@@ -48,17 +50,23 @@
     [self prepareNavigationMenu];
     [self prepareMenu];
      */
+    [self setupScrollview];
     [self setupAudio];
     [self setCurrentActivity];
     _isScrollingEnabled = false;
-    //UIStoryboard *mainStoryboard = self.storyboard;
     
-    /*In order to maintain the unique functionality found in our objects, we must make each
-     object a "child view controller" of our "parent view controller" (ViewController.m).
-     We make it a child to maintain functionality and then add the view of this controller into our
-     scrollView so we can actually see the contents of the child view controller
-     */
-    
+    //[self getFilepathFromJSON];
+    //[self setImageFromPath];
+    [self showChildControllers];
+}
+
+/*In order to maintain the unique functionality found in our objects, we must make each
+ object a "child view controller" of our "parent view controller" (ViewController.m).
+ We make it a child to maintain functionality and then add the view of this controller into our
+ scrollView so we can actually see the contents of the child view controller
+ */
+
+-(void) showChildControllers {
     UIStoryboard *mainStoryboard = self.storyboard;
     
     //First Controller
@@ -69,30 +77,63 @@
     [mapController didMoveToParentViewController:self];
     [self.scrollView addSubview:mapController.view];
     
-    //Second Controller
-    Puzzle *puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
-    puzzleController.filename = @"cipher.png";
-    puzzleController.currentTopic = @"computing";
-    CGRect frame = puzzleController.view.frame;
-    frame.origin.x = 0;
-    puzzleController.view.frame = CGRectMake (self.view.frame.size.width,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
-    puzzleController.view.contentMode = UIViewContentModeScaleToFill;
+    /* To maintain dynamic functionality we have a conditional that checks for the incoming segue
+     and then loads the corresponding data */
+    if([_incomingSegue  isEqual:@"computing"]){
+        //Second Controller
+        Puzzle *puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
+        puzzleController.filename = @"cipher.png";
+        puzzleController.currentTopic = @"computing";
+        CGRect frame = puzzleController.view.frame;
+        frame.origin.x = 0;
+        puzzleController.view.frame = CGRectMake (self.view.frame.size.width,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+        puzzleController.view.contentMode = UIViewContentModeScaleToFill;
+        
+        [self addChildViewController:puzzleController];
+        [puzzleController didMoveToParentViewController:self];
+        puzzleController.view.autoresizesSubviews = YES;
+        [self.scrollView addSubview:puzzleController.view];
+    } else if([_incomingSegue isEqual:@"energy"]){
+        //Second Controller
+        Puzzle *puzzleController = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
+        puzzleController.filename = @"materials_energyissue.png";
+        puzzleController.currentTopic = @"energy";
+        CGRect frame = puzzleController.view.frame;
+        frame.origin.x = 0;
+        puzzleController.view.frame = CGRectMake (self.view.frame.size.width,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+        puzzleController.view.contentMode = UIViewContentModeScaleToFill;
+        
+        [self addChildViewController:puzzleController];
+        [puzzleController didMoveToParentViewController:self];
+        puzzleController.view.autoresizesSubviews = YES;
+        [self.scrollView addSubview:puzzleController.view];
+    }
     
-    [self addChildViewController:puzzleController];
-    [puzzleController didMoveToParentViewController:self];
-    puzzleController.view.autoresizesSubviews = YES;
-    [self.scrollView addSubview:puzzleController.view];
-    
-    //Third Controller
-    Puzzle *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
-    puzzleController2.filename = @"howfastistheinternet.png";
-    puzzleController2.currentTopic = @"computing";
-    
-    puzzleController2.view.frame = CGRectMake (self.view.frame.size.width*2,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
-    
-    [self addChildViewController:puzzleController2];
-    [puzzleController2 didMoveToParentViewController:self];
-    [self.scrollView addSubview:puzzleController2.view];
+    /* To maintain dynamic functionality we have a conditional that checks for the incoming segue
+     and then loads the corresponding data */
+    if([_incomingSegue isEqual:@"computing"]){
+        //Third Controller
+        Puzzle *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
+        puzzleController2.filename = @"howfastistheinternet.png";
+        puzzleController2.currentTopic = @"computing";
+        
+        puzzleController2.view.frame = CGRectMake (self.view.frame.size.width*2,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+        
+        [self addChildViewController:puzzleController2];
+        [puzzleController2 didMoveToParentViewController:self];
+        [self.scrollView addSubview:puzzleController2.view];
+    } else if([_incomingSegue isEqual:@"energy"]){
+        //Third Controller
+        Puzzle *puzzleController2 = [mainStoryboard instantiateViewControllerWithIdentifier:@"PuzzleScene"];
+        puzzleController2.filename = @"hawaiisolarissues_1.png";
+        puzzleController2.currentTopic = @"energy";
+        
+        puzzleController2.view.frame = CGRectMake (self.view.frame.size.width*2,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+        
+        [self addChildViewController:puzzleController2];
+        [puzzleController2 didMoveToParentViewController:self];
+        [self.scrollView addSubview:puzzleController2.view];
+    }
     
     //Fourth Controller
     youtubeViewController *youtubeController = [mainStoryboard instantiateViewControllerWithIdentifier:@"youtubeScene"];
@@ -102,40 +143,6 @@
     [self addChildViewController:youtubeController];
     [youtubeController didMoveToParentViewController:self];
     [self.scrollView addSubview:youtubeController.view];
-    
-    _issueArray = [[NSMutableArray alloc] init];
-    
-    [self getFilepathFromJSON];
-    for (int i = 0; i < [_issueArray count]; i++) {
-        CGFloat xOrigin = i * self.view.frame.size.width;
-        
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:
-                                  CGRectMake(xOrigin, 0,
-                                             self.scrollView.frame.size.width,
-                                             self.scrollView.frame.size.height)];
-    
-    /*
-     SDWebImageManager is the library that allows us to download an image from its URL if
-     we do not already have that image in our storage/cache
-     */
-     
-    SDWebImageManager *manager = [SDWebImageManager sharedManager];
-    [manager downloadImageWithURL:[NSURL URLWithString:[_issueArray objectAtIndex:i]]
-                          options:0
-                         progress:^(NSInteger receivedSize, NSInteger expectedSize) {
-                             NSLog(@"Received: %ld expected: %ld", (long)receivedSize, (long)expectedSize);
-                         }
-                        completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
-                            if (image) {
-                                [imageView setImage:image];
-                                imageView.contentMode = UIViewContentModeScaleToFill;
-                                [self.scrollView addSubview:imageView];
-                                
-                            }
-                        }];
-    }
-    
-    
 }
 
 //This works with next/prevScreen to change the text of what activity we are looking at
@@ -155,6 +162,36 @@
             break;
         default:
             break;
+    }
+}
+
+// Takes an arrays of images from a filepath and displays them accordingly
+-(void) setImageFromPath {
+    for (int i = 0; i < [_issueArray count]; i++) {
+        CGFloat xOrigin = i * self.view.frame.size.width;
+        
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:
+                                  CGRectMake(xOrigin, 0,
+                                             self.scrollView.frame.size.width,
+                                             self.scrollView.frame.size.height)];
+        /*
+         SDWebImageManager is the library that allows us to download an image from its URL if
+         we do not already have that image in our storage/cache
+         */
+        SDWebImageManager *manager = [SDWebImageManager sharedManager];
+        [manager downloadImageWithURL:[NSURL URLWithString:[_issueArray objectAtIndex:i]]
+                              options:0
+                             progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+                                 NSLog(@"Received: %ld expected: %ld", (long)receivedSize, (long)expectedSize);
+                             }
+                            completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, BOOL finished, NSURL *imageURL) {
+                                if (image) {
+                                    [imageView setImage:image];
+                                    imageView.contentMode = UIViewContentModeScaleToFill;
+                                    [self.scrollView addSubview:imageView];
+                                    
+                                }
+                            }];
     }
 }
 
@@ -244,6 +281,7 @@
     
     //To pull item based on topic, add a conditional that says
     //[item objectForKey:@"topic"] isEqual: @"energy"] in addition to the @"notes" key
+    // Note: loads data dynamically 
     for(NSDictionary *item in jsonDataArray) {
         if([[item objectForKey:@"topic"] isEqual: _currentTopic]) {
             if([[item objectForKey:@"notes"] isEqual: _note]) {
