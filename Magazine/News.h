@@ -17,6 +17,7 @@
 @property NSInteger numPages;
 @property NSString *currentTopic;
 @property NSString *note;
+@property (nonatomic, strong) NSString *incomingSegue;
 @property BOOL setupDone;
 
 @property NSMutableArray *articleArray;

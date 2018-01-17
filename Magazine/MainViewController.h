@@ -27,9 +27,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *sender;
 //@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-
-
-@property NSString *currentTopic;
+//@property NSString *currentTopic;
 
 @end
 

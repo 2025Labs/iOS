@@ -5,7 +5,8 @@
   "country": "India",
   "imagefilename": "bangalore.jpg",
   "information": "Bangalore, India is well known for information technology companies to which other companies hire out their work. Among these IT outsourcers: Infosys, Tata, and Wipro. Tech companies all over the world make use of IT talent from Indian companies. India hopes to move beyond outsourcing to more home grown companies.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/bangalore.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/bangalore.jpg",
+  "topic": "computing"
   },{
   "title": "Tel Aviv",
   "latitude": 32.0853,
@@ -13,7 +14,8 @@
   "country": "Isarel",
   "imagefilename": "telaviv.jpg",
   "information": "Tel Aviv, Israel is not big, but it is an emerging technology center with a thriving startup scene. According to the bbc, high tech exports amounted to about $18 billion per year, and about 45% of Israels exports. There is so much startup activity that there is one startup for every 431 residents.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/telaviv.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/telaviv.jpg",
+  "topic": "computing"
   },{
   "title": "London",
   "latitude": 51.5074,
@@ -21,7 +23,8 @@
   "country": "England",
   "imagefilename": "london.jpg",
   "information": "London's technology industry is growing quickly, thanksk to government investment in developing an area rich in startup support and tech infrastructure. According to the Boston Globe, London has the highest rate of startup companies in Europe.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/london.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/london.jpg",
+  "topic": "computing"
   },{
   "title": "Boston",
   "latitude": 42.3601,
@@ -29,7 +32,8 @@
   "country": "USA",
   "imagefilename": "boston.jpg",
   "information": "Boston, Massachusetts has been a high tech hub for a long time. A Boston-based company (BBN) and a Boston area university (MIT) created technology that implemented the early Internet as part of the ARPANET work funded by the Pentagon. The Boston area still has many technology companies and lots of startup activity, receiving more than $6 billion in startup funding in 2015.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/boston.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/boston.jpg",
+  "topic": "computing"
   },{
   "title": "Hong Kong",
   "latitude": 22.3964,
@@ -37,7 +41,8 @@
   "country": "China",
   "imagefilename": "hongkong.jpg",
   "information": "Hong Kong, China is compared to hot startup locations like London and New York. It is considered an emerging tech hub by sources such as Forbes, Inc. In face, Hong Kong has one of the fastest growing startup communities in the world. With only 7 million residents, a whopping 150,000 new businesses were started in 2011 alone. With its rich startup environment, it is nicknamed \"Silicon Harbour\" in comparison to Silicon Valley.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/hongkong.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/hongkong.jpg",
+  "topic": "computing"
   },{
   "title": "Dublin",
   "latitude": 53.3498,
@@ -45,7 +50,8 @@
   "country": "Ireland",
   "imagefilename": "dublin.jpg",
   "information": "Many US companies locate their European headquarters in Dublin, Ireland. Among the reasons: a low tax rate for businesses (12.5% vs 39% in the US), a well-educated and talented work force, a set of laws that do not create much extra work for businesses. In addition, Dublin has a much lower cost of living (such as housing expenses) compared to expensive places like London and Silicon Valley.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/dublin.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/dublin.jpg",
+  "topic": "computing"
   },{
   "title": "Seattle",
   "latitude": 47.6062,
@@ -53,7 +59,8 @@
   "country": "USA",
   "imagefilename": "seattle.jpg",
   "information": "Seattle, Washington is home to well-known companies like Amazon, Microsoft, Code.org, and Expedia. Many Silicon Valley companies have Seattle offices as well. Not only that - the University of Washington has one of the best Computer Science programs in the country, according to US News and World Report Rankings.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/seattle.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/seattle.jpg",
+  "topic": "computing"
   },{
   "title": "Silicon Valley",
   "latitude": 37.3382,
@@ -61,7 +68,8 @@
   "country": "USA",
   "imagefilename": "siliconvalley.jpg",
   "information": "Silicon Valley in California is known all over the world for its technology businesses. Silicon Valley cities are home to companies such as Google, Facebook, Adobe, and Intel. The second computer on the early Internet was at the Stanford Research Institute (SRI) in Palo Alto, a city in the northern part of Silicon Valley. In addition to many large tech businesses, Silicon Valley has a huge startup economy.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/siliconvalley.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/siliconvalley.jpg",
+  "topic": "computing"
   },{
   "title": "Los Angeles",
   "latitude": 34.0522,
@@ -69,7 +77,8 @@
   "country": "USA",
   "imagefilename": "losangeles.jpg",
   "information": "Forbes Magazine lists the Los Angeles area as a fast-growing area for startups. The area received more than $5 billion in startup funding in 2015. LA is historically important, too. Two of the first computers of the early internet were in the greater Los Angeles area at two of California's flagship public universities: one at UCLA, and one at UCSB.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/losangeles.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/losangeles.jpg",
+  "topic": "computing"
   },{
   "title": "San Francisco",
   "latitude": 37.7749,
@@ -77,7 +86,8 @@
   "country": "USA",
   "imagefilename": "sanfrancisco.jpg",
   "information": "San Francisco, California is north of what is typically included in Silicon Valley. Recently, though, it has become a hot spot for new technology companies, with firms like Twitter, Pinterest, Uber, Square, and DropBox calling San Francisco home.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/sanfrancisco.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/sanfrancisco.jpg",
+  "topic": "computing"
   },{
   "title": "Austin",
   "latitude": 30.2672,
@@ -85,7 +95,8 @@
   "country": "USA",
   "imagefilename": "austin.jpg",
   "information": "Austin, Texas has seen incredible growth in tech industry jobs, creating technology jobs at a higher rate than anywhere else in the country, according to a recent Forbes list. Companies with a presence in Austin include Dell, IBM, and Oracle.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/austin_88166311.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/austin_88166311.jpg",
+  "topic": "computing"
   },{
   "title": "Washington D.C",
   "latitude": 38.9072,
@@ -93,7 +104,8 @@
   "country": "USA",
   "imagefilename": "washingtondc.jpg",
   "information": "You may know Washington, D.C as our nation's capital. It is also a hub for high tech companies such as LivingSocial. And, the APARNET, the precursor to our modern Internet, was funded out of the Pentagon's advanced research organization there. So, we can thank the country's leadership for our ability to tweet and share photos on Instagram!",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/washingtondc.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/washingtondc.jpg",
+  "topic": "computing"
   },{
   "title": "New York City",
   "latitude": 40.7128,
@@ -101,7 +113,8 @@
   "country": "USA",
   "imagefilename": "newyorkcity.jpg",
   "information": "New York City (NYC) is included on many lists of US high tech centers. In 2013, nearly 7000 tech companies in New York City provided more than 100,000 jobs. In 2015 alone, more than $7 billion of venture (startup) funding was invested in NYC-based startup companies. In fact, the increase in 2015 NYC-area venture funding was greater than any other region.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/newyorkcity.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/newyorkcity.jpg",
+  "topic": "computing"
   },{
   "title": "Shenzhen",
   "latitude": 22.5431,
@@ -109,5 +122,78 @@
   "country": "China",
   "imagefilename": "shenzhen.jpg",
   "information": "Shenzhen, China was a fishing village 30 years ago, but is now a high tech world power. Shenzen makes much of the world's computing devices like smartphones and computers. Taiwan and Hong Kong firms were first to begin manufacturing in Shenzhen. Then companies like Apple and Cisco began outsourcing to Shenzhen as well. It is also home to successful Chinese companies like Tencent and Huawei, and has a thriving startup environment.",
-  "filepath": "http://www.2025kids.com/AppIcons/cities/shenzhen.jpg"
+  "filepath": "http://www.2025kids.com/AppIcons/cities/shenzhen.jpg",
+  "topic": "computing"
+  },{
+ 	"title": "North Dakota",
+  "latitude": 47.4497236,
+  "longitude": -102.545242,
+  "country": "USA",
+  "imagefilename": "NDak_oil_273537326.jpg",
+  "information": "This image is of an oil pump in North Dakota, one of two states leading the growth in U.S. oil production as of November 2015. The top oil-producing states in the U.S. are Alaska, Louisiana, North Dakota, Oklahoma, and Texas. When oil prices are higher, these economies of these states improve. For example, there are more jobs, and those employees spend money on local business, making those businesses better off. In addition, the higher tax revenues paid to the states help the states balance their budgets and provide for the needs of their residents. In 2014, the U.S. became the biggest producer of petroleum in the world, primarily due to dramatic growth in production in North Dakota and Texas. Afterwards, Saudi Arabia and other countries vastly increased oil production around the world to force the price of oil lower, and try to drive new oil producers out of the market.",
+  "filepath": "http://staging.2025kids.com/AppIcons/cities/NDak_oil_273537326.jpg",
+  "topic": "energy"
+  },{
+  "title": "Itaipu Dam, Brazil",
+  "latitude": -25.4080511 ,
+  "longitude":-54.5910777 ,
+  "country": "Brazil",
+  "imagefilename": "itaipu_254440330.jpg",
+  "information": "The Itaipu Dam between Brazil and Paraguay is the second largest hydroelectric dam in the world. Hydroelectric power uses the kinetic energy of falling water to turn turbines, which generate electricity.",
+  "filepath": "http://staging.2025kids.com/AppIcons/cities/itaipu_254440330.jpg",
+  "topic": "energy"
+  },{
+  "title": "Tricastin Nuclear Power Plant",
+  "latitude": 44.329722,
+  "longitude": 4.732222,
+  "country": "France",
+  "imagefilename": "Tricastin_FR_80866174.jpg",
+  "information": "Tricastin Nuclear Power Plant in France. France gets more than 70% of its power from nuclear power.",
+  "filepath": "http://staging.2025kids.com/AppIcons/cities/Tricastin_FR_80866174.jpg",
+  "topic": "energy"
+  },{
+  "title": "Wind Farm in Hesse, Germany",
+  "latitude":50.666111,
+  "longitude": 8.591111,
+  "country": "Germany",
+  "imagefilename": "windfarm_hesse_ger_110242874.jpg",
+  "information": "Wind farm in Hesse, Germany. Germany was ranked fourth in renewable energy capacity in the world in 2015. Germany was also ranked third in the world in wind power generation, behind China and the USA.",
+  "filepath": "http://staging.2025kids.com/AppIcons/cities/windfarm_hesse_ger_110242874.jpg",
+  "topic": "energy"
+  },{
+  "title": "China",
+  "latitude": 30.823056,
+  "longitude": 111.003333,
+  "country": "China",
+  "imagefilename": "three_gorges_dam_128863591.jpg",
+  "information": "The Three Gorges Dam in China is the largest power facility of any kind in the world.",
+  "filepath": "http://staging.2025kids.com/AppIcons/cities/three_gorges_dam_128863591.jpg",
+  "topic": "energy"
+  },{
+  "title": "Saudi Arabia",
+  "latitude":26.266667,
+  "longitude": 50.15,
+  "country": "Saudi Arabia",
+  "imagefilename": "saudi_arabia_288678785.jpg",
+  "information": "Saudi Arabia is well-known for oil production, with 16% of the world’s proven oil reserves.",
+  "filepath": "http://staging.2025kids.com/AppIcons/cities/saudi_arabia_288678785.jpg",
+  "topic": "energy"
+  },{
+  "title": "Russia",
+  "latitude":55.7498598 ,
+  "longitude": 37.3523165,
+  "country": "Russia",
+  "imagefilename": "siberia_oil_156632204.jpg",
+  "information": "Money from exporting oil contributes significantly to Russia's federal budget. When oil prices began to drop in late 2014, Russia is one of the countries whose economy was impacted. ",
+  "filepath": "http://staging.2025kids.com/AppIcons/cities/siberia_oil_156632204.jpg",
+  "topic": "energy"
+  },{
+  "title": "Venezuela",
+  "latitude": 6.647729,
+  "longitude": -71.1132444,
+  "country": "Venezuela",
+  "imagefilename": "venezuela_289060586.jpg",
+  "information": "Venezuela is another country whose economy depends on money earned from exporting oil. According to Business Insider, about 95% of Venezuela's export revenues come from oil. In 2014, the price of oil started dropping, from more than $100 per barrel in June to less than $40 per barrel by the following December, 2015. As a result, Venezuela has been dealing with food shortages, increased crime, unemployment, malnutrition, and other issues.",
+  "filepath": "http://staging.2025kids.com/AppIcons/cities/venezuela_289060586.jpg",
+  "topic": "energy"
   }]

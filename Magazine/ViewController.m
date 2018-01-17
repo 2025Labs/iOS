@@ -28,6 +28,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <libpq/libpq-fe.h>
 #import "MainViewController.h"
+#import "Magazine-Swift.h" // allows us to use Swift classes in our Objective-C files
 @import WebImage;
 
 @interface ViewController ()
@@ -36,7 +37,7 @@
 
 @implementation ViewController
     AVAudioPlayer *_audioPlayer;
-@synthesize incomingSegue = _incomingSegue;
+@synthesize incomingSegue = _incomingSegue; 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,7 +54,7 @@
     [self setupScrollview];
     [self setupAudio];
     [self setCurrentActivity];
-    _isScrollingEnabled = false;
+    _isScrollingEnabled = true;
     
     //[self getFilepathFromJSON];
     //[self setImageFromPath];
@@ -64,20 +65,34 @@
  object a "child view controller" of our "parent view controller" (ViewController.m).
  We make it a child to maintain functionality and then add the view of this controller into our
  scrollView so we can actually see the contents of the child view controller
+ UPDATE (12/14/17): Added functionality that checks for incoming segue
+                    to base images by topic.
  */
 
 -(void) showChildControllers {
     UIStoryboard *mainStoryboard = self.storyboard;
     
-    //First Controller
-    ViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
-    mapController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+    if([_incomingSegue isEqual:@"computing"]) {
+        //First Controller
+        MapViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
+        mapController.mapTopic = @"computing";
+        mapController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+        
+        [self addChildViewController:mapController];
+        [mapController didMoveToParentViewController:self];
+        [self.scrollView addSubview:mapController.view];
+    } else if([_incomingSegue isEqual:@"energy"]) {
+        //First Controller
+        MapViewController *mapController = [mainStoryboard instantiateViewControllerWithIdentifier:@"mapScene"];
+        mapController.mapTopic = @"energy";
+        mapController.view.frame = CGRectMake (0,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height);
+        
+        [self addChildViewController:mapController];
+        [mapController didMoveToParentViewController:self];
+        [self.scrollView addSubview:mapController.view];
+    }
     
-    [self addChildViewController:mapController];
-    [mapController didMoveToParentViewController:self];
-    [self.scrollView addSubview:mapController.view];
-    
-    /* To maintain dynamic functionality we have a conditional that checks for the incoming segue
+    /* To maintain dynamic functionality within the same view we have a conditional that checks for the incoming segue
      and then loads the corresponding data */
     if([_incomingSegue  isEqual:@"computing"]){
         //Second Controller
@@ -109,7 +124,7 @@
         [self.scrollView addSubview:puzzleController.view];
     }
     
-    /* To maintain dynamic functionality we have a conditional that checks for the incoming segue
+    /* To maintain dynamic functionality within the same view we have a conditional that checks for the incoming segue
      and then loads the corresponding data */
     if([_incomingSegue isEqual:@"computing"]){
         //Third Controller
@@ -152,10 +167,18 @@
             _currentActivity.text = @"Computing Around the World";
             break;
         case 1:
-            _currentActivity.text = @"Cipher Puzzle";
+            if([_incomingSegue isEqual:@"computing"]){
+                _currentActivity.text = @"Puzzle: Cipher Puzzle";
+            } else if([_incomingSegue isEqual:@"energy"]){
+                _currentActivity.text = @"Puzzle: It's Material";
+            }
             break;
         case 2:
-            _currentActivity.text = @"News: How Fast is the Internet?";
+            if([_incomingSegue isEqual:@"computing"]){
+                _currentActivity.text = @"News: How Fast is the Internet?";
+            } else if([_incomingSegue isEqual:@"energy"]){
+                 _currentActivity.text = @"News: Solar Power Overload";
+            }
             break;
         case 3:
             _currentActivity.text = @"Computing for Kids";
@@ -299,21 +322,40 @@
     prepareForSegue is where we pass the topic and filename for which we wish to display
     when we transition into a new scene. The new scene will load up by looking at its
     current topic and/or the filename and display content accordingly
- 
+ UPDATE (12/14/17): Added functionality that checks for incoming segue
+                    to base images by topic.
  **
  */
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     [_audioPlayer play];
     if([segue.identifier isEqualToString:@"showNews"]) {
-        News* controller = [segue destinationViewController];
-        _currentTopic = @"computing";
-        controller.note = @"article";
-        controller.currentTopic = _currentTopic;
-        controller.pageNumber = 0;
+        if([_incomingSegue isEqual:@"computing"]){
+            [segue.destinationViewController setIncomingSegue:@"computing"];
+            News* controller = [segue destinationViewController];
+            _currentTopic = @"computing";
+            controller.note = @"article";
+            controller.currentTopic = _currentTopic;
+            controller.pageNumber = 0;
+        }  else if([_incomingSegue isEqual:@"energy"]){
+             [segue.destinationViewController setIncomingSegue:@"energy"];
+            News* controller = [segue destinationViewController];
+            _currentTopic = @"energy";
+            controller.note = @"article";
+            controller.currentTopic = _currentTopic;
+            controller.pageNumber = 0;
+        }
     } else if([segue.identifier isEqualToString:@"showPuzzle"]) {
-        PuzzleNavigation* controller = [segue destinationViewController];
-        controller.currentTopic = _currentTopic;
-        controller.fileName = @"wordsearch.png";
+        if([_incomingSegue isEqual:@"computing"]){
+            [segue.destinationViewController setIncomingSegue:@"computing"];
+            PuzzleNavigation* controller = [segue destinationViewController];
+            controller.currentTopic = _currentTopic;
+            controller.fileName = @"wordsearch.png";
+        } else if([_incomingSegue isEqual:@"energy"]){
+            [segue.destinationViewController setIncomingSegue:@"energy"];
+            PuzzleNavigation* controller = [segue destinationViewController];
+            controller.currentTopic = _currentTopic;
+            controller.fileName = @"wordsearchenergy.png";
+        }
     } else if([segue.identifier isEqualToString:@"showWorld"]) {
         News* controller = [segue destinationViewController];
         controller.currentTopic = _currentTopic;
@@ -452,5 +494,10 @@
     _audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundUrl error:nil];
 }
 
+/*
+- MySegue {
+    return mySegue;
+}
+*/
 
 @end

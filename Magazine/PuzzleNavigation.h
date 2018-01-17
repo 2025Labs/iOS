@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *PuzzleButton;
 @property NSString *currentTopic;
 @property NSString *note;
+@property (nonatomic, strong) NSString *incomingSegue;
 
 
 //Drawing Variables

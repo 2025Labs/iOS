@@ -45,7 +45,7 @@
 		781A8C101D3EDEAB00963931 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781A8C0F1D3EDEAB00963931 /* City.swift */; };
 		781A8C121D3EDEEC00963931 /* VCMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781A8C111D3EDEEC00963931 /* VCMapView.swift */; };
 		781A8C141D3EDFEC00963931 /* Popover.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781A8C131D3EDFEC00963931 /* Popover.framework */; };
-		781A8C181D3EE08E00963931 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781A8C171D3EE08E00963931 /* ViewController.swift */; };
+		781A8C181D3EE08E00963931 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781A8C171D3EE08E00963931 /* MapViewController.swift */; };
 		781D77511D1CA8CC00D9417C /* Puzzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 781D77501D1CA8CC00D9417C /* Puzzle.m */; };
 		782592051D41700E00556A66 /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 782592041D41700E00556A66 /* WebImage.framework */; };
 		782592121D46913F00556A66 /* Puzzle-250.png in Resources */ = {isa = PBXBuildFile; fileRef = 782592111D46913F00556A66 /* Puzzle-250.png */; };
@@ -190,11 +190,10 @@
 		7816C7781D318752005696ED /* NSString+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Base64.m"; sourceTree = "<group>"; };
 		7816C7791D318752005696ED /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7816C7811D341DB8005696ED /* libpq.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = libpq.framework; sourceTree = "<group>"; };
-		781A8C0E1D3EDEAB00963931 /* Magazine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Magazine-Bridging-Header.h"; sourceTree = "<group>"; };
 		781A8C0F1D3EDEAB00963931 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		781A8C111D3EDEEC00963931 /* VCMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCMapView.swift; sourceTree = "<group>"; };
 		781A8C131D3EDFEC00963931 /* Popover.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Popover.framework; path = Carthage/Build/iOS/Popover.framework; sourceTree = "<group>"; };
-		781A8C171D3EE08E00963931 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		781A8C171D3EE08E00963931 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		781D774F1D1CA8CC00D9417C /* Puzzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Puzzle.h; sourceTree = "<group>"; };
 		781D77501D1CA8CC00D9417C /* Puzzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Puzzle.m; sourceTree = "<group>"; };
 		782592041D41700E00556A66 /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
@@ -285,6 +284,7 @@
 		A1C429011FC51A91008DE8E3 /* wordsearchenergy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordsearchenergy.png; sourceTree = "<group>"; };
 		A1C429031FC51C81008DE8E3 /* hawaiisolarissues_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hawaiisolarissues_2.png; sourceTree = "<group>"; };
 		A1C429051FC51C9E008DE8E3 /* hawaiisolarissues_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hawaiisolarissues_1.png; sourceTree = "<group>"; };
+		A1C5B3A81FF44C8A00F1E483 /* Magazine-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Magazine-Bridging-Header.h"; sourceTree = "<group>"; };
 		A1E046CD1FBE3C050085E477 /* energy2017JSON-stage.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "energy2017JSON-stage.json"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -476,6 +476,7 @@
 				7837DF521D504EEB00E17401 /* YTPlayerView.m */,
 				784A31821D26CE6700AC8AB9 /* Quiz.h */,
 				784A31831D26CE6700AC8AB9 /* Quiz.m */,
+				A1C5B3A81FF44C8A00F1E483 /* Magazine-Bridging-Header.h */,
 				78E4D44B1D1B1CF200FAFC1C /* AppDelegate.h */,
 				78E4D44C1D1B1CF200FAFC1C /* AppDelegate.m */,
 				78A9FBF21D233A9B0055B029 /* Project.h */,
@@ -488,10 +489,10 @@
 				78E4D44F1D1B1CF200FAFC1C /* ViewController.m */,
 				78E4D4511D1B1CF200FAFC1C /* Main.storyboard */,
 				781A8C0F1D3EDEAB00963931 /* City.swift */,
-				78A9FBDF1D21DEF70055B029 /* News.h */,
 				A1A1B3381FE2062400B45978 /* WebViewController.swift */,
 				781A8C111D3EDEEC00963931 /* VCMapView.swift */,
-				781A8C171D3EE08E00963931 /* ViewController.swift */,
+				781A8C171D3EE08E00963931 /* MapViewController.swift */,
+				78A9FBDF1D21DEF70055B029 /* News.h */,
 				78A9FBE01D21DEF70055B029 /* News.m */,
 				78A9FBB11D1E15300055B029 /* PuzzleNavigation.h */,
 				78A9FBB21D1E15300055B029 /* PuzzleNavigation.m */,
@@ -505,7 +506,6 @@
 				78E4D4561D1B1CF200FAFC1C /* LaunchScreen.storyboard */,
 				78E4D4591D1B1CF200FAFC1C /* Info.plist */,
 				78E4D4481D1B1CF100FAFC1C /* Supporting Files */,
-				781A8C0E1D3EDEAB00963931 /* Magazine-Bridging-Header.h */,
 			);
 			path = Magazine;
 			sourceTree = "<group>";
@@ -709,7 +709,7 @@
 				7816C77F1D318752005696ED /* NSString+Base64.m in Sources */,
 				7816C75D1D317EBD005696ED /* Login.m in Sources */,
 				78A9FBB31D1E15300055B029 /* PuzzleNavigation.m in Sources */,
-				781A8C181D3EE08E00963931 /* ViewController.swift in Sources */,
+				781A8C181D3EE08E00963931 /* MapViewController.swift in Sources */,
 				A1A1B3361FE1D4CC00B45978 /* MainViewController.m in Sources */,
 				781A8C121D3EDEEC00963931 /* VCMapView.swift in Sources */,
 				78D07FCE1D2EFBB90090D72B /* IGCMenu.m in Sources */,
@@ -789,6 +789,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Melissa/michael/iOStest/iOS/Magazine/Magazine-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -829,6 +830,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Melissa/michael/iOStest/iOS/Magazine/Magazine-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;

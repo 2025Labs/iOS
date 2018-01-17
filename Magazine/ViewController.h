@@ -12,6 +12,10 @@
 #import "IGCMenu.h"
 #import <libpq/libpq-fe.h>
 
+#define computerSegue 1
+#define energySegue   @"energy2017JSON-stage"
+#define dynamicSegue
+
 @interface ViewController : UIViewController<IGCMenuDelegate>
 
 
@@ -27,6 +31,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *triviaButton;
 @property (weak, nonatomic) IBOutlet UIButton *menuButton;
 @property (nonatomic, strong) NSString *incomingSegue;
+
 
 @property NSMutableArray *issueArray;
 @property NSString *currentTopic;

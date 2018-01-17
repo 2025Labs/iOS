@@ -29,13 +29,7 @@
 
 /*
  **
- 
- prepareForSegue is where we pass the topic and filename for which we wish to display
- when we transition into a new scene. The new scene will load up by looking at its
- current topic and/or the filename/note and display content accordingly
- Note: the data displayed here is loaded into the view controller by
- clicking a button which represents a different issue in the
- magazine.
+Used for each button on our main homepage. Passes the correponding string for our incomingSegue variable depending on which button is clicked. 
  **
  */
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

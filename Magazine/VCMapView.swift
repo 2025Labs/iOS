@@ -11,7 +11,7 @@ import MapKit
 import Popover
 import WebImage
 
-extension ViewController: MKMapViewDelegate {
+extension MapViewController: MKMapViewDelegate {
 
     
     // 1

@@ -1,5 +1,18 @@
 //
-//  Use this file to import your target's public headers that you would like to expose to Swift.
+//  Magazine-Bridging-Header.h
+//  Magazine
+//
+//  Created by Melissa Liu on 12/27/17.
+//  Copyright © 2017 MBPro. All rights reserved.
 //
 
-#import <libpq/libpq-fe.h>
+
+#import "ViewController.h"
+#import "News.h"
+#import "PuzzleNavigation.h"
+
+#ifndef Magazine_Bridging_Header_h
+#define Magazine_Bridging_Header_h
+
+
+#endif /* Magazine_Bridging_Header_h */
